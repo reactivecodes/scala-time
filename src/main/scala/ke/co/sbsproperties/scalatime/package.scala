@@ -33,6 +33,7 @@ package object scalatime extends conversions.TemporalImplicits {
   type Instant = time.Instant
   type LocalDate = time.LocalDate
   type LocalDateTime = time.LocalDateTime
+  type LocalTime = time.LocalTime
   type Month = time.Month
   type MonthDay = time.MonthDay
   type OffsetDateTime = time.OffsetDateTime
@@ -52,4 +53,7 @@ package object scalatime extends conversions.TemporalImplicits {
   type ChronoUnit = time.temporal.ChronoUnit
   type TemporalQuery[A] = time.temporal.TemporalQuery[A]
 
+  // java.time.format
+  type DateTimeFormatter = time.format.DateTimeFormatter
+  type DateTimeFormatterBuilder = time.format.DateTimeFormatterBuilder
 }

@@ -20,7 +20,9 @@ package ke.co.sbsproperties.scalatime
 
 import java.time.{LocalDate => LD}
 
-
+/** Factory object for creation of [[LocalDate]] instances
+  * @since 0.1.0
+  */
 object LocalDate {
 
   /** Creates a new [[LocalDate]] instance by querying the current system UTC clock
@@ -57,7 +59,7 @@ object LocalDate {
     * @param day the day to represent
     * @param month the month to represent
     * @param year the year to represent
-    * @return
+    * @return  a new [[LocalDate]]
     */
   @throws[DateTimeException]("if the value of any field is out of range, " +
     "or if the day-of-month is invalid for the month-year.")
@@ -69,13 +71,29 @@ object LocalDate {
     * @param day the day to represent
     * @param month the month to represent
     * @param year the year to represent
-    * @return
+    * @return  a new [[LocalDate]]
     */
   @throws[DateTimeException]("if the value of any field is out of range, " +
     "or if the day-of-month is invalid for the month-year.")
   def of(year: Int, month: Month, day: Int): LocalDate = LD.of(year, month, day)
 
+  /** Creates a new [[LocalDate]] instance from valid ISO-8601 extended local date formatted text, otherwise
+    * throws an exception.
+   *
+   * @param text the text to parse such as "2007-12-03"
+   * @return  a new [[LocalDate]]
+   */
+  @throws[DateTimeException]("if the text cannot be successfully parsed as a LocalDate.")
+  def parse(text: String): LocalDate = LD.parse(text)
 
+  /** Creates a new [[LocalDate]] instance from valid text formatted according to the provided `formatter`, otherwise
+    * throws an exception.
+    *
+    * @param text the text to parse
+    * @return  a new [[LocalDate]]
+    */
+  @throws[DateTimeException]("if the text cannot be successfully parsed as a LocalDate.")
+  def parse(text: String, formatter: DateTimeFormatter): LocalDate = LD.parse(text, formatter)
 
 }
 
