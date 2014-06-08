@@ -23,23 +23,32 @@ published to the [`Sonatype OSS Snapshots`][5] public repository.
     "ke.co.sbsproperties" %% "scala-time" % "0.1.0-SNAPSHOT"
 ```
 
-#### Example:
+#### Examples:
 ```scala
 import ke.co.sbsproperties.scalatime._
 import conversions._
 
+// Create a Duration instance from a Long
 val duration = 10L minutes
 
 val otherDuration = 1L minute
 
+// Create a Period instance from an Int
 val period = 2 weeks
 
+// Create a LocalDate instance
 val localDate = LocalDate.of(2014, 6, 7)
 
+// Create a Duration instance from a sum of Durations
 duration + otherDuration
 
+//  Add a TemporalAmount to a Temporal
 period <+= localDate
 
+//  Add a TemporalAmount to a Temporal
+localDate + period
+
+// Subtract a TemporalAmount from a Temporal
 localDate - period
 ```
 
@@ -53,7 +62,7 @@ See the NOTICE file distributed with this work for additional
 information regarding copyright ownership
 
 Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
+you may not use this work except in compliance with the License.
 You may obtain a copy of the License at
 
  [`http://www.apache.org/licenses/LICENSE-2.0`][4]
