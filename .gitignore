@@ -1,0 +1,5 @@
+.idea/*
+!.idea/copyright/
+.idea_modules/
+target/
+out/
