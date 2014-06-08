@@ -65,6 +65,8 @@ object Duration {
     */
   def days(days: Long): Duration = JD.ofDays(days)
 
+  /** Returns a [[Duration]] instance representing a duration of zero. **/
+  def nil: Duration = JD.ZERO
 }
 
 object Period {
@@ -103,4 +105,7 @@ object Period {
     * @return a new Duration instance
     */
   def years(years: Int): Period = JP.ofYears(years)
+
+  /** Returns a [[Period]] instance representing a period of zero. **/
+  def nil: Period = JP.ZERO
 }
