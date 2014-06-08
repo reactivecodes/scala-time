@@ -23,7 +23,7 @@ import java.time.format.{DateTimeFormatter => DF}
 /** Factory object for creation of [[DateTimeFormatter]] instances 
   * @since 0.1.0
   */
-object TimeFormater {
+object TimeFormatter {
 
   val ISO: ISOTimeFormatters = new ISOTimeFormatters {}
 
