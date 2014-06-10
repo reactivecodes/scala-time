@@ -3,8 +3,8 @@
     <LanguageOptions name="__TEMPLATE__">
       <option name="separateBefore" value="true" />
       <option name="separateAfter" value="true" />
-      <option name="lenBefore" value="72" />
-      <option name="lenAfter" value="72" />
+      <option name="lenBefore" value="69" />
+      <option name="lenAfter" value="69" />
       <option name="box" value="true" />
     </LanguageOptions>
   </settings>
