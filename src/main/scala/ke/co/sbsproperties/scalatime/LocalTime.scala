@@ -63,7 +63,7 @@ object LocalTime {
     * @param nano the nano-of-second to represent, from 0 to 999,999,999
     * @throws DateTimeException - if the value of any field is out of range
     */
-  def of(hour: Int, minute: Int, second: Int, nano: Int) = LT.of(hour, minute, second, nano)
+  def of(hour: Int, minute: Int, second: Int, nano: Int): LocalTime = LT.of(hour, minute, second, nano)
 
   /** Creates a new [[LocalTime]] instance from an hour, minute and second.
     *
@@ -72,7 +72,7 @@ object LocalTime {
     * @param second the second-of-minute to represent, from 0 to 59
     * @throws DateTimeException - if the value of any field is out of range
     */
-  def of(hour: Int, minute: Int, second: Int) = LT.of(hour, minute, second)
+  def of(hour: Int, minute: Int, second: Int): LocalTime = LT.of(hour, minute, second)
 
   /** Creates a new [[LocalTime]] instance from an hour and minute.
     *
@@ -80,31 +80,31 @@ object LocalTime {
     * @param minute the minute-of-hour to represent, from 0 to 59
     * @throws DateTimeException - if the value of any field is out of range
     */
-  def of(hour: Int, minute: Int) = LT.of(hour, minute)
+  def of(hour: Int, minute: Int): LocalTime = LT.of(hour, minute)
 
   /** Creates a new [[LocalTime]] instance from from a nanos-of-day value.
     *
     * @param  nanoOfDay the nano of day, from 0 to 24 * 60 * 60 * 1,000,000,000 - 1
     * @throws DateTimeException - if the nanos of day value is invalid
     */
-  def ofNano(nanoOfDay: Long) = LT.ofNanoOfDay(nanoOfDay)
+  def ofNano(nanoOfDay: Long): LocalTime = LT.ofNanoOfDay(nanoOfDay)
 
   /** Creates a new [[LocalTime]] instance from from a second-of-day value.
     *
     * @param  secondOfDay the second-of-day, from 0 to 24 * 60 * 60 - 1
     * @throws DateTimeException - if the second of day value is invalid
     */
-  def ofSecond(secondOfDay: Long) = LT.ofSecondOfDay(secondOfDay)
+  def ofSecond(secondOfDay: Long): LocalTime = LT.ofSecondOfDay(secondOfDay)
 
   /** The maximum supported LocalTime ('23:59:59.999999999' - just before midnight at the end of the day). **/
-  val max = LT.MAX
+  val max: LocalTime = LT.MAX
 
   /** The LocalTime of midnight at the start of the day, '00:00'. **/
-  val midnight = LT.MIDNIGHT
+  val midnight: LocalTime = LT.MIDNIGHT
 
   /** The minimum supported LocalTime ('00:00' - the time of midnight at the start of the day). **/
-  val min = midnight
+  val min: LocalTime = midnight
 
   /** The LocalTime of noon in the middle of the day, '12:00'. **/
-  val noon = LT.NOON
+  val noon: LocalTime = LT.NOON
 }

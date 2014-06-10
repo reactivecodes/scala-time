@@ -120,9 +120,9 @@ object OffsetDateTime {
   def parse(text: String, formatter: DateTimeFormatter): OffsetDateTime = OD.parse(text, formatter)
 
   /** The maximum supported OffsetDateTime, '+999999999-12-31T23:59:59.999999999-18:00' - or 'far future'. **/
-  val max = OD.MAX
+  val max: OffsetDateTime = OD.MAX
 
   /** The minimum supported OffsetDateTime, '-999999999-01-01T00:00:00+18:00' - or 'far past'. **/
-  val min = OD.MIN
+  val min: OffsetDateTime = OD.MIN
 
 }
