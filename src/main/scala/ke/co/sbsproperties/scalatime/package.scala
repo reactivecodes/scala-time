@@ -137,6 +137,11 @@ package object scalatime extends conversions.TemporalImplicits with TimeZone wit
     */
   type TemporalUnit = time.temporal.TemporalUnit
 
+  /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoField.html java.time.temporal.ChronoField]]
+    * A standard set of date periods fields.
+    */
+  type ChronoField = time.temporal.ChronoField
+
   /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html java.time.temporal.ChronoUnit]]
     * A standard set of date periods units.
     */
@@ -146,6 +151,12 @@ package object scalatime extends conversions.TemporalImplicits with TimeZone wit
     * Strategy for querying a temporal object.
     */
   type TemporalQuery[A] = time.temporal.TemporalQuery[A]
+
+  /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/temporal/UnsupportedTemporalTypeException.html java.time.temporal.UnsupportedTemporalTypeException]]
+    * Exception indicating that a [[ChronoField]] or [[ChronoUnit]] is not supported for a Temporal class.
+    */
+  type UnsupportedTemporalTypeException = time.temporal.UnsupportedTemporalTypeException
+
 
   // java.time.format
   /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html java.time.format.DateTimeFormatter]]
