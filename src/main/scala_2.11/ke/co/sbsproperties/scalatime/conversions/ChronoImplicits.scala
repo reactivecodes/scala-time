@@ -22,14 +22,12 @@ package conversions
 import ke.co.sbsproperties.scalatime.chrono.{RichChronoZonedDateTime, RichChronoLocalDateTime, RichChronoLocalDate}
 
 
-trait ChronoConverters {
+trait ChronoImplicits extends ChronoConverters {
 
-  def richChronoLocalDate(underlying: ChronoLocalDate): RichChronoLocalDate = new RichChronoLocalDate(underlying)
+  implicit val augmentChronoLocalDate: ChronoLocalDate => RichChronoLocalDate = richChronoLocalDate
 
-  def richChronoLocalDateTime[A <: ChronoLocalDate](underlying: ChronoLocalDateTime[A]) = new RichChronoLocalDateTime(underlying)
+  implicit val augmentChronoLocalDateTime: ChronoLocalDateTime[_] => RichChronoLocalDateTime[_] = richChronoLocalDateTime(_)
 
-  def richChronoZonedDateTime[A <: ChronoLocalDate](underlying: ChronoZonedDateTime[A]) = new RichChronoZonedDateTime(underlying)
+  implicit val augmentChronoZonedDateTime: ChronoZonedDateTime[_] => RichChronoZonedDateTime[_] = richChronoZonedDateTime(_)
+
 }
-
-// See Scala version specific source folder for ChronoImplicits
-

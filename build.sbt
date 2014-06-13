@@ -31,6 +31,8 @@ scalacOptions in (Compile, compile) += "-language:postfixOps"
 
 sources in(Compile, doc) ~= (_.filter(!_.name.contains("BuildInfo")))
 
+unmanagedSourceDirectories in Compile += (sourceDirectory in Compile).value / s"scala_${scalaBinaryVersion.value}"
+
 pomExtra <<= pomExtra(_ ++ developers)
 
 ScalastylePlugin.Settings
