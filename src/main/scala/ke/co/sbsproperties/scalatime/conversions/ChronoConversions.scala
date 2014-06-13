@@ -17,20 +17,26 @@
  *******************************************************************/
 
 package ke.co.sbsproperties.scalatime
-package control
+package conversions
 
-import org.scalatest.{Matchers, FunSuite}
+import ke.co.sbsproperties.scalatime.chrono.{RichChronoZonedDateTime, RichChronoLocalDateTime, RichChronoLocalDate}
 
 
-class CatchersSuite extends FunSuite with Matchers {
+trait ChronoConverters {
 
-  test("Catch provides 'Exception.Catch' instances for 'DateTimeException' instances") {
-    val t = Catch.all.withTry(LocalDate.parse(")(&#)(@*@&#%@#%@#%)"))
-    val t1 = Catch.unsupportedTemporalType.withTry(LocalTime().get(IsoFields.dayOfQuarter))
-    t.isFailure shouldEqual true
-    t1.isFailure shouldEqual true
-    intercept[DateTimeException](t.get)
-    intercept[UnsupportedTemporalTypeException](t1.get)
-  }
+  def richChronoLocalDate(underlying: ChronoLocalDate): RichChronoLocalDate = new RichChronoLocalDate(underlying)
+
+  def richChronoLocalDateTime[A <: ChronoLocalDate](underlying: ChronoLocalDateTime[A]) = new RichChronoLocalDateTime(underlying)
+
+  def richChronoZonedDateTime[A <: ChronoLocalDate](underlying: ChronoZonedDateTime[A]) = new RichChronoZonedDateTime(underlying)
+}
+
+trait ChronoImplicits extends ChronoConverters {
+
+  implicit val augmentChronoLocalDate: ChronoLocalDate => RichChronoLocalDate = richChronoLocalDate
+
+  implicit val augmentChronoLocalDateTime: ChronoLocalDateTime[_] => RichChronoLocalDateTime[_] = richChronoLocalDateTime(_)
+
+  implicit val augmentChronoZonedDateTime: ChronoZonedDateTime[_] => RichChronoZonedDateTime[_] = richChronoZonedDateTime(_)
 
 }

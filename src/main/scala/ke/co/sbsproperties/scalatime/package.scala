@@ -21,7 +21,7 @@ package ke.co.sbsproperties
 import java.time
 
 
-package object scalatime extends conversions.TemporalImplicits with TimeZone with TimeFormatters {
+package object scalatime extends conversions.PredefImplicits with TimeZones with TimeFormatters {
 
   // java.time
   /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/Clock.html java.time.Clock]]. A clock providing
@@ -126,6 +126,11 @@ package object scalatime extends conversions.TemporalImplicits with TimeZone wit
     */
   type TemporalAccessor = time.temporal.TemporalAccessor
 
+  /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjuster.html java.time.temporal.TemporalAdjuster]]
+    * Strategy for adjusting a temporal object.
+    */
+  type TemporalAdjuster = time.temporal.TemporalAdjuster
+
   /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAmount.html java.time.temporal.TemporalAmount]]
     * The base interface type for amounts of time. An amount is distinct from a date or time-of-day in that it is not
     * tied to any specific point on the time-line.
@@ -136,6 +141,11 @@ package object scalatime extends conversions.TemporalImplicits with TimeZone wit
     * TemporalUnit is a unit of date-time, such as Days or Hours.
     */
   type TemporalUnit = time.temporal.TemporalUnit
+
+  /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalField.html java.time.temporal.TemporalField]]
+    * TemporalUnit is a field of date-time, such as month-of-year or hour-of-minute.
+    */
+  type TemporalField = time.temporal.TemporalField
 
   /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoField.html java.time.temporal.ChronoField]]
     * A standard set of date periods fields.
@@ -174,4 +184,20 @@ package object scalatime extends conversions.TemporalImplicits with TimeZone wit
     * ZoneRulesException is used to indicate a problems with the configured time-zone rules.
     */
   type ZoneRulesException = time.zone.ZoneRulesException
+
+  // java.time.chrono
+  /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/chrono/ChronoLocalDate.html java.time.chrono.ChronoLocalDate]]
+    * A date without time-of-day or time-zone in an arbitrary chronology, intended for advanced globalization use cases.
+    */
+  type ChronoLocalDate = time.chrono.ChronoLocalDate
+
+  /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/chrono/ChronoLocalDateTime.html java.time.chrono.ChronoLocalDateTime]]
+    * A date-time without a time-zone in an arbitrary chronology, intended for advanced globalization use cases.
+    */
+  type ChronoLocalDateTime[A <: ChronoLocalDate] = time.chrono.ChronoLocalDateTime[A]
+
+  /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/chrono/ChronoZonedDateTime.html java.time.chrono.ChronoZonedDateTime]]
+    * A date-time with a time-zone in an arbitrary chronology, intended for advanced globalization use cases.
+    */
+  type ChronoZonedDateTime[A <: ChronoLocalDate] = time.chrono.ChronoZonedDateTime[A]
 }

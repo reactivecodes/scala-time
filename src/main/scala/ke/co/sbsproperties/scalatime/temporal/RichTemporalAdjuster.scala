@@ -17,20 +17,14 @@
  *******************************************************************/
 
 package ke.co.sbsproperties.scalatime
-package control
+package temporal
 
-import org.scalatest.{Matchers, FunSuite}
+/** Enriches a [[TemporalAdjuster]] with Scala friendly method syntax
+  * @since 0.1.0
+  */
+final class RichTemporalAdjuster(val underlying: TemporalAdjuster) extends AnyVal {
 
-
-class CatchersSuite extends FunSuite with Matchers {
-
-  test("Catch provides 'Exception.Catch' instances for 'DateTimeException' instances") {
-    val t = Catch.all.withTry(LocalDate.parse(")(&#)(@*@&#%@#%@#%)"))
-    val t1 = Catch.unsupportedTemporalType.withTry(LocalTime().get(IsoFields.dayOfQuarter))
-    t.isFailure shouldEqual true
-    t1.isFailure shouldEqual true
-    intercept[DateTimeException](t.get)
-    intercept[UnsupportedTemporalTypeException](t1.get)
-  }
+  /** Adjusts the provided temporal object using the logic encapsulated in this. **/
+  def <~=(temporal: Temporal): Temporal = underlying.adjustInto(temporal)
 
 }

@@ -21,7 +21,7 @@ package control
 
 import scala.reflect.ClassTag
 import scala.util.control.Exception
-import scala.util.control.Exception._
+import scala.util.control.Exception.Catcher
 
 /** Provides methods for obtaining default [[scala.util.control.Exception.Catcher]]s for possible
   * [[DateTimeException]]s thrown by the underlying Java API.
@@ -31,37 +31,42 @@ import scala.util.control.Exception._
 object Catchers {
 
   /** Returns a new [[scala.util.control.Exception.Catcher]] for exception `Ex` **/
-  private def catcher[A, Ex <: Throwable](implicit tag: ClassTag[Ex]): Catcher[A] =
+  private def catcher[A, Ex <: Throwable : ClassTag]: Catcher[A] =
     Exception.mkThrowableCatcher({ case _: Ex => true; case _ => false}, throw _)
 
   /** Returns a [[scala.util.control.Exception.Catcher]] for all [[DateTimeException]]s. **/
-  def all[A] = catcher[A, DateTimeException]
+  def all[A]: Catcher[A] = catcher[A, DateTimeException]
 
   /** Returns a [[scala.util.control.Exception.Catcher]] for an [[UnsupportedTemporalTypeException]], an exception
     * indicating that a ChronoField or ChronoUnit is not supported for a Temporal class.
     */
-  def unsupportedTemporalType[A] = catcher[A, UnsupportedTemporalTypeException]
+  def unsupportedTemporalType[A]: Catcher[A] = catcher[A, UnsupportedTemporalTypeException]
 
   /** Returns a [[scala.util.control.Exception.Catcher]] for a [[ZoneRulesException]], an exception
     * indicating a problems with the configured time-zone rules.
     */
-  def zoneRules[A] = catcher[A, ZoneRulesException]
+  def zoneRules[A]: Catcher[A] = catcher[A, ZoneRulesException]
 }
 
+/** Provides methods for obtaining default [[scala.util.control.Exception.Catch]]s for possible
+  * [[DateTimeException]]s thrown by the underlying Java API.
+  *
+  * @since  0.1.0
+  */
 object Catch {
 
-  import Exception._
+  import Exception.catching
 
   /** Returns a [[scala.util.control.Exception.Catch]] for all [[DateTimeException]]s. **/
-  def all[A] = catching(Catchers.all)
+  def all[A]: Exception.Catch[A] = catching(Catchers.all)
 
   /** Returns a [[scala.util.control.Exception.Catch]] for an [[UnsupportedTemporalTypeException]], an exception
     * indicating that a ChronoField or ChronoUnit is not supported for a Temporal class.
     */
-  def unsupportedTemporalType[A] = catching(Catchers.unsupportedTemporalType)
+  def unsupportedTemporalType[A]: Exception.Catch[A] = catching(Catchers.unsupportedTemporalType)
 
   /** Returns a [[scala.util.control.Exception.Catch]] for a [[ZoneRulesException]], an exception
     * indicating a problems with the configured time-zone rules.
     */
-  def zoneRules[A] = catching(Catchers.zoneRules)
+  def zoneRules[A]: Exception.Catch[A] = catching(Catchers.zoneRules)
 }

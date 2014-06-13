@@ -23,7 +23,7 @@ import ke.co.sbsproperties.scalatime
 import scala.collection.mutable
 
 /** Provides the mechanisms for easily creating or obtaining [[ZoneID]] and [[ZoneOffset]] instances **/
-trait TimeZone {
+trait TimeZones {
 
   /** Provides methods for creating, or values of [[ZoneID]] instances **/
   val zone = new Zone {}
@@ -87,7 +87,7 @@ trait TimeZone {
       * @throws ZoneRulesException if the converted zone region ID cannot be found
       * @return the current system default time [[ZoneID]]
       */
-    def system = ZI.systemDefault
+    def system: ZoneID = ZI.systemDefault
 
     /** Gets a [[scala.Predef.Set]] of the [[scala.Predef.String]] form of all currently available region based
       * zone IDs.
