@@ -10,12 +10,12 @@ description := "Basic Scala wrapper for easier use of JDK 1.8.0 (JSR-310) time l
 
 startYear := Some(2014)
 
-homepage := Some(url("https://github.com/sbsproperties/scala-time"))
+homepage := Some(url("https://github.com/reactivecodes/scala-time"))
 
 scmInfo := Some(ScmInfo(
-  url("https://github.com/sbsproperties/scala-time"),
-  "scm:git:git@github.com:sbsproperties/scala-time.git",
-  Some("scm:git:git@github.com:sbsproperties/scala-time.git")))
+  url("https://github.com/reactivecodes/scala-time"),
+  "scm:git:git@github.com:reactivecodes/scala-time.git",
+  Some("scm:git:git@github.com:reactivecodes/scala-time.git")))
 
 sbsOss := true
 

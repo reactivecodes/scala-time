@@ -3,7 +3,6 @@ scala-time
 
 Basic Scala utilities allowing for easier use of [Java 8][1] *[java.time][2]* APIs (JSR-310).
 
-Build Status:  ![Build Status Icon][3]
 
 ###### Supported Scala Versions:
 - 2.11
@@ -20,12 +19,12 @@ published to the [`Sonatype OSS Snapshots`][5] public repository.
 ###### [sbt][6] coordinates:
 
 ```scala
-    "ke.co.sbsproperties" %% "scala-time" % "0.1.0-SNAPSHOT"
+    "codes.reactive" %% "scala-time" % "0.1.0-SNAPSHOT"
 ```
 
 #### Examples:
 ```scala
-import ke.co.sbsproperties.scalatime._
+import codes.reactive.scalatime._
 import conversions._
 
 // Create a Duration instance from a Long
@@ -76,7 +75,6 @@ limitations under the License.
 
 [1]: http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html
 [2]: http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-[3]: https://dev.sbsproperties.co.ke/app/rest/builds/buildType(id:ScalaTime_Development),branch:devel/statusIcon
 [4]: http://www.apache.org/licenses/LICENSE-2.0
 [5]: https://oss.sonatype.org/content/repositories/snapshots
 [6]: http://scala-sbt.org
