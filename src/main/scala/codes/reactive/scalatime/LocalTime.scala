@@ -1,0 +1,110 @@
+/*******************************************************************
+ * See the NOTICE file distributed with this work for additional   *
+ * information regarding Copyright ownership.  The author/authors  *
+ * license this file to you under the terms of the Apache License, *
+ * Version 2.0 (the "License"); you may not use this file except   *
+ * in compliance with the License.  You may obtain a copy of the   *
+ * License at:                                                     *
+ *                                                                 *
+ *     http://www.apache.org/licenses/LICENSE-2.0                  *
+ *                                                                 *
+ * Unless required by applicable law or agreed to in writing,      *
+ * software distributed under the License is distributed on an     *
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY          *
+ * KIND, either express or implied.  See the License for the       *
+ * specific language governing permissions and limitations         *
+ * under the License.                                              *
+ *******************************************************************/
+
+package codes.reactive.scalatime
+
+import java.time.{LocalTime => LT}
+
+/** Factory object for creating [[LocalTime]] instances **/
+object LocalTime {
+
+  /** Creates a new [[LocalTime]] instance from the current time of the system UTC clock. **/
+  def apply(): LocalTime = LT.now(Clock())
+
+  /** Creates a new [[LocalTime]] instance from the current time of the provided clock. 
+    *
+    * @param clock  the clock to use
+    */
+  def apply(clock: Clock): LocalTime = LT.now(clock)
+
+  /** Queries a [[Temporal]] to obtain a [[LocalTime]] (if available)
+    *
+    * @param from the temporal to query
+    * @throws DateTimeException - if unable to convert to a [[LocalTime]]
+    */
+  def apply(from: TemporalAccessor): LocalTime = LT.from(from)
+
+  /** Creates a new [[LocalTime]] instance from valid ISO-8601 extended local time formatted text, otherwise
+    * throws an exception.
+    *
+    * @param text the text to parse such as "10:15:30"
+    * @throws DateTimeException if the text cannot be successfully parsed as an [[LocalTime]]
+    */
+  def parse(text: String): LocalTime = LT.parse(text)
+
+  /** Creates a new [[LocalTime]] instance from valid text formatted according to the provided `formatter`, otherwise
+    * throws an exception.
+    *
+    * @param text the text to parse
+    * @throws DateTimeException if the text cannot be successfully parsed as an [[LocalTime]]
+    */
+  def parse(text: String, formatter: DateTimeFormatter): LocalTime = LT.parse(text, formatter)
+
+  /** Creates a new [[LocalTime]] instance from an hour, minute, second and nanosecond.
+    *
+    * @param hour the hour-of-day to represent, from 0 to 23
+    * @param minute the minute-of-hour to represent, from 0 to 59
+    * @param second the second-of-minute to represent, from 0 to 59
+    * @param nano the nano-of-second to represent, from 0 to 999,999,999
+    * @throws DateTimeException - if the value of any field is out of range
+    */
+  def of(hour: Int, minute: Int, second: Int, nano: Int): LocalTime = LT.of(hour, minute, second, nano)
+
+  /** Creates a new [[LocalTime]] instance from an hour, minute and second.
+    *
+    * @param hour the hour-of-day to represent, from 0 to 23
+    * @param minute the minute-of-hour to represent, from 0 to 59
+    * @param second the second-of-minute to represent, from 0 to 59
+    * @throws DateTimeException - if the value of any field is out of range
+    */
+  def of(hour: Int, minute: Int, second: Int): LocalTime = LT.of(hour, minute, second)
+
+  /** Creates a new [[LocalTime]] instance from an hour and minute.
+    *
+    * @param hour the hour-of-day to represent, from 0 to 23
+    * @param minute the minute-of-hour to represent, from 0 to 59
+    * @throws DateTimeException - if the value of any field is out of range
+    */
+  def of(hour: Int, minute: Int): LocalTime = LT.of(hour, minute)
+
+  /** Creates a new [[LocalTime]] instance from from a nanos-of-day value.
+    *
+    * @param  nanoOfDay the nano of day, from 0 to 24 * 60 * 60 * 1,000,000,000 - 1
+    * @throws DateTimeException - if the nanos of day value is invalid
+    */
+  def ofNano(nanoOfDay: Long): LocalTime = LT.ofNanoOfDay(nanoOfDay)
+
+  /** Creates a new [[LocalTime]] instance from from a second-of-day value.
+    *
+    * @param  secondOfDay the second-of-day, from 0 to 24 * 60 * 60 - 1
+    * @throws DateTimeException - if the second of day value is invalid
+    */
+  def ofSecond(secondOfDay: Long): LocalTime = LT.ofSecondOfDay(secondOfDay)
+
+  /** The maximum supported LocalTime ('23:59:59.999999999' - just before midnight at the end of the day). **/
+  val max: LocalTime = LT.MAX
+
+  /** The LocalTime of midnight at the start of the day, '00:00'. **/
+  val midnight: LocalTime = LT.MIDNIGHT
+
+  /** The minimum supported LocalTime ('00:00' - the time of midnight at the start of the day). **/
+  val min: LocalTime = midnight
+
+  /** The LocalTime of noon in the middle of the day, '12:00'. **/
+  val noon: LocalTime = LT.NOON
+}
