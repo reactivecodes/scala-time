@@ -3,6 +3,7 @@ scala-time
 
 Basic Scala utilities allowing for easier use of [Java 8][1] *[java.time][2]* APIs (JSR-310).
 
+[Build Status:][7]  ![Build Status Icon][3]
 
 ###### Supported Scala Versions:
 - 2.11
@@ -75,6 +76,8 @@ limitations under the License.
 
 [1]: http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html
 [2]: http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+[3]: https://reactive.codes/ci/app/rest/builds/buildType(id:ScalaTime_Devel),branch:devel/statusIcon
 [4]: http://www.apache.org/licenses/LICENSE-2.0
 [5]: https://oss.sonatype.org/content/repositories/snapshots
 [6]: http://scala-sbt.org
+[7]: https://reactive.codes/ci/viewLog.html?buildTypeId=ScalaTime_Devel&buildId=lastFinished&buildBranch=devel
