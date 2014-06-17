@@ -17,26 +17,26 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package conversions
+package dsl.conversions
 
 import temporal._
 
 
 trait TemporalConversions {
 
-  /** Returns a new [[codes.reactive.scalatime.temporal.RichTemporal]] from a [[Temporal]] **/
+  /** Returns a new [[temporal.RichTemporal]] from a [[Temporal]] **/
   def richTemporal(temporal: Temporal): RichTemporal = new RichTemporal(temporal)
 
-  /** Returns a new [[codes.reactive.scalatime.temporal.RichTemporalAdjuster]] from a [[TemporalAdjuster]] **/
+  /** Returns a new [[temporal.RichTemporalAdjuster]] from a [[TemporalAdjuster]] **/
   def richTemporalAdjuster(temporalAdjuster: TemporalAdjuster) = new RichTemporalAdjuster(temporalAdjuster)
 
-  /** Returns a new [[codes.reactive.scalatime.temporal.RichTemporalAmount]] from a [[TemporalAmount]] **/
+  /** Returns a new [[temporal.RichTemporalAmount]] from a [[TemporalAmount]] **/
   def richTemporalAmount(temporalAmount: TemporalAmount): RichTemporalAmount = new RichTemporalAmount(temporalAmount)
 
-  /** Returns a new [[codes.reactive.scalatime.temporal.RichDuration]] from a [[Duration]] **/
+  /** Returns a new [[temporal.RichDuration]] from a [[Duration]] **/
   def richDuration(duration: Duration): RichDuration = new RichDuration(duration)
 
-  /** Returns a new [[codes.reactive.scalatime.temporal.RichPeriod]] from a [[Period]] **/
+  /** Returns a new [[temporal.RichPeriod]] from a [[Period]] **/
   def richPeriod(period: Period): RichPeriod = new RichPeriod(period)
 
 }
@@ -44,27 +44,27 @@ trait TemporalConversions {
 
 trait TemporalImplicits extends TemporalConversions {
 
-  /** Implicit function which returns a new [[codes.reactive.scalatime.temporal.RichTemporal]] from a [[Temporal]].
+  /** Implicit function which returns a new [[temporal.RichTemporal]] from a [[Temporal]].
     * We make it a val to avoid having to explicitly enable implicit conversions
     */
   implicit val augmentTemporal: Temporal => RichTemporal = richTemporal
 
-  /** Implicit function which returns a new [[codes.reactive.scalatime.temporal.RichTemporalAdjuster]] from a [[TemporalAdjuster]].
+  /** Implicit function which returns a new [[temporal.RichTemporalAdjuster]] from a [[TemporalAdjuster]].
     * We make it a val to avoid having to explicitly enable implicit conversions
     */
   implicit val augmentTemporalAdjuster: TemporalAdjuster => RichTemporalAdjuster = richTemporalAdjuster
 
-  /** Implicit function which returns a new [[codes.reactive.scalatime.temporal.RichTemporalAmount]] from a [[TemporalAmount]].
+  /** Implicit function which returns a new [[temporal.RichTemporalAmount]] from a [[TemporalAmount]].
     * We make it a val to avoid having to explicitly enable implicit conversions
     */
   implicit val augmentTemporalAmount: TemporalAmount => RichTemporalAmount = richTemporalAmount
 
-  /** Implicit function which returns a new [[codes.reactive.scalatime.temporal.RichDuration]] from a [[Duration]].
+  /** Implicit function which returns a new [[temporal.RichDuration]] from a [[Duration]].
     * We make it a val to avoid having to explicitly enable implicit conversions
     */
   implicit val augmentDuration: Duration => RichDuration = richDuration
 
-  /** Implicit function which returns a new [[codes.reactive.scalatime.temporal.RichPeriod]] from a [[Period]].
+  /** Implicit function which returns a new [[temporal.RichPeriod]] from a [[Period]].
     * We make it a val to avoid having to explicitly enable implicit conversions
     */
   implicit val augmentPeriod: Period => RichPeriod = richPeriod

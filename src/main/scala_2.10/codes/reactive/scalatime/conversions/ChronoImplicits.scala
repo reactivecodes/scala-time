@@ -17,10 +17,10 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package conversions
+package dsl.conversions
 
 import codes.reactive.scalatime.chrono.{RichChronoZonedDateTime, RichChronoLocalDateTime, RichChronoLocalDate}
-import codes.reactive.scalatime.conversions.ChronoConverters
+import codes.reactive.scalatime.dsl.conversions.ChronoConverters
 import language.implicitConversions
 
 trait ChronoImplicits extends ChronoConverters {

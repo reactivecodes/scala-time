@@ -16,7 +16,7 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.conversions
+package codes.reactive.scalatime.dsl.conversions
 
 
 /** Provides core implicit conversions which are included by default in [[codes.reactive.scalatime.dsl]] **/

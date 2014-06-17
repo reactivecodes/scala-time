@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime.test.conversions
 
-import codes.reactive.scalatime.conversions.TemporalImplicits
+import codes.reactive.scalatime.dsl.conversions.TemporalImplicits
 import codes.reactive.scalatime.temporal.{RichDuration, RichPeriod, RichTemporal, RichTemporalAmount}
 import codes.reactive.scalatime.{Duration, LocalDate, Period}
 import org.scalatest.{FreeSpec, Matchers}
@@ -32,22 +32,22 @@ class TemporalConversionsSuite extends FreeSpec with Matchers {
 
     "provides an implicit conversion of a 'Temporal' to a 'RichTemporal'" in {
       val v: RichTemporal = LocalDate.of(2014, 6, 7)
-      v.isInstanceOf[RichTemporal] should be (right = true)
+      v.isInstanceOf[RichTemporal] should be(right = true)
     }
 
     "provides an implicit conversion of a 'TemporalAmount' to a 'RichTemporalAmount'" in {
       val v: RichTemporalAmount = Duration.days(1)
-      v.isInstanceOf[RichTemporalAmount] should be (right = true)
+      v.isInstanceOf[RichTemporalAmount] should be(right = true)
     }
 
     "provides an implicit conversion of a 'Duration' to a 'RichDuration'" in {
       val v: RichDuration = Duration.days(1)
-      v.isInstanceOf[RichDuration] should be (right = true)
+      v.isInstanceOf[RichDuration] should be(right = true)
     }
 
     "provides an implicit conversion of a 'Period' to a 'RichPeriod'" in {
       val v: RichPeriod = Period.days(1)
-      v.isInstanceOf[RichPeriod] should be (right = true)
+      v.isInstanceOf[RichPeriod] should be(right = true)
     }
   }
 

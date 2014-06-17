@@ -17,17 +17,39 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package conversions
+package dsl.conversions
 
-import chrono.{RichChronoLocalDate, RichChronoLocalDateTime, RichChronoZonedDateTime}
+import temporal.{IntPeriod, LongDuration}
 
 
-trait ChronoImplicits extends ChronoConverters {
+trait NumberConversions {
 
-  implicit val augmentChronoLocalDate: ChronoLocalDate => RichChronoLocalDate = richChronoLocalDate
+  /** Creates a new [[temporal.IntPeriod]] from an [[scala.Int]]
+    *
+    * @param in the Int to be converted
+    * @return a new [[temporal.IntPeriod]]
+    */
+  def intPeriod(in: Int): IntPeriod = new IntPeriod(in)
 
-  implicit val augmentChronoLocalDateTime: ChronoLocalDateTime[_] => RichChronoLocalDateTime[_] = richChronoLocalDateTime(_)
+  /** Creates a new [[temporal.LongDuration]] from a [[scala.Long]]
+    *
+    * @param in the Long to be converted
+    * @return a new [[temporal.LongDuration]]
+    */
+  def longDuration(in: Long): LongDuration = new LongDuration(in)
+}
 
-  implicit val augmentChronoZonedDateTime: ChronoZonedDateTime[_] => RichChronoZonedDateTime[_] = richChronoZonedDateTime(_)
+trait NumberImplicits extends NumberConversions {
 
+  /** Implicit function to convert an Int to an [[temporal.IntPeriod]]
+    * We use a val to avoid having to explicitly enable
+    * implicit conversions.
+    */
+  implicit val augmentInt: Int => IntPeriod = intPeriod
+
+  /** Implicit function to convert a Long to a [[temporal.LongDuration]]
+    * We use a val to avoid having to explicitly enable
+    * implicit conversions.
+    */
+  implicit val augmentLong: Long => LongDuration = longDuration
 }

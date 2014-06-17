@@ -20,8 +20,6 @@ package codes.reactive
 
 import java.time
 
-import codes.reactive.scalatime.conversions
-
 
 package object scalatime {
 

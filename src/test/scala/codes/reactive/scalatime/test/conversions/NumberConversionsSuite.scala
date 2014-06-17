@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime.test.conversions
 
-import codes.reactive.scalatime.conversions.NumberImplicits
+import codes.reactive.scalatime.dsl.conversions.NumberImplicits
 import codes.reactive.scalatime.{Duration, Period}
 import org.scalatest.{FreeSpec, Matchers}
 
@@ -34,11 +34,11 @@ class NumberConversionsSuite extends FreeSpec with Matchers {
   "A NumberImplicits instance" - {
 
     "provides an implicit conversion of an 'Int' to an 'IntPeriod'" in {
-      (1 day).isInstanceOf[Period] should be (right = true)
+      (1 day).isInstanceOf[Period] should be(right = true)
     }
 
     "provides an implicit conversion of a 'Long' to a 'LongDuration'" in {
-      (1L day).isInstanceOf[Duration] should be (right = true)
+      (1L day).isInstanceOf[Duration] should be(right = true)
     }
   }
 
