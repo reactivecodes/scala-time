@@ -39,6 +39,10 @@ object LocalDateTime {
     */
   def apply(from: TemporalAccessor): LocalDateTime = LD.from(from)
 
+  /** Obtains a [[LocalDateTime]] instance from a [[LocalDate]] and [[LocalTime]] instance **/
+  def apply(date: LocalDate, time: LocalTime): LocalDateTime = LD.of(date, time)
+
+
   /** Creates a new [[LocalDateTime]] instance from year, month, day, hour, minute, second and nanosecond.
     * An exception will be thrown if the day is not valid for the year and month or if the value of any field is
     * out of range.
@@ -135,14 +139,6 @@ object LocalDateTime {
     */
   def of(year: Int, month: Month, day: Int, hour: Int, minute: Int): LocalDateTime =
     LD.of(year, month, day, hour, minute)
-
-  /** Creates a new [[LocalDateTime]] instance from a [[LocalDate]] and [[LocalTime]] instance
-    *
-    * @param date the local date
-    * @param time the local time
-    */
-  def of(date: LocalDate, time: LocalTime): LocalDateTime = LD.of(date, time)
-
 
   /** Creates a new [[LocalDateTime]] instance from valid ISO-8601 extended offset date time formatted text, otherwise
     * throws an exception.

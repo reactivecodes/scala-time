@@ -45,6 +45,12 @@ object OffsetDateTime {
     */
   def apply(from: TemporalAccessor): OffsetDateTime = OD.from(from)
 
+  /** Obtains a [[OffsetDateTime]] instance from [[LocalDate]], [[LocalTime]] and [[ZoneOffset]] instances **/
+  def apply(date: LocalDate, time: LocalTime, zone: ZoneOffset): OffsetDateTime = OD.of(date, time, zone)
+
+  /** Obtains a [[OffsetDateTime]] instance from a [[LocalDateTime]] and [[ZoneID]] instance **/
+  def apply(dateTime: LocalDateTime, zone: ZoneOffset): OffsetDateTime = OD.of(dateTime, zone)
+
   /** Creates a new [[OffsetDateTime]] instance from a year, month, day, hour, minute, second, nanosecond and offset.
     * An exception will be thrown if the day is not valid for the year and month or if the value of any field is
     * out of range.
@@ -82,24 +88,6 @@ object OffsetDateTime {
     */
   def of(year: Int, month: Month, day: Int, hour: Int, minute: Int, second: Int, nano: Int, zone: ZoneOffset): OffsetDateTime =
     OD.of(year, month.getValue, day, hour, minute, second, nano, zone)
-
-
-  /** Creates a new [[OffsetDateTime]] instance from [[LocalDate]], [[LocalTime]] and [[ZoneOffset]] instances
-    *
-    * @param date the local date
-    * @param time the local time
-    * @param zone the time zone
-    * @return a new [[OffsetDateTime]]
-    */
-  def of(date: LocalDate, time: LocalTime, zone: ZoneOffset): OffsetDateTime = OD.of(date, time, zone)
-
-  /** Creates a new [[OffsetDateTime]] instance from a [[LocalDateTime]] and [[ZoneID]] instance
-    *
-    * @param dateTime the local date
-    * @param zone the time zone
-    * @return a new [[OffsetDateTime]]
-    */
-  def of(dateTime: LocalDateTime, zone: ZoneOffset): OffsetDateTime = OD.of(dateTime, zone)
 
   /** Creates a new [[OffsetDateTime]] instance from valid ISO-8601 extended offset date time formatted text, otherwise
     * throws an exception.

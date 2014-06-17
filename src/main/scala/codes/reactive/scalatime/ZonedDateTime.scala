@@ -40,6 +40,12 @@ object ZonedDateTime {
     */
   def apply(from: TemporalAccessor): ZonedDateTime = ZD.from(from)
 
+  /** Obtain a [[ZonedDateTime]] instance from [[LocalDate]], [[LocalTime]] and [[ZoneID]] instance **/
+  def apply(date: LocalDate, time: LocalTime, zone: ZoneID): ZonedDateTime = ZD.of(date, time, zone)
+
+  /** Obtain a [[ZonedDateTime]] instance from a [[LocalDateTime]] and [[ZoneID]] instance **/
+  def apply(dateTime: LocalDateTime, zone: ZoneID): ZonedDateTime = ZD.of(dateTime, zone)
+
   /** Creates a new [[ZonedDateTime]] instance from a year, month, day, hour, minute, second, nanosecond and zone.
     * An exception will be thrown if the day is not valid for the year and month or if the value of any field is
     * out of range.
@@ -75,23 +81,6 @@ object ZonedDateTime {
     */
   def of(year: Int, month: Month, day: Int, hour: Int, minute: Int, second: Int, nano: Int, zone: ZoneID): ZonedDateTime =
     ZD.of(year, month.getValue, day, hour, minute, second, nano, zone)
-
-
-  /** Creates a new [[ZonedDateTime]] instance from [[LocalDate]], [[LocalTime]] and [[ZoneID]] instance
-    *
-    * @param date the local date
-    * @param time the local time
-    * @param zone the time zone
-    */
-  def of(date: LocalDate, time: LocalTime, zone: ZoneID): ZonedDateTime = ZD.of(date, time, zone)
-
-  /** Creates a new [[ZonedDateTime]] instance from a [[LocalDateTime]] and [[ZoneID]] instance
-    *
-    * @param dateTime the local date
-    * @param zone the time zone
-    * @return a new [[ZonedDateTime]]
-    */
-  def of(dateTime: LocalDateTime, zone: ZoneID): ZonedDateTime = ZD.of(dateTime, zone)
 
   /** Creates a new [[ZonedDateTime]] instance from valid ISO-8601 extended offset date time formatted text, otherwise
     * throws an exception.
