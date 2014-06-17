@@ -56,7 +56,6 @@ object Clock {
     * @param instant the instant which will always be returned
     * @return a new Clock
     */
-  def fixed(instant: Instant): Clock = JC.fixed(instant, offset UTC)
-
+  def fixed(instant: Instant): Clock = JC.fixed(instant, ZoneOffset.UTC)
 
 }

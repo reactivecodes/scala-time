@@ -36,7 +36,7 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
     }
 
     "can create a 'Clock' instance from the current System clock at a specific ZoneID" in { _ =>
-      Clock(zone EAT) should be(java.time.Clock.system(zone EAT))
+      Clock(ZoneID EAT) should be(java.time.Clock.system(ZoneID.EAT))
     }
 
     "can create a 'Clock' instance from the current System clock at with the default system time zone" in { _ =>
@@ -44,11 +44,11 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
     }
 
     "can create UTC 'Clock' instance which is fixed to a specific instant" in { f =>
-      Clock.fixed(f _1) should be(java.time.Clock.fixed(f _1, zone UTC))
+      Clock.fixed(f _1) should be(java.time.Clock.fixed(f _1, ZoneID.UTC))
     }
 
     "can create 'Clock' instance at a specific ZoneID which is fixed to a specific instant" in { f =>
-      Clock.fixed(f _1, zone EAT) should be(java.time.Clock.fixed(f _1, zone EAT))
+      Clock.fixed(f _1, ZoneID.EAT) should be(java.time.Clock.fixed(f _1, ZoneID.EAT))
     }
   }
 
@@ -63,7 +63,7 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
     }
 
     "can create an Instant from an Epoch millisecond value" in { _ =>
-      Instant.milli(1402331329505L).atZone(zone UTC) shouldEqual ZonedDateTime.of(2014, 6, 9, 16, 28, 49, 505000000, zone UTC)
+      Instant.milli(1402331329505L).atZone(ZoneID.UTC) shouldEqual ZonedDateTime.of(2014, 6, 9, 16, 28, 49, 505000000, ZoneID.UTC)
     }
 
     "can create an 'Instant' instance from a parsed String" in { _ =>

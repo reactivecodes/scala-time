@@ -16,32 +16,16 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime
+package codes.reactive.scalatime.temporal
 
 import java.time.temporal.{IsoFields => IF}
 
-
-@deprecated object IsoUnits extends IsoUnits
-
-trait IsoUnits {
-
-  /** [[TemporalUnit]] which represents the concept of a quarter-year. For the ISO calendar system, it is equal to 3 months.
-    * The estimated duration of a quarter-year is one quarter of 365.2425 Days.
-    */
-  val quarterYears: TemporalUnit = IF.QUARTER_YEARS
-
-  /** [[TemporalUnit]] which represents week-based-years for the purpose of addition and subtraction. The estimated duration of
-    * a week-based-year is the same as that of a standard ISO year at 365.2425 Days.
-    *
-    * The rules for addition add the number of week-based-years to the existing value for the week-based-year field. If 
-    * the resulting week-based-year only has 52 weeks, then the date will be in week 1 of the following week-based-year.
-    */
-  val weekBasedYears: TemporalUnit = IF.WEEK_BASED_YEARS
-}
+import codes.reactive.scalatime._
 
 
-@deprecated object IsoFields extends IsoFields
-
+/** Provides fields specific to the ISO-8601 calendar system as [[TemporalField]] instances
+  * @since  0.1.0
+  */
 trait IsoFields {
 
   /** [[TemporalField]] which represents the day-of-quarter. **/
@@ -57,3 +41,24 @@ trait IsoFields {
   val weekOfWeekBasedYear = IF.WEEK_OF_WEEK_BASED_YEAR
 
 }
+
+
+/** Provides units specific to the ISO-8601 calendar system as [[TemporalUnit]] instances
+  * @since  0.1.0
+  */
+trait IsoUnits {
+
+  /** [[TemporalUnit]] which represents the concept of a quarter-year. For the ISO calendar system, it is equal to 3 months.
+    * The estimated duration of a quarter-year is one quarter of 365.2425 Days.
+    */
+  val quarterYears: TemporalUnit = IF.QUARTER_YEARS
+
+  /** [[TemporalUnit]] which represents week-based-years for the purpose of addition and subtraction. The estimated duration of
+    * a week-based-year is the same as that of a standard ISO year at 365.2425 Days.
+    *
+    * The rules for addition add the number of week-based-years to the existing value for the week-based-year field. If
+    * the resulting week-based-year only has 52 weeks, then the date will be in week 1 of the following week-based-year.
+    */
+  val weekBasedYears: TemporalUnit = IF.WEEK_BASED_YEARS
+}
+

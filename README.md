@@ -26,7 +26,7 @@ published to the [`Sonatype OSS Snapshots`][5] public repository.
 #### Examples:
 ```scala
 import codes.reactive.scalatime._
-import conversions._
+import dsl._
 
 // Create a Duration instance from a Long
 val duration = 10L minutes

@@ -23,7 +23,7 @@ import java.time
 import codes.reactive.scalatime.conversions
 
 
-package object scalatime extends conversions.PredefImplicits with TimeZones with TimeFormatters {
+package object scalatime {
 
   // java.time
   /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/Clock.html java.time.Clock]]. A clock providing

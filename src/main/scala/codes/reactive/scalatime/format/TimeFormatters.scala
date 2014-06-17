@@ -16,50 +16,49 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime
+package codes.reactive.scalatime.format
 
 import java.time.format.{DateTimeFormatter => DF}
 import java.util.Locale
 
-/** Provides factory for accessing and creating [[DateTimeFormatter]] instances
+import codes.reactive.scalatime._
+
+
+/** Provides standard [[DateTimeFormatter]] instances, as well as methods to create them.
   * @since 0.1.0
   */
 trait TimeFormatters {
 
-  /** Factory for accessing and creating [[DateTimeFormatter]] instances **/
-  val formatter = new {
+  /** Provides members providing default ISO-8601 [[DateTimeFormatter]] instances **/
+  val iso: ISO = new ISO {}
 
-    /** Provides members providing default ISO-8601 [[DateTimeFormatter]] instances **/
-    val iso: ISO = new ISO {}
 
-    /** Formats or parses an RFC-1123 / RFC822 (internet) date-time **/
-    val `RFC1123/RFC822`: DateTimeFormatter = DF.RFC_1123_DATE_TIME
+  /** Formats or parses an RFC-1123 / RFC822 (internet) date-time **/
+  val `RFC1123/RFC822`: DateTimeFormatter = DF.RFC_1123_DATE_TIME
 
-    /** Formats or parses an RFC-1123 / RFC822 (internet) date-time **/
-    val internet: DateTimeFormatter = `RFC1123/RFC822`
+  /** Formats or parses an RFC-1123 / RFC822 (internet) date-time **/
+  val internet: DateTimeFormatter = `RFC1123/RFC822`
 
-    /** Creates a new [[DateTimeFormatter]] based on a string pattern of letters and symbols. See the
-      * [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html java API documentation]] for
-      * a full list of symbols and meanings. For example, d MMM uuuu will format 2014-06-07 as '7 Jun 2014'.
-      *
-      * @param pattern  the pattern to use
-      * @throws IllegalArgumentException - if the pattern is invalid
-      * @return a [[DateTimeFormatter]] based on the pattern
-      */
-    def apply(pattern: String): DateTimeFormatter = DF.ofPattern(pattern)
+  /** Creates a new [[DateTimeFormatter]] based on a string pattern of letters and symbols. See the
+    * [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html java API documentation]] for
+    * a full list of symbols and meanings. For example, d MMM uuuu will format 2014-06-07 as '7 Jun 2014'.
+    *
+    * @param pattern  the pattern to use
+    * @throws IllegalArgumentException - if the pattern is invalid
+    * @return a [[DateTimeFormatter]] based on the pattern
+    */
+  def apply(pattern: String): DateTimeFormatter = DF.ofPattern(pattern)
 
-    /** Creates a new [[DateTimeFormatter]] based on a string pattern of letters and symbols and the provided locale.
-      * This can be changed using `withLocale(Locale)` on the returned formatter. See the
-      * [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html java API documentation]] for
-      * a full list of symbols and meanings. For example, d MMM uuuu will format 2014-06-07 as '7 Jun 2014'.
-      *
-      * @param pattern  the pattern to use
-      * @param locale the locale to use
-      * @return a [[DateTimeFormatter]] based on the pattern and locale
-      */
-    def apply(pattern: String, locale: Locale): DateTimeFormatter = DF.ofPattern(pattern, locale)
-
-  }
+  /** Creates a new [[DateTimeFormatter]] based on a string pattern of letters and symbols and the provided locale.
+    * This can be changed using `withLocale(Locale)` on the returned formatter. See the
+    * [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html java API documentation]] for
+    * a full list of symbols and meanings. For example, d MMM uuuu will format 2014-06-07 as '7 Jun 2014'.
+    *
+    * @param pattern  the pattern to use
+    * @param locale the locale to use
+    * @return a [[DateTimeFormatter]] based on the pattern and locale
+    */
+  def apply(pattern: String, locale: Locale): DateTimeFormatter = DF.ofPattern(pattern, locale)
 
 
   protected trait ISO {
@@ -132,3 +131,4 @@ trait TimeFormatters {
   }
 
 }
+

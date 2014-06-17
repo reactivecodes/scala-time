@@ -16,13 +16,83 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime
+package codes.reactive.scalatime.temporal
 
 import java.time.temporal.{ChronoField => CF, ChronoUnit => CU}
 
+import codes.reactive.scalatime._
 
-@deprecated object ChronoUnits extends ChronoUnits
 
+/** Provides a standard set of date period fields as [[TemporalField]] instances
+  * @since  0.1.0
+  */
+trait ChronoFields {
+
+  val alignedDayOfWeekInMonth: ChronoField = CF.ALIGNED_DAY_OF_WEEK_IN_MONTH
+
+  val alignedDayOfWeekInYear: ChronoField = CF.ALIGNED_DAY_OF_WEEK_IN_YEAR
+
+  val alignedWeekOfMonth: ChronoField = CF.ALIGNED_WEEK_OF_MONTH
+
+  val alignedWeedOfYear: ChronoField = CF.ALIGNED_WEEK_OF_YEAR
+
+  val amPmOfDay: ChronoField = CF.AMPM_OF_DAY
+
+  val clockHourOfAmPm: ChronoField = CF.CLOCK_HOUR_OF_AMPM
+
+  val clockHourOfDay: ChronoField = CF.CLOCK_HOUR_OF_DAY
+
+  val dayOfMonth: ChronoField = CF.DAY_OF_MONTH
+
+  val dayOfWeek: ChronoField = CF.DAY_OF_WEEK
+
+  val dayOfYear: ChronoField = CF.DAY_OF_YEAR
+
+  val epochDay: ChronoField = CF.EPOCH_DAY
+
+  val era: ChronoField = CF.ERA
+
+  val hourOfMonth: ChronoField = CF.HOUR_OF_AMPM
+
+  val hourOfDay: ChronoField = CF.HOUR_OF_DAY
+
+  val instantSeconds: ChronoField = CF.INSTANT_SECONDS
+
+  val microOfDay: ChronoField = CF.MICRO_OF_DAY
+
+  val microOfSecond: ChronoField = CF.MICRO_OF_SECOND
+
+  val milliOfDay: ChronoField = CF.MILLI_OF_DAY
+
+  val milliOfSecond: ChronoField = CF.MILLI_OF_SECOND
+
+  val minuteOfDay: ChronoField = CF.MINUTE_OF_DAY
+
+  val minuteOfMonth: ChronoField = CF.MINUTE_OF_HOUR
+
+  val monthOfYear: ChronoField = CF.MONTH_OF_YEAR
+
+  val monthOfday: ChronoField = CF.NANO_OF_DAY
+
+  val nanoOfSecond: ChronoField = CF.NANO_OF_SECOND
+
+  val offsetSeconds: ChronoField = CF.OFFSET_SECONDS
+
+  val prolepticMonth: ChronoField = CF.PROLEPTIC_MONTH
+
+  val secondOfDay: ChronoField = CF.SECOND_OF_DAY
+
+  val secondOfMinute: ChronoField = CF.SECOND_OF_MINUTE
+
+  val year: ChronoField = CF.YEAR
+
+  val yearOfEra: ChronoField = CF.YEAR_OF_ERA
+}
+
+
+/** Provides a standard set of date period units as [[TemporalUnit]] instances
+  * @since  0.1.0
+  */
 trait ChronoUnits {
 
   /** [[ChronoUnit]] which represents the concept of a century. For the ISO calendar system, it is equal to 100 years. **/
@@ -112,68 +182,3 @@ trait ChronoUnits {
 
 }
 
-
-@deprecated object ChronoFields extends ChronoFields
-
-trait ChronoFields {
-
-  val alignedDayOfWeekInMonth: ChronoField = CF.ALIGNED_DAY_OF_WEEK_IN_MONTH
-
-  val alignedDayOfWeekInYear: ChronoField = CF.ALIGNED_DAY_OF_WEEK_IN_YEAR
-
-  val alignedWeekOfMonth: ChronoField = CF.ALIGNED_WEEK_OF_MONTH
-
-  val alignedWeedOfYear: ChronoField = CF.ALIGNED_WEEK_OF_YEAR
-
-  val amPmOfDay: ChronoField = CF.AMPM_OF_DAY
-
-  val clockHourOfAmPm: ChronoField = CF.CLOCK_HOUR_OF_AMPM
-
-  val clockHourOfDay: ChronoField = CF.CLOCK_HOUR_OF_DAY
-
-  val dayOfMonth: ChronoField = CF.DAY_OF_MONTH
-
-  val dayOfWeek: ChronoField = CF.DAY_OF_WEEK
-
-  val dayOfYear: ChronoField = CF.DAY_OF_YEAR
-
-  val epochDay: ChronoField = CF.EPOCH_DAY
-
-  val era: ChronoField = CF.ERA
-
-  val hourOfMonth: ChronoField = CF.HOUR_OF_AMPM
-
-  val hourOfDay: ChronoField = CF.HOUR_OF_DAY
-
-  val instantSeconds: ChronoField = CF.INSTANT_SECONDS
-
-  val microOfDay: ChronoField = CF.MICRO_OF_DAY
-
-  val microOfSecond: ChronoField = CF.MICRO_OF_SECOND
-
-  val milliOfDay: ChronoField = CF.MILLI_OF_DAY
-
-  val milliOfSecond: ChronoField = CF.MILLI_OF_SECOND
-
-  val minuteOfDay: ChronoField = CF.MINUTE_OF_DAY
-
-  val minuteOfMonth: ChronoField = CF.MINUTE_OF_HOUR
-
-  val monthOfYear: ChronoField = CF.MONTH_OF_YEAR
-
-  val monthOfday: ChronoField = CF.NANO_OF_DAY
-
-  val nanoOfSecond: ChronoField = CF.NANO_OF_SECOND
-
-  val offsetSeconds: ChronoField = CF.OFFSET_SECONDS
-
-  val prolepticMonth: ChronoField = CF.PROLEPTIC_MONTH
-
-  val secondOfDay: ChronoField = CF.SECOND_OF_DAY
-
-  val secondOfMinute: ChronoField = CF.SECOND_OF_MINUTE
-
-  val year: ChronoField = CF.YEAR
-
-  val yearOfEra: ChronoField = CF.YEAR_OF_ERA
-}

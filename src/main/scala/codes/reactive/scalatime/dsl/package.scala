@@ -16,8 +16,13 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.conversions
+package codes.reactive.scalatime
 
 
-/** Provides core implicit conversions which are included by default in [[codes.reactive.scalatime.dsl]] **/
-protected[scalatime] abstract class PredefImplicits extends TemporalImplicits with ChronoImplicits
+/** Provides all implicit conversion functions, as well as a standard set of units, formatters and additional
+  * helpers.
+  *
+  * @since  0.1.0
+  */
+package object dsl extends conversions.PredefImplicits with conversions.NumberImplicits with
+    UnitHelpers with FormatterHelpers with ZoneHelpers

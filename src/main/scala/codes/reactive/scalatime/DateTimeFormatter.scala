@@ -16,8 +16,13 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.conversions
+package codes.reactive.scalatime
 
 
-/** Provides core implicit conversions which are included by default in [[codes.reactive.scalatime.dsl]] **/
-protected[scalatime] abstract class PredefImplicits extends TemporalImplicits with ChronoImplicits
+import format.TimeFormatters
+
+/** Provides a standard set of [[DateTimeFormatter]] instances, and factory methods for their creation.
+  * @since 0.1.0
+  */
+object DateTimeFormatter extends TimeFormatters
+

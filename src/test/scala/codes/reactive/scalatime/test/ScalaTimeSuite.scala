@@ -30,20 +30,16 @@ class ScalaTimeSuite extends FeatureSpec with Matchers {
 
     val period: Period = Period.days(1)
 
-    val otherPeriod = Period.days(2)
-
     val duration = Duration.days(1)
 
-    duration + duration shouldBe java.time.Duration.ofDays(2)
+    duration shouldBe java.time.Duration.ofDays(1)
 
-    period + otherPeriod  shouldBe  java.time.Period.ofDays(3)
-
-    (period <-= LocalDate.of(2014, 6, 7)) shouldBe LocalDate.of(2014, 6, 6)
+    period shouldBe  java.time.Period.ofDays(1)
   }
 
   feature("'extended' usage with additional implicits import of 'conversions._'") {
     import codes.reactive.scalatime._
-    import conversions._
+    import dsl._
 
     val duration: Duration = 1L day
 

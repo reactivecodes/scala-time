@@ -16,8 +16,18 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.conversions
+package codes.reactive.scalatime
+
+import codes.reactive.scalatime.temporal.{ChronoFields, ChronoUnits}
 
 
-/** Provides core implicit conversions which are included by default in [[codes.reactive.scalatime.dsl]] **/
-protected[scalatime] abstract class PredefImplicits extends TemporalImplicits with ChronoImplicits
+/** Provides a standard set of date period units as [[TemporalUnit]] instances
+  * @since  0.1.0
+  */
+object ChronoUnit extends ChronoUnits
+
+/** Provides a standard set of date period fields as [[TemporalField]] instances
+  * @since  0.1.0
+  */
+object ChronoField extends ChronoFields
+
