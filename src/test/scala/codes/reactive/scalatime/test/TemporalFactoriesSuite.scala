@@ -16,8 +16,9 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime
+package codes.reactive.scalatime.test
 
+import codes.reactive.scalatime._
 import org.scalatest.{Matchers, Outcome, fixture}
 
 
@@ -94,6 +95,12 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
   "OffsetDateTime" - {
     "can create a default 'OffsetDateTime' instance from the current System time" in { _ =>
       OffsetDateTime().isInstanceOf[OffsetDateTime] shouldEqual true
+    }
+  }
+
+  "OffsetTime" - {
+    "can create a default 'OffsetTime' instance from the current System time" in { _ =>
+      OffsetTime().isInstanceOf[OffsetTime] shouldEqual true
     }
   }
 

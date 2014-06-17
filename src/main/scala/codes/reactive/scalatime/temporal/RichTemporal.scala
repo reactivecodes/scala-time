@@ -85,6 +85,6 @@ final class RichTemporal(val underlying: Temporal) extends AnyVal {
     * @throws  UnsupportedTemporalTypeException - if the unit is not supported
     * @throws  ArithmeticException - if numeric overflow occurs
     */
-  def ~>(end: Temporal, inUnits: TemporalUnit) = underlying.until(end, inUnits)
+  def ~(end: Temporal, inUnits: TemporalUnit) = underlying.until(end, inUnits)
 
 }

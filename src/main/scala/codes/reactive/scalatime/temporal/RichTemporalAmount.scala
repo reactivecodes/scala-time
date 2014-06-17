@@ -19,33 +19,102 @@
 package codes.reactive.scalatime
 package temporal
 
+
+/** Enriches a [[TemporalAmount]] with scala friendly methods.
+  *
+  * @since  0.1.0
+  */
 final class RichTemporalAmount(val underlying: TemporalAmount) extends AnyVal {
 
-  def <+= (temporal: Temporal): Temporal = underlying.addTo(temporal)
+  /** Adds this amount to the specified temporal object **/
+  def <+=(temporal: Temporal): Temporal = underlying.addTo(temporal)
 
-  def <-= (temporal: Temporal): Temporal = underlying.subtractFrom(temporal)
+  /** Subtracts this amount from the specified temporal object **/
+  def <-=(temporal: Temporal): Temporal = underlying.subtractFrom(temporal)
 }
 
+
+/** Enriches a [[Duration]] with scala friendly methods.
+  *
+  * @since  0.1.0
+  */
 final class RichDuration(val underlying: Duration) extends AnyVal {
 
-  def * (scalar: Int): Duration = underlying.multipliedBy(scalar)
+  /** Returns a copy of this duration multiplied by the scalar.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def *(scalar: Int): Duration = underlying.multipliedBy(scalar)
 
-  def + (duration: Duration): Duration = underlying.plus(duration)
+  /** Returns a copy of this duration with the specified duration added.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def +(duration: Duration): Duration = underlying.plus(duration)
 
-  def + (amount: Long, unit: TemporalUnit): Duration = underlying.plus(amount, unit)
+  /** Returns a copy of this duration with a duration added measured in terms of the specified unit.
+    *
+    * @throws UnsupportedTemporalTypeException - if the unit is not supported
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def +(amount: Long, unit: TemporalUnit): Duration = underlying.plus(amount, unit)
 
-  def - (duration: Duration): Duration = underlying.minus(duration)
+  /** Returns a copy of this duration with the specified duration subtracted.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def -(duration: Duration): Duration = underlying.minus(duration)
 
-  def - (amount: Long, unit: TemporalUnit): Duration = underlying.minus(amount, unit)
+  /** Returns a copy of this duration with a duration subtracted measured in terms of the specified unit.
+    *
+    * @throws UnsupportedTemporalTypeException - if the unit is not supported
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def -(amount: Long, unit: TemporalUnit): Duration = underlying.minus(amount, unit)
 
+  /** Returns a copy of this amount divided by the divisor.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def /(divisor: Int): Duration = underlying.dividedBy(divisor)
+
+  /** Swaps the sign of the total length of this duration. For example, PT1.3S will be returned as PT-1.3S.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def unary_! : Duration = underlying.negated
 }
 
+
+/** Enriches a [[Period]] with scala friendly methods.
+  *
+  * @since  0.1.0
+  */
 final class RichPeriod(val underlying: Period) extends AnyVal {
 
-  def * (scalar: Int): Period = underlying.multipliedBy(scalar)
+  /** Returns a copy of this period multiplied by the scalar.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def *(scalar: Int): Period = underlying.multipliedBy(scalar)
 
-  def + (amount: TemporalAmount): Period = underlying.plus(amount)
+  /** Returns a copy of this period with the specified period added.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def +(amount: TemporalAmount): Period = underlying.plus(amount)
 
-  def - (amount: TemporalAmount): Period = underlying.minus(amount)
+  /** Returns a copy of this period with the specified period subtracted.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def -(amount: TemporalAmount): Period = underlying.minus(amount)
 
+  /** Returns a new instance with each amount in this period negated. For example, a period of "2 years, -3 months and
+    * 4 days" will be negated to "-2 years, 3 months and -4 days". No normalization is performed.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs, which only happens if one of the units
+    *                             has the value Long.MIN_VALUE
+    */
+  def unary_! : Period = underlying.negated
 }

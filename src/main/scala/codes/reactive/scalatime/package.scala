@@ -83,6 +83,11 @@ package object scalatime {
     */
   type OffsetDateTime = time.OffsetDateTime
 
+  /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/OffsetTime.html java.time.OffsetTime]].
+    * An OffsetTime is a time with an offset from UTC/Greenwich in the ISO-8601 calendar system, such as 10:15:30+01:00.
+    */
+  type OffsetTime = time.OffsetTime
+
   /** Alias for [[http://docs.oracle.com/javase/8/docs/api/java/time/Period.html java.time.Period]].
     * Period is a date-based amount of time in the ISO-8601 calendar system, such as '2 years, 3 months and 4 days'.
     */

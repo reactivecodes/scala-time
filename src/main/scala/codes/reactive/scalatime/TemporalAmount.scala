@@ -23,46 +23,30 @@ import java.time.{Duration => JD, Period => JP}
 
 object Duration {
 
-  /** Returns a new [[Duration]] instance representing a number of nanoseconds.
+  /** Obtains an instance of [[Duration]] from a temporal amount which has an exact duration
+    * else throws an exception.
     *
-    * @param nanos  the number of nanos to represent as a [[Duration]]
-    * @return a new Duration instance
+    * @throws DateTimeException - if unable to convert to a [[Duration]]
+    * @throws ArithmeticException - if numeric overflow occurs
     */
+  def apply(amount: TemporalAmount): Duration = JD.from(amount)
+
+  /** Returns a [[Duration]] instance representing a number of nanoseconds. **/
   def nanos(nanos: Long): Duration = JD.ofNanos(nanos)
 
-  /** Returns a new [[Duration]] instance representing a number of milliseconds.
-    *
-    * @param millis  the number of milliseconds to represent as a [[Duration]]
-    * @return a new Duration instance
-    */
+  /** Returns a new [[Duration]] instance representing a number of milliseconds. **/
   def millis(millis: Long): Duration = JD.ofMillis(millis)
 
-  /** Returns a new [[Duration]] instance representing a number of seconds.
-    *
-    * @param seconds  the number of seconds to represent as a [[Duration]]
-    * @return a new Duration instance
-    */
+  /** Returns a new [[Duration]] instance representing a number of seconds. **/
   def seconds(seconds: Long): Duration = JD.ofSeconds(seconds)
 
-  /** Returns a new [[Duration]] instance representing a number of minutes.
-    *
-    * @param minutes the number of minutes to represent as a [[Duration]]
-    * @return a new Duration instance
-    */
+  /** Returns a new [[Duration]] instance representing a number of minutes. **/
   def minutes(minutes: Long): Duration = JD.ofMinutes(minutes)
 
-  /** Returns a new [[Duration]] instance representing a number of hours.
-    *
-    * @param hours  the number of hours to represent as a [[Duration]]
-    * @return a new Duration instance
-    */
+  /** Returns a new [[Duration]] instance representing a number of hours. **/
   def hours(hours: Long): Duration = JD.ofHours(hours)
 
-  /** Returns a new [[Duration]] instance representing a number of days.
-    *
-    * @param days  the number of days to represent as a [[Duration]]
-    * @return a new Duration instance
-    */
+  /** Returns a new [[Duration]] instance representing a number of days. **/
   def days(days: Long): Duration = JD.ofDays(days)
 
   /** Returns a [[Duration]] instance representing a duration of zero. **/
@@ -70,6 +54,15 @@ object Duration {
 }
 
 object Period {
+
+  /** Obtains an instance of [[Period]] from a temporal amount by looping around the set of units from the amount
+    * and using the YEARS, MONTHS and DAYS units to create a period. If any other units are found then an exception
+    * is thrown.
+    *
+    * @throws DateTimeException - if unable to convert to a [[Period]]
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def apply(amount: TemporalAmount): Period = JP.from(amount)
 
   /** Returns a new [[Period]] instance representing a number of days.
     *
