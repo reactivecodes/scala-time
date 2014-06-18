@@ -22,7 +22,7 @@ package dsl.conversions
 import temporal.{IntPeriod, LongDuration}
 
 
-trait NumberConversions {
+private[conversions] trait NumberConverters {
 
   /** Creates a new [[temporal.IntPeriod]] from an [[scala.Int]]
     *
@@ -39,7 +39,7 @@ trait NumberConversions {
   def longDuration(in: Long): LongDuration = new LongDuration(in)
 }
 
-trait NumberImplicits extends NumberConversions {
+private[dsl] trait NumberImplicits extends NumberConverters {
 
   /** Implicit function to convert an Int to an [[temporal.IntPeriod]]
     * We use a val to avoid having to explicitly enable

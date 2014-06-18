@@ -16,9 +16,8 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.test.conversions
+package codes.reactive.scalatime.dsl.conversions
 
-import codes.reactive.scalatime.dsl.conversions.TemporalImplicits
 import codes.reactive.scalatime.temporal.{RichDuration, RichPeriod, RichTemporal, RichTemporalAmount}
 import codes.reactive.scalatime.{Duration, LocalDate, Period}
 import org.scalatest.{FreeSpec, Matchers}

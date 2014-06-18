@@ -16,19 +16,29 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime
-package dsl.conversions
+package codes.reactive.scalatime.dsl.conversions
 
-import codes.reactive.scalatime.chrono.{RichChronoZonedDateTime, RichChronoLocalDateTime, RichChronoLocalDate}
-import codes.reactive.scalatime.dsl.conversions.ChronoConverters
-import language.implicitConversions
+import codes.reactive.scalatime.{Duration, Period}
+import org.scalatest.{FreeSpec, Matchers}
 
-private[conversions] trait ChronoImplicits extends ChronoConverters {
+/**
+ * Created by arashid on 08/06/14.
+ */
+class NumberConversionsSuite extends FreeSpec with Matchers {
 
-  implicit def augmentChronoLocalDate(localDate: ChronoLocalDate): RichChronoLocalDate = richChronoLocalDate(localDate)
+  val subject = new NumberImplicits {}
 
-  implicit def augmentChronoLocalDateTime[A <: ChronoLocalDate](localDateTime: ChronoLocalDateTime[A]): RichChronoLocalDateTime[A] = richChronoLocalDateTime(localDateTime)
+  import subject._
 
-  implicit def augmentChronoZonedDateTime[A <: ChronoLocalDate](zonedDateTime: ChronoZonedDateTime[A]): RichChronoZonedDateTime[A] = richChronoZonedDateTime(zonedDateTime)
+  "A NumberImplicits instance" - {
+
+    "provides an implicit conversion of an 'Int' to an 'IntPeriod'" in {
+      (1 day).isInstanceOf[Period] should be(right = true)
+    }
+
+    "provides an implicit conversion of a 'Long' to a 'LongDuration'" in {
+      (1L day).isInstanceOf[Duration] should be(right = true)
+    }
+  }
 
 }

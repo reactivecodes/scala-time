@@ -16,30 +16,16 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.test.conversions
+package codes.reactive.scalatime
+package dsl.conversions
 
-import codes.reactive.scalatime.dsl.conversions.NumberImplicits
-import codes.reactive.scalatime.{Duration, Period}
-import org.scalatest.{FreeSpec, Matchers}
 
-/**
- * Created by arashid on 08/06/14.
- */
-class NumberConversionsSuite extends FreeSpec with Matchers {
+private[conversions] trait Decorators {
 
-  val subject = new NumberImplicits {}
-
-  import subject._
-
-  "A NumberImplicits instance" - {
-
-    "provides an implicit conversion of an 'Int' to an 'IntPeriod'" in {
-      (1 day).isInstanceOf[Period] should be(right = true)
-    }
-
-    "provides an implicit conversion of a 'Long' to a 'LongDuration'" in {
-      (1L day).isInstanceOf[Duration] should be(right = true)
-    }
+  /** Generic class containing the `enrich` converter method */
+  class Enrich[A](f: => A) {
+    /** Converts an object to the corresponding 'Rich' object */
+    def enrich: A = f
   }
 
 }

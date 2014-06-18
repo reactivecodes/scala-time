@@ -20,4 +20,4 @@ package codes.reactive.scalatime.dsl.conversions
 
 
 /** Provides core implicit conversions which are included by default in [[codes.reactive.scalatime.dsl]] **/
-protected[scalatime] abstract class PredefImplicits extends TemporalImplicits with ChronoImplicits
+private[dsl] abstract class PredefImplicits extends TemporalImplicits with ChronoImplicits

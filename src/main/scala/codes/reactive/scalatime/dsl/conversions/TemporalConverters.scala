@@ -22,27 +22,27 @@ package dsl.conversions
 import temporal._
 
 
-trait TemporalConversions {
+private[conversions] trait TemporalConverters {
 
   /** Returns a new [[temporal.RichTemporal]] from a [[Temporal]] **/
-  def richTemporal(temporal: Temporal): RichTemporal = new RichTemporal(temporal)
+  protected def richTemporal(temporal: Temporal): RichTemporal = new RichTemporal(temporal)
 
   /** Returns a new [[temporal.RichTemporalAdjuster]] from a [[TemporalAdjuster]] **/
-  def richTemporalAdjuster(temporalAdjuster: TemporalAdjuster) = new RichTemporalAdjuster(temporalAdjuster)
+  protected def richTemporalAdjuster(temporalAdjuster: TemporalAdjuster) = new RichTemporalAdjuster(temporalAdjuster)
 
   /** Returns a new [[temporal.RichTemporalAmount]] from a [[TemporalAmount]] **/
-  def richTemporalAmount(temporalAmount: TemporalAmount): RichTemporalAmount = new RichTemporalAmount(temporalAmount)
+  protected def richTemporalAmount(temporalAmount: TemporalAmount): RichTemporalAmount = new RichTemporalAmount(temporalAmount)
 
   /** Returns a new [[temporal.RichDuration]] from a [[Duration]] **/
-  def richDuration(duration: Duration): RichDuration = new RichDuration(duration)
+  protected def richDuration(duration: Duration): RichDuration = new RichDuration(duration)
 
   /** Returns a new [[temporal.RichPeriod]] from a [[Period]] **/
-  def richPeriod(period: Period): RichPeriod = new RichPeriod(period)
+  protected def richPeriod(period: Period): RichPeriod = new RichPeriod(period)
 
 }
 
 
-trait TemporalImplicits extends TemporalConversions {
+private[conversions] trait TemporalImplicits extends TemporalConverters {
 
   /** Implicit function which returns a new [[temporal.RichTemporal]] from a [[Temporal]].
     * We make it a val to avoid having to explicitly enable implicit conversions
@@ -70,3 +70,22 @@ trait TemporalImplicits extends TemporalConversions {
   implicit val augmentPeriod: Period => RichPeriod = richPeriod
 
 }
+
+private[scalatime] trait AnnotateEnrichTemporal extends TemporalConverters with Decorators {
+
+  import scala.language.implicitConversions
+
+  implicit def enrichTemporalConverter(u: Temporal): Enrich[RichTemporal] = new Enrich[RichTemporal](richTemporal(u))
+
+  implicit def enrichTemporalAdjusterConverter(u: TemporalAdjuster): Enrich[RichTemporalAdjuster] =
+    new Enrich[RichTemporalAdjuster](richTemporalAdjuster(u))
+
+  implicit def enrichTemporalAmountConverter(u: TemporalAmount): Enrich[RichTemporalAmount] =
+    new Enrich[RichTemporalAmount](richTemporalAmount(u))
+
+  implicit def enrichDuration(u: Duration): Enrich[RichDuration] = new Enrich[RichDuration](richDuration(u))
+
+  implicit def enrichPeriod(u: Period): Enrich[RichPeriod] = new Enrich[RichPeriod](richPeriod(u))
+
+}
+

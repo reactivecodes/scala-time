@@ -22,7 +22,7 @@ package dsl.conversions
 import chrono.{RichChronoLocalDate, RichChronoLocalDateTime, RichChronoZonedDateTime}
 
 
-trait ChronoImplicits extends ChronoConverters {
+private[conversions] trait ChronoImplicits extends ChronoConverters {
 
   implicit val augmentChronoLocalDate: ChronoLocalDate => RichChronoLocalDate = richChronoLocalDate
 

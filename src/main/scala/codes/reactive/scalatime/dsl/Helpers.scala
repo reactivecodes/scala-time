@@ -30,7 +30,7 @@ protected[dsl] trait UnitHelpers {
     */
   val field = new ChronoFields with IsoFields {}
 
-  /** Provides a standard set of date period units as [[TemporalField]] instances, including those
+  /** Provides a standard set of date period units as [[TemporalUnit]] instances, including those
     * specific to the ISO-8601 calendar system.
     */
   val unit = new ChronoUnits with IsoUnits {}
