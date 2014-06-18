@@ -21,9 +21,7 @@ package codes.reactive.scalatime.dsl.conversions
 import codes.reactive.scalatime.{Duration, Period}
 import org.scalatest.{FreeSpec, Matchers}
 
-/**
- * Created by arashid on 08/06/14.
- */
+
 class NumberConversionsSuite extends FreeSpec with Matchers {
 
   val subject = new NumberImplicits {}
