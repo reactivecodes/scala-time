@@ -3,7 +3,12 @@ scala-time
 
 Basic Scala utilities allowing for easier use of [Java 8][1] *[java.time][2]* APIs (JSR-310).
 
-[Build Status:][7]  ![Build Status Icon][3]
+###### Status:
+  - [Issues:][8]
+    - [![Stories in Ready][10]][8]
+    - [![Stories in In Progress][9]][8]
+  - [Build:][11]
+    - [`devel`][7]: ![Devel Build Status Icon][3]
 
 ###### Supported Scala Versions:
 - 2.11
@@ -81,3 +86,7 @@ limitations under the License.
 [5]: https://oss.sonatype.org/content/repositories/snapshots
 [6]: http://scala-sbt.org
 [7]: https://reactive.codes/ci/viewLog.html?buildTypeId=ScalaTime_Devel&buildId=lastFinished&buildBranch=devel
+[8]: https://waffle.io/reactivecodes/scala-time
+[9]: https://badge.waffle.io/reactivecodes/scala-time.png?label=in%20progress&title=InProgress
+[10]: https://badge.waffle.io/reactivecodes/scala-time.png?label=ready&title=Ready
+[11]: https://reactive.codes/ci/project.html?projectId=ScalaTime&tab=projectOverview
