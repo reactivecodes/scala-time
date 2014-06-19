@@ -3,19 +3,21 @@ scala-time
 
 Basic Scala utilities allowing for easier use of [Java 8][1] *[java.time][2]* APIs (JSR-310).
 
-###### Status:
-  - [Issues:][8]
-    - [![Stories in Ready][10]][8]
-    - [![Stories in In Progress][9]][8]
-  - [Build:][11]
-    - [`devel`][7]: ![Devel Build Status Icon][3]
+###### [Build:][11]
+  - [*devel*][7]: ![Devel Build Status Icon][3]
+
+###### [Issues:][8]
+  - [![Stories in Ready][10]][8]
+  - [![Stories in In Progress][9]][8]
 
 ###### Supported Scala Versions:
 - 2.11
 - 2.10
 
-###### Required Java Minimum Version:
-- 1.8.0 (Java 8)
+###### Required Java SDK Version:
+- JDK 1.8.0 (Java 8)
+
+__________________________________
 
 Usage:
 -----
@@ -62,7 +64,7 @@ __________________________________
 
 
 License
-=======
+-------
 See the NOTICE file distributed with this work for additional
 information regarding copyright ownership
 
@@ -87,6 +89,6 @@ limitations under the License.
 [6]: http://scala-sbt.org
 [7]: https://reactive.codes/ci/viewLog.html?buildTypeId=ScalaTime_Devel&buildId=lastFinished&buildBranch=devel
 [8]: https://waffle.io/reactivecodes/scala-time
-[9]: https://badge.waffle.io/reactivecodes/scala-time.png?label=in%20progress&title=InProgress
+[9]: https://badge.waffle.io/reactivecodes/scala-time.png?label=in%20progress&title=In%20Progress
 [10]: https://badge.waffle.io/reactivecodes/scala-time.png?label=ready&title=Ready
 [11]: https://reactive.codes/ci/project.html?projectId=ScalaTime&tab=projectOverview
