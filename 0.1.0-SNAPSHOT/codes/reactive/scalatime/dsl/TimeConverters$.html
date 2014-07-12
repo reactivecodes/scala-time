@@ -1,0 +1,783 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>TimeConverters - Scala Time 0.1.0-SNAPSHOT - codes.reactive.scalatime.dsl.TimeConverters</title>
+          <meta name="description" content="TimeConverters - Scala Time 0.1.0 - SNAPSHOT - codes.reactive.scalatime.dsl.TimeConverters" />
+          <meta name="keywords" content="TimeConverters Scala Time 0.1.0 SNAPSHOT codes.reactive.scalatime.dsl.TimeConverters" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'codes.reactive.scalatime.dsl.TimeConverters$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/object_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="codes">codes</a>.<a href="../../package.html" class="extype" name="codes.reactive">reactive</a>.<a href="../package.html" class="extype" name="codes.reactive.scalatime">scalatime</a>.<a href="package.html" class="extype" name="codes.reactive.scalatime.dsl">dsl</a></p>
+        <h1>TimeConverters</h1> <span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TimeConverters</span><span class="result"> extends <span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal">AnnotateEnrichTemporal</span> with <span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono">AnnotateEnrichChrono</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/0e74330/src/main/scala/codes/reactive/scalatime/dsl/TimeConverters.scala" target="_blank">TimeConverters.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono">AnnotateEnrichChrono</span>, <span class="extype" name="codes.reactive.scalatime.dsl.conversions.ChronoConverters">ChronoConverters</span>, <span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal">AnnotateEnrichTemporal</span>, <span class="extype" name="codes.reactive.scalatime.dsl.conversions.Decorators">Decorators</span>, <span class="extype" name="codes.reactive.scalatime.dsl.conversions.TemporalConverters">TemporalConverters</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="codes.reactive.scalatime.dsl.TimeConverters"><span>TimeConverters</span></li><li class="in" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono"><span>AnnotateEnrichChrono</span></li><li class="in" name="codes.reactive.scalatime.dsl.conversions.ChronoConverters"><span>ChronoConverters</span></li><li class="in" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal"><span>AnnotateEnrichTemporal</span></li><li class="in" name="codes.reactive.scalatime.dsl.conversions.Decorators"><span>Decorators</span></li><li class="in" name="codes.reactive.scalatime.dsl.conversions.TemporalConverters"><span>TemporalConverters</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="codes.reactive.scalatime.dsl.conversions.Decorators.Enrich" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Enrich[A]extendsAnyRef"></a>
+      <a id="Enrich[A]:Enrich[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Enrich</span><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@Enrich[A]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Generic class containing the <code>enrich</code> converter method</p><div class="fullcomment"><div class="comment cmt"><p>Generic class containing the <code>enrich</code> converter method</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>Decorators</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono#enrichChronoLocalDateConverter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enrichChronoLocalDateConverter(u:codes.reactive.scalatime.ChronoLocalDate):AnnotateEnrichChrono.this.Enrich[codes.reactive.scalatime.chrono.RichChronoLocalDate]"></a>
+      <a id="enrichChronoLocalDateConverter(ChronoLocalDate):Enrich[RichChronoLocalDate]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrichChronoLocalDateConverter</span><span class="params">(<span name="u">u: <a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">ChronoLocalDate</a></span>)</span><span class="result">: <a href="#Enrich[A]extendsAnyRef" class="extmbr" name="codes.reactive.scalatime.dsl.TimeConverters.Enrich">Enrich</a>[<a href="../chrono/RichChronoLocalDate.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoLocalDate">RichChronoLocalDate</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@enrichChronoLocalDateConverter(u:codes.reactive.scalatime.ChronoLocalDate):AnnotateEnrichChrono.this.Enrich[codes.reactive.scalatime.chrono.RichChronoLocalDate]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnnotateEnrichChrono</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono#enrichChronoLocalDateTimeConverter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enrichChronoLocalDateTimeConverter[A&lt;:codes.reactive.scalatime.ChronoLocalDate](u:codes.reactive.scalatime.ChronoLocalDateTime[A]):AnnotateEnrichChrono.this.Enrich[codes.reactive.scalatime.chrono.RichChronoLocalDateTime[A]]"></a>
+      <a id="enrichChronoLocalDateTimeConverter[A&lt;:ChronoLocalDate](ChronoLocalDateTime[A]):Enrich[RichChronoLocalDateTime[A]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrichChronoLocalDateTimeConverter</span><span class="tparams">[<span name="A">A &lt;: <a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">ChronoLocalDate</a></span>]</span><span class="params">(<span name="u">u: <a href="../package.html#ChronoLocalDateTime[A&lt;:codes.reactive.scalatime.package.ChronoLocalDate]=java.time.chrono.ChronoLocalDateTime[A]" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDateTime">ChronoLocalDateTime</a>[<span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono.enrichChronoLocalDateTimeConverter.A">A</span>]</span>)</span><span class="result">: <a href="#Enrich[A]extendsAnyRef" class="extmbr" name="codes.reactive.scalatime.dsl.TimeConverters.Enrich">Enrich</a>[<a href="../chrono/RichChronoLocalDateTime.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoLocalDateTime">RichChronoLocalDateTime</a>[<span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono.enrichChronoLocalDateTimeConverter.A">A</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@enrichChronoLocalDateTimeConverter[A&lt;:codes.reactive.scalatime.ChronoLocalDate](u:codes.reactive.scalatime.ChronoLocalDateTime[A]):AnnotateEnrichChrono.this.Enrich[codes.reactive.scalatime.chrono.RichChronoLocalDateTime[A]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnnotateEnrichChrono</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono#enrichChronoZonedDateTimeConverter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enrichChronoZonedDateTimeConverter[A&lt;:codes.reactive.scalatime.ChronoLocalDate](u:codes.reactive.scalatime.ChronoZonedDateTime[A]):AnnotateEnrichChrono.this.Enrich[codes.reactive.scalatime.chrono.RichChronoZonedDateTime[A]]"></a>
+      <a id="enrichChronoZonedDateTimeConverter[A&lt;:ChronoLocalDate](ChronoZonedDateTime[A]):Enrich[RichChronoZonedDateTime[A]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrichChronoZonedDateTimeConverter</span><span class="tparams">[<span name="A">A &lt;: <a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">ChronoLocalDate</a></span>]</span><span class="params">(<span name="u">u: <a href="../package.html#ChronoZonedDateTime[A&lt;:codes.reactive.scalatime.package.ChronoLocalDate]=java.time.chrono.ChronoZonedDateTime[A]" class="extmbr" name="codes.reactive.scalatime.ChronoZonedDateTime">ChronoZonedDateTime</a>[<span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono.enrichChronoZonedDateTimeConverter.A">A</span>]</span>)</span><span class="result">: <a href="#Enrich[A]extendsAnyRef" class="extmbr" name="codes.reactive.scalatime.dsl.TimeConverters.Enrich">Enrich</a>[<a href="../chrono/RichChronoZonedDateTime.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoZonedDateTime">RichChronoZonedDateTime</a>[<span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono.enrichChronoZonedDateTimeConverter.A">A</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@enrichChronoZonedDateTimeConverter[A&lt;:codes.reactive.scalatime.ChronoLocalDate](u:codes.reactive.scalatime.ChronoZonedDateTime[A]):AnnotateEnrichChrono.this.Enrich[codes.reactive.scalatime.chrono.RichChronoZonedDateTime[A]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnnotateEnrichChrono</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal#enrichDuration" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enrichDuration(u:codes.reactive.scalatime.Duration):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichDuration]"></a>
+      <a id="enrichDuration(Duration):Enrich[RichDuration]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrichDuration</span><span class="params">(<span name="u">u: <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a></span>)</span><span class="result">: <a href="#Enrich[A]extendsAnyRef" class="extmbr" name="codes.reactive.scalatime.dsl.TimeConverters.Enrich">Enrich</a>[<a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">RichDuration</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@enrichDuration(u:codes.reactive.scalatime.Duration):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichDuration]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnnotateEnrichTemporal</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal#enrichPeriod" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enrichPeriod(u:codes.reactive.scalatime.Period):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichPeriod]"></a>
+      <a id="enrichPeriod(Period):Enrich[RichPeriod]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrichPeriod</span><span class="params">(<span name="u">u: <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a></span>)</span><span class="result">: <a href="#Enrich[A]extendsAnyRef" class="extmbr" name="codes.reactive.scalatime.dsl.TimeConverters.Enrich">Enrich</a>[<a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">RichPeriod</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@enrichPeriod(u:codes.reactive.scalatime.Period):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichPeriod]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnnotateEnrichTemporal</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal#enrichTemporalAdjusterConverter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enrichTemporalAdjusterConverter(u:codes.reactive.scalatime.TemporalAdjuster):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichTemporalAdjuster]"></a>
+      <a id="enrichTemporalAdjusterConverter(TemporalAdjuster):Enrich[RichTemporalAdjuster]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrichTemporalAdjusterConverter</span><span class="params">(<span name="u">u: <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a></span>)</span><span class="result">: <a href="#Enrich[A]extendsAnyRef" class="extmbr" name="codes.reactive.scalatime.dsl.TimeConverters.Enrich">Enrich</a>[<a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">RichTemporalAdjuster</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@enrichTemporalAdjusterConverter(u:codes.reactive.scalatime.TemporalAdjuster):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichTemporalAdjuster]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnnotateEnrichTemporal</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal#enrichTemporalAmountConverter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enrichTemporalAmountConverter(u:codes.reactive.scalatime.TemporalAmount):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichTemporalAmount]"></a>
+      <a id="enrichTemporalAmountConverter(TemporalAmount):Enrich[RichTemporalAmount]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrichTemporalAmountConverter</span><span class="params">(<span name="u">u: <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a></span>)</span><span class="result">: <a href="#Enrich[A]extendsAnyRef" class="extmbr" name="codes.reactive.scalatime.dsl.TimeConverters.Enrich">Enrich</a>[<a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">RichTemporalAmount</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@enrichTemporalAmountConverter(u:codes.reactive.scalatime.TemporalAmount):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichTemporalAmount]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnnotateEnrichTemporal</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal#enrichTemporalConverter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enrichTemporalConverter(u:codes.reactive.scalatime.Temporal):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichTemporal]"></a>
+      <a id="enrichTemporalConverter(Temporal):Enrich[RichTemporal]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrichTemporalConverter</span><span class="params">(<span name="u">u: <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a></span>)</span><span class="result">: <a href="#Enrich[A]extendsAnyRef" class="extmbr" name="codes.reactive.scalatime.dsl.TimeConverters.Enrich">Enrich</a>[<a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">RichTemporal</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@enrichTemporalConverter(u:codes.reactive.scalatime.Temporal):AnnotateEnrichTemporal.this.Enrich[codes.reactive.scalatime.temporal.RichTemporal]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnnotateEnrichTemporal</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.ChronoConverters#richChronoLocalDate" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richChronoLocalDate(underlying:codes.reactive.scalatime.ChronoLocalDate):codes.reactive.scalatime.chrono.RichChronoLocalDate"></a>
+      <a id="richChronoLocalDate(ChronoLocalDate):RichChronoLocalDate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richChronoLocalDate</span><span class="params">(<span name="underlying">underlying: <a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">ChronoLocalDate</a></span>)</span><span class="result">: <a href="../chrono/RichChronoLocalDate.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoLocalDate">RichChronoLocalDate</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@richChronoLocalDate(underlying:codes.reactive.scalatime.ChronoLocalDate):codes.reactive.scalatime.chrono.RichChronoLocalDate" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ChronoConverters</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.ChronoConverters#richChronoLocalDateTime" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richChronoLocalDateTime[A&lt;:codes.reactive.scalatime.ChronoLocalDate](underlying:codes.reactive.scalatime.ChronoLocalDateTime[A]):codes.reactive.scalatime.chrono.RichChronoLocalDateTime[A]"></a>
+      <a id="richChronoLocalDateTime[A&lt;:ChronoLocalDate](ChronoLocalDateTime[A]):RichChronoLocalDateTime[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richChronoLocalDateTime</span><span class="tparams">[<span name="A">A &lt;: <a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">ChronoLocalDate</a></span>]</span><span class="params">(<span name="underlying">underlying: <a href="../package.html#ChronoLocalDateTime[A&lt;:codes.reactive.scalatime.package.ChronoLocalDate]=java.time.chrono.ChronoLocalDateTime[A]" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDateTime">ChronoLocalDateTime</a>[<span class="extype" name="codes.reactive.scalatime.dsl.conversions.ChronoConverters.richChronoLocalDateTime.A">A</span>]</span>)</span><span class="result">: <a href="../chrono/RichChronoLocalDateTime.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoLocalDateTime">RichChronoLocalDateTime</a>[<span class="extype" name="codes.reactive.scalatime.dsl.conversions.ChronoConverters.richChronoLocalDateTime.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@richChronoLocalDateTime[A&lt;:codes.reactive.scalatime.ChronoLocalDate](underlying:codes.reactive.scalatime.ChronoLocalDateTime[A]):codes.reactive.scalatime.chrono.RichChronoLocalDateTime[A]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ChronoConverters</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.ChronoConverters#richChronoZonedDateTime" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richChronoZonedDateTime[A&lt;:codes.reactive.scalatime.ChronoLocalDate](underlying:codes.reactive.scalatime.ChronoZonedDateTime[A]):codes.reactive.scalatime.chrono.RichChronoZonedDateTime[A]"></a>
+      <a id="richChronoZonedDateTime[A&lt;:ChronoLocalDate](ChronoZonedDateTime[A]):RichChronoZonedDateTime[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richChronoZonedDateTime</span><span class="tparams">[<span name="A">A &lt;: <a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">ChronoLocalDate</a></span>]</span><span class="params">(<span name="underlying">underlying: <a href="../package.html#ChronoZonedDateTime[A&lt;:codes.reactive.scalatime.package.ChronoLocalDate]=java.time.chrono.ChronoZonedDateTime[A]" class="extmbr" name="codes.reactive.scalatime.ChronoZonedDateTime">ChronoZonedDateTime</a>[<span class="extype" name="codes.reactive.scalatime.dsl.conversions.ChronoConverters.richChronoZonedDateTime.A">A</span>]</span>)</span><span class="result">: <a href="../chrono/RichChronoZonedDateTime.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoZonedDateTime">RichChronoZonedDateTime</a>[<span class="extype" name="codes.reactive.scalatime.dsl.conversions.ChronoConverters.richChronoZonedDateTime.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@richChronoZonedDateTime[A&lt;:codes.reactive.scalatime.ChronoLocalDate](underlying:codes.reactive.scalatime.ChronoZonedDateTime[A]):codes.reactive.scalatime.chrono.RichChronoZonedDateTime[A]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ChronoConverters</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.TemporalConverters#richDuration" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richDuration(duration:codes.reactive.scalatime.Duration):codes.reactive.scalatime.temporal.RichDuration"></a>
+      <a id="richDuration(Duration):RichDuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richDuration</span><span class="params">(<span name="duration">duration: <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a></span>)</span><span class="result">: <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">RichDuration</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@richDuration(duration:codes.reactive.scalatime.Duration):codes.reactive.scalatime.temporal.RichDuration" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.TemporalConverters#richPeriod" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richPeriod(period:codes.reactive.scalatime.Period):codes.reactive.scalatime.temporal.RichPeriod"></a>
+      <a id="richPeriod(Period):RichPeriod"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richPeriod</span><span class="params">(<span name="period">period: <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a></span>)</span><span class="result">: <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">RichPeriod</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@richPeriod(period:codes.reactive.scalatime.Period):codes.reactive.scalatime.temporal.RichPeriod" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.TemporalConverters#richTemporal" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richTemporal(temporal:codes.reactive.scalatime.Temporal):codes.reactive.scalatime.temporal.RichTemporal"></a>
+      <a id="richTemporal(Temporal):RichTemporal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richTemporal</span><span class="params">(<span name="temporal">temporal: <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a></span>)</span><span class="result">: <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">RichTemporal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@richTemporal(temporal:codes.reactive.scalatime.Temporal):codes.reactive.scalatime.temporal.RichTemporal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.TemporalConverters#richTemporalAdjuster" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richTemporalAdjuster(temporalAdjuster:codes.reactive.scalatime.TemporalAdjuster):codes.reactive.scalatime.temporal.RichTemporalAdjuster"></a>
+      <a id="richTemporalAdjuster(TemporalAdjuster):RichTemporalAdjuster"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richTemporalAdjuster</span><span class="params">(<span name="temporalAdjuster">temporalAdjuster: <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a></span>)</span><span class="result">: <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">RichTemporalAdjuster</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@richTemporalAdjuster(temporalAdjuster:codes.reactive.scalatime.TemporalAdjuster):codes.reactive.scalatime.temporal.RichTemporalAdjuster" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.dsl.conversions.TemporalConverters#richTemporalAmount" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richTemporalAmount(temporalAmount:codes.reactive.scalatime.TemporalAmount):codes.reactive.scalatime.temporal.RichTemporalAmount"></a>
+      <a id="richTemporalAmount(TemporalAmount):RichTemporalAmount"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richTemporalAmount</span><span class="params">(<span name="temporalAmount">temporalAmount: <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a></span>)</span><span class="result">: <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">RichTemporalAmount</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@richTemporalAmount(temporalAmount:codes.reactive.scalatime.TemporalAmount):codes.reactive.scalatime.temporal.RichTemporalAmount" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.dsl.TimeConverters$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono">
+              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichChrono">AnnotateEnrichChrono</span></h3>
+            </div><div class="parent" name="codes.reactive.scalatime.dsl.conversions.ChronoConverters">
+              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.dsl.conversions.ChronoConverters">ChronoConverters</span></h3>
+            </div><div class="parent" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal">
+              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.dsl.conversions.AnnotateEnrichTemporal">AnnotateEnrichTemporal</span></h3>
+            </div><div class="parent" name="codes.reactive.scalatime.dsl.conversions.Decorators">
+              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.dsl.conversions.Decorators">Decorators</span></h3>
+            </div><div class="parent" name="codes.reactive.scalatime.dsl.conversions.TemporalConverters">
+              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.dsl.conversions.TemporalConverters">TemporalConverters</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 0e74330) Scala 2.11 API Documentation. </div>
+
+
+    </body>
+      </html>
