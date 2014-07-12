@@ -6,9 +6,7 @@ Basic Scala utilities allowing for easier use of [Java 8][1] *[java.time][2]* AP
 ###### [Build:][11]
   - [*devel*][7]: ![Devel Build Status Icon][3]
 
-###### [Issues:][8]
-  - [![Stories in Ready][10]][8]
-  - [![Stories in In Progress][9]][8]
+###### [Issues][8]
 
 ###### Supported Scala Versions:
 - 2.11
@@ -29,6 +27,9 @@ published to the [`Sonatype OSS Snapshots`][5] public repository.
 ```scala
     "codes.reactive" %% "scala-time" % "0.1.0-SNAPSHOT"
 ```
+
+#### Documentation:
+See the [project website][9] for links to current documentation.
 
 #### Examples:
 ```scala
@@ -88,7 +89,6 @@ limitations under the License.
 [5]: https://oss.sonatype.org/content/repositories/snapshots
 [6]: http://scala-sbt.org
 [7]: https://reactive.codes/ci/viewLog.html?buildTypeId=ScalaTime_Devel&buildId=lastFinished&buildBranch=devel
-[8]: https://waffle.io/reactivecodes/scala-time
-[9]: https://badge.waffle.io/reactivecodes/scala-time.png?label=in%20progress&title=In%20Progress
-[10]: https://badge.waffle.io/reactivecodes/scala-time.png?label=ready&title=Ready
+[8]: https://reactive.codes/issues/issues?q=project%3A+%7BScala+Time%7D
+[9]: http://oss.reactive.codes/scala-time
 [11]: https://reactive.codes/ci/project.html?projectId=ScalaTime&tab=projectOverview
