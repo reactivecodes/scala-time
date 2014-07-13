@@ -21,15 +21,16 @@ package control
 
 import org.scalatest.{Matchers, FunSuite}
 
+import scala.util.{Success, Try}
+
 
 class CatchersSuite extends FunSuite with Matchers {
 
-  test("Catch provides 'Exception.Catch' instances for 'DateTimeException' instances") {
-    val t = Catch.all.withTry(LocalDate.parse(")(&#)(@*@&#%@#%@#%)"))
-    val t1 = Catch.unsupportedTemporalType.withTry(LocalTime().get(IsoField.dayOfQuarter))
-    t.isFailure shouldEqual true
+  test("Catcher provides 'Catcher' instances for 'DateTimeException' instances") {
+    val t = Try(LocalDate.parse(")(&#)(@*@&#%@#%@#%)")).recover(Catcher.all(_ => LocalDate.of(2014, 7, 13)))
+    val t1 = Try(LocalTime().get(IsoField.DayOfQuarter)).recover(Catcher.unsupportedTemporalType)
+    t shouldEqual Success(LocalDate.of(2014, 7, 13))
     t1.isFailure shouldEqual true
-    intercept[DateTimeException](t.get)
     intercept[UnsupportedTemporalTypeException](t1.get)
   }
 
