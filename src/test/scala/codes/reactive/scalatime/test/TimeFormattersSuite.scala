@@ -43,16 +43,16 @@ class TimeFormattersSuite extends fixture.FreeSpec with Matchers {
     "provides access to commonly used 'DateTimeFormatter' instances via its 'format' member" - {
 
       "including ISO-8601 formatters provided by the `iso` member" in { a =>
-        import a.subject.iso
-        iso.offsetDateTime.format(a.date.truncatedTo(ChronoUnit.SECONDS)) should be(a.offsetTruncated)
-        LocalDateTime(iso.offsetDateTime.parse(a.offset)).truncatedTo(ChronoUnit.SECONDS) should be(a.date.toLocalDateTime.truncatedTo(ChronoUnit.SECONDS))
-        iso.localTime.format(a.date.truncatedTo(ChronoUnit.SECONDS)) should be(a.localTime)
+        import a.subject.Iso
+        Iso.OffsetDateTime.format(a.date.truncatedTo(ChronoUnit.SECONDS)) should be(a.offsetTruncated)
+        LocalDateTime(Iso.OffsetDateTime.parse(a.offset)).truncatedTo(ChronoUnit.SECONDS) should be(a.date.toLocalDateTime.truncatedTo(ChronoUnit.SECONDS))
+        Iso.LocalTime.format(a.date.truncatedTo(ChronoUnit.SECONDS)) should be(a.localTime)
       }
 
       "and an RFC-1123 / RFC822 (internet) date-time formatter" in { a =>
-        import a.subject.internet
-        internet.format(a.date) should be(a.internet)
-        LocalDateTime(internet.parse(a.internet)) should be(a.date.truncatedTo(ChronoUnit.SECONDS).toLocalDateTime)
+        import a.subject.Internet
+        Internet.format(a.date) should be(a.internet)
+        LocalDateTime(Internet.parse(a.internet)) should be(a.date.truncatedTo(ChronoUnit.SECONDS).toLocalDateTime)
       }
 
     }

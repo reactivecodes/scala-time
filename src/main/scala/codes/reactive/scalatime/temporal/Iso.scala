@@ -29,16 +29,16 @@ import codes.reactive.scalatime._
 trait IsoFields {
 
   /** [[TemporalField]] which represents the day-of-quarter. **/
-  val dayOfQuarter = IF.DAY_OF_QUARTER
+  val DayOfQuarter = IF.DAY_OF_QUARTER
 
   /** [[TemporalField]] which represents the quarter-of-year. **/
-  val quarterOfYear = IF.QUARTER_OF_YEAR
+  val QuarterOfYear = IF.QUARTER_OF_YEAR
 
   /** [[TemporalField]] which represents the week-based-year. **/
-  val weekBasedYear = IF.WEEK_BASED_YEAR
+  val WeekBasedYear = IF.WEEK_BASED_YEAR
 
   /** [[TemporalField]] which represents the week-of-week-based-year. **/
-  val weekOfWeekBasedYear = IF.WEEK_OF_WEEK_BASED_YEAR
+  val WeekOfWeekBasedYear = IF.WEEK_OF_WEEK_BASED_YEAR
 
 }
 
@@ -51,7 +51,7 @@ trait IsoUnits {
   /** [[TemporalUnit]] which represents the concept of a quarter-year. For the ISO calendar system, it is equal to 3 months.
     * The estimated duration of a quarter-year is one quarter of 365.2425 Days.
     */
-  val quarterYears: TemporalUnit = IF.QUARTER_YEARS
+  val QuarterYears: TemporalUnit = IF.QUARTER_YEARS
 
   /** [[TemporalUnit]] which represents week-based-years for the purpose of addition and subtraction. The estimated duration of
     * a week-based-year is the same as that of a standard ISO year at 365.2425 Days.
@@ -59,6 +59,6 @@ trait IsoUnits {
     * The rules for addition add the number of week-based-years to the existing value for the week-based-year field. If
     * the resulting week-based-year only has 52 weeks, then the date will be in week 1 of the following week-based-year.
     */
-  val weekBasedYears: TemporalUnit = IF.WEEK_BASED_YEARS
+  val WeekBasedYears: TemporalUnit = IF.WEEK_BASED_YEARS
 }
 

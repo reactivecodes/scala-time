@@ -30,14 +30,14 @@ import codes.reactive.scalatime._
 trait TimeFormatters {
 
   /** Provides members providing default ISO-8601 [[DateTimeFormatter]] instances **/
-  val iso: ISO = new ISO {}
+  val Iso: ISO = new ISO {}
 
 
   /** Formats or parses an RFC-1123 / RFC822 (internet) date-time **/
   val `RFC1123/RFC822`: DateTimeFormatter = DF.RFC_1123_DATE_TIME
 
   /** Formats or parses an RFC-1123 / RFC822 (internet) date-time **/
-  val internet: DateTimeFormatter = `RFC1123/RFC822`
+  val Internet: DateTimeFormatter = `RFC1123/RFC822`
 
   /** Creates a new [[DateTimeFormatter]] based on a string pattern of letters and symbols. See the
     * [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html java API documentation]] for
@@ -67,67 +67,67 @@ trait TimeFormatters {
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#BASIC_ISO_DATE Java API]]
       * for more information.
       */
-    val basic: DateTimeFormatter = DF.BASIC_ISO_DATE
+    val Basic: DateTimeFormatter = DF.BASIC_ISO_DATE
 
     /** Formats or parses a date with the offset if available, such as '2011-12-03' or '2011-12-03+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_DATE Java API]]
       * for more information.
       */
-    val date: DateTimeFormatter = DF.ISO_DATE
+    val Date: DateTimeFormatter = DF.ISO_DATE
 
     /** Formats or parses a time, with the offset if available, such as '10:15', '10:15:30' or '10:15:30+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_TIME Java API]]
       * for more information.
       */
-    val time: DateTimeFormatter = DF.ISO_TIME
+    val Time: DateTimeFormatter = DF.ISO_TIME
 
     /** Formats or parses an instant in UTC, such as '2011-12-03T10:15:30Z'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_INSTANT Java API]]
       * for more information.
       */
-    val instant: DateTimeFormatter = DF.ISO_INSTANT
+    val Instant: DateTimeFormatter = DF.ISO_INSTANT
 
     /** Formats or parses a date without an offset, such as '2011-12-03'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_LOCAL_DATE Java API]]
       * for more information.
       */
-    val localDate: DateTimeFormatter = DF.ISO_LOCAL_DATE
+    val LocalDate: DateTimeFormatter = DF.ISO_LOCAL_DATE
 
     /** Formats or parses a date-time without an offset, such as '2011-12-03T10:15:30'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_LOCAL_DATE_TIME Java API]]
       * for more information.
       */
-    val localDateTime: DateTimeFormatter = DF.ISO_LOCAL_DATE_TIME
+    val LocalDateTime: DateTimeFormatter = DF.ISO_LOCAL_DATE_TIME
 
     /** Formats or parses a time without an offset, such as '10:15' or '10:15:30'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_LOCAL_TIME Java API]]
       * for more information.
       */
-    val localTime: DateTimeFormatter = DF.ISO_LOCAL_TIME
+    val LocalTime: DateTimeFormatter = DF.ISO_LOCAL_TIME
 
     /** Formats or parses a date with an offset, such as '2011-12-03+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_OFFSET_DATE Java API]]
       * for more information.
       */
-    val offsetDate: DateTimeFormatter = DF.ISO_OFFSET_DATE
+    val OffsetDate: DateTimeFormatter = DF.ISO_OFFSET_DATE
 
     /** Formats or parses a date-time with an offset, such as '2011-12-03T10:15:30+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_OFFSET_DATE_TIME Java API]]
       * for more information.
       */
-    val offsetDateTime: DateTimeFormatter = DF.ISO_OFFSET_DATE_TIME
+    val OffsetDateTime: DateTimeFormatter = DF.ISO_OFFSET_DATE_TIME
 
     /** Formats or parses a time with an offset, such as '10:15+01:00' or '10:15:30+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_OFFSET_TIME Java API]]
       * for more information.
       */
-    val offsetTime: DateTimeFormatter = DF.ISO_OFFSET_TIME
+    val OffsetTime: DateTimeFormatter = DF.ISO_OFFSET_TIME
 
     /** Formats or parses the ordinal date without an offset, such as '2012-337'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_ORDINAL_DATE Java API]]
       * for more information.
       */
-    val ordinalDate: DateTimeFormatter = DF.ISO_ORDINAL_DATE
+    val OrdinalDate: DateTimeFormatter = DF.ISO_ORDINAL_DATE
   }
 
 }
