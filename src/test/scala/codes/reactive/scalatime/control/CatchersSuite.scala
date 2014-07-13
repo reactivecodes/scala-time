@@ -28,7 +28,7 @@ class CatchersSuite extends FunSuite with Matchers {
 
   test("Catcher provides 'Catcher' instances for 'DateTimeException' instances") {
     val t = Try(LocalDate.parse(")(&#)(@*@&#%@#%@#%)")).recover(Catcher.all(_ => LocalDate.of(2014, 7, 13)))
-    val t1 = Try(LocalTime().get(IsoField.DayOfQuarter)).recover(Catcher.unsupportedTemporalType)
+    val t1 = Try(LocalTime().get(IsoField.dayOfQuarter)).recover(Catcher.unsupportedTemporalType)
     t shouldEqual Success(LocalDate.of(2014, 7, 13))
     t1.isFailure shouldEqual true
     intercept[UnsupportedTemporalTypeException](t1.get)
