@@ -17,28 +17,47 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
+package temporal
 
-import org.threeten.bp.{OffsetTime => OT}
+import ${underlyingBase}.temporal. {
+ChronoUnit => CU
+}
 
 
-/** Factory object for obtaining [[OffsetTime]] instances. */
-object OffsetTime extends OffsetTimeFactory {
+/** Provides a standard set of date period units as [[TemporalUnit]] instances
+  * @since  0.1.0
+  */
+trait ChronoUnits extends AbstractChronoUnits {
 
-  def apply(): OffsetTime = OT.now(Clock())
+  val Centuries: ChronoUnit = CU.CENTURIES
 
-  def apply(clock: Clock): OffsetTime = OT.now(clock)
+  val Days: ChronoUnit = CU.DAYS
 
-  def apply(localTime: LocalTime, offset: ZoneOffset): OffsetTime = OT.of(localTime, offset)
+  val Decades: ChronoUnit = CU.DECADES
 
-  def apply(from: TemporalAccessor): OffsetTime = OT.from(from)
+  val Eras: ChronoUnit = CU.ERAS
 
-  def parse(text: String): OffsetTime = OT.parse(text)
+  val Forever: ChronoUnit = CU.FOREVER
 
-  def parse(text: String, formatter: DateTimeFormatter): OffsetTime = OT.parse(text, formatter)
+  val HalfDays: ChronoUnit = CU.HALF_DAYS
 
-  def of(hour: Int, minute: Int, second: Int, nano: Int, offset: ZoneOffset): OffsetTime = OT.of(hour, minute, second, nano, offset)
+  val Hours: ChronoUnit = CU.HOURS
 
-  val Max: OffsetTime = OT.MAX
+  val Micros: ChronoUnit = CU.MICROS
 
-  val Min: OffsetTime = OT.MIN
+  val Millenia: ChronoUnit = CU.MILLENNIA
+
+  val Millis: ChronoUnit = CU.MILLIS
+
+  val Minutes: ChronoUnit = CU.MINUTES
+
+  val Months: ChronoUnit = CU.MONTHS
+
+  val Nanos: ChronoUnit = CU.NANOS
+
+  val Seconds: ChronoUnit = CU.SECONDS
+
+  val Weeks: ChronoUnit = CU.WEEKS
+
+  val Years: ChronoUnit = CU.YEARS
 }

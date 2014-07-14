@@ -18,28 +18,28 @@
 
 package codes.reactive.scalatime
 
-import java.time.{ZoneOffset => ZO}
+import ${underlyingBase}. {
+Instant => I
+}
 
-/** Provides default time zone [[ZoneOffset]] instances, as well as methods to create them.
+
+/** Factory object for obtaining instances of [[Instant]].
+  *
   * @since  0.1.0
   */
-private[scalatime] trait ZoneOffsets extends AbstractZoneOffsets {
+object Instant extends InstantFactory {
 
-  def apply(temporal: TemporalAccessor): ZoneOffset = ZO.from(temporal)
+  def apply(): Instant = apply(Clock())
 
-  def apply(hours: Int): ZoneOffset = ZO.ofHours(hours)
+  def apply(clock: Clock): Instant = I.now(clock)
 
-  def apply(hours: Int, minutes: Int): ZoneOffset = ZO.ofHoursMinutes(hours, minutes)
+  def milli(epochMilli: Long): Instant = I.ofEpochMilli(epochMilli)
 
-  def apply(hours: Int, minutes: Int, seconds: Int): ZoneOffset = ZO.ofHoursMinutesSeconds(hours, minutes, seconds)
+  def second(epochSecond: Long): Instant = I.ofEpochSecond(epochSecond)
 
-  def apply(offsetId: String): ZoneOffset = ZO.of(offsetId)
+  def second(epochSecond: Long, nanoAdjustment: Long): Instant = I.ofEpochSecond(epochSecond, nanoAdjustment)
 
-  val EAT: ZoneOffset = apply(3)
+  def apply(from: TemporalAccessor): Instant = I.from(from)
 
-  val UTC: ZoneOffset = ZO.UTC
-
-  val MIN: ZoneOffset = ZO.MIN
-
-  val MAX: ZoneOffset = ZO.MAX
+  def parse(text: String): Instant = I.parse(text)
 }

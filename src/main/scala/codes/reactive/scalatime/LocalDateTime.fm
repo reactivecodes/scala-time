@@ -18,7 +18,9 @@
 
 package codes.reactive.scalatime
 
-import org.threeten.bp.{LocalDateTime => LD}
+import ${underlyingBase}. {
+LocalDateTime => LD
+}
 
 
 /** Factory object for creation of [[LocalDateTime]] instances

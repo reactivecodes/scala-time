@@ -17,45 +17,39 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package temporal
 
-import org.threeten.bp.temporal.{ChronoUnit => CU}
+import ${underlyingBase}. {
+LocalTime => LT
+}
 
+/** Factory object for creating [[LocalTime]] instances **/
+object LocalTime extends LocalTimeFactory {
 
-/** Provides a standard set of date period units as [[TemporalUnit]] instances
-  * @since  0.1.0
-  */
-trait ChronoUnits extends AbstractChronoUnits {
+  def apply(): LocalTime = LT.now(Clock())
 
-  val Centuries: ChronoUnit = CU.CENTURIES
+  def apply(clock: Clock): LocalTime = LT.now(clock)
 
-  val Days: ChronoUnit = CU.DAYS
+  def apply(from: TemporalAccessor): LocalTime = LT.from(from)
 
-  val Decades: ChronoUnit = CU.DECADES
+  def parse(text: String): LocalTime = LT.parse(text)
 
-  val Eras: ChronoUnit = CU.ERAS
+  def parse(text: String, formatter: DateTimeFormatter): LocalTime = LT.parse(text, formatter)
 
-  val Forever: ChronoUnit = CU.FOREVER
+  def of(hour: Int, minute: Int, second: Int, nano: Int): LocalTime = LT.of(hour, minute, second, nano)
 
-  val HalfDays: ChronoUnit = CU.HALF_DAYS
+  def of(hour: Int, minute: Int, second: Int): LocalTime = LT.of(hour, minute, second)
 
-  val Hours: ChronoUnit = CU.HOURS
+  def of(hour: Int, minute: Int): LocalTime = LT.of(hour, minute)
 
-  val Micros: ChronoUnit = CU.MICROS
+  def ofNano(nanoOfDay: Long): LocalTime = LT.ofNanoOfDay(nanoOfDay)
 
-  val Millenia: ChronoUnit = CU.MILLENNIA
+  def ofSecond(secondOfDay: Long): LocalTime = LT.ofSecondOfDay(secondOfDay)
 
-  val Millis: ChronoUnit = CU.MILLIS
+  val Max: LocalTime = LT.MAX
 
-  val Minutes: ChronoUnit = CU.MINUTES
+  val Midnight: LocalTime = LT.MIDNIGHT
 
-  val Months: ChronoUnit = CU.MONTHS
+  val Min: LocalTime = Midnight
 
-  val Nanos: ChronoUnit = CU.NANOS
-
-  val Seconds: ChronoUnit = CU.SECONDS
-
-  val Weeks: ChronoUnit = CU.WEEKS
-
-  val Years: ChronoUnit = CU.YEARS
+  val Noon: LocalTime = LT.NOON
 }

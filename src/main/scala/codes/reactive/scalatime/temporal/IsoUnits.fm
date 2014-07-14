@@ -17,37 +17,20 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
+package temporal
 
-import java.time.{LocalTime => LT}
-
-/** Factory object for creating [[LocalTime]] instances **/
-object LocalTime extends LocalTimeFactory {
-
-  def apply(): LocalTime = LT.now(Clock())
-
-  def apply(clock: Clock): LocalTime = LT.now(clock)
-
-  def apply(from: TemporalAccessor): LocalTime = LT.from(from)
-
-  def parse(text: String): LocalTime = LT.parse(text)
-
-  def parse(text: String, formatter: DateTimeFormatter): LocalTime = LT.parse(text, formatter)
-
-  def of(hour: Int, minute: Int, second: Int, nano: Int): LocalTime = LT.of(hour, minute, second, nano)
-
-  def of(hour: Int, minute: Int, second: Int): LocalTime = LT.of(hour, minute, second)
-
-  def of(hour: Int, minute: Int): LocalTime = LT.of(hour, minute)
-
-  def ofNano(nanoOfDay: Long): LocalTime = LT.ofNanoOfDay(nanoOfDay)
-
-  def ofSecond(secondOfDay: Long): LocalTime = LT.ofSecondOfDay(secondOfDay)
-
-  val Max: LocalTime = LT.MAX
-
-  val Midnight: LocalTime = LT.MIDNIGHT
-
-  val Min: LocalTime = Midnight
-
-  val Noon: LocalTime = LT.NOON
+import ${underlyingBase}.temporal. {
+IsoFields => IF
 }
+
+
+/** Provides units specific to the ISO-8601 calendar system as [[TemporalUnit]] instances
+  * @since  0.1.0
+  */
+trait IsoUnits extends AbstractIsoUnits {
+
+  val QuarterYears: TemporalUnit = IF.QUARTER_YEARS
+
+  val WeekBasedYears: TemporalUnit = IF.WEEK_BASED_YEARS
+}
+

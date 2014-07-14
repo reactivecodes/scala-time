@@ -18,33 +18,30 @@
 
 package codes.reactive.scalatime
 
-import java.time.{ZonedDateTime => ZD}
+import ${underlyingBase}. {
+Duration => JD
+}
 
 
-/** Factory object for creation of [[ZonedDateTime]] instances
-  * @since 0.1.0
+/** Factory object for obtaining instances of [[Duration]].
+  *
+  * @since  0.1.0
   */
-object ZonedDateTime extends ZonedDateTimeFactory {
+object Duration extends DurationFactory {
 
+  def apply(amount: TemporalAmount): Duration = JD.from(amount)
 
-  def apply(): ZonedDateTime = ZD.now(Clock())
+  def nanos(nanos: Long): Duration = JD.ofNanos(nanos)
 
-  def apply(clock: Clock): ZonedDateTime = ZD.now(clock)
+  def millis(millis: Long): Duration = JD.ofMillis(millis)
 
-  def apply(from: TemporalAccessor): ZonedDateTime = ZD.from(from)
+  def seconds(seconds: Long): Duration = JD.ofSeconds(seconds)
 
-  def apply(date: LocalDate, time: LocalTime, zone: ZoneID): ZonedDateTime = ZD.of(date, time, zone)
+  def minutes(minutes: Long): Duration = JD.ofMinutes(minutes)
 
-  def apply(dateTime: LocalDateTime, zone: ZoneID): ZonedDateTime = ZD.of(dateTime, zone)
+  def hours(hours: Long): Duration = JD.ofHours(hours)
 
-  def of(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nano: Int, zone: ZoneID): ZonedDateTime =
-    ZD.of(year, month, day, hour, minute, second, nano, zone)
+  def days(days: Long): Duration = JD.ofDays(days)
 
-  def of(year: Int, month: Month, day: Int, hour: Int, minute: Int, second: Int, nano: Int, zone: ZoneID): ZonedDateTime =
-    ZD.of(year, month.getValue, day, hour, minute, second, nano, zone)
-
-  def parse(text: String): ZonedDateTime = ZD.parse(text)
-
-  def parse(text: String, formatter: DateTimeFormatter): ZonedDateTime = ZD.parse(text, formatter)
-
+  val Nil: Duration = JD.ZERO
 }
