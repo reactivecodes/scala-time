@@ -192,8 +192,8 @@
   <header class="page-header">
     <h1>Scala Time</h1>
 
-    <p class="lead">Scala Time is a simple, wrapper for the Java Development Kit <em>java.time</em> API
-      as provided by Java versions 1.8 (Java 8) and greater.</p>
+    <p class="lead">Scala Time is a simple, wrapper for <em>JSR-310 compatible</em> time APIs as provided by JDK
+      versions 1.8 and greater (Java 8), and the Threeten BP Java 7 backport project.</p>
   </header>
 
   <div class="row">
@@ -217,13 +217,19 @@
             binaries are published to the <a href="https://oss.sonatype.org/content/repositories/snapshots"
                                              target="_blank">Sonatype OSS Snapshots</a> public repository. </p>
 
-          <p>
+          <div>
             If using <a href="http://scala-sbt.org" target="_blank">sbt</a>, the current snapshot artefacts can be found
-            at the following coordinates:<br/><code>"codes.reactive" %% "scala-time" % "0.1.0-SNAPSHOT"</code>
-          </p>
+            at the following coordinates:
+            <h6><strong>JDK 1.8</strong></h6>
 
+            <p><code>"codes.reactive" %% "scala-time" % "0.1.0-SNAPSHOT"</code></p>
+            <h6><strong>JDK 1.7</strong></h6>
+
+            <p><code>"codes.reactive" %% "scala-time-threeten" % "0.1.0-SNAPSHOT"</code></p>
+          </div>
+          <br/>
           <p>
-            See documentation for available versions for usage examples and information.
+            See version specific documentation for usage examples and information.
           </p>
         </div>
       </div>
