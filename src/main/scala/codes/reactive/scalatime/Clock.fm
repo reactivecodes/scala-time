@@ -18,7 +18,9 @@
 
 package codes.reactive.scalatime
 
-import java.time.{Clock => JC}
+import ${underlyingBase}. {
+Clock => JC
+}
 
 
 /** Factory object for obtaining instances of [[Clock]].
