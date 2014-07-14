@@ -18,8 +18,6 @@
 
 package codes.reactive.scalatime
 
-import java.time.{ZoneOffset => ZO}
-
 
 /** Provides default time zone [[ZoneOffset]] instances, as well as methods to create them.
   * @since  0.1.0
@@ -27,64 +25,4 @@ import java.time.{ZoneOffset => ZO}
 object ZoneOffset extends ZoneOffsets
 
 
-/** Provides default time zone [[ZoneOffset]] instances, as well as methods to create them.
-  * @since  0.1.0
-  */
-protected[scalatime] trait ZoneOffsets {
 
-  /** Queries a [[Temporal]] to obtain its ZoneOffset (if available).
-    *
-    * @param temporal the temporal object to query
-    * @throws DateTimeException - if unable to extract a [[ZoneOffset]]
-    * @return the [[ZoneOffset]]
-    */
-  def apply(temporal: TemporalAccessor): ZoneOffset = ZO.from(temporal)
-
-  /** Obtains an instance of [[ZoneOffset]] using an offset in hours.
-    *
-    * @param hours  the time-zone offset in hours, from 0 to ±18
-    * @throws DateTimeException - if the offset is not in the required range
-    * @return the [[ZoneOffset]]
-    */
-  def apply(hours: Int): ZoneOffset = ZO.ofHours(hours)
-
-  /** Obtains an instance of [[ZoneOffset]] using an offset in hours and minutes.
-    *
-    * @param hours  the time-zone offset in hours, from 0 to ±18
-    * @param minutes the time-zone offset in minutes, from 0 to ±59
-    * @throws DateTimeException - if the offset is not in the required range
-    * @return the [[ZoneOffset]]
-    */
-  def apply(hours: Int, minutes: Int): ZoneOffset = ZO.ofHoursMinutes(hours, minutes)
-
-  /** Obtains an instance of [[ZoneOffset]] using an offset in hours, minutes and seconds.
-    *
-    * @param hours  the time-zone offset in hours, from 0 to ±18
-    * @param minutes the time-zone offset in minutes, from 0 to ±59
-    * @param seconds the time-zone offset in seconds, from 0 to ±59,
-    * @throws DateTimeException - if the offset is not in the required range
-    * @return the [[ZoneOffset]]
-    */
-  def apply(hours: Int, minutes: Int, seconds: Int): ZoneOffset = ZO.ofHoursMinutesSeconds(hours, minutes, seconds)
-
-  /** Parses a [[scala.Predef.String]] producing a [[ZoneOffset]]
-    * See [[http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#of-java.lang.String- Java API.]]
-    *
-    * @param offsetId the offset ID
-    * @throws DateTimeException - if the offset ID is invalid
-    * @return the [[ZoneOffset]]
-    */
-  def apply(offsetId: String): ZoneOffset = ZO.of(offsetId)
-
-  /** The time-zone offset representing EAT (Eastern Africa Time), with an offset of '+03:00'. **/
-  val EAT: ZoneOffset = apply(3)
-
-  /** The time-zone offset representing UTC (Coordinated Universal Time), with an offset of '0'. **/
-  val UTC: ZoneOffset = ZO.UTC
-
-  /** The time-zone offset representing the minimum supported offset. **/
-  val MIN: ZoneOffset = ZO.MIN
-
-  /** The time-zone offset representing the maximum supported offset. **/
-  val MAX: ZoneOffset = ZO.MAX
-}

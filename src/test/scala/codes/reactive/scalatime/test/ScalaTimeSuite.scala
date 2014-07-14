@@ -32,9 +32,9 @@ class ScalaTimeSuite extends FeatureSpec with Matchers {
 
     val duration = Duration.days(1)
 
-    duration shouldBe java.time.Duration.ofDays(1)
+    duration shouldBe DurationTestHelpers.days(1L)
 
-    period shouldBe  java.time.Period.ofDays(1)
+    period shouldBe PeriodTestHelpers.days(1)
   }
 
   feature("'extended' usage with additional implicits import of 'conversions._'") {
@@ -48,8 +48,8 @@ class ScalaTimeSuite extends FeatureSpec with Matchers {
     val period = 1 day
     val otherPeriod = 2 days
 
-    duration + otherDuration shouldBe java.time.Duration.ofDays(3)
-    period + otherPeriod shouldBe java.time.Period.ofDays(3)
+    duration + otherDuration shouldBe DurationTestHelpers.days(3L)
+    period + otherPeriod shouldBe PeriodTestHelpers.days(3)
   }
 
 }

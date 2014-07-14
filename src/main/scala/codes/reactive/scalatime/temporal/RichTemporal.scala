@@ -19,8 +19,6 @@
 package codes.reactive.scalatime
 package temporal
 
-import java.time.temporal.Temporal
-
 /** Enriches a [[Temporal]] with Scala friendly method syntax
   * @since 0.1.0
   */

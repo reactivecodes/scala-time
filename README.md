@@ -1,7 +1,8 @@
 scala-time
 ==========
 
-Basic Scala utilities allowing for easier use of [Java 8][1] *[java.time][2]* APIs (JSR-310).
+Basic Scala utilities allowing for easier use of *JSR-310 compatible* APIs, with the aim of providing a single
+Scala API (and migration point) between [JDK 1.8 Time][2], and the [Threeten BP][12] JDK 7 backport.
 
 ###### [Build:][11]
   - [*devel*][7]: ![Devel Build Status Icon][3]
@@ -11,9 +12,6 @@ Basic Scala utilities allowing for easier use of [Java 8][1] *[java.time][2]* AP
 ###### Supported Scala Versions:
 - 2.11
 - 2.10
-
-###### Required Java SDK Version:
-- JDK 1.8.0 (Java 8)
 
 __________________________________
 
@@ -25,7 +23,11 @@ published to the [`Sonatype OSS Snapshots`][5] public repository.
 ###### [sbt][6] coordinates:
 
 ```scala
+    // If using JDK 1.8 and above
     "codes.reactive" %% "scala-time" % "0.1.0-SNAPSHOT"
+    
+    // If using JDK 1.7
+    "codes.reactive" %% "scala-time-threeten" % "0.1.0-SNAPSHOT"
 ```
 
 #### Documentation:
@@ -92,3 +94,5 @@ limitations under the License.
 [8]: https://reactive.codes/issues/issues?q=project%3A+%7BScala+Time%7D
 [9]: http://oss.reactive.codes/scala-time
 [11]: https://reactive.codes/ci/project.html?projectId=ScalaTime&tab=projectOverview
+[12]: http://www.threeten.org
+[13]: http://www.threeten.org/threetenbp/apidocs

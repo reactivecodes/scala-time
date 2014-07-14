@@ -1,7 +1,11 @@
 import org.scalastyle.sbt.{PluginKeys => StylePluginKeys, ScalastylePlugin}
 
 
+val jdkVersion = settingKey[String]("Revision of the JDK used to build this project.")
+
 lazy val scalaTime = project.in(file("."))
+
+name <<= (name, jdkVersion)((n, v) => if (v == "1.7") s"$n Threeten" else n)
 
 site.settings
 
@@ -11,7 +15,7 @@ version := "0.1.0-SNAPSHOT"
 
 organization := "codes.reactive"
 
-description := "Basic Scala wrapper for easier use of JDK 1.8.0 (JSR-310) time libraries."
+description := "Basic Scala wrapper for easier use of JDK 1.8.0 (JSR-310) or Threeten BP time libraries."
 
 startYear := Some(2014)
 
@@ -23,11 +27,20 @@ apacheLicensed
 
 publishOSS
 
+jdkVersion := System.getProperty("java.specification.version")
+
 scalaVersion := "2.11.1"
 
 crossScalaVersions := Seq("2.11.1", "2.10.4")
 
-libraryDependencies += scalaTest
+libraryDependencies ++= {
+  def dependencies = Seq(scalaTest)
+  jdkVersion.value match {
+    case "1.8" => dependencies
+    case "1.7" => dependencies :+ threeten
+    case _ => sys.error("Java JDK version not supported. Use JDK 1.8 or 1.7.")
+  }
+}
 
 codesCompileOpts
 
@@ -38,6 +51,10 @@ codesUnidocOpts
 scalacOptions in (Compile, compile) += "-language:postfixOps"
 
 unmanagedSourceDirectories in Compile += (sourceDirectory in Compile).value / s"scala_${scalaBinaryVersion.value}"
+
+unmanagedSourceDirectories in Compile += (sourceDirectory in Compile).value / s"jdk_${jdkVersion.value}"
+
+unmanagedSourceDirectories in Test += (sourceDirectory in Test).value / s"jdk_${jdkVersion.value}"
 
 codesDevelopers := Some(Seq(Developer("Ali Salim Rashid", "arashi01")))
 
@@ -54,3 +71,4 @@ git.remoteRepo := codesGithubRepo.value.developerConnection.drop(8)
 
 def scalaTest = "org.scalatest" %% "scalatest" % "2.1.5" % "test"
 
+def threeten = "org.threeten" % "threetenbp" % "1.0"

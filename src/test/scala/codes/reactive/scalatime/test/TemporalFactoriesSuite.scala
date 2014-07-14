@@ -24,6 +24,8 @@ import org.scalatest.{Matchers, Outcome, fixture}
 
 class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
 
+  import ClockTestHelpers._
+
   override type FixtureParam = (Instant, Clock)
 
   override protected def withFixture(test: OneArgTest): Outcome = {
@@ -33,23 +35,23 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
 
   "Clock" - {
     "can create a default 'Clock' instance from the current UTC System clock" in { _ =>
-      Clock() should be(java.time.Clock.systemUTC())
+      Clock() should be(utcClock)
     }
 
     "can create a 'Clock' instance from the current System clock at a specific ZoneID" in { _ =>
-      Clock(ZoneID EAT) should be(java.time.Clock.system(ZoneID.EAT))
+      Clock(ZoneID EAT) should be(eatClock)
     }
 
     "can create a 'Clock' instance from the current System clock at with the default system time zone" in { _ =>
-      Clock.systemZone should be(java.time.Clock.systemDefaultZone())
+      Clock.systemZone should be(systemDefault)
     }
 
     "can create UTC 'Clock' instance which is fixed to a specific instant" in { f =>
-      Clock.fixed(f _1) should be(java.time.Clock.fixed(f _1, ZoneID.UTC))
+      Clock.fixed(f _1) should be(fixedClock(f _1, ZoneID.UTC))
     }
 
     "can create 'Clock' instance at a specific ZoneID which is fixed to a specific instant" in { f =>
-      Clock.fixed(f _1, ZoneID.EAT) should be(java.time.Clock.fixed(f _1, ZoneID.EAT))
+      Clock.fixed(f _1, ZoneID.EAT) should be(fixedClock(f _1, ZoneID.EAT))
     }
   }
 

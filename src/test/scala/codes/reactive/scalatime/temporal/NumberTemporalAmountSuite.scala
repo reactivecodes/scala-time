@@ -23,40 +23,44 @@ import org.scalatest.{Outcome, fixture, Matchers}
 
 class IntPeriodSuite extends fixture.FunSuite with Matchers {
 
+  import codes.reactive.scalatime.test.PeriodTestHelpers._
+
   override type FixtureParam = IntPeriod
 
   override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new IntPeriod(10)))
 
-  test("An IntPeriod instance can create a Period instance of days from an Int")(i => (i days) shouldEqual java.time.Period.ofDays(10))
+  test("An IntPeriod instance can create a Period instance of days from an Int")(i => (i days) shouldEqual days(10))
 
-  test("An IntPeriod instance can create a Period instance of weeks from an Int")(i => (i weeks) shouldEqual java.time.Period.ofWeeks(10))
+  test("An IntPeriod instance can create a Period instance of weeks from an Int")(i => (i weeks) shouldEqual weeks(10))
 
-  test("An IntPeriod instance can create a Period instance of fortnights from an Int")(i => (i fortnights) shouldEqual java.time.Period.ofWeeks(20))
+  test("An IntPeriod instance can create a Period instance of fortnights from an Int")(i => (i fortnights) shouldEqual weeks(20))
 
-  test("An IntPeriod instance can create a Period instance of months from an Int")(i => (i months) shouldEqual java.time.Period.ofMonths(10))
+  test("An IntPeriod instance can create a Period instance of months from an Int")(i => (i months) shouldEqual months(10))
 
-  test("An IntPeriod instance can create a Period instance of years from an Int")(i => (i years) shouldEqual java.time.Period.ofYears(10))
+  test("An IntPeriod instance can create a Period instance of years from an Int")(i => (i years) shouldEqual years(10))
 
 }
 
 
 class LongDurationSuite extends fixture.FunSuite with Matchers {
 
+  import codes.reactive.scalatime.test.DurationTestHelpers._
+
   override type FixtureParam = LongDuration
 
   override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new LongDuration(10)))
 
-  test("A LongDuration instance can create a Duration instance of nanos from a Long")(i => (i nanos) shouldEqual java.time.Duration.ofNanos(10))
+  test("A LongDuration instance can create a Duration instance of nanos from a Long")(i => (i nanos) shouldEqual nanos(10))
 
-  test("A LongDuration instance can create a Duration instance of a millis from a Long")(i => (i millis) shouldEqual java.time.Duration.ofMillis(10))
+  test("A LongDuration instance can create a Duration instance of a millis from a Long")(i => (i millis) shouldEqual millis(10))
 
-  test("A LongDuration instance can create a Duration instance of a seconds from a Long")(i => (i seconds) shouldEqual java.time.Duration.ofSeconds(10))
+  test("A LongDuration instance can create a Duration instance of a seconds from a Long")(i => (i seconds) shouldEqual seconds(10))
 
-  test("A LongDuration instance can create a Duration instance of a minutes from a Long")(i => (i minutes) shouldEqual java.time.Duration.ofMinutes(10))
+  test("A LongDuration instance can create a Duration instance of a minutes from a Long")(i => (i minutes) shouldEqual minutes(10))
 
-  test("A LongDuration instance can create a Duration instance of a hours from a Long")(i => (i hours) shouldEqual java.time.Duration.ofHours(10))
+  test("A LongDuration instance can create a Duration instance of a hours from a Long")(i => (i hours) shouldEqual hours(10))
 
-  test("A LongDuration instance can create a Duration instance of a days from a Long")(i => (i days) shouldEqual java.time.Duration.ofDays(10))
+  test("A LongDuration instance can create a Duration instance of a days from a Long")(i => (i days) shouldEqual days(10))
 
 }
 

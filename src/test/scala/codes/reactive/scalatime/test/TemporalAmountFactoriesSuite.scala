@@ -20,37 +20,38 @@ package codes.reactive.scalatime.test
 
 import codes.reactive.scalatime.{Period, Duration}
 import org.scalatest.{Matchers, FunSuite}
-import java.time.{Duration => JD, Period => JP}
 
 
 class DurationSuite extends FunSuite with Matchers {
 
+  import DurationTestHelpers._
+
   test("Duration can create an instance of Duration from Long nanos") {
-    Duration.nanos(10L) shouldBe JD.ofNanos(10L)
+    Duration.nanos(10L) shouldBe nanos(10L)
   }
 
   test("Duration can create an instance of Duration from Long millis") {
-    Duration.millis(10L) shouldBe JD.ofMillis(10L)
+    Duration.millis(10L) shouldBe millis(10L)
   }
 
   test("Duration can create an instance of Duration from Long seconds") {
-    Duration.seconds(10L) shouldBe JD.ofSeconds(10L)
+    Duration.seconds(10L) shouldBe seconds(10L)
   }
 
   test("Duration can create an instance of Duration from Long minutes") {
-    Duration.minutes(10L) shouldBe JD.ofMinutes(10L)
+    Duration.minutes(10L) shouldBe minutes(10L)
   }
 
   test("Duration can create an instance of Duration from Long hours") {
-    Duration.hours(10L) shouldBe JD.ofHours(10L)
+    Duration.hours(10L) shouldBe hours(10L)
   }
 
   test("Duration can create an instance of Duration from Long days") {
-    Duration.days(10L) shouldBe JD.ofDays(10L)
+    Duration.days(10L) shouldBe days(10L)
   }
 
   test("Duration can create an instance of Duration of zero") {
-    Duration.nil shouldBe JD.ZERO
+    Duration.Nil shouldBe zero
   }
 
 }
@@ -58,28 +59,30 @@ class DurationSuite extends FunSuite with Matchers {
 
 class PeriodSuite extends FunSuite with Matchers {
 
+  import PeriodTestHelpers._
+
   test("Period can create an instance of Period from Int days") {
-    Period.days(10) shouldBe JP.ofDays(10)
+    Period.days(10) shouldBe days(10)
   }
 
   test("Period can create an instance of Period from Int weeks") {
-    Period.weeks(10) shouldBe JP.ofWeeks(10)
+    Period.weeks(10) shouldBe weeks(10)
   }
 
   test("Period can create an instance of Period from Int fortnights") {
-    Period.fortnights(10) shouldBe JP.ofWeeks(20)
+    Period.fortnights(10) shouldBe weeks(20)
   }
 
   test("Period can create an instance of Period from Int months") {
-    Period.months(10) shouldBe JP.ofMonths(10)
+    Period.months(10) shouldBe months(10)
   }
 
   test("Period can create an instance of Period from Int years") {
-    Period.years(10) shouldBe JP.ofYears(10)
+    Period.years(10) shouldBe years(10)
   }
 
   test("Duration can create an instance of Period of zero") {
-    Period.nil shouldBe JP.ZERO
+    Period.Nil shouldBe zero
   }
 
 }
