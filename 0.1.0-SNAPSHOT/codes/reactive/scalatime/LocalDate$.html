@@ -43,14 +43,14 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">LocalDate</span>
+        <span class="name">LocalDate</span><span class="result"> extends <span class="extype" name="codes.reactive.scalatime.LocalDateFactory">LocalDateFactory</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for creation of <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instances</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/11cacf0/src/main/scala/codes/reactive/scalatime/LocalDate.scala" target="_blank">LocalDate.scala</a></dd><dt>Since</dt><dd><p>0.1.0
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for creation of <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instances</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/723d1b3/src/main/jdk_1.8/codes/reactive/scalatime/LocalDate.scala" target="_blank">LocalDate.scala</a></dd><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.LocalDateFactory">LocalDateFactory</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -68,7 +68,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="codes.reactive.scalatime.LocalDate"><span>LocalDate</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="codes.reactive.scalatime.LocalDate"><span>LocalDate</span></li><li class="in" name="codes.reactive.scalatime.LocalDateFactory"><span>LocalDateFactory</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -147,14 +147,14 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDate#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(from:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.LocalDate"></a>
-      <a id="apply(TemporalAccessor):LocalDate"></a>
+      <a id="apply(scalatime.TemporalAccessor):scalatime.LocalDate"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="from">from: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">TemporalAccessor</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a></span>
+        <span class="name">apply</span><span class="params">(<span name="from">from: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">scalatime.LocalDate</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.LocalDate$@apply(from:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.LocalDate" title="Permalink" target="_top">
@@ -163,18 +163,18 @@
     </span>
       <p class="shortcomment cmt">Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> (if available)
 </p><div class="fullcomment"><div class="comment cmt"><p>Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> (if available)
-</p></div><dl class="paramcmts block"><dt class="param">from</dt><dd class="cmt"><p>the temporal to query</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if unable to convert to an <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a>
+</p></div><dl class="paramcmts block"><dt class="param">from</dt><dd class="cmt"><p>the temporal to query</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDate">LocalDate</a> → LocalDateFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if unable to convert to an <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a>
 </p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDate#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(clock:codes.reactive.scalatime.Clock):codes.reactive.scalatime.LocalDate"></a>
-      <a id="apply(Clock):LocalDate"></a>
+      <a id="apply(scalatime.Clock):scalatime.LocalDate"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="clock">clock: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a></span>
+        <span class="name">apply</span><span class="params">(<span name="clock">clock: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">scalatime.LocalDate</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.LocalDate$@apply(clock:codes.reactive.scalatime.Clock):codes.reactive.scalatime.LocalDate" title="Permalink" target="_top">
@@ -185,17 +185,17 @@
 for the current date.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance by querying the provided clock
 for the current date.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a>
-</p></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDate">LocalDate</a> → LocalDateFactory</dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDate#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply():codes.reactive.scalatime.LocalDate"></a>
-      <a id="apply():LocalDate"></a>
+      <a id="apply():scalatime.LocalDate"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">()</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a></span>
+        <span class="name">apply</span><span class="params">()</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">scalatime.LocalDate</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.LocalDate$@apply():codes.reactive.scalatime.LocalDate" title="Permalink" target="_top">
@@ -206,7 +206,7 @@ for the current date.
 for the current date.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance by querying the current system UTC clock
 for the current date.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a>
-</p></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDate">LocalDate</a> → LocalDateFactory</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -408,14 +408,14 @@ for the current date.
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDate#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="of(year:Int,month:codes.reactive.scalatime.Month,day:Int):codes.reactive.scalatime.LocalDate"></a>
-      <a id="of(Int,Month,Int):LocalDate"></a>
+      <a id="of(Int,scalatime.Month,Int):scalatime.LocalDate"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="package.html#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">Month</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a></span>
+        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="package.html#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">scalatime.Month</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">scalatime.LocalDate</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.LocalDate$@of(year:Int,month:codes.reactive.scalatime.Month,day:Int):codes.reactive.scalatime.LocalDate" title="Permalink" target="_top">
@@ -424,19 +424,19 @@ for the current date.
     </span>
       <p class="shortcomment cmt">Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance from a year, month and day.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance from a year, month and day. An exception will be thrown if the day is
 not valid for the year and month.
-</p></div><dl class="paramcmts block"><dt class="param">year</dt><dd class="cmt"><p>the year to represent</p></dd><dt class="param">month</dt><dd class="cmt"><p>the month to represent</p></dd><dt class="param">day</dt><dd class="cmt"><p>the day to represent</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the value of any field is out of range or if the day-of-month is invalid for
+</p></div><dl class="paramcmts block"><dt class="param">year</dt><dd class="cmt"><p>the year to represent</p></dd><dt class="param">month</dt><dd class="cmt"><p>the month to represent</p></dd><dt class="param">day</dt><dd class="cmt"><p>the day to represent</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDate">LocalDate</a> → LocalDateFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the value of any field is out of range or if the day-of-month is invalid for
                           the month-year.
 </p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDate#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="of(year:Int,month:Int,day:Int):codes.reactive.scalatime.LocalDate"></a>
-      <a id="of(Int,Int,Int):LocalDate"></a>
+      <a id="of(Int,Int,Int):scalatime.LocalDate"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a></span>
+        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">scalatime.LocalDate</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.LocalDate$@of(year:Int,month:Int,day:Int):codes.reactive.scalatime.LocalDate" title="Permalink" target="_top">
@@ -445,19 +445,19 @@ not valid for the year and month.
     </span>
       <p class="shortcomment cmt">Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance from a year, month and day.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance from a year, month and day. An exception will be thrown if the day is
 not valid for the year and month.
-</p></div><dl class="paramcmts block"><dt class="param">year</dt><dd class="cmt"><p>the year to represent</p></dd><dt class="param">month</dt><dd class="cmt"><p>the month to represent</p></dd><dt class="param">day</dt><dd class="cmt"><p>the day to represent</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the value of any field is out of range or if the day-of-month is invalid for
+</p></div><dl class="paramcmts block"><dt class="param">year</dt><dd class="cmt"><p>the year to represent</p></dd><dt class="param">month</dt><dd class="cmt"><p>the month to represent</p></dd><dt class="param">day</dt><dd class="cmt"><p>the day to represent</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDate">LocalDate</a> → LocalDateFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the value of any field is out of range or if the day-of-month is invalid for
                           the month-year.
 </p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDate#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):codes.reactive.scalatime.LocalDate"></a>
-      <a id="parse(String,DateTimeFormatter):LocalDate"></a>
+      <a id="parse(String,scalatime.DateTimeFormatter):scalatime.LocalDate"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="formatter">formatter: <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a></span>
+        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="formatter">formatter: <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">scalatime.DateTimeFormatter</a></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">scalatime.LocalDate</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.LocalDate$@parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):codes.reactive.scalatime.LocalDate" title="Permalink" target="_top">
@@ -467,18 +467,18 @@ not valid for the year and month.
       <p class="shortcomment cmt">Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance from valid text formatted according to the provided <code>formatter</code>, otherwise
 throws an exception.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance from valid text formatted according to the provided <code>formatter</code>, otherwise
 throws an exception.
-</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the text cannot be successfully parsed as an <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a>
+</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDate">LocalDate</a> → LocalDateFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the text cannot be successfully parsed as an <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a>
 </p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDate#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="parse(text:String):codes.reactive.scalatime.LocalDate"></a>
-      <a id="parse(String):LocalDate"></a>
+      <a id="parse(String):scalatime.LocalDate"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a></span>
+        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">scalatime.LocalDate</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.LocalDate$@parse(text:String):codes.reactive.scalatime.LocalDate" title="Permalink" target="_top">
@@ -488,7 +488,7 @@ throws an exception.
       <p class="shortcomment cmt">Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance from valid ISO-8601 extended local date formatted text, otherwise
 throws an exception.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instance from valid ISO-8601 extended local date formatted text, otherwise
 throws an exception.
-</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse such as &quot;2007-12-03&quot;</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the text cannot be successfully parsed as an <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a>
+</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse such as &quot;2007-12-03&quot;</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDate">LocalDate</a> → LocalDateFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the text cannot be successfully parsed as an <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a>
 </p></span></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
@@ -602,7 +602,9 @@ throws an exception.
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="codes.reactive.scalatime.LocalDateFactory">
+              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.LocalDateFactory">LocalDateFactory</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
@@ -621,7 +623,7 @@ throws an exception.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 11cacf0) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 723d1b3) Scala 2.11 API Documentation. </div>
 
 
     </body>

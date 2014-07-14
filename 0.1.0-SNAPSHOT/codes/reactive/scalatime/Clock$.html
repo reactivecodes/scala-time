@@ -43,13 +43,25 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">Clock</span>
+        <span class="name">Clock</span><span class="result"> extends <span class="extype" name="codes.reactive.scalatime.ClockFactory">ClockFactory</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/11cacf0/src/main/scala/codes/reactive/scalatime/Clock.scala" target="_blank">Clock.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><p>The default no-argument <code>apply</code> method differs from the underlying constructor in that it explicitly returns
+the <b>UTC</b> Zone Clock from the current system time. Use <code>apply(ZoneID)</code> to specify an alternative zone,
+or <a href="#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="codes.reactive.scalatime.Clock#systemZone">Clock.systemZone</a> to obtain a Clock from the current system time and zone.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/723d1b3/src/main/jdk_1.8/codes/reactive/scalatime/Clock.scala" target="_blank">Clock.scala</a></dd><div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain a Clock from the current system UTC time</span>
+<span class="kw">val</span> utcClock = Clock()
+
+<span class="cmt">// Obtain a Clock fixed to the current instant</span>
+<span class="kw">val</span> fixed = Clock.fixed(Instant())</pre></li></ol>
+            </div><dt>Since</dt><dd><p>0.1.0
+</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.ClockFactory">ClockFactory</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -67,7 +79,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="codes.reactive.scalatime.Clock"><span>Clock</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="codes.reactive.scalatime.Clock"><span>Clock</span></li><li class="in" name="codes.reactive.scalatime.ClockFactory"><span>ClockFactory</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -146,14 +158,14 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="codes.reactive.scalatime.Clock#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(zone:codes.reactive.scalatime.ZoneID):codes.reactive.scalatime.Clock"></a>
-      <a id="apply(ZoneID):Clock"></a>
+      <a id="apply(scalatime.ZoneID):scalatime.Clock"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="zone">zone: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a></span>
+        <span class="name">apply</span><span class="params">(<span name="zone">zone: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.Clock$@apply(zone:codes.reactive.scalatime.ZoneID):codes.reactive.scalatime.Clock" title="Permalink" target="_top">
@@ -164,17 +176,17 @@
 obtained from the best available system clock.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> from the current instance converted to the provided time zone
 obtained from the best available system clock.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new Clock
-</p></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Clock">Clock</a> → ClockFactory</dd></dl></div>
     </li><li name="codes.reactive.scalatime.Clock#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply():codes.reactive.scalatime.Clock"></a>
-      <a id="apply():Clock"></a>
+      <a id="apply():scalatime.Clock"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">()</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a></span>
+        <span class="name">apply</span><span class="params">()</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.Clock$@apply():codes.reactive.scalatime.Clock" title="Permalink" target="_top">
@@ -183,7 +195,7 @@ obtained from the best available system clock.
     </span>
       <p class="shortcomment cmt">Returns a new <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> from the current instance converted to UTC obtained from the best available system clock.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> from the current instance converted to UTC obtained from the best available system clock.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new Clock
-</p></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Clock">Clock</a> → ClockFactory</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -283,14 +295,14 @@ obtained from the best available system clock.
         </dd></dl></div>
     </li><li name="codes.reactive.scalatime.Clock#fixed" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="fixed(instant:codes.reactive.scalatime.Instant):codes.reactive.scalatime.Clock"></a>
-      <a id="fixed(Instant):Clock"></a>
+      <a id="fixed(scalatime.Instant):scalatime.Clock"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fixed</span><span class="params">(<span name="instant">instant: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a></span>
+        <span class="name">fixed</span><span class="params">(<span name="instant">instant: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.Clock$@fixed(instant:codes.reactive.scalatime.Instant):codes.reactive.scalatime.Clock" title="Permalink" target="_top">
@@ -300,17 +312,17 @@ obtained from the best available system clock.
       <p class="shortcomment cmt">Returns a new <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> that will always return the provided <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>
 </p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> that will always return the provided <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>
 </p></div><dl class="paramcmts block"><dt class="param">instant</dt><dd class="cmt"><p>the instant which will always be returned</p></dd><dt>returns</dt><dd class="cmt"><p>a new Clock
-</p></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Clock">Clock</a> → ClockFactory</dd></dl></div>
     </li><li name="codes.reactive.scalatime.Clock#fixed" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="fixed(instant:codes.reactive.scalatime.Instant,zone:codes.reactive.scalatime.ZoneID):codes.reactive.scalatime.Clock"></a>
-      <a id="fixed(Instant,ZoneID):Clock"></a>
+      <a id="fixed(scalatime.Instant,scalatime.ZoneID):scalatime.Clock"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fixed</span><span class="params">(<span name="instant">instant: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a></span>, <span name="zone">zone: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a></span>
+        <span class="name">fixed</span><span class="params">(<span name="instant">instant: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a></span>, <span name="zone">zone: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.Clock$@fixed(instant:codes.reactive.scalatime.Instant,zone:codes.reactive.scalatime.ZoneID):codes.reactive.scalatime.Clock" title="Permalink" target="_top">
@@ -320,7 +332,7 @@ obtained from the best available system clock.
       <p class="shortcomment cmt">Returns a new <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> that will always return the provided <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> converted to the provided <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>
 </p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> that will always return the provided <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> converted to the provided <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>
 </p></div><dl class="paramcmts block"><dt class="param">instant</dt><dd class="cmt"><p>the instant which will always be returned after zone conversion</p></dd><dt class="param">zone</dt><dd class="cmt"><p>the zone for which the instant will be converted</p></dd><dt>returns</dt><dd class="cmt"><p>a new Clock
-</p></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Clock">Clock</a> → ClockFactory</dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -442,14 +454,14 @@ obtained from the best available system clock.
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="codes.reactive.scalatime.Clock#systemZone" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="systemZone:codes.reactive.scalatime.Clock"></a>
-      <a id="systemZone:Clock"></a>
+      <a id="systemZone:scalatime.Clock"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">systemZone</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a></span>
+        <span class="name">systemZone</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.Clock$@systemZone:codes.reactive.scalatime.Clock" title="Permalink" target="_top">
@@ -460,7 +472,7 @@ obtained from the best available system clock.
 the system time zone.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> from the current instance obtained from the best available system clock, retaining
 the system time zone.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new Clock
-</p></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Clock">Clock</a> → ClockFactory</dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <a id="toString():String"></a>
@@ -556,7 +568,9 @@ the system time zone.
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="codes.reactive.scalatime.ClockFactory">
+              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.ClockFactory">ClockFactory</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
@@ -575,7 +589,7 @@ the system time zone.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 11cacf0) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 723d1b3) Scala 2.11 API Documentation. </div>
 
 
     </body>

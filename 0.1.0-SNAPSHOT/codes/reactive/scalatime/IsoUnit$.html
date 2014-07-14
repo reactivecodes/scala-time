@@ -47,10 +47,10 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides units specific to the ISO-8601 calendar system as <a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/11cacf0/src/main/scala/codes/reactive/scalatime/Iso.scala" target="_blank">Iso.scala</a></dd><dt>Since</dt><dd><p>0.1.0
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides units specific to the ISO-8601 calendar system as <a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/723d1b3/src/main/scala/codes/reactive/scalatime/Iso.scala" target="_blank">Iso.scala</a></dd><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="temporal/IsoUnits.html" class="extype" name="codes.reactive.scalatime.temporal.IsoUnits">IsoUnits</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="temporal/IsoUnits.html" class="extype" name="codes.reactive.scalatime.temporal.IsoUnits">IsoUnits</a>, <span class="extype" name="codes.reactive.scalatime.temporal.AbstractIsoUnits">AbstractIsoUnits</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -68,7 +68,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="codes.reactive.scalatime.IsoUnit"><span>IsoUnit</span></li><li class="in" name="codes.reactive.scalatime.temporal.IsoUnits"><span>IsoUnits</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="codes.reactive.scalatime.IsoUnit"><span>IsoUnit</span></li><li class="in" name="codes.reactive.scalatime.temporal.IsoUnits"><span>IsoUnits</span></li><li class="in" name="codes.reactive.scalatime.temporal.AbstractIsoUnits"><span>AbstractIsoUnits</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -147,14 +147,14 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="codes.reactive.scalatime.temporal.IsoUnits#QuarterYears" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="QuarterYears:codes.reactive.scalatime.TemporalUnit"></a>
-      <a id="QuarterYears:TemporalUnit"></a>
+      <a id="QuarterYears:scalatime.TemporalUnit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">QuarterYears</span><span class="result">: <a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a></span>
+        <span class="name">QuarterYears</span><span class="result">: <a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">scalatime.TemporalUnit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.IsoUnit$@QuarterYears:codes.reactive.scalatime.TemporalUnit" title="Permalink" target="_top">
@@ -163,17 +163,17 @@
     </span>
       <p class="shortcomment cmt"><a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> which represents the concept of a quarter-year.</p><div class="fullcomment"><div class="comment cmt"><p><a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> which represents the concept of a quarter-year. For the ISO calendar system, it is equal to 3 months.
 The estimated duration of a quarter-year is one quarter of 365.2425 Days.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="temporal/IsoUnits.html" class="extype" name="codes.reactive.scalatime.temporal.IsoUnits">IsoUnits</a></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="temporal/IsoUnits.html" class="extype" name="codes.reactive.scalatime.temporal.IsoUnits">IsoUnits</a> → AbstractIsoUnits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.temporal.IsoUnits#WeekBasedYears" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="WeekBasedYears:codes.reactive.scalatime.TemporalUnit"></a>
-      <a id="WeekBasedYears:TemporalUnit"></a>
+      <a id="WeekBasedYears:scalatime.TemporalUnit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">WeekBasedYears</span><span class="result">: <a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a></span>
+        <span class="name">WeekBasedYears</span><span class="result">: <a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">scalatime.TemporalUnit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.IsoUnit$@WeekBasedYears:codes.reactive.scalatime.TemporalUnit" title="Permalink" target="_top">
@@ -183,7 +183,7 @@ The estimated duration of a quarter-year is one quarter of 365.2425 Days.
       <p class="shortcomment cmt"><a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> which represents week-based-years for the purpose of addition and subtraction.</p><div class="fullcomment"><div class="comment cmt"><p><a href="package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> which represents week-based-years for the purpose of addition and subtraction. The estimated duration of
 a week-based-year is the same as that of a standard ISO year at 365.2425 Days.</p><p>The rules for addition add the number of week-based-years to the existing value for the week-based-year field. If
 the resulting week-based-year only has 52 weeks, then the date will be in week 1 of the following week-based-year.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="temporal/IsoUnits.html" class="extype" name="codes.reactive.scalatime.temporal.IsoUnits">IsoUnits</a></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="temporal/IsoUnits.html" class="extype" name="codes.reactive.scalatime.temporal.IsoUnits">IsoUnits</a> → AbstractIsoUnits</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -497,6 +497,8 @@ the resulting week-based-year only has 52 weeks, then the date will be in week 1
         <div id="inheritedMembers">
         <div class="parent" name="codes.reactive.scalatime.temporal.IsoUnits">
               <h3>Inherited from <a href="temporal/IsoUnits.html" class="extype" name="codes.reactive.scalatime.temporal.IsoUnits">IsoUnits</a></h3>
+            </div><div class="parent" name="codes.reactive.scalatime.temporal.AbstractIsoUnits">
+              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.temporal.AbstractIsoUnits">AbstractIsoUnits</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
@@ -516,7 +518,7 @@ the resulting week-based-year only has 52 weeks, then the date will be in week 1
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 11cacf0) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 723d1b3) Scala 2.11 API Documentation. </div>
 
 
     </body>
