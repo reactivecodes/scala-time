@@ -21,6 +21,7 @@ package codes.reactive.scalatime
 import org.threeten.bp.{OffsetTime => OT}
 
 
+/** Factory object for obtaining [[OffsetTime]] instances. */
 object OffsetTime extends OffsetTimeFactory {
 
   def apply(): OffsetTime = OT.now(Clock())

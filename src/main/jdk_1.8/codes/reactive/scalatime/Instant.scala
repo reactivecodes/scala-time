@@ -20,6 +20,11 @@ package codes.reactive.scalatime
 
 import java.time.{Instant => I}
 
+
+/** Factory object for obtaining instances of [[Instant]].
+  *
+  * @since  0.1.0
+  */
 object Instant extends InstantFactory {
 
   def apply(): Instant = apply(Clock())

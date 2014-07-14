@@ -21,6 +21,7 @@ package codes.reactive.scalatime
 import java.time.{Period => JP}
 
 
+/** Factory object for obtaining [[Period]] instances. */
 object Period extends PeriodFactory {
 
   /** Obtains an instance of [[Period]] from a temporal amount by looping around the set of units from the amount

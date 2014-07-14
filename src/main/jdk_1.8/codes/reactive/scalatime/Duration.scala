@@ -20,6 +20,11 @@ package codes.reactive.scalatime
 
 import java.time.{Duration => JD}
 
+
+/** Factory object for obtaining instances of [[Duration]].
+  *
+  * @since  0.1.0
+  */
 object Duration extends DurationFactory {
 
   def apply(amount: TemporalAmount): Duration = JD.from(amount)

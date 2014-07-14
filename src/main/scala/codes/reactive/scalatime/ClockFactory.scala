@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime
 
-
+/** Factory for [[Clock]] instances. */
 private[scalatime] abstract class ClockFactory {
 
 

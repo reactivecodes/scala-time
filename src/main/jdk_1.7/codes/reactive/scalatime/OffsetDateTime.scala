@@ -20,6 +20,8 @@ package codes.reactive.scalatime
 
 import org.threeten.bp.{OffsetDateTime => OD}
 
+
+/** Factory object for obtaining [[OffsetDateTime]] instances. */
 object OffsetDateTime extends OffsetDateTimeFactory {
 
 

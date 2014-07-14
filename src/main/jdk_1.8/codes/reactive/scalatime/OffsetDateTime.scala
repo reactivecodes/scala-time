@@ -20,6 +20,7 @@ package codes.reactive.scalatime
 
 import java.time.{OffsetDateTime => OD}
 
+/** Factory object for obtaining [[OffsetDateTime]] instances. */
 object OffsetDateTime extends OffsetDateTimeFactory {
 
 

@@ -20,6 +20,11 @@ package codes.reactive.scalatime
 
 import org.threeten.bp.{Duration => JD}
 
+
+/** Factory object for obtaining instances of [[Duration]].
+  *
+  * @since  0.1.0
+  */
 object Duration extends DurationFactory {
 
   def apply(amount: TemporalAmount): Duration = JD.from(amount)
