@@ -17,45 +17,31 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package temporal
 
-import org.threeten.bp.temporal.{ChronoUnit => CU}
+import ${underlyingBase}. {
+Duration => JD
+}
 
 
-/** Provides a standard set of date period units as [[TemporalUnit]] instances
+/** Factory object for obtaining instances of [[Duration]].
+  *
   * @since  0.1.0
   */
-trait ChronoUnits extends AbstractChronoUnits {
+object Duration extends DurationFactory {
 
-  val Centuries: ChronoUnit = CU.CENTURIES
+  def apply(amount: TemporalAmount): Duration = JD.from(amount)
 
-  val Days: ChronoUnit = CU.DAYS
+  def nanos(nanos: Long): Duration = JD.ofNanos(nanos)
 
-  val Decades: ChronoUnit = CU.DECADES
+  def millis(millis: Long): Duration = JD.ofMillis(millis)
 
-  val Eras: ChronoUnit = CU.ERAS
+  def seconds(seconds: Long): Duration = JD.ofSeconds(seconds)
 
-  val Forever: ChronoUnit = CU.FOREVER
+  def minutes(minutes: Long): Duration = JD.ofMinutes(minutes)
 
-  val HalfDays: ChronoUnit = CU.HALF_DAYS
+  def hours(hours: Long): Duration = JD.ofHours(hours)
 
-  val Hours: ChronoUnit = CU.HOURS
+  def days(days: Long): Duration = JD.ofDays(days)
 
-  val Micros: ChronoUnit = CU.MICROS
-
-  val Millenia: ChronoUnit = CU.MILLENNIA
-
-  val Millis: ChronoUnit = CU.MILLIS
-
-  val Minutes: ChronoUnit = CU.MINUTES
-
-  val Months: ChronoUnit = CU.MONTHS
-
-  val Nanos: ChronoUnit = CU.NANOS
-
-  val Seconds: ChronoUnit = CU.SECONDS
-
-  val Weeks: ChronoUnit = CU.WEEKS
-
-  val Years: ChronoUnit = CU.YEARS
+  val Nil: Duration = JD.ZERO
 }

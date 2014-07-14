@@ -18,7 +18,9 @@
 
 package codes.reactive.scalatime.format
 
-import java.time.format.{DateTimeFormatter => DF}
+import ${underlyingBase}.format. {
+DateTimeFormatter => DF
+}
 import java.util.Locale
 
 import codes.reactive.scalatime._

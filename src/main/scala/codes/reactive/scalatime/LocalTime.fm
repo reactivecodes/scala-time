@@ -18,37 +18,38 @@
 
 package codes.reactive.scalatime
 
-import java.time.{Clock => JC}
+import ${underlyingBase}. {
+LocalTime => LT
+}
 
+/** Factory object for creating [[LocalTime]] instances **/
+object LocalTime extends LocalTimeFactory {
 
-/** Factory object for obtaining instances of [[Clock]].
-  *
-  * The default no-argument `apply` method differs from the underlying constructor in that it explicitly returns
-  * the '''UTC''' Zone Clock from the current system time. Use `apply(ZoneID)` to specify an alternative zone,
-  * or [[Clock.systemZone]] to obtain a Clock from the current system time and zone.
-  *
-  * @example
-  * {{{
-  *             import codes.reactive.scalatime._
-  *
-  *             // Obtain a Clock from the current system UTC time
-  *             val utcClock = Clock()
-  *
-  *             // Obtain a Clock fixed to the current instant
-  *             val fixed = Clock.fixed(Instant())
-  * }}}
-  *
-  * @since 0.1.0
-  */
-object Clock extends ClockFactory {
+  def apply(): LocalTime = LT.now(Clock())
 
-  def apply(): Clock = JC.systemUTC()
+  def apply(clock: Clock): LocalTime = LT.now(clock)
 
-  def apply(zone: ZoneID): Clock = JC.system(zone)
+  def apply(from: TemporalAccessor): LocalTime = LT.from(from)
 
-  def systemZone: Clock = JC.systemDefaultZone()
+  def parse(text: String): LocalTime = LT.parse(text)
 
-  def fixed(instant: Instant, zone: ZoneID): Clock = JC.fixed(instant, zone)
+  def parse(text: String, formatter: DateTimeFormatter): LocalTime = LT.parse(text, formatter)
 
-  def fixed(instant: Instant): Clock = JC.fixed(instant, ZoneOffset.UTC)
+  def of(hour: Int, minute: Int, second: Int, nano: Int): LocalTime = LT.of(hour, minute, second, nano)
+
+  def of(hour: Int, minute: Int, second: Int): LocalTime = LT.of(hour, minute, second)
+
+  def of(hour: Int, minute: Int): LocalTime = LT.of(hour, minute)
+
+  def ofNano(nanoOfDay: Long): LocalTime = LT.ofNanoOfDay(nanoOfDay)
+
+  def ofSecond(secondOfDay: Long): LocalTime = LT.ofSecondOfDay(secondOfDay)
+
+  val Max: LocalTime = LT.MAX
+
+  val Midnight: LocalTime = LT.MIDNIGHT
+
+  val Min: LocalTime = Midnight
+
+  val Noon: LocalTime = LT.NOON
 }

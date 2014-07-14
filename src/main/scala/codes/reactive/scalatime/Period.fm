@@ -18,7 +18,9 @@
 
 package codes.reactive.scalatime
 
-import java.time.{Period => JP}
+import ${underlyingBase}. {
+Period => JP
+}
 
 
 /** Factory object for obtaining [[Period]] instances. */

@@ -17,18 +17,29 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package temporal
 
-import org.threeten.bp.temporal.{IsoFields => IF}
+import ${underlyingBase}.{ZoneId => ZI}
 
-
-/** Provides units specific to the ISO-8601 calendar system as [[TemporalUnit]] instances
+/** Provides default time zone [[ZoneID]] instances, as well as methods to create them.
   * @since  0.1.0
   */
-trait IsoUnits extends AbstractIsoUnits {
+private[scalatime] trait ZoneIDs extends AbstractZoneIDs {
 
-  val QuarterYears: TemporalUnit = IF.QUARTER_YEARS
+  val EAT: ZoneID = apply(entries.find(_.contains("Nairobi")).get)
 
-  val WeekBasedYears: TemporalUnit = IF.WEEK_BASED_YEARS
+  val UTC: ZoneID = apply("Z")
+
+  def apply(temporal: TemporalAccessor): ZoneID = ZI.from(temporal)
+
+  def apply(zoneID: String): ZoneID = ZI.of(zoneID)
+
+  def apply(zoneID: String, aliasMap: Map[String, String]): ZoneID = ZI.of(zoneID,
+    collection.JavaConversions.mapAsJavaMap(aliasMap))
+
+  def apply(prefix: String, offset: ZoneOffset): ZoneID = ZI.ofOffset(prefix, offset)
+
+  def system: ZoneID = ZI.systemDefault
+
+  def entries: Set[String] = collection.JavaConversions.asScalaSet(ZI.getAvailableZoneIds).toSet
+
 }
-

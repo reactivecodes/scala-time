@@ -18,26 +18,39 @@
 
 package codes.reactive.scalatime
 
-import java.time.{Instant => I}
+import ${underlyingBase}. {
+Clock => JC
+}
 
 
-/** Factory object for obtaining instances of [[Instant]].
+/** Factory object for obtaining instances of [[Clock]].
   *
-  * @since  0.1.0
+  * The default no-argument `apply` method differs from the underlying constructor in that it explicitly returns
+  * the '''UTC''' Zone Clock from the current system time. Use `apply(ZoneID)` to specify an alternative zone,
+  * or [[Clock.systemZone]] to obtain a Clock from the current system time and zone.
+  *
+  * @example
+  * {{{
+  *             import codes.reactive.scalatime._
+  *
+  *             // Obtain a Clock from the current system UTC time
+  *             val utcClock = Clock()
+  *
+  *             // Obtain a Clock fixed to the current instant
+  *             val fixed = Clock.fixed(Instant())
+  * }}}
+  *
+  * @since 0.1.0
   */
-object Instant extends InstantFactory {
+object Clock extends ClockFactory {
 
-  def apply(): Instant = apply(Clock())
+  def apply(): Clock = JC.systemUTC()
 
-  def apply(clock: Clock): Instant = I.now(clock)
+  def apply(zone: ZoneID): Clock = JC.system(zone)
 
-  def milli(epochMilli: Long): Instant = I.ofEpochMilli(epochMilli)
+  def systemZone: Clock = JC.systemDefaultZone()
 
-  def second(epochSecond: Long): Instant = I.ofEpochSecond(epochSecond)
+  def fixed(instant: Instant, zone: ZoneID): Clock = JC.fixed(instant, zone)
 
-  def second(epochSecond: Long, nanoAdjustment: Long): Instant = I.ofEpochSecond(epochSecond, nanoAdjustment)
-
-  def apply(from: TemporalAccessor): Instant = I.from(from)
-
-  def parse(text: String): Instant = I.parse(text)
+  def fixed(instant: Instant): Clock = JC.fixed(instant, ZoneOffset.UTC)
 }

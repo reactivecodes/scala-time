@@ -3,13 +3,15 @@ import org.scalastyle.sbt.{PluginKeys => StylePluginKeys, ScalastylePlugin}
 
 val jdkVersion = settingKey[String]("Revision of the JDK used to build this project.")
 
-lazy val scalaTime = project.in(file("."))
+lazy val scalaTime = project.in(file(".")).configs(Fmpp)
 
 name <<= (name, jdkVersion)((n, v) => if (v == "1.7") s"$n Threeten" else n)
 
 site.settings
 
 ghpages.settings
+
+fmppSettings
 
 version := "0.1.0-SNAPSHOT"
 
@@ -72,3 +74,5 @@ git.remoteRepo := codesGithubRepo.value.developerConnection.drop(8)
 def scalaTest = "org.scalatest" %% "scalatest" % "2.1.5" % "test"
 
 def threeten = "org.threeten" % "threetenbp" % "1.0"
+
+fmppArgs ++= Seq(s"-DunderlyingBase:${if (jdkVersion.value == "1.7") "org.threeten.bp" else "java.time"}")
