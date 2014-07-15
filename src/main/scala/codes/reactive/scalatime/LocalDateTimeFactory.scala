@@ -131,20 +131,14 @@ private[scalatime] abstract class LocalDateTimeFactory {
     */
   def of(year: Int, month: Month, day: Int, hour: Int, minute: Int): LocalDateTime
 
-  /** Creates a new [[LocalDateTime]] instance from valid ISO-8601 extended offset date time formatted text, otherwise
-    * throws an exception.
+  /** Tries to obtain a [[LocalDateTime]] instance from text formatted according to
+    * [[DateTimeFormatter.Iso.LocalDateTime]].
     *
     * @param text the text to parse such as "2007-12-03T10:15:30"
-    * @throws DateTimeException - if the text cannot be successfully parsed as a LocalDate.
     */
-  def parse(text: String): LocalDateTime
+  def parse(text: String): Try[LocalDateTime]
 
-  /** Creates a new [[LocalDateTime]] instance from valid text formatted according to the provided `formatter`, otherwise
-    * throws an exception.
-    *
-    * @param text the text to parse
-    * @throws DateTimeException - if the text cannot be successfully parsed as a LocalDate.
-    */
-  def parse(text: String, formatter: DateTimeFormatter): LocalDateTime
+  /** Tries to obtain a [[LocalDateTime]] instance from valid text formatted according to the provided `formatter`. */
+  def parse(text: String, formatter: DateTimeFormatter): Try[LocalDateTime]
 
 }

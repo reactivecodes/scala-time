@@ -44,8 +44,8 @@ object ZonedDateTime extends ZonedDateTimeFactory {
   def of(year: Int, month: Month, day: Int, hour: Int, minute: Int, second: Int, nano: Int, zone: ZoneID): ZonedDateTime =
     ZD.of(year, month.getValue, day, hour, minute, second, nano, zone)
 
-  def parse(text: String): ZonedDateTime = ZD.parse(text)
+  def parse(text: String): Try[ZonedDateTime] = Try(ZD.parse(text))
 
-  def parse(text: String, formatter: DateTimeFormatter): ZonedDateTime = ZD.parse(text, formatter)
+  def parse(text: String, formatter: DateTimeFormatter): Try[ZonedDateTime] = Try(ZD.parse(text, formatter))
 
 }

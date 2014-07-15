@@ -31,9 +31,9 @@ object LocalTime extends LocalTimeFactory {
 
   def from(from: TemporalAccessor): Try[LocalTime] = Try(LT.from(from))
 
-  def parse(text: String): LocalTime = LT.parse(text)
+  def parse(text: String): Try[LocalTime] = Try(LT.parse(text))
 
-  def parse(text: String, formatter: DateTimeFormatter): LocalTime = LT.parse(text, formatter)
+  def parse(text: String, formatter: DateTimeFormatter): Try[LocalTime] = Try(LT.parse(text, formatter))
 
   def of(hour: Int, minute: Int, second: Int, nano: Int): LocalTime = LT.of(hour, minute, second, nano)
 

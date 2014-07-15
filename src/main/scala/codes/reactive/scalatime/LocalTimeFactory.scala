@@ -40,21 +40,14 @@ private[scalatime] abstract class LocalTimeFactory {
     */
   def from(from: TemporalAccessor): Try[LocalTime]
 
-  /** Creates a new [[LocalTime]] instance from valid ISO-8601 extended local time formatted text, otherwise
-    * throws an exception.
+  /** Tries to obtain a [[LocalTime]] instance from text formatted according to [[DateTimeFormatter.Iso.LocalTime]].
     *
     * @param text the text to parse such as "10:15:30"
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[LocalTime]]
     */
-  def parse(text: String): LocalTime
+  def parse(text: String): Try[LocalTime]
 
-  /** Creates a new [[LocalTime]] instance from valid text formatted according to the provided `formatter`, otherwise
-    * throws an exception.
-    *
-    * @param text the text to parse
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[LocalTime]]
-    */
-  def parse(text: String, formatter: DateTimeFormatter): LocalTime
+  /** Tries to obtain a [[LocalTime]] instance from valid text formatted according to the provided `formatter`. */
+  def parse(text: String, formatter: DateTimeFormatter): Try[LocalTime]
 
   /** Creates a new [[LocalTime]] instance from an hour, minute, second and nanosecond.
     *

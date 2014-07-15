@@ -65,6 +65,8 @@ trait TimeFormatters extends AbstractTimeFormatters {
     val OffsetTime: DateTimeFormatter = DF.ISO_OFFSET_TIME
 
     val OrdinalDate: DateTimeFormatter = DF.ISO_ORDINAL_DATE
+
+    val ZonedDateTime: DateTimeFormatter = DF.ISO_ZONED_DATE_TIME
   }
 
 }

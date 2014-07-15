@@ -38,21 +38,14 @@ private[scalatime] abstract class OffsetTimeFactory {
     */
   def from(from: TemporalAccessor): Try[OffsetTime]
 
-  /** Obtains an [[OffsetTime]] instance from valid ISO-8601 extended local time formatted text, otherwise
-    * throws an exception.
+  /** Tries to obtain an [[OffsetTime]] instance from text formatted according to [[DateTimeFormatter.Iso.OffsetTime]].
     *
     * @param text the text to parse such as "10:15:30"
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[OffsetTime]]
     */
-  def parse(text: String): OffsetTime
+  def parse(text: String): Try[OffsetTime]
 
-  /** Obtains an [[OffsetTime]] instance from valid text formatted according to the provided `formatter`, otherwise
-    * throws an exception.
-    *
-    * @param text the text to parse
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[OffsetTime]]
-    */
-  def parse(text: String, formatter: DateTimeFormatter): OffsetTime
+  /** Tries to obtain an [[OffsetTime]] instance from valid text formatted according to the provided `formatter`. */
+  def parse(text: String, formatter: DateTimeFormatter): Try[OffsetTime]
 
   /** Obtains an [[OffsetTime]] instance from an hour, minute, second and nanosecond.
     *

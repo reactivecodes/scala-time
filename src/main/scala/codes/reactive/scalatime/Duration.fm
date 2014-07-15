@@ -46,6 +46,8 @@ object Duration extends DurationFactory {
 
   def from(amount: TemporalAmount): Try[Duration] = Try(JD.from(amount))
 
+  def parse(text: String): Try[Duration] = Try(JD.parse(text))
+
   def nanos(nanos: Long): Duration = JD.ofNanos(nanos)
 
   def millis(millis: Long): Duration = JD.ofMillis(millis)

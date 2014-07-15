@@ -26,6 +26,17 @@ import scala.util.control.Exception.Catcher
 /** Provides methods for obtaining default [[scala.util.control.Exception.Catcher]]s for possible
   * [[DateTimeException]]s thrown by the underlying Java API.
   *
+  * @example
+  *          {{{
+  *            import codes.reactive.scalatime._
+  *
+  *             // Obtain a TimeCatcher for all DateTimeExceptions
+  *             val catchAllLocalDate = Catcher.all(_ => LocalDate())
+  *             
+  *             // Use the catcher to recover from a parse error
+  *             val recovered = Try(LocalDate.parse(")(&#)(@*@&#%@#%@#%)")).recover(catchAllLocalDate)
+  *          }}}
+  *
   * @since  0.1.0
   */
 object Catcher {
@@ -41,9 +52,9 @@ object Catcher {
 
   /** Returns a [[scala.util.control.Exception.Catcher]] for all [[DateTimeException]]s.
     *
-    * @param  onMatch function to execute if the exception is encountered.
+    * @param  f function to execute if the exception is encountered.
     */
-  def all[A](onMatch: DateTimeException => A): Catcher[A] = catcher(onMatch)
+  def all[A](f: DateTimeException => A): Catcher[A] = catcher(f)
 
   /** Returns a [[scala.util.control.Exception.Catcher]] for an [[UnsupportedTemporalTypeException]], an exception
     * indicating that a ChronoField or ChronoUnit is not supported for a Temporal class.
@@ -53,10 +64,10 @@ object Catcher {
   /** Returns a [[scala.util.control.Exception.Catcher]] for an [[UnsupportedTemporalTypeException]], an exception
     * indicating that a ChronoField or ChronoUnit is not supported for a Temporal class.
     *
-    * @param  onMatch function to execute if the exception is encountered.
+    * @param  f function to execute if the exception is encountered.
     */
-  def unsupportedTemporalType[A](onMatch: UnsupportedTemporalTypeException => A): Catcher[A] =
-    catcher(onMatch)
+  def unsupportedTemporalType[A](f: UnsupportedTemporalTypeException => A): Catcher[A] =
+    catcher(f)
 
   /** Returns a [[scala.util.control.Exception.Catcher]] for a [[ZoneRulesException]], an exception
     * indicating a problems with the configured time-zone rules.
@@ -66,7 +77,7 @@ object Catcher {
   /** Returns a [[scala.util.control.Exception.Catcher]] for a [[ZoneRulesException]], an exception
     * indicating a problems with the configured time-zone rules.
     *
-    * @param  onMatch function to execute if the exception is encountered.
+    * @param  f function to execute if the exception is encountered.
     */
-  def zoneRules[A](onMatch: ZoneRulesException => A): Catcher[A] = catcher(onMatch)
+  def zoneRules[A](f: ZoneRulesException => A): Catcher[A] = catcher(f)
 }

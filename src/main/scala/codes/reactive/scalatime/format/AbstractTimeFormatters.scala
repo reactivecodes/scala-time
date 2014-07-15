@@ -64,65 +64,71 @@ private[scalatime] trait AbstractIsoFormatters {
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#BASIC_ISO_DATE Java API]]
       * for more information.
       */
-    val Basic: DateTimeFormatter
+    def Basic: DateTimeFormatter
 
     /** Formats or parses a date with the offset if available, such as '2011-12-03' or '2011-12-03+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_DATE Java API]]
       * for more information.
       */
-    val Date: DateTimeFormatter
+    def Date: DateTimeFormatter
 
     /** Formats or parses a time, with the offset if available, such as '10:15', '10:15:30' or '10:15:30+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_TIME Java API]]
       * for more information.
       */
-    val Time: DateTimeFormatter
+    def Time: DateTimeFormatter
 
     /** Formats or parses an instant in UTC, such as '2011-12-03T10:15:30Z'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_INSTANT Java API]]
       * for more information.
       */
-    val Instant: DateTimeFormatter
+    def Instant: DateTimeFormatter
 
     /** Formats or parses a date without an offset, such as '2011-12-03'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_LOCAL_DATE Java API]]
       * for more information.
       */
-    val LocalDate: DateTimeFormatter
+    def LocalDate: DateTimeFormatter
 
     /** Formats or parses a date-time without an offset, such as '2011-12-03T10:15:30'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_LOCAL_DATE_TIME Java API]]
       * for more information.
       */
-    val LocalDateTime: DateTimeFormatter
+    def LocalDateTime: DateTimeFormatter
 
     /** Formats or parses a time without an offset, such as '10:15' or '10:15:30'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_LOCAL_TIME Java API]]
       * for more information.
       */
-    val LocalTime: DateTimeFormatter
+    def LocalTime: DateTimeFormatter
 
     /** Formats or parses a date with an offset, such as '2011-12-03+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_OFFSET_DATE Java API]]
       * for more information.
       */
-    val OffsetDate: DateTimeFormatter
+    def OffsetDate: DateTimeFormatter
 
     /** Formats or parses a date-time with an offset, such as '2011-12-03T10:15:30+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_OFFSET_DATE_TIME Java API]]
       * for more information.
       */
-    val OffsetDateTime: DateTimeFormatter
+    def OffsetDateTime: DateTimeFormatter
 
     /** Formats or parses a time with an offset, such as '10:15+01:00' or '10:15:30+01:00'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_OFFSET_TIME Java API]]
       * for more information.
       */
-    val OffsetTime: DateTimeFormatter
+    def OffsetTime: DateTimeFormatter
+
+     /** Formats or parses a date time with an offset and zone, such as '2011-12-03T10:15:30+01:00[Europe/Paris]'.
+      * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_ZONED_DATE_TIME Java API]]
+      * for more information.
+      */
+    def ZonedDateTime: DateTimeFormatter
 
     /** Formats or parses the ordinal date without an offset, such as '2012-337'.
       * See [[http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_ORDINAL_DATE Java API]]
       * for more information.
       */
-    val OrdinalDate: DateTimeFormatter
+    def OrdinalDate: DateTimeFormatter
   }

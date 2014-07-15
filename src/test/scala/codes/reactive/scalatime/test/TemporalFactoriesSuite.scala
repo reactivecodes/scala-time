@@ -70,7 +70,7 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
     }
 
     "can create an 'Instant' instance from a parsed String" in { _ =>
-      Instant.parse("2014-06-09T16:28:49.505000000Z") shouldEqual Instant.milli(1402331329505L)
+      Instant.parse("2014-06-09T16:28:49.505000000Z").get shouldEqual Instant.milli(1402331329505L)
     }
   }
 

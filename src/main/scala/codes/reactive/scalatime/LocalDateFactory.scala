@@ -40,10 +40,9 @@ private[scalatime] abstract class LocalDateFactory {
     */
   def apply(clock: Clock): LocalDate
 
-  /** Queries a [[Temporal]] to obtain an [[LocalDate]] (if available)
+  /** Tries to query a [[Temporal]] to obtain an [[LocalDate]] (if available)
     *
     * @param from the temporal to query
-    * @throws DateTimeException - if unable to convert to an [[LocalDate]]
     */
   def from(from: TemporalAccessor): Try[LocalDate]
 
@@ -70,20 +69,12 @@ private[scalatime] abstract class LocalDateFactory {
     */
   def of(year: Int, month: Month, day: Int): LocalDate
 
-  /** Creates a new [[LocalDate]] instance from valid ISO-8601 extended local date formatted text, otherwise
-    * throws an exception.
-    *
-    * @param text the text to parse such as "2007-12-03"
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[LocalDate]]
+  /** Tries to obtain a [[LocalDate]] instance from text formatted according to
+    * [[DateTimeFormatter.Iso.LocalDate]].
     */
-  def parse(text: String): LocalDate
+  def parse(text: String): Try[LocalDate]
 
-  /** Creates a new [[LocalDate]] instance from valid text formatted according to the provided `formatter`, otherwise
-    * throws an exception.
-    *
-    * @param text the text to parse
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[LocalDate]]
-    */
-  def parse(text: String, formatter: DateTimeFormatter): LocalDate
+  /** Tries to obtain a [[LocalDate]] instance from valid text formatted according to the provided `formatter`. */
+  def parse(text: String, formatter: DateTimeFormatter): Try[LocalDate]
 
 }

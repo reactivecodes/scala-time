@@ -33,11 +33,7 @@ private[scalatime] abstract class ZonedDateTimeFactory {
   /** Creates a new [[ZonedDateTime]] instance by querying the provided clock for the current date. **/
   def apply(clock: Clock): ZonedDateTime
 
-  /** Queries a [[Temporal]] to obtain an [[ZonedDateTime]] (if available)
-    *
-    * @param from the temporal to query
-    * @throws DateTimeException - if unable to convert to an [[ZonedDateTime]]
-    */
+  /** Tries to query a [[Temporal]] to obtain an [[ZonedDateTime]]. */
   def from(from: TemporalAccessor): Try[ZonedDateTime]
 
   /** Obtain a [[ZonedDateTime]] instance from [[LocalDate]], [[LocalTime]] and [[ZoneID]] instance **/
@@ -80,20 +76,14 @@ private[scalatime] abstract class ZonedDateTimeFactory {
     */
   def of(year: Int, month: Month, day: Int, hour: Int, minute: Int, second: Int, nano: Int, zone: ZoneID): ZonedDateTime
 
-  /** Creates a new [[ZonedDateTime]] instance from valid ISO-8601 extended offset date time formatted text, otherwise
-    * throws an exception.
+  /** Tries to obtain a [[ZonedDateTime]] instance from text formatted according to
+    * [[DateTimeFormatter.Iso.ZonedDateTime]].
     *
-    * @param text the text to parse such as "2007-12-03T10:15:30"
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[OffsetDateTime]]
+    * @param text the text to parse such as "2011-12-03T10:15:30+01:00[Europe/Paris]".
     */
-  def parse(text: String): ZonedDateTime
+  def parse(text: String): Try[ZonedDateTime]
 
-  /** Creates a new [[ZonedDateTime]] instance from valid text formatted according to the provided `formatter`, otherwise
-    * throws an exception.
-    *
-    * @param text the text to parse
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[OffsetDateTime]]
-    */
-  def parse(text: String, formatter: DateTimeFormatter): ZonedDateTime
+  /** Tries to obtain a [[ZonedDateTime]] instance from valid text formatted according to the provided `formatter`. */
+  def parse(text: String, formatter: DateTimeFormatter): Try[ZonedDateTime]
 
 }

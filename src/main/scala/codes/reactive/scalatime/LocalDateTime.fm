@@ -53,8 +53,8 @@ object LocalDateTime extends LocalDateTimeFactory {
   def of(year: Int, month: Month, day: Int, hour: Int, minute: Int): LocalDateTime =
     LD.of(year, month, day, hour, minute)
 
-  def parse(text: String): LocalDateTime = LD.parse(text)
+  def parse(text: String): Try[LocalDateTime] = Try(LD.parse(text))
 
-  def parse(text: String, formatter: DateTimeFormatter): LocalDateTime = LD.parse(text, formatter)
+  def parse(text: String, formatter: DateTimeFormatter): Try[LocalDateTime] = Try(LD.parse(text, formatter))
 
 }

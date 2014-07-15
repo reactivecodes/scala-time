@@ -36,9 +36,9 @@ object LocalDate extends LocalDateFactory {
 
   def of(year: Int, month: Month, day: Int): LocalDate = LD.of(year, month, day)
 
-  def parse(text: String): LocalDate = LD.parse(text)
+  def parse(text: String): Try[LocalDate] = Try(LD.parse(text))
 
-  def parse(text: String, formatter: DateTimeFormatter): LocalDate = LD.parse(text, formatter)
+  def parse(text: String, formatter: DateTimeFormatter): Try[LocalDate] = Try(LD.parse(text, formatter))
 
 }
 

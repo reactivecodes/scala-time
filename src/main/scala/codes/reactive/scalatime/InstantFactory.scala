@@ -53,19 +53,12 @@ private[scalatime] abstract class InstantFactory {
     */
   def second(epochSecond: Long, nanoAdjustment: Long): Instant
 
-  /** Queries a [[Temporal]] to obtain an [[Instant]] (if available)
-    *
-    * @param from the temporal to query
-    * @throws DateTimeException - if unable to convert to an [[Instant]]
-    */
+  /** Tries to query a [[Temporal]] to obtain an [[Instant]]. */
   def from(from: TemporalAccessor): Try[Instant]
 
-  /** Creates a new [[Instant]] instance from valid ISO-8601 instant formatted text, otherwise
-    * throws an exception.
-    *
-    * @param text the text to parse such as "2007-12-03T10:15:30.00Z"
-    * @throws DateTimeException - if the text cannot be successfully parsed as a LocalDate.
+  /** Tries to obtain an [[Instant]] from a [[scala.Predef.String String]] formatted
+    * according to [[DateTimeFormatter.Iso.Instant]] such as `2014-07-15T14:47:00.00Z`.
     */
-  def parse(text: String): Instant
+  def parse(text: String): Try[Instant]
 
 }

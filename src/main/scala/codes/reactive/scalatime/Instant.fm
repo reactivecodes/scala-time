@@ -53,5 +53,5 @@ object Instant extends InstantFactory {
 
   def from(from: TemporalAccessor): Try[Instant] = Try(I.from(from))
 
-  def parse(text: String): Instant = I.parse(text)
+  def parse(text: String): Try[Instant] = Try(I.parse(text))
 }

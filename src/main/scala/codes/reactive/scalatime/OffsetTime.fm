@@ -33,9 +33,9 @@ object OffsetTime extends OffsetTimeFactory {
 
   def from(from: TemporalAccessor): Try[OffsetTime] = Try(OT.from(from))
 
-  def parse(text: String): OffsetTime = OT.parse(text)
+  def parse(text: String): Try[OffsetTime] = Try(OT.parse(text))
 
-  def parse(text: String, formatter: DateTimeFormatter): OffsetTime = OT.parse(text, formatter)
+  def parse(text: String, formatter: DateTimeFormatter): Try[OffsetTime] = Try(OT.parse(text, formatter))
 
   def of(hour: Int, minute: Int, second: Int, nano: Int, offset: ZoneOffset): OffsetTime = OT.of(hour, minute, second, nano, offset)
 

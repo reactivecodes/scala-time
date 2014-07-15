@@ -68,7 +68,6 @@ private[scalatime] abstract class AbstractZoneIDs {
     * @param prefix the time-zone ID
     * @param offset the offset
     * @throws DateTimeException if the prefix is not one of "GMT", "UTC", or "UT", or ""
-    * @return
     */
   def apply(prefix: String, offset: ZoneOffset): ZoneID
 
@@ -80,8 +79,8 @@ private[scalatime] abstract class AbstractZoneIDs {
     */
   def system: ZoneID
 
-  /** Gets a [[scala.Predef.Set]] of the [[scala.Predef.String]] form of all currently available region based
-    * zone IDs.
+  /** Obtains a [[scala.collection.immutable.Set Set]] of the [[scala.Predef.String String]] form of all currently
+    * available region based zone IDs.
     *
     * @return the set of all currently available zone ID
     */

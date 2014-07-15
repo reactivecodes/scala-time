@@ -56,9 +56,9 @@ object OffsetDateTime extends OffsetDateTimeFactory {
          zone: ZoneOffset): OffsetDateTime =
     OD.of(year, month.getValue, day, hour, minute, second, nano, zone)
 
-  def parse(text: String): OffsetDateTime = OD.parse(text)
+  def parse(text: String): Try[OffsetDateTime] = Try(OD.parse(text))
 
-  def parse(text: String, formatter: DateTimeFormatter): OffsetDateTime = OD.parse(text, formatter)
+  def parse(text: String, formatter: DateTimeFormatter): Try[OffsetDateTime] = Try(OD.parse(text, formatter))
 
   val Max: OffsetDateTime = OD.MAX
 

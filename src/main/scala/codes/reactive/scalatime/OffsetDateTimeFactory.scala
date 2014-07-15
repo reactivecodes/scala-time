@@ -104,23 +104,15 @@ private[scalatime] abstract class OffsetDateTimeFactory {
          zone: ZoneOffset): OffsetDateTime
 
 
-  /** Creates a new [[OffsetDateTime]] instance from valid ISO-8601 extended offset date time formatted text, otherwise
-    * throws an exception.
+  /** Tries to obtain an [[OffsetDateTime]] instance from text formatted according to
+    * [[DateTimeFormatter.Iso.OffsetDateTime]].
     *
     * @param text the text to parse such as "2007-12-03T10:15:30+01:00"
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[OffsetDateTime]]
-    * @return  a new [[OffsetDateTime]]
     */
-  def parse(text: String): OffsetDateTime
+  def parse(text: String): Try[OffsetDateTime]
 
-  /** Creates a new [[OffsetDateTime]] instance from valid text formatted according to the provided `formatter`, otherwise
-    * throws an exception.
-    *
-    * @param text the text to parse
-    * @throws DateTimeException if the text cannot be successfully parsed as an [[OffsetDateTime]]
-    * @return  a new [[OffsetDateTime]]
-    */
-  def parse(text: String, formatter: DateTimeFormatter): OffsetDateTime
+  /** Tries to obtain an [[OffsetDateTime]] instance from valid text formatted according to the provided `formatter`. */
+  def parse(text: String, formatter: DateTimeFormatter): Try[OffsetDateTime]
 
   /** The maximum supported OffsetDateTime, '+999999999-12-31T23:59:59.999999999-18:00' - or 'far future'. **/
   def Max: OffsetDateTime
