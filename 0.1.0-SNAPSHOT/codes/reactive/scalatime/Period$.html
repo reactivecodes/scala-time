@@ -47,7 +47,19 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instances.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/548dc57/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Period.scala" target="_blank">Period.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a>.</p><p>Period is a date-based amount of time in the ISO-8601 calendar system, such as '2 years, 3 months and 4 days'.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a491b68/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Period.scala" target="_blank">Period.scala</a></dd><div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain a Period of 10 weeks</span>
+<span class="kw">val</span> tenWeeks = Period.weeks(<span class="num">10</span>)
+
+<span class="cmt">// Obtain a Period of zero</span>
+<span class="kw">val</span> zero = Period.Nil</pre></li></ol>
+            </div><dt>Since</dt><dd><p>0.1.0
+</p></dd><dt>Note</dt><dd><span class="cmt"><p>Direct use of this object is not the only mechanism to obtain <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instances. See also
+        the <a href="dsl/package.html" class="extype" name="codes.reactive.scalatime.dsl">dsl</a> package for alternatives.
+</p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.PeriodFactory">PeriodFactory</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -610,7 +622,7 @@ is thrown.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 548dc57) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
 
 
     </body>

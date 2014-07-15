@@ -47,8 +47,16 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/548dc57/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Instant.scala" target="_blank">Instant.scala</a></dd><dt>Since</dt><dd><p>0.1.0
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>.</p><p>Instant is an instantaneous point on the time-line.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a491b68/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Instant.scala" target="_blank">Instant.scala</a></dd><div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain the current instant of a Clock</span>
+<span class="kw">val</span> clockInstant = Instant(Clock())
+
+<span class="cmt">// Obtain the current instant</span>
+<span class="kw">val</span> currentInstant = Instant()</pre></li></ol>
+            </div><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.InstantFactory">InstantFactory</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -610,7 +618,7 @@ throws an exception.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 548dc57) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
 
 
     </body>

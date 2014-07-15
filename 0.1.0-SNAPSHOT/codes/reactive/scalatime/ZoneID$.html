@@ -47,7 +47,22 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides default time zone <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> instances, as well as methods to create them.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/548dc57/src/main/scala/codes/reactive/scalatime/ZoneID.scala" target="_blank">ZoneID.scala</a></dd><dt>Since</dt><dd><p>0.1.0
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>. Also provides default instances <a href="#UTC:codes.reactive.scalatime.ZoneID" class="extmbr" name="codes.reactive.scalatime.ZoneID#UTC">ZoneID.UTC</a>, and
+<a href="#EAT:codes.reactive.scalatime.ZoneID" class="extmbr" name="codes.reactive.scalatime.ZoneID#EAT">ZoneID.EAT</a> which correspond to time zone ids representing Coordinated Universal Time, and East African Time
+respectively.</p><p>In addition to factory methods, <a href="#entries:Set[String]" class="extmbr" name="codes.reactive.scalatime.ZoneID#entries">ZoneID.entries</a> obtains a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a> of all currently
+available region based zone ids.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a491b68/src/main/scala/codes/reactive/scalatime/ZoneID.scala" target="_blank">ZoneID.scala</a></dd><div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain the UTC zone</span>
+<span class="kw">val</span> utcZone = ZoneID.UTC
+
+<span class="cmt">// Obtain the current system zone</span>
+<span class="kw">val</span> systemZone = ZoneID.system
+
+<span class="cmt">// Obtain a time zone from the region zone id 'Europe/Lisbon'</span>
+<span class="kw">val</span> lisbonZone = ZoneID(<span class="lit">"Europe/Lisbon"</span>)</pre></li></ol>
+            </div><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.ZoneIDs">ZoneIDs</span>, <span class="extype" name="codes.reactive.scalatime.AbstractZoneIDs">AbstractZoneIDs</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -635,7 +650,7 @@ zone IDs.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 548dc57) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
 
 
     </body>
