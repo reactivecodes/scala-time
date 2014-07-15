@@ -18,6 +18,8 @@
 
 package codes.reactive.scalatime
 
+import scala.util.Try
+
 
 private[scalatime] abstract class InstantFactory {
 
@@ -56,7 +58,7 @@ private[scalatime] abstract class InstantFactory {
     * @param from the temporal to query
     * @throws DateTimeException - if unable to convert to an [[Instant]]
     */
-  def apply(from: TemporalAccessor): Instant
+  def from(from: TemporalAccessor): Try[Instant]
 
   /** Creates a new [[Instant]] instance from valid ISO-8601 instant formatted text, otherwise
     * throws an exception.

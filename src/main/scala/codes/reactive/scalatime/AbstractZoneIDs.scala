@@ -18,6 +18,8 @@
 
 package codes.reactive.scalatime
 
+import scala.util.Try
+
 
 private[scalatime] abstract class AbstractZoneIDs {
 
@@ -34,7 +36,7 @@ private[scalatime] abstract class AbstractZoneIDs {
     * @throws DateTimeException - if unable to extract a ZoneID
     * @return the [[ZoneID]]
     */
-  def apply(temporal: TemporalAccessor): ZoneID
+  def from(temporal: TemporalAccessor): Try[ZoneID]
 
   /** Parses a [[scala.Predef.String]] producing a [[ZoneID]] or [[ZoneOffset]]. A [[ZoneOffset]] is returned
     * if the String is 'Z', or starts with '+' or '-'. The result will always be a valid ID for which ZoneRules

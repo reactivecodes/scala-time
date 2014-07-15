@@ -19,6 +19,8 @@
 package codes.reactive.scalatime
 
 import ${underlyingBase}.{ZoneId => ZI}
+import util.Try
+
 
 /** Provides default time zone [[ZoneID]] instances, as well as methods to create them.
   * @since  0.1.0
@@ -29,7 +31,7 @@ private[scalatime] trait ZoneIDs extends AbstractZoneIDs {
 
   val UTC: ZoneID = apply("Z")
 
-  def apply(temporal: TemporalAccessor): ZoneID = ZI.from(temporal)
+  def from(temporal: TemporalAccessor): Try[ZoneID] = Try(ZI.from(temporal))
 
   def apply(zoneID: String): ZoneID = ZI.of(zoneID)
 

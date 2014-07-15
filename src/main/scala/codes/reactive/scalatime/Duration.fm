@@ -19,6 +19,7 @@
 package codes.reactive.scalatime
 
 import ${underlyingBase}.{Duration => JD}
+import scala.util.Try
 
 
 /** Factory object for obtaining instances of [[Duration]].
@@ -43,7 +44,7 @@ import ${underlyingBase}.{Duration => JD}
   */
 object Duration extends DurationFactory {
 
-  def apply(amount: TemporalAmount): Duration = JD.from(amount)
+  def from(amount: TemporalAmount): Try[Duration] = Try(JD.from(amount))
 
   def nanos(nanos: Long): Duration = JD.ofNanos(nanos)
 

@@ -19,6 +19,7 @@
 package codes.reactive.scalatime
 
 import ${underlyingBase}.{Period => JP}
+import scala.util.Try
 
 
 /** Factory object for obtaining instances of [[Period]].
@@ -50,7 +51,7 @@ object Period extends PeriodFactory {
     * @throws DateTimeException - if unable to convert to a [[Period]]
     * @throws ArithmeticException - if numeric overflow occurs
     */
-  def apply(amount: TemporalAmount): Period = JP.from(amount)
+  def from(amount: TemporalAmount): Try[Period] = Try(JP.from(amount))
 
   /** Returns a new [[Period]] instance representing a number of days.
     *

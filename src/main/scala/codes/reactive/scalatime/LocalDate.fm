@@ -18,9 +18,9 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}. {
-LocalDate => LD
-}
+import ${underlyingBase}.{LocalDate => LD}
+import scala.util.Try
+
 
 /** Factory object for creation of [[LocalDate]] instances
   * @since 0.1.0
@@ -30,7 +30,7 @@ object LocalDate extends LocalDateFactory {
 
   def apply(clock: Clock): LocalDate = LD.now(clock)
 
-  def apply(from: TemporalAccessor): LocalDate = LD.from(from)
+  def from(from: TemporalAccessor): Try[LocalDate] = Try(LD.from(from))
 
   def of(year: Int, month: Int, day: Int): LocalDate = LD.of(year, month, day)
 

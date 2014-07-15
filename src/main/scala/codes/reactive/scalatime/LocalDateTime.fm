@@ -18,9 +18,8 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}. {
-LocalDateTime => LD
-}
+import ${underlyingBase}.{LocalDateTime => LD}
+import scala.util.Try
 
 
 /** Factory object for creation of [[LocalDateTime]] instances
@@ -32,7 +31,7 @@ object LocalDateTime extends LocalDateTimeFactory {
 
   def apply(clock: Clock): LocalDateTime = LD.now(clock)
 
-  def apply(from: TemporalAccessor): LocalDateTime = LD.from(from)
+  def from(from: TemporalAccessor): Try[LocalDateTime] = Try(LD.from(from))
 
   def apply(date: LocalDate, time: LocalTime): LocalDateTime = LD.of(date, time)
 

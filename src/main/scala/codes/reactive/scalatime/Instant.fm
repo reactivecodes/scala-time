@@ -19,6 +19,7 @@
 package codes.reactive.scalatime
 
 import ${underlyingBase}.{Instant => I}
+import scala.util.Try
 
 
 /** Factory object for obtaining instances of [[Instant]].
@@ -50,7 +51,7 @@ object Instant extends InstantFactory {
 
   def second(epochSecond: Long, nanoAdjustment: Long): Instant = I.ofEpochSecond(epochSecond, nanoAdjustment)
 
-  def apply(from: TemporalAccessor): Instant = I.from(from)
+  def from(from: TemporalAccessor): Try[Instant] = Try(I.from(from))
 
   def parse(text: String): Instant = I.parse(text)
 }

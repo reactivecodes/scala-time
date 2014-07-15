@@ -18,6 +18,8 @@
 
 package codes.reactive.scalatime
 
+import scala.util.Try
+
 private[scalatime] abstract class PeriodFactory {
 
   /** Obtains an instance of [[Period]] from a temporal amount by looping around the set of units from the amount
@@ -27,7 +29,7 @@ private[scalatime] abstract class PeriodFactory {
     * @throws DateTimeException - if unable to convert to a [[Period]]
     * @throws ArithmeticException - if numeric overflow occurs
     */
-  def apply(amount: TemporalAmount): Period
+  def from(amount: TemporalAmount): Try[Period]
 
   /** Returns a new [[Period]] instance representing a number of days.
     *

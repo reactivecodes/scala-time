@@ -18,6 +18,8 @@
 
 package codes.reactive.scalatime
 
+import scala.util.Try
+
 private[scalatime] abstract class AbstractZoneOffsets {
 
 
@@ -27,7 +29,7 @@ private[scalatime] abstract class AbstractZoneOffsets {
     * @throws DateTimeException - if unable to extract a [[ZoneOffset]]
     * @return the [[ZoneOffset]]
     */
-  def apply(temporal: TemporalAccessor): ZoneOffset
+  def from(temporal: TemporalAccessor): Try[ZoneOffset]
 
   /** Obtains an instance of [[ZoneOffset]] using an offset in hours.
     *

@@ -44,14 +44,14 @@ class TimeFormattersSuite extends fixture.FreeSpec with Matchers {
       "including ISO-8601 formatters provided by the `iso` member" in { a =>
         import a.subject.Iso
         Iso.OffsetDateTime.format(a.date.truncatedTo(ChronoUnit.Seconds)) should be(a.offsetTruncated)
-        LocalDateTime(Iso.OffsetDateTime.parse(a.offset)).truncatedTo(ChronoUnit.Seconds) should be(a.date.toLocalDateTime.truncatedTo(ChronoUnit.Seconds))
+        LocalDateTime.from(Iso.OffsetDateTime.parse(a.offset)).get.truncatedTo(ChronoUnit.Seconds) should be(a.date.toLocalDateTime.truncatedTo(ChronoUnit.Seconds))
         Iso.LocalTime.format(a.date.truncatedTo(ChronoUnit.Seconds)) should be(a.localTime)
       }
 
       "and an RFC-1123 / RFC822 (internet) date-time formatter" in { a =>
         import a.subject.Internet
         Internet.format(a.date) should be(a.internet)
-        LocalDateTime(Internet.parse(a.internet)) should be(a.date.truncatedTo(ChronoUnit.Seconds).toLocalDateTime)
+        LocalDateTime.from(Internet.parse(a.internet)).get should be(a.date.truncatedTo(ChronoUnit.Seconds).toLocalDateTime)
       }
 
     }

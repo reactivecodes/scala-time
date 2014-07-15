@@ -18,9 +18,9 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}. {
-OffsetDateTime => OD
-}
+import ${underlyingBase}.{OffsetDateTime => OD}
+import util.Try
+
 
 /** Factory object for obtaining [[OffsetDateTime]] instances. */
 object OffsetDateTime extends OffsetDateTimeFactory {
@@ -30,7 +30,7 @@ object OffsetDateTime extends OffsetDateTimeFactory {
 
   def apply(clock: Clock): OffsetDateTime = OD.now(clock)
 
-  def apply(from: TemporalAccessor): OffsetDateTime = OD.from(from)
+  def from(from: TemporalAccessor): Try[OffsetDateTime] = Try(OD.from(from))
 
   def apply(date: LocalDate, time: LocalTime, zone: ZoneOffset): OffsetDateTime = OD.of(date, time, zone)
 

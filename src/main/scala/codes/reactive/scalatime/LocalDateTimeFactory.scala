@@ -18,6 +18,8 @@
 
 package codes.reactive.scalatime
 
+import scala.util.Try
+
 
 private[scalatime] abstract class LocalDateTimeFactory {
 
@@ -33,7 +35,7 @@ private[scalatime] abstract class LocalDateTimeFactory {
     * @param from the temporal to query
     * @throws DateTimeException - if unable to convert to an [[LocalDateTime]]
     */
-  def apply(from: TemporalAccessor): LocalDateTime
+  def from(from: TemporalAccessor): Try[LocalDateTime]
 
   /** Obtains a [[LocalDateTime]] instance from a [[LocalDate]] and [[LocalTime]] instance **/
   def apply(date: LocalDate, time: LocalTime): LocalDateTime

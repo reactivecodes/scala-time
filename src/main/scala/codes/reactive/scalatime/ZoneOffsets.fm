@@ -3,10 +3,16 @@
 package codes.reactive.scalatime
 
 import ${underlyingBase}.{ZoneOffset => ZO}
+import util.Try
 
-/** Provides default time zone [[ZoneOffset]] instances, as well as methods to create them.* @since  0.1.0*/private[scalatime] trait ZoneOffsets extends AbstractZoneOffsets {
 
-def apply(temporal: TemporalAccessor): ZoneOffset = ZO.from(temporal)
+/** Provides default time zone [[ZoneOffset]] instances, as well as methods to create them.
+  *
+  * @since  0.1.0
+  */
+private[scalatime] trait ZoneOffsets extends AbstractZoneOffsets {
+
+def from(temporal: TemporalAccessor): Try[ZoneOffset] = Try(ZO.from(temporal))
 
 def apply(hours: Int): ZoneOffset = ZO.ofHours(hours)
 

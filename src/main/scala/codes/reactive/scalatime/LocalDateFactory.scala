@@ -18,6 +18,8 @@
 
 package codes.reactive.scalatime
 
+import scala.util.Try
+
 /**
  * Created by arashid on 14/07/14.
  */
@@ -43,7 +45,7 @@ private[scalatime] abstract class LocalDateFactory {
     * @param from the temporal to query
     * @throws DateTimeException - if unable to convert to an [[LocalDate]]
     */
-  def apply(from: TemporalAccessor): LocalDate
+  def from(from: TemporalAccessor): Try[LocalDate]
 
   /** Creates a new [[LocalDate]] instance from a year, month and day. An exception will be thrown if the day is
     * not valid for the year and month.

@@ -18,9 +18,8 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}. {
-ZonedDateTime => ZD
-}
+import ${underlyingBase}.{ZonedDateTime => ZD}
+import util.Try
 
 
 /** Factory object for creation of [[ZonedDateTime]] instances
@@ -33,7 +32,7 @@ object ZonedDateTime extends ZonedDateTimeFactory {
 
   def apply(clock: Clock): ZonedDateTime = ZD.now(clock)
 
-  def apply(from: TemporalAccessor): ZonedDateTime = ZD.from(from)
+  def from(from: TemporalAccessor): Try[ZonedDateTime] = Try(ZD.from(from))
 
   def apply(date: LocalDate, time: LocalTime, zone: ZoneID): ZonedDateTime = ZD.of(date, time, zone)
 

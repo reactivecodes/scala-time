@@ -18,6 +18,8 @@
 
 package codes.reactive.scalatime
 
+import scala.util.Try
+
 
 private[scalatime] abstract class OffsetTimeFactory {
 
@@ -34,7 +36,7 @@ private[scalatime] abstract class OffsetTimeFactory {
     *
     * @throws DateTimeException - if unable to convert to a [[OffsetTime]]
     */
-  def apply(from: TemporalAccessor): OffsetTime
+  def from(from: TemporalAccessor): Try[OffsetTime]
 
   /** Obtains an [[OffsetTime]] instance from valid ISO-8601 extended local time formatted text, otherwise
     * throws an exception.

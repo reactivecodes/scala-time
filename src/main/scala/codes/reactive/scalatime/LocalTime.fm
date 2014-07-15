@@ -18,9 +18,9 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}. {
-LocalTime => LT
-}
+import ${underlyingBase}.{LocalTime => LT}
+import util.Try
+
 
 /** Factory object for creating [[LocalTime]] instances **/
 object LocalTime extends LocalTimeFactory {
@@ -29,7 +29,7 @@ object LocalTime extends LocalTimeFactory {
 
   def apply(clock: Clock): LocalTime = LT.now(clock)
 
-  def apply(from: TemporalAccessor): LocalTime = LT.from(from)
+  def from(from: TemporalAccessor): Try[LocalTime] = Try(LT.from(from))
 
   def parse(text: String): LocalTime = LT.parse(text)
 

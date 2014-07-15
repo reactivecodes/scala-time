@@ -18,6 +18,8 @@
 
 package codes.reactive.scalatime
 
+import scala.util.Try
+
 /**
  * Created by arashid on 14/07/14.
  */
@@ -30,7 +32,7 @@ private[scalatime] abstract class DurationFactory {
     * @throws DateTimeException - if unable to convert to a [[Duration]]
     * @throws ArithmeticException - if numeric overflow occurs
     */
-  def apply(amount: TemporalAmount): Duration
+  def from(amount: TemporalAmount): Try[Duration]
 
   /** Returns a [[Duration]] instance representing a number of nanoseconds. */
   def nanos(nanos: Long): Duration

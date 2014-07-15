@@ -18,6 +18,8 @@
 
 package codes.reactive.scalatime
 
+import scala.util.Try
+
 
 /** Factory object for creation of [[ZonedDateTime]] instances
   * @since 0.1.0
@@ -36,7 +38,7 @@ private[scalatime] abstract class ZonedDateTimeFactory {
     * @param from the temporal to query
     * @throws DateTimeException - if unable to convert to an [[ZonedDateTime]]
     */
-  def apply(from: TemporalAccessor): ZonedDateTime
+  def from(from: TemporalAccessor): Try[ZonedDateTime]
 
   /** Obtain a [[ZonedDateTime]] instance from [[LocalDate]], [[LocalTime]] and [[ZoneID]] instance **/
   def apply(date: LocalDate, time: LocalTime, zone: ZoneID): ZonedDateTime
