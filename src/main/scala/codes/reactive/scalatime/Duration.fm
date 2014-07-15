@@ -18,12 +18,26 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}. {
-Duration => JD
-}
+import ${underlyingBase}.{Duration => JD}
 
 
 /** Factory object for obtaining instances of [[Duration]].
+  *
+  * Duration is a time-based amount of time, such as '34.5 seconds'.
+  *
+  * @note   Direct use of this object is not the only mechanism to obtain [[Duration]] instances. See also
+  *         the [[dsl]] package for alternatives.
+  *
+  * @example
+  *          {{{
+  *            import codes.reactive.scalatime._
+  *
+  *            // Obtain a Duration of 10 nano seconds
+  *            val tenNanos = Duration.nanos(10)
+  *
+  *            // Obtain a Duration of zero
+  *            val zero = Duration.Nil
+  *          }}}
   *
   * @since  0.1.0
   */

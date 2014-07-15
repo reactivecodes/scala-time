@@ -18,12 +18,23 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}. {
-Instant => I
-}
+import ${underlyingBase}.{Instant => I}
 
 
 /** Factory object for obtaining instances of [[Instant]].
+  *
+  * Instant is an instantaneous point on the time-line.
+  *
+  * @example
+  *          {{{
+  *            import codes.reactive.scalatime._
+  *
+  *            // Obtain the current instant of a Clock
+  *            val clockInstant = Instant(Clock())
+  *
+  *            // Obtain the current instant
+  *            val currentInstant = Instant()
+  *          }}}
   *
   * @since  0.1.0
   */

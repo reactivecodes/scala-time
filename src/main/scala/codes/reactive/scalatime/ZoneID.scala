@@ -19,7 +19,26 @@
 package codes.reactive.scalatime
 
 
-/** Provides default time zone [[ZoneID]] instances, as well as methods to create them.
+/** Factory object for obtaining instances of [[ZoneID]]. Also provides default instances [[ZoneID.UTC]], and
+  * [[ZoneID.EAT]] which correspond to time zone ids representing Coordinated Universal Time, and East African Time
+  * respectively.
+  *
+  * In addition to factory methods, [[ZoneID.entries]] obtains a [[scala.collection.immutable.Set Set]] of all currently
+  * available region based zone ids.
+  *
+  * @example
+  *          {{{
+  *            import codes.reactive.scalatime._
+  *
+  *            // Obtain the UTC zone
+  *            val utcZone = ZoneID.UTC
+  *
+  *            // Obtain the current system zone
+  *            val systemZone = ZoneID.system
+  *
+  *            // Obtain a time zone from the region zone id 'Europe/Lisbon'
+  *            val lisbonZone = ZoneID("Europe/Lisbon")
+  *          }}}
   * @since  0.1.0
   */
 object ZoneID extends ZoneIDs

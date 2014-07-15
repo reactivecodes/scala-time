@@ -19,7 +19,23 @@
 package codes.reactive.scalatime
 
 
-/** Provides default time zone [[ZoneOffset]] instances, as well as methods to create them.
+/** Factory object for obtaining instances of [[ZoneOffset]]. Also provides default instances [[ZoneOffset.UTC]], and
+  * [[ZoneOffset.EAT]] which correspond to time zone ids representing Coordinated Universal Time, and East African Time
+  * respectively.
+  *
+  * @example
+  *          {{{
+  *            import codes.reactive.scalatime._
+  *
+  *            // Obtain the UTC zone
+  *            val utcZone = ZoneOffset.UTC
+  *
+  *            // Obtain the current system zone
+  *            val systemZone = ZoneOffset.system
+  *
+  *            // Obtain a time zone from the time offset of +5:00
+  *            val plusFive = ZoneOffset(5)
+  *          }}}
   * @since  0.1.0
   */
 object ZoneOffset extends ZoneOffsets

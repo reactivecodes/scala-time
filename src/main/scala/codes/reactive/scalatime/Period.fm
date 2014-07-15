@@ -18,12 +18,29 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}. {
-Period => JP
-}
+import ${underlyingBase}.{Period => JP}
 
 
-/** Factory object for obtaining [[Period]] instances. */
+/** Factory object for obtaining instances of [[Period]].
+  *
+  * Period is a date-based amount of time in the ISO-8601 calendar system, such as '2 years, 3 months and 4 days'.
+  *
+  * @note   Direct use of this object is not the only mechanism to obtain [[Period]] instances. See also
+  *         the [[dsl]] package for alternatives.
+  *
+  * @example
+  *          {{{
+  *            import codes.reactive.scalatime._
+  *
+  *            // Obtain a Period of 10 weeks
+  *            val tenWeeks = Period.weeks(10)
+  *
+  *            // Obtain a Period of zero
+  *            val zero = Period.Nil
+  *          }}}
+  *
+  * @since  0.1.0
+  */
 object Period extends PeriodFactory {
 
   /** Obtains an instance of [[Period]] from a temporal amount by looping around the set of units from the amount
