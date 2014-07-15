@@ -49,7 +49,15 @@
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides methods for obtaining default <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">scala.util.control.Exception.Catcher</a>s for possible
 <a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException">DateTimeException</a>s thrown by the underlying Java API.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a491b68/src/main/scala/codes/reactive/scalatime/control/Catcher.scala" target="_blank">Catcher.scala</a></dd><dt>Since</dt><dd><p>0.1.0
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/87fb4fa/src/main/scala/codes/reactive/scalatime/control/Catcher.scala" target="_blank">Catcher.scala</a></dd><div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain a TimeCatcher for all DateTimeExceptions</span>
+<span class="kw">val</span> catchAllLocalDate = Catcher.all(_ <span class="kw">=&gt;</span> LocalDate())
+
+<span class="cmt">// Use the catcher to recover from a parse error</span>
+<span class="kw">val</span> recovered = Try(LocalDate.parse(<span class="lit">")(&#)(@*@&#%@#%@#%)"</span>)).recover(catchAllLocalDate)</pre></li></ol>
+            </div><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -148,7 +156,7 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="codes.reactive.scalatime.control.Catcher#all" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="all[A](onMatch:codes.reactive.scalatime.DateTimeException=&gt;A):util.control.Exception.Catcher[A]"></a>
+      <a id="all[A](f:codes.reactive.scalatime.DateTimeException=&gt;A):util.control.Exception.Catcher[A]"></a>
       <a id="all[A]((scalatime.DateTimeException)⇒A):Catcher[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -156,15 +164,15 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">all</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="onMatch">onMatch: (<a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException">scalatime.DateTimeException</a>) ⇒ <span class="extype" name="codes.reactive.scalatime.control.Catcher.all.A">A</span></span>)</span><span class="result">: <span class="extype" name="scala.util.control.Exception.Catcher">Catcher</span>[<span class="extype" name="codes.reactive.scalatime.control.Catcher.all.A">A</span>]</span>
+        <span class="name">all</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="f">f: (<a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException">scalatime.DateTimeException</a>) ⇒ <span class="extype" name="codes.reactive.scalatime.control.Catcher.all.A">A</span></span>)</span><span class="result">: <span class="extype" name="scala.util.control.Exception.Catcher">Catcher</span>[<span class="extype" name="codes.reactive.scalatime.control.Catcher.all.A">A</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.control.Catcher$@all[A](onMatch:codes.reactive.scalatime.DateTimeException=&gt;A):util.control.Exception.Catcher[A]" title="Permalink" target="_top">
+      <a href="../../../../index.html#codes.reactive.scalatime.control.Catcher$@all[A](f:codes.reactive.scalatime.DateTimeException=&gt;A):util.control.Exception.Catcher[A]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Returns a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">scala.util.control.Exception.Catcher</a> for all <a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException">DateTimeException</a>s.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">scala.util.control.Exception.Catcher</a> for all <a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException">DateTimeException</a>s.
-</p></div><dl class="paramcmts block"><dt class="param">onMatch</dt><dd class="cmt"><p>function to execute if the exception is encountered.
+</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>function to execute if the exception is encountered.
 </p></dd></dl></div>
     </li><li name="codes.reactive.scalatime.control.Catcher#all" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="all[A]:util.control.Exception.Catcher[A]"></a>
@@ -417,7 +425,7 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="codes.reactive.scalatime.control.Catcher#unsupportedTemporalType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="unsupportedTemporalType[A](onMatch:codes.reactive.scalatime.UnsupportedTemporalTypeException=&gt;A):util.control.Exception.Catcher[A]"></a>
+      <a id="unsupportedTemporalType[A](f:codes.reactive.scalatime.UnsupportedTemporalTypeException=&gt;A):util.control.Exception.Catcher[A]"></a>
       <a id="unsupportedTemporalType[A]((scalatime.UnsupportedTemporalTypeException)⇒A):Catcher[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -425,17 +433,17 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">unsupportedTemporalType</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="onMatch">onMatch: (<a href="../package.html#UnsupportedTemporalTypeException=java.time.temporal.UnsupportedTemporalTypeException" class="extmbr" name="codes.reactive.scalatime.UnsupportedTemporalTypeException">scalatime.UnsupportedTemporalTypeException</a>) ⇒ <span class="extype" name="codes.reactive.scalatime.control.Catcher.unsupportedTemporalType.A">A</span></span>)</span><span class="result">: <span class="extype" name="scala.util.control.Exception.Catcher">Catcher</span>[<span class="extype" name="codes.reactive.scalatime.control.Catcher.unsupportedTemporalType.A">A</span>]</span>
+        <span class="name">unsupportedTemporalType</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="f">f: (<a href="../package.html#UnsupportedTemporalTypeException=java.time.temporal.UnsupportedTemporalTypeException" class="extmbr" name="codes.reactive.scalatime.UnsupportedTemporalTypeException">scalatime.UnsupportedTemporalTypeException</a>) ⇒ <span class="extype" name="codes.reactive.scalatime.control.Catcher.unsupportedTemporalType.A">A</span></span>)</span><span class="result">: <span class="extype" name="scala.util.control.Exception.Catcher">Catcher</span>[<span class="extype" name="codes.reactive.scalatime.control.Catcher.unsupportedTemporalType.A">A</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.control.Catcher$@unsupportedTemporalType[A](onMatch:codes.reactive.scalatime.UnsupportedTemporalTypeException=&gt;A):util.control.Exception.Catcher[A]" title="Permalink" target="_top">
+      <a href="../../../../index.html#codes.reactive.scalatime.control.Catcher$@unsupportedTemporalType[A](f:codes.reactive.scalatime.UnsupportedTemporalTypeException=&gt;A):util.control.Exception.Catcher[A]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Returns a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">scala.util.control.Exception.Catcher</a> for an <a href="../package.html#UnsupportedTemporalTypeException=java.time.temporal.UnsupportedTemporalTypeException" class="extmbr" name="codes.reactive.scalatime.UnsupportedTemporalTypeException">UnsupportedTemporalTypeException</a>, an exception
 indicating that a ChronoField or ChronoUnit is not supported for a Temporal class.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">scala.util.control.Exception.Catcher</a> for an <a href="../package.html#UnsupportedTemporalTypeException=java.time.temporal.UnsupportedTemporalTypeException" class="extmbr" name="codes.reactive.scalatime.UnsupportedTemporalTypeException">UnsupportedTemporalTypeException</a>, an exception
 indicating that a ChronoField or ChronoUnit is not supported for a Temporal class.
-</p></div><dl class="paramcmts block"><dt class="param">onMatch</dt><dd class="cmt"><p>function to execute if the exception is encountered.
+</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>function to execute if the exception is encountered.
 </p></dd></dl></div>
     </li><li name="codes.reactive.scalatime.control.Catcher#unsupportedTemporalType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="unsupportedTemporalType[A]:util.control.Exception.Catcher[A]"></a>
@@ -525,7 +533,7 @@ indicating that a ChronoField or ChronoUnit is not supported for a Temporal clas
               
         </dd></dl></div>
     </li><li name="codes.reactive.scalatime.control.Catcher#zoneRules" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="zoneRules[A](onMatch:codes.reactive.scalatime.ZoneRulesException=&gt;A):util.control.Exception.Catcher[A]"></a>
+      <a id="zoneRules[A](f:codes.reactive.scalatime.ZoneRulesException=&gt;A):util.control.Exception.Catcher[A]"></a>
       <a id="zoneRules[A]((scalatime.ZoneRulesException)⇒A):Catcher[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -533,17 +541,17 @@ indicating that a ChronoField or ChronoUnit is not supported for a Temporal clas
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">zoneRules</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="onMatch">onMatch: (<a href="../package.html#ZoneRulesException=java.time.zone.ZoneRulesException" class="extmbr" name="codes.reactive.scalatime.ZoneRulesException">scalatime.ZoneRulesException</a>) ⇒ <span class="extype" name="codes.reactive.scalatime.control.Catcher.zoneRules.A">A</span></span>)</span><span class="result">: <span class="extype" name="scala.util.control.Exception.Catcher">Catcher</span>[<span class="extype" name="codes.reactive.scalatime.control.Catcher.zoneRules.A">A</span>]</span>
+        <span class="name">zoneRules</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="f">f: (<a href="../package.html#ZoneRulesException=java.time.zone.ZoneRulesException" class="extmbr" name="codes.reactive.scalatime.ZoneRulesException">scalatime.ZoneRulesException</a>) ⇒ <span class="extype" name="codes.reactive.scalatime.control.Catcher.zoneRules.A">A</span></span>)</span><span class="result">: <span class="extype" name="scala.util.control.Exception.Catcher">Catcher</span>[<span class="extype" name="codes.reactive.scalatime.control.Catcher.zoneRules.A">A</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.control.Catcher$@zoneRules[A](onMatch:codes.reactive.scalatime.ZoneRulesException=&gt;A):util.control.Exception.Catcher[A]" title="Permalink" target="_top">
+      <a href="../../../../index.html#codes.reactive.scalatime.control.Catcher$@zoneRules[A](f:codes.reactive.scalatime.ZoneRulesException=&gt;A):util.control.Exception.Catcher[A]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Returns a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">scala.util.control.Exception.Catcher</a> for a <a href="../package.html#ZoneRulesException=java.time.zone.ZoneRulesException" class="extmbr" name="codes.reactive.scalatime.ZoneRulesException">ZoneRulesException</a>, an exception
 indicating a problems with the configured time-zone rules.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">scala.util.control.Exception.Catcher</a> for a <a href="../package.html#ZoneRulesException=java.time.zone.ZoneRulesException" class="extmbr" name="codes.reactive.scalatime.ZoneRulesException">ZoneRulesException</a>, an exception
 indicating a problems with the configured time-zone rules.
-</p></div><dl class="paramcmts block"><dt class="param">onMatch</dt><dd class="cmt"><p>function to execute if the exception is encountered.
+</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>function to execute if the exception is encountered.
 </p></dd></dl></div>
     </li><li name="codes.reactive.scalatime.control.Catcher#zoneRules" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="zoneRules[A]:util.control.Exception.Catcher[A]"></a>
@@ -591,7 +599,7 @@ indicating a problems with the configured time-zone rules.</p>
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 87fb4fa) Scala 2.11 API Documentation. </div>
 
 
     </body>

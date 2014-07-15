@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for creation of <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a491b68/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/LocalDateTime.scala" target="_blank">LocalDateTime.scala</a></dd><dt>Since</dt><dd><p>0.1.0
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for creation of <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/87fb4fa/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/LocalDateTime.scala" target="_blank">LocalDateTime.scala</a></dd><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.LocalDateTimeFactory">LocalDateTimeFactory</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -162,26 +162,6 @@
       </a>
     </span>
       <p class="shortcomment cmt">Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from a <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> and <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> instance *</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from a <a href="package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> and <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> instance *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> → LocalDateTimeFactory</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.LocalDateTime#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(from:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.LocalDateTime"></a>
-      <a id="apply(scalatime.TemporalAccessor):scalatime.LocalDateTime"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="from">from: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@apply(from:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.LocalDateTime" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> (if available)
-</p><div class="fullcomment"><div class="comment cmt"><p>Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> (if available)
-</p></div><dl class="paramcmts block"><dt class="param">from</dt><dd class="cmt"><p>the temporal to query</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> → LocalDateTimeFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if unable to convert to an <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a>
-</p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(clock:codes.reactive.scalatime.Clock):codes.reactive.scalatime.LocalDateTime"></a>
       <a id="apply(scalatime.Clock):scalatime.LocalDateTime"></a>
@@ -313,6 +293,26 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="codes.reactive.scalatime.LocalDateTime#from" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="from(from:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
+      <a id="from(scalatime.TemporalAccessor):Try[scalatime.LocalDateTime]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">from</span><span class="params">(<span name="from">from: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@from(from:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.LocalDateTime]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> (if available)
+</p><div class="fullcomment"><div class="comment cmt"><p>Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> (if available)
+</p></div><dl class="paramcmts block"><dt class="param">from</dt><dd class="cmt"><p>the temporal to query</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> → LocalDateTimeFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if unable to convert to an <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a>
+</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -552,47 +552,43 @@ out of range.
                           the month-year.
 </p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):codes.reactive.scalatime.LocalDateTime"></a>
-      <a id="parse(String,scalatime.DateTimeFormatter):scalatime.LocalDateTime"></a>
+      <a id="parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
+      <a id="parse(String,scalatime.DateTimeFormatter):Try[scalatime.LocalDateTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="formatter">formatter: <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">scalatime.DateTimeFormatter</a></span>)</span><span class="result">: <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a></span>
+        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="formatter">formatter: <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">scalatime.DateTimeFormatter</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):codes.reactive.scalatime.LocalDateTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):scala.util.Try[codes.reactive.scalatime.LocalDateTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Creates a new <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from valid text formatted according to the provided <code>formatter</code>, otherwise
-throws an exception.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from valid text formatted according to the provided <code>formatter</code>, otherwise
-throws an exception.
-</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> → LocalDateTimeFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the text cannot be successfully parsed as a LocalDate.
-</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from valid text formatted according to the provided <code>formatter</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from valid text formatted according to the provided <code>formatter</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> → LocalDateTimeFactory</dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="parse(text:String):codes.reactive.scalatime.LocalDateTime"></a>
-      <a id="parse(String):scalatime.LocalDateTime"></a>
+      <a id="parse(text:String):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
+      <a id="parse(String):Try[scalatime.LocalDateTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a></span>
+        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@parse(text:String):codes.reactive.scalatime.LocalDateTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@parse(text:String):scala.util.Try[codes.reactive.scalatime.LocalDateTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Creates a new <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from valid ISO-8601 extended offset date time formatted text, otherwise
-throws an exception.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from valid ISO-8601 extended offset date time formatted text, otherwise
-throws an exception.
-</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse such as &quot;2007-12-03T10:15:30&quot;</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> → LocalDateTimeFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the text cannot be successfully parsed as a LocalDate.
-</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from text formatted according to
+<span class="extype" name="DateTimeFormatter.Iso.LocalDateTime">DateTimeFormatter.Iso.LocalDateTime</span>.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instance from text formatted according to
+<span class="extype" name="DateTimeFormatter.Iso.LocalDateTime">DateTimeFormatter.Iso.LocalDateTime</span>.
+</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse such as &quot;2007-12-03T10:15:30&quot;
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> → LocalDateTimeFactory</dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -726,7 +722,7 @@ throws an exception.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 87fb4fa) Scala 2.11 API Documentation. </div>
 
 
     </body>

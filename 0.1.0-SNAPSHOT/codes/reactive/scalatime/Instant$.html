@@ -48,7 +48,7 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>.</p><p>Instant is an instantaneous point on the time-line.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a491b68/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Instant.scala" target="_blank">Instant.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/87fb4fa/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Instant.scala" target="_blank">Instant.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain the current instant of a Clock</span>
@@ -154,26 +154,6 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Instant#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(from:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.Instant"></a>
-      <a id="apply(scalatime.TemporalAccessor):scalatime.Instant"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="from">from: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.Instant$@apply(from:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.Instant" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> (if available)
-</p><div class="fullcomment"><div class="comment cmt"><p>Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> (if available)
-</p></div><dl class="paramcmts block"><dt class="param">from</dt><dd class="cmt"><p>the temporal to query</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Instant">Instant</a> → InstantFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if unable to convert to an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>
-</p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.Instant#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(clock:codes.reactive.scalatime.Clock):codes.reactive.scalatime.Instant"></a>
       <a id="apply(scalatime.Clock):scalatime.Instant"></a>
@@ -305,6 +285,23 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="codes.reactive.scalatime.Instant#from" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="from(from:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.Instant]"></a>
+      <a id="from(scalatime.TemporalAccessor):Try[scalatime.Instant]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">from</span><span class="params">(<span name="from">from: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.Instant$@from(from:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.Instant]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tries to query a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to query a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Instant">Instant</a> → InstantFactory</dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -427,26 +424,25 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="codes.reactive.scalatime.Instant#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="parse(text:String):codes.reactive.scalatime.Instant"></a>
-      <a id="parse(String):scalatime.Instant"></a>
+      <a id="parse(text:String):scala.util.Try[codes.reactive.scalatime.Instant]"></a>
+      <a id="parse(String):Try[scalatime.Instant]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a></span>
+        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.Instant$@parse(text:String):codes.reactive.scalatime.Instant" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.Instant$@parse(text:String):scala.util.Try[codes.reactive.scalatime.Instant]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Creates a new <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> instance from valid ISO-8601 instant formatted text, otherwise
-throws an exception.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> instance from valid ISO-8601 instant formatted text, otherwise
-throws an exception.
-</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse such as &quot;2007-12-03T10:15:30.00Z&quot;</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Instant">Instant</a> → InstantFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the text cannot be successfully parsed as a LocalDate.
-</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> from a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">String</a> formatted
+according to <span class="extype" name="DateTimeFormatter.Iso.Instant">DateTimeFormatter.Iso.Instant</span> such as <code>2014-07-15T14:47:00.00Z</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> from a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">String</a> formatted
+according to <span class="extype" name="DateTimeFormatter.Iso.Instant">DateTimeFormatter.Iso.Instant</span> such as <code>2014-07-15T14:47:00.00Z</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Instant">Instant</a> → InstantFactory</dd></dl></div>
     </li><li name="codes.reactive.scalatime.Instant#second" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="second(epochSecond:Long,nanoAdjustment:Long):codes.reactive.scalatime.Instant"></a>
       <a id="second(Long,Long):scalatime.Instant"></a>
@@ -618,7 +614,7 @@ throws an exception.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 87fb4fa) Scala 2.11 API Documentation. </div>
 
 
     </body>

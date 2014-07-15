@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instances.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a491b68/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/OffsetTime.scala" target="_blank">OffsetTime.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instances.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/87fb4fa/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/OffsetTime.scala" target="_blank">OffsetTime.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.OffsetTimeFactory">OffsetTimeFactory</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -184,26 +184,6 @@ maximum offset)
 </p><div class="fullcomment"><div class="comment cmt"><p>The minimum supported <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> ('00:00:00+18:00' - the time of midnight at the start of the day in the
 maximum offset)
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> → OffsetTimeFactory</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.OffsetTime#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(from:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.OffsetTime"></a>
-      <a id="apply(scalatime.TemporalAccessor):scalatime.OffsetTime"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="from">from: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">scalatime.OffsetTime</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.OffsetTime$@apply(from:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.OffsetTime" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain a <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> (if available)
-</p><div class="fullcomment"><div class="comment cmt"><p>Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain a <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> (if available)
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> → OffsetTimeFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if unable to convert to a <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a>
-</p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.OffsetTime#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(localTime:codes.reactive.scalatime.LocalTime,offset:codes.reactive.scalatime.ZoneOffset):codes.reactive.scalatime.OffsetTime"></a>
       <a id="apply(scalatime.LocalTime,scalatime.ZoneOffset):scalatime.OffsetTime"></a>
@@ -352,6 +332,26 @@ maximum offset)
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="codes.reactive.scalatime.OffsetTime#from" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="from(from:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.OffsetTime]"></a>
+      <a id="from(scalatime.TemporalAccessor):Try[scalatime.OffsetTime]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">from</span><span class="params">(<span name="from">from: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">scalatime.OffsetTime</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.OffsetTime$@from(from:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.OffsetTime]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain a <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> (if available)
+</p><div class="fullcomment"><div class="comment cmt"><p>Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain a <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> (if available)
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> → OffsetTimeFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if unable to convert to a <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a>
+</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -474,47 +474,41 @@ maximum offset)
 </p></div><dl class="paramcmts block"><dt class="param">hour</dt><dd class="cmt"><p>the hour-of-day to represent, from 0 to 23</p></dd><dt class="param">minute</dt><dd class="cmt"><p>the minute-of-hour to represent, from 0 to 59</p></dd><dt class="param">second</dt><dd class="cmt"><p>the second-of-minute to represent, from 0 to 59</p></dd><dt class="param">nano</dt><dd class="cmt"><p>the nano-of-second to represent, from 0 to 999,999,999</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> → OffsetTimeFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the value of any field is out of range
 </p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.OffsetTime#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):codes.reactive.scalatime.OffsetTime"></a>
-      <a id="parse(String,scalatime.DateTimeFormatter):scalatime.OffsetTime"></a>
+      <a id="parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):scala.util.Try[codes.reactive.scalatime.OffsetTime]"></a>
+      <a id="parse(String,scalatime.DateTimeFormatter):Try[scalatime.OffsetTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="formatter">formatter: <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">scalatime.DateTimeFormatter</a></span>)</span><span class="result">: <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">scalatime.OffsetTime</a></span>
+        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="formatter">formatter: <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">scalatime.DateTimeFormatter</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">scalatime.OffsetTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.OffsetTime$@parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):codes.reactive.scalatime.OffsetTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.OffsetTime$@parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):scala.util.Try[codes.reactive.scalatime.OffsetTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from valid text formatted according to the provided <code>formatter</code>, otherwise
-throws an exception.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from valid text formatted according to the provided <code>formatter</code>, otherwise
-throws an exception.
-</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> → OffsetTimeFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the text cannot be successfully parsed as an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a>
-</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from valid text formatted according to the provided <code>formatter</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from valid text formatted according to the provided <code>formatter</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> → OffsetTimeFactory</dd></dl></div>
     </li><li name="codes.reactive.scalatime.OffsetTime#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="parse(text:String):codes.reactive.scalatime.OffsetTime"></a>
-      <a id="parse(String):scalatime.OffsetTime"></a>
+      <a id="parse(text:String):scala.util.Try[codes.reactive.scalatime.OffsetTime]"></a>
+      <a id="parse(String):Try[scalatime.OffsetTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">scalatime.OffsetTime</a></span>
+        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">scalatime.OffsetTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.OffsetTime$@parse(text:String):codes.reactive.scalatime.OffsetTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.OffsetTime$@parse(text:String):scala.util.Try[codes.reactive.scalatime.OffsetTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from valid ISO-8601 extended local time formatted text, otherwise
-throws an exception.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from valid ISO-8601 extended local time formatted text, otherwise
-throws an exception.
-</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse such as &quot;10:15:30&quot;</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> → OffsetTimeFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the text cannot be successfully parsed as an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a>
-</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from text formatted according to <span class="extype" name="DateTimeFormatter.Iso.OffsetTime">DateTimeFormatter.Iso.OffsetTime</span>.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from text formatted according to <span class="extype" name="DateTimeFormatter.Iso.OffsetTime">DateTimeFormatter.Iso.OffsetTime</span>.
+</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse such as &quot;10:15:30&quot;
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> → OffsetTimeFactory</dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -648,7 +642,7 @@ throws an exception.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 87fb4fa) Scala 2.11 API Documentation. </div>
 
 
     </body>

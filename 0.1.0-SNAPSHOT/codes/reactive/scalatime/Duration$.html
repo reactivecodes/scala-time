@@ -48,7 +48,7 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a>.</p><p>Duration is a time-based amount of time, such as '34.5 seconds'.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a491b68/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Duration.scala" target="_blank">Duration.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/87fb4fa/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Duration.scala" target="_blank">Duration.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain a Duration of 10 nano seconds</span>
@@ -173,27 +173,6 @@
       </a>
     </span>
       <p class="shortcomment cmt">Returns a <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> instance representing a duration of zero.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> instance representing a duration of zero.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Duration">Duration</a> → DurationFactory</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Duration#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(amount:codes.reactive.scalatime.TemporalAmount):codes.reactive.scalatime.Duration"></a>
-      <a id="apply(scalatime.TemporalAmount):scalatime.Duration"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="amount">amount: <a href="package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">scalatime.TemporalAmount</a></span>)</span><span class="result">: <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">scalatime.Duration</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.Duration$@apply(amount:codes.reactive.scalatime.TemporalAmount):codes.reactive.scalatime.Duration" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Obtains an instance of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from a temporal amount which has an exact duration
-else throws an exception.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains an instance of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from a temporal amount which has an exact duration
-else throws an exception.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Duration">Duration</a> → DurationFactory</dd><dt>Exceptions thrown</dt><dd><span class="cmt">ArithmeticException<p>- if numeric overflow occurs
-</p></span><span class="cmt">DateTimeException<p>- if unable to convert to a <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a></p></span></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -308,6 +287,26 @@ else throws an exception.
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="codes.reactive.scalatime.Duration#from" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="from(amount:codes.reactive.scalatime.TemporalAmount):scala.util.Try[codes.reactive.scalatime.Duration]"></a>
+      <a id="from(scalatime.TemporalAmount):Try[scalatime.Duration]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">from</span><span class="params">(<span name="amount">amount: <a href="package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">scalatime.TemporalAmount</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">scalatime.Duration</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.Duration$@from(amount:codes.reactive.scalatime.TemporalAmount):scala.util.Try[codes.reactive.scalatime.Duration]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tries to obtain an instance of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from a temporal amount which has an
+exact duration.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain an instance of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from a temporal amount which has an
+exact duration.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Duration">Duration</a> → DurationFactory</dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -478,6 +477,47 @@ else throws an exception.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.Duration#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parse(text:String):scala.util.Try[codes.reactive.scalatime.Duration]"></a>
+      <a id="parse(String):Try[scalatime.Duration]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parse</span><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">scalatime.Duration</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.Duration$@parse(text:String):scala.util.Try[codes.reactive.scalatime.Duration]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tries to obtain an instance of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">String</a> based on
+the ISO-8601 Duration format - PnDTnHnMn.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain an instance of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">String</a> based on
+the ISO-8601 Duration format - PnDTnHnMn.nS - with days considered to be exactly 24 hours.</p><h6> String Format </h6><p>The string starts with an optional sign, denoted by the ASCII negative or positive symbol.
+If negative, the whole period is negated.</p><p>The ASCII letter &quot;P&quot; is next in upper or lower case.</p><p>There are then four sections, each consisting of a number and a suffix. The sections have
+suffixes in ASCII of &quot;D&quot;, &quot;H&quot;, &quot;M&quot; and &quot;S&quot; for days, hours, minutes and seconds, accepted in
+upper or lower case.</p><p>The suffixes must occur in order. The ASCII letter &quot;T&quot; must occur before the first
+occurrence, if any, of an hour, minute or second section. At least one of the four
+sections must be present, and if &quot;T&quot; is present there must be at least one section after the
+&quot;T&quot;. The number part of each section must consist of one or more ASCII digits. The number may
+be prefixed by the ASCII negative or positive symbol. The number of days, hours and minutes must
+parse to an long. The number of seconds must parse to an long with optional fraction. The decimal
+point may be either a dot or a comma. The fractional part may have from zero to 9 digits.</p><p>The leading plus/minus sign, and negative values for other units are not part of the
+ISO-8601 standard.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Duration">Duration</a> → DurationFactory</dd><div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Parses as 20.345 seconds</span>
+<span class="kw">val</span> dur1 = Duration.parse(<span class="lit">"PT20.345S"</span>)
+
+<span class="cmt">// Parses as 2 days, 3 hours, 4 minutes</span>
+<span class="kw">val</span> dur2 = Duration.parse(<span class="lit">"P2DT3H4M"</span>)
+
+<span class="cmt">// Parses as minus 6 hours, 3 minutes</span>
+<span class="kw">val</span> dur3 = Duration.parse(<span class="lit">"P-6H3M"</span>)</pre></li></ol>
+            </div></dl></div>
     </li><li name="codes.reactive.scalatime.Duration#seconds" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="seconds(seconds:Long):codes.reactive.scalatime.Duration"></a>
       <a id="seconds(Long):scalatime.Duration"></a>
@@ -628,7 +668,7 @@ else throws an exception.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 87fb4fa) Scala 2.11 API Documentation. </div>
 
 
     </body>

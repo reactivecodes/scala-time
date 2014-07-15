@@ -89,7 +89,15 @@
       <p class="shortcomment cmt">Provides methods for obtaining default <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">scala.util.control.Exception.Catcher</a>s for possible
 <a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException">DateTimeException</a>s thrown by the underlying Java API.</p><div class="fullcomment"><div class="comment cmt"><p>Provides methods for obtaining default <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">scala.util.control.Exception.Catcher</a>s for possible
 <a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException">DateTimeException</a>s thrown by the underlying Java API.
-</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
+</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain a TimeCatcher for all DateTimeExceptions</span>
+<span class="kw">val</span> catchAllLocalDate = Catcher.all(_ <span class="kw">=&gt;</span> LocalDate())
+
+<span class="cmt">// Use the catcher to recover from a parse error</span>
+<span class="kw">val</span> recovered = Try(LocalDate.parse(<span class="lit">")(&#)(@*@&#%@#%@#%)"</span>)).recover(catchAllLocalDate)</pre></li></ol>
+            </div><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl></div>
     </li></ol>
             </div>
@@ -115,7 +123,7 @@
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 87fb4fa) Scala 2.11 API Documentation. </div>
 
 
     </body>

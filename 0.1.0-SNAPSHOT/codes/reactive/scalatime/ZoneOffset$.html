@@ -50,7 +50,7 @@
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>. Also provides default instances <a href="#UTC:codes.reactive.scalatime.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset#UTC">ZoneOffset.UTC</a>, and
 <a href="#EAT:codes.reactive.scalatime.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset#EAT">ZoneOffset.EAT</a> which correspond to time zone ids representing Coordinated Universal Time, and East African Time
 respectively.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a491b68/src/main/scala/codes/reactive/scalatime/ZoneOffset.scala" target="_blank">ZoneOffset.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/87fb4fa/src/main/scala/codes/reactive/scalatime/ZoneOffset.scala" target="_blank">ZoneOffset.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain the UTC zone</span>
@@ -306,25 +306,6 @@ See <a href="http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#
       <p class="shortcomment cmt">Obtains an instance of <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> using an offset in hours.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains an instance of <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> using an offset in hours.
 </p></div><dl class="paramcmts block"><dt class="param">hours</dt><dd class="cmt"><p>the time-zone offset in hours, from 0 to ±18</p></dd><dt>returns</dt><dd class="cmt"><p>the <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets → AbstractZoneOffsets</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the offset is not in the required range</p></span></dd></dl></div>
-    </li><li name="codes.reactive.scalatime.ZoneOffsets#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(temporal:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.ZoneOffset"></a>
-      <a id="apply(scalatime.TemporalAccessor):scalatime.ZoneOffset"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="temporal">temporal: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@apply(temporal:codes.reactive.scalatime.TemporalAccessor):codes.reactive.scalatime.ZoneOffset" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain its ZoneOffset (if available).</p><div class="fullcomment"><div class="comment cmt"><p>Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain its ZoneOffset (if available).
-</p></div><dl class="paramcmts block"><dt class="param">temporal</dt><dd class="cmt"><p>the temporal object to query</p></dd><dt>returns</dt><dd class="cmt"><p>the <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets → AbstractZoneOffsets</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if unable to extract a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a></p></span></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -422,6 +403,25 @@ See <a href="http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="codes.reactive.scalatime.ZoneOffsets#from" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="from(temporal:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.ZoneOffset]"></a>
+      <a id="from(scalatime.TemporalAccessor):Try[scalatime.ZoneOffset]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">from</span><span class="params">(<span name="temporal">temporal: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@from(temporal:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.ZoneOffset]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain its ZoneOffset (if available).</p><div class="fullcomment"><div class="comment cmt"><p>Queries a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> to obtain its ZoneOffset (if available).
+</p></div><dl class="paramcmts block"><dt class="param">temporal</dt><dd class="cmt"><p>the temporal object to query</p></dd><dt>returns</dt><dd class="cmt"><p>the <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets → AbstractZoneOffsets</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if unable to extract a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a></p></span></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -659,7 +659,7 @@ See <a href="http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. a491b68) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 87fb4fa) Scala 2.11 API Documentation. </div>
 
 
     </body>
