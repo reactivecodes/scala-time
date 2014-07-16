@@ -23,23 +23,39 @@ import util.Try
 
 
 /** Factory object for obtaining [[OffsetTime]] instances. */
-object OffsetTime extends OffsetTimeFactory {
+object OffsetTime {
 
+  /** Obtains an [[OffsetTime]] by querying the current system clock at UTC for the current time. */
   def apply(): OffsetTime = OT.now(Clock())
 
+  /** Obtains an [[OffsetTime]] by querying the specified clock for the current time. */
   def apply(clock: Clock): OffsetTime = OT.now(clock)
 
+  /** Obtains an [[OffsetTime]] from a specified [[LocalTime]] and [[ZoneOffset]]. */
   def apply(localTime: LocalTime, offset: ZoneOffset): OffsetTime = OT.of(localTime, offset)
 
+  /** Tries to query a [[Temporal]] instance to obtain an [[OffsetTime]]. */
   def from(from: TemporalAccessor): Try[OffsetTime] = Try(OT.from(from))
 
+  /** Tries to obtain an [[OffsetTime]] instance from text formatted according to [[DateTimeFormatter.Iso.OffsetTime]].
+    *
+    * @param text the text to parse such as "10:15:30"
+    */
   def parse(text: String): Try[OffsetTime] = Try(OT.parse(text))
 
+  /** Tries to obtain an [[OffsetTime]] instance from valid text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[OffsetTime] = Try(OT.parse(text, formatter))
 
+  /** Obtains an [[OffsetTime]] instance from an hour, minute, second and nanosecond. All values must be within range. */
   def of(hour: Int, minute: Int, second: Int, nano: Int, offset: ZoneOffset): OffsetTime = OT.of(hour, minute, second, nano, offset)
 
+  /** The maximum supported [[OffsetTime]] ('23:59:59.999999999-18:00' - the time just before midnight at the end of
+    * the day in the minimum offset)
+    */
   val Max: OffsetTime = OT.MAX
 
+  /** The minimum supported [[OffsetTime]] ('00:00:00+18:00' - the time of midnight at the start of the day in the
+    * maximum offset)
+    */
   val Min: OffsetTime = OT.MIN
 }

@@ -39,19 +39,42 @@ import scala.util.Try
   *
   * @since  0.1.0
   */
-object Instant extends InstantFactory {
+object Instant {
 
+  /** Obtains the current instant from the UTC system clock. **/
   def apply(): Instant = apply(Clock())
 
+  /** Queries the provided [[Clock]] to obtain the current instant **/
   def apply(clock: Clock): Instant = I.now(clock)
 
+  /** Obtains the current instance from milliseconds from the epoch of 1970-01-01T00:00:00Z.
+    *
+    * @param epochMilli the number of milliseconds from 1970-01-01T00:00:00Z
+    * @throws DateTimeException - if the instant exceeds the maximum or minimum instant
+    */
   def milli(epochMilli: Long): Instant = I.ofEpochMilli(epochMilli)
 
+  /** Obtains the current instance from seconds from the epoch of 1970-01-01T00:00:00Z.
+    *
+    * @param epochSecond the number of seconds from 1970-01-01T00:00:00Z
+    * @throws DateTimeException - if the instant exceeds the maximum or minimum instant
+    */
   def second(epochSecond: Long): Instant = I.ofEpochSecond(epochSecond)
 
+  /** Obtains the current instance from seconds from the epoch of 1970-01-01T00:00:00Z, and nanosecond fraction.
+    *
+    * @param epochSecond the number of seconds from 1970-01-01T00:00:00Z
+    * @param nanoAdjustment the nanosecond adjustment to the number of seconds, positive or negative
+    * @throws DateTimeException - if the instant exceeds the maximum or minimum instant
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
   def second(epochSecond: Long, nanoAdjustment: Long): Instant = I.ofEpochSecond(epochSecond, nanoAdjustment)
 
+  /** Tries to query a [[Temporal]] to obtain an [[Instant]]. */
   def from(from: TemporalAccessor): Try[Instant] = Try(I.from(from))
 
+  /** Tries to obtain an [[Instant]] from text formatted according to [[DateTimeFormatter.Iso.Instant]], such as
+    * `2014-07-15T14:47:00.00Z`.
+    */
   def parse(text: String): Try[Instant] = Try(I.parse(text))
 }

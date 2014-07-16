@@ -1,4 +1,20 @@
-/******************************************************************** See the NOTICE file distributed with this work for additional   ** information regarding Copyright ownership.  The author/authors  ** license this file to you under the terms of the Apache License, ** Version 2.0 (the "License"); you may not use this file except   ** in compliance with the License.  You may obtain a copy of the   ** License at:                                                     **                                                                 **     http://www.apache.org/licenses/LICENSE-2.0                  **                                                                 ** Unless required by applicable law or agreed to in writing,      ** software distributed under the License is distributed on an     ** "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY          ** KIND, either express or implied.  See the License for the       ** specific language governing permissions and limitations         ** under the License.                                              ********************************************************************/
+/*******************************************************************
+ * See the NOTICE file distributed with this work for additional   *
+ * information regarding Copyright ownership.  The author/authors  *
+ * license this file to you under the terms of the Apache License, *
+ * Version 2.0 (the "License"); you may not use this file except   *
+ * in compliance with the License.  You may obtain a copy of the   *
+ * License at:                                                     *
+ *                                                                 *
+ *     http://www.apache.org/licenses/LICENSE-2.0                  *
+ *                                                                 *
+ * Unless required by applicable law or agreed to in writing,      *
+ * software distributed under the License is distributed on an     *
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY          *
+ * KIND, either express or implied.  See the License for the       *
+ * specific language governing permissions and limitations         *
+ * under the License.                                              *
+ *******************************************************************/
 
 package codes.reactive.scalatime
 
@@ -10,22 +26,39 @@ import util.Try
   *
   * @since  0.1.0
   */
-private[scalatime] trait ZoneOffsets extends AbstractZoneOffsets {
+private[scalatime] trait ZoneOffsets {
 
-def from(temporal: TemporalAccessor): Try[ZoneOffset] = Try(ZO.from(temporal))
+  /** Obtains a [[ZoneOffset]] from an offset of hours - from 0 to ±18. */
+  def apply(hours: Int): ZoneOffset = ZO.ofHours(hours)
 
-def apply(hours: Int): ZoneOffset = ZO.ofHours(hours)
+  /** Obtains a [[ZoneOffset]] from an offset of hours (from 0 to ±18) and minutes (0 to ±59). */
+  def apply(hours: Int, minutes: Int): ZoneOffset = ZO.ofHoursMinutes(hours, minutes)
 
-def apply(hours: Int, minutes: Int): ZoneOffset = ZO.ofHoursMinutes(hours, minutes)
+  /** Obtains a [[ZoneOffset]] from an offset of hours (from 0 to ±18), minutes and seconds  (0 to ±59 respectively). */
+  def apply(hours: Int, minutes: Int, seconds: Int): ZoneOffset = ZO.ofHoursMinutesSeconds(hours, minutes, seconds)
 
-def apply(hours: Int, minutes: Int, seconds: Int): ZoneOffset = ZO.ofHoursMinutesSeconds(hours, minutes, seconds)
+  /** Parses a [[scala.Predef.String]] producing a [[ZoneOffset]]
+    * See [[http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#of-java.lang.String- Java API.]]
+    *
+    * @param offsetId the offset ID
+    * @throws DateTimeException - if the offset ID is invalid
+    * @return the [[ZoneOffset]]
+    */
+  def apply(offsetId: String): ZoneOffset = ZO.of(offsetId)
 
-def apply(offsetId: String): ZoneOffset = ZO.of(offsetId)
+  /** Tries to query a [[Temporal]] instance to obtain its [[ZoneOffset]]. */
+  def from(temporal: TemporalAccessor): Try[ZoneOffset] = Try(ZO.from(temporal))
 
-val EAT: ZoneOffset = apply(3)
+  /** The time-zone offset representing EAT (Eastern Africa Time), with an offset of '+03:00'. */
+  val EAT: ZoneOffset = apply(3)
 
-val UTC: ZoneOffset = ZO.UTC
+  /** The time-zone offset representing UTC (Coordinated Universal Time), with an offset of '0'. */
+  val UTC: ZoneOffset = ZO.UTC
 
-val MIN: ZoneOffset = ZO.MIN
+  /** The time-zone offset representing the minimum supported offset. */
+  val MIN: ZoneOffset = ZO.MIN
 
-val MAX: ZoneOffset = ZO.MAX}
+  /** The time-zone offset representing the maximum supported offset. */
+  val MAX: ZoneOffset = ZO.MAX
+
+}

@@ -25,19 +25,31 @@ import scala.util.Try
 /** Factory object for creation of [[LocalDate]] instances
   * @since 0.1.0
   */
-object LocalDate extends LocalDateFactory {
+object LocalDate {
+
+  /** Obtains a [[LocalDate]] by querying the current system clock at UTC for the current date. */
   def apply(): LocalDate = LD.now(Clock())
 
+  /** Obtains a [[LocalDate]] by querying the specified clock for the current date. */
   def apply(clock: Clock): LocalDate = LD.now(clock)
 
+  /** Tries to query a [[Temporal]] instance to obtain a [[LocalDate]]. */
   def from(from: TemporalAccessor): Try[LocalDate] = Try(LD.from(from))
 
+  /** Obtains a [[LocalDate]] instance from a year, month and day. The day must be valid for the year and month. The
+    * values of all fields must be within range, and the day must be valid for the year and month.
+    */
   def of(year: Int, month: Int, day: Int): LocalDate = LD.of(year, month, day)
 
+  /** Obtains a [[LocalDate]] instance from a year, [[Month]] and day. The values of all fields must be within range,
+    * and the day must be valid for the year and month.
+    */
   def of(year: Int, month: Month, day: Int): LocalDate = LD.of(year, month, day)
 
+  /** Tries to obtain a [[LocalDate]] from text formatted according to [[DateTimeFormatter.Iso.LocalDate]]. */
   def parse(text: String): Try[LocalDate] = Try(LD.parse(text))
 
+  /** Tries to obtain a [[LocalDate]] text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[LocalDate] = Try(LD.parse(text, formatter))
 
 }

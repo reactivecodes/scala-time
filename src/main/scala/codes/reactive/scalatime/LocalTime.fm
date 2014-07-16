@@ -23,33 +23,50 @@ import util.Try
 
 
 /** Factory object for creating [[LocalTime]] instances **/
-object LocalTime extends LocalTimeFactory {
+object LocalTime {
 
+  /** Obtains a [[LocalTime]] by querying the current system clock at UTC for the current time. */
   def apply(): LocalTime = LT.now(Clock())
 
+  /** Obtains a [[LocalTime]] by querying the specified clock for the current time. */
   def apply(clock: Clock): LocalTime = LT.now(clock)
 
+  /** Tries to query a [[Temporal]] instance to obtain a [[LocalTime]]. */
   def from(from: TemporalAccessor): Try[LocalTime] = Try(LT.from(from))
 
+  /** Tries to obtain a [[LocalTime]] from text formatted according to [[DateTimeFormatter.Iso.LocalTime]].
+    *
+    * @param text the text to parse such as "10:15:30"
+    */
   def parse(text: String): Try[LocalTime] = Try(LT.parse(text))
 
+  /** Tries to obtain a [[LocalTime]] instance from valid text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[LocalTime] = Try(LT.parse(text, formatter))
 
+  /** Obtains a [[LocalTime]] from an hour, minute, second and nanosecond. All values must be within range. */
   def of(hour: Int, minute: Int, second: Int, nano: Int): LocalTime = LT.of(hour, minute, second, nano)
 
+  /** Obtains a [[LocalTime]] from an hour, minute and second. All values must be within range. */
   def of(hour: Int, minute: Int, second: Int): LocalTime = LT.of(hour, minute, second)
 
+  /** Obtains a [[LocalTime]] from an hour and minute. Both values must be within range. */
   def of(hour: Int, minute: Int): LocalTime = LT.of(hour, minute)
 
+  /** Obtains a [[LocalTime]] instance from from a nanos-of-day value - from 0 to 24 * 60 * 60 * 1,000,000,000 - 1 */
   def ofNano(nanoOfDay: Long): LocalTime = LT.ofNanoOfDay(nanoOfDay)
 
+  /** Obtains a [[LocalTime]] instance from from a second-of-day value - from 0 to 24 * 60 * 60 - 1 */
   def ofSecond(secondOfDay: Long): LocalTime = LT.ofSecondOfDay(secondOfDay)
 
+  /** The maximum supported LocalTime ('23:59:59.999999999' - just before midnight at the end of the day). */
   val Max: LocalTime = LT.MAX
 
+  /** The LocalTime of midnight at the start of the day, '00:00'. */
   val Midnight: LocalTime = LT.MIDNIGHT
 
+  /** The minimum supported LocalTime ('00:00' - the time of midnight at the start of the day). */
   val Min: LocalTime = Midnight
 
+  /** The LocalTime of noon in the middle of the day, '12:00'. */
   val Noon: LocalTime = LT.NOON
 }

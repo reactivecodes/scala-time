@@ -42,21 +42,58 @@ import scala.util.Try
   *
   * @since  0.1.0
   */
-object Period extends PeriodFactory {
+object Period {
 
+  /** Tries to obtain a [[Period]] from a temporal amount by looping around the set of units from the amount and using
+    * the YEARS, MONTHS and DAYS units to create a period.
+    */
   def from(amount: TemporalAmount): Try[Period] = Try(JP.from(amount))
 
+  /** Tries to obtain a [[Duration]] from text based on the ISO-8601 Period format - PnDTnHnMn.nS - PnYnMnD and PnW.
+    *
+    * ==== Text Format ====
+    * The string starts with an optional sign, denoted by the ASCII negative or positive symbol. If negative, the whole
+    * period is negated.
+    *
+    * The ASCII letter "P" is next in upper or lower case.
+    *
+    * There are then four sections, each consisting of a number and a suffix. At least one of the four sections must be
+    * present. The sections have suffixes in ASCII of "Y", "M", "W" and "D" for years, months, weeks and days, accepted
+    * in upper or lower case.
+    *
+    * The suffixes must occur in order. The number part of each section must consist of ASCII digits. The number may be
+    * prefixed by the ASCII negative or positive symbol. The number must parse to an int.
+    *
+    * The leading plus/minus sign, and negative values for other units are not part of the ISO-8601 standard.
+    *
+    * @example
+    * {{{
+    *               import codes.reactive.scalatime._
+    *
+    *               // Parses as 1 year, 2 months, 3 days
+    *               val peri1 = Period.parse("P1Y2M3D")
+    *
+    *               // Parses as minus 1 year, 2 months, zero days
+    *               val peri2 = Period.parse("P-1Y2M")
+    * }}}
+    */
   def parse(text: String): Try[Period] = Try(JP.parse(text))
 
+  /** Obtains a [[Period]] representing a number of days. */
   def days(days: Int): Period = JP.ofDays(days)
 
+  /** Obtains a [[Period]] representing a number of weeks. */
   def weeks(weeks: Int): Period = JP.ofWeeks(weeks)
 
+  /** Obtains a [[Period]] representing a number of fortnights. */
   def fortnights(fortnights: Int): Period = JP.ofWeeks(fortnights * 2)
 
+  /** Obtains a [[Period]] representing a number of months. */
   def months(months: Int): Period = JP.ofMonths(months)
 
+  /** Obtains a [[Period]] representing a number of years. */
   def years(years: Int): Period = JP.ofYears(years)
 
+  /** Obtains a [[Period]] of zero. */
   val Nil: Period = JP.ZERO
 }

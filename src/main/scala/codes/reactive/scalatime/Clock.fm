@@ -40,15 +40,20 @@ import ${underlyingBase}.{Clock => JC}
   *
   * @since 0.1.0
   */
-object Clock extends ClockFactory {
+object Clock {
 
+  /** Obtains a [[Clock]] from the current instant converted to UTC from the best available system clock. */
   def apply(): Clock = JC.systemUTC()
 
+  /** Obtains a [[Clock]] from the current instant at the specified time zone from the best available system clock. */
   def apply(zone: ZoneID): Clock = JC.system(zone)
 
+  /** Obtains a [[Clock]] from the current instant at the system time zone from the best available system clock. */
   def systemZone: Clock = JC.systemDefaultZone()
 
+  /** Obtains a [[Clock]] fixed to a specific instant, at a specific time zone */
   def fixed(instant: Instant, zone: ZoneID): Clock = JC.fixed(instant, zone)
 
+  /** Obtains a [[Clock]] fixed to a specific instant */
   def fixed(instant: Instant): Clock = JC.fixed(instant, ZoneOffset.UTC)
 }

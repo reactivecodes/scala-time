@@ -25,23 +25,63 @@ import util.Try
 /** Provides default time zone [[ZoneID]] instances, as well as methods to create them.
   * @since  0.1.0
   */
-private[scalatime] trait ZoneIDs extends AbstractZoneIDs {
+private[scalatime] trait ZoneIDs {
 
+  /** The time-zone ID representing EAT (Eastern Africa Time), with an ID of 'Africa/Nairobi'. */
   val EAT: ZoneID = apply(entries.find(_.contains("Nairobi")).get)
 
+  /** The time-zone ID representing UTC (Coordinated Universal Time), with an ID of 'Z'. */
   val UTC: ZoneID = apply("Z")
 
+  /** Tries to query a [[Temporal]] instance to obtain its [[ZoneID]]. */
   def from(temporal: TemporalAccessor): Try[ZoneID] = Try(ZI.from(temporal))
 
+  /** Parses a [[scala.Predef.String]] producing a [[ZoneID]] or [[ZoneOffset]]. A [[ZoneOffset]] is returned
+    * if the String is 'Z', or starts with '+' or '-'. The result will always be a valid ID for which ZoneRules
+    * can be obtained.
+    *
+    * @param zoneID  the time-zone ID
+    * @throws DateTimeException if the converted zone ID has an invalid format
+    * @throws ZoneRulesException if the converted zone region ID cannot be found
+    * @return the [[ZoneID]]
+    */
   def apply(zoneID: String): ZoneID = ZI.of(zoneID)
 
+  /** Similar to `apply(zoneID: String)`, but allows supplementing the existing [[ZoneID]]s with a [[scala.Predef.Map]] of
+    * aliases.
+    *
+    * @param zoneID the time-zone ID
+    * @param aliasMap a map of alias zone IDs (typically abbreviations) to real zone ID
+    * @throws DateTimeException if the converted zone ID has an invalid format
+    * @throws ZoneRulesException if the converted zone region ID cannot be found
+    * @return the [[ZoneID]]
+    */
   def apply(zoneID: String, aliasMap: Map[String, String]): ZoneID = ZI.of(zoneID,
     collection.JavaConversions.mapAsJavaMap(aliasMap))
 
+  /** Obtains an instance of [[ZoneID]] wrapping an offset.
+    * If the prefix is "GMT", "UTC", or "UT" a ZoneId with the prefix and the non-zero offset is returned.
+    * If the prefix is empty "" the ZoneOffset is returned.
+    *
+    * @param prefix the time-zone ID
+    * @param offset the offset
+    * @throws DateTimeException if the prefix is not one of "GMT", "UTC", or "UT", or ""
+    */
   def apply(prefix: String, offset: ZoneOffset): ZoneID = ZI.ofOffset(prefix, offset)
 
+  /** Queries TimeZone.getDefault() to find the current default time-zone and converts it to a ZoneId.
+    *
+    * @throws DateTimeException if the converted zone ID has an invalid format
+    * @throws ZoneRulesException if the converted zone region ID cannot be found
+    * @return the current system default time [[ZoneID]]
+    */
   def system: ZoneID = ZI.systemDefault
 
+  /** Obtains a [[scala.collection.immutable.Set Set]] of the [[scala.Predef.String String]] form of all currently
+    * available region based zone IDs.
+    *
+    * @return the set of all currently available zone ID
+    */
   def entries: Set[String] = collection.JavaConversions.asScalaSet(ZI.getAvailableZoneIds).toSet
 
 }
