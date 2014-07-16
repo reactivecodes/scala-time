@@ -43,12 +43,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">Period</span><span class="result"> extends <span class="extype" name="codes.reactive.scalatime.PeriodFactory">PeriodFactory</span></span>
+        <span class="name">Period</span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a>.</p><p>Period is a date-based amount of time in the ISO-8601 calendar system, such as '2 years, 3 months and 4 days'.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/87fb4fa/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Period.scala" target="_blank">Period.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/d94b24b/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Period.scala" target="_blank">Period.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain a Period of 10 weeks</span>
@@ -61,7 +61,7 @@
         the <a href="dsl/package.html" class="extype" name="codes.reactive.scalatime.dsl">dsl</a> package for alternatives.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.PeriodFactory">PeriodFactory</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -79,7 +79,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="codes.reactive.scalatime.Period"><span>Period</span></li><li class="in" name="codes.reactive.scalatime.PeriodFactory"><span>PeriodFactory</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="codes.reactive.scalatime.Period"><span>Period</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -156,7 +156,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Period#Nil" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.Period#Nil" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Nil:codes.reactive.scalatime.Period"></a>
       <a id="Nil:scalatime.Period"></a>
       <h4 class="signature">
@@ -172,7 +172,7 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a period of zero.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a period of zero. *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Period">Period</a> → PeriodFactory</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> of zero.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -213,7 +213,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Period#days" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.Period#days" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="days(days:Int):codes.reactive.scalatime.Period"></a>
       <a id="days(Int):scalatime.Period"></a>
       <h4 class="signature">
@@ -229,9 +229,7 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of days.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of days.
-</p></div><dl class="paramcmts block"><dt class="param">days</dt><dd class="cmt"><p>the number of days to represent as a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a></p></dd><dt>returns</dt><dd class="cmt"><p>a new Duration instance
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Period">Period</a> → PeriodFactory</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> representing a number of days.</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -289,7 +287,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Period#fortnights" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.Period#fortnights" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="fortnights(fortnights:Int):codes.reactive.scalatime.Period"></a>
       <a id="fortnights(Int):scalatime.Period"></a>
       <h4 class="signature">
@@ -305,10 +303,8 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of fortnights.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of fortnights.
-</p></div><dl class="paramcmts block"><dt class="param">fortnights</dt><dd class="cmt"><p>the number of fortnights to represent as a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a></p></dd><dt>returns</dt><dd class="cmt"><p>a new Duration instance
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Period">Period</a> → PeriodFactory</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Period#from" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">Obtains a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> representing a number of fortnights.</p>
+    </li><li name="codes.reactive.scalatime.Period#from" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="from(amount:codes.reactive.scalatime.TemporalAmount):scala.util.Try[codes.reactive.scalatime.Period]"></a>
       <a id="from(scalatime.TemporalAmount):Try[scalatime.Period]"></a>
       <h4 class="signature">
@@ -324,10 +320,8 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tries to obtain an instance of <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> from a temporal amount by looping around the set of units
-from the amount and using the YEARS, MONTHS and DAYS units to create a period.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain an instance of <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> from a temporal amount by looping around the set of units
-from the amount and using the YEARS, MONTHS and DAYS units to create a period.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Period">Period</a> → PeriodFactory</dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> from a temporal amount by looping around the set of units from the amount and using
+the YEARS, MONTHS and DAYS units to create a period.</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -379,7 +373,7 @@ from the amount and using the YEARS, MONTHS and DAYS units to create a period.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Period#months" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.Period#months" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="months(months:Int):codes.reactive.scalatime.Period"></a>
       <a id="months(Int):scalatime.Period"></a>
       <h4 class="signature">
@@ -395,9 +389,7 @@ from the amount and using the YEARS, MONTHS and DAYS units to create a period.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of months.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of months.
-</p></div><dl class="paramcmts block"><dt class="param">months</dt><dd class="cmt"><p>the number of months to represent as a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a></p></dd><dt>returns</dt><dd class="cmt"><p>a new Duration instance
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Period">Period</a> → PeriodFactory</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> representing a number of months.</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -465,16 +457,12 @@ from the amount and using the YEARS, MONTHS and DAYS units to create a period.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tries to obtain an instance of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">String</a> based
-on the ISO-8601 Period format - PnDTnHnMn.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain an instance of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">String</a> based
-on the ISO-8601 Period format - PnDTnHnMn.nS - PnYnMnD and PnW.</p><h6> String Format </h6><p>The string starts with an optional sign, denoted by the ASCII negative or positive symbol.
-If negative, the whole period is negated.</p><p>The ASCII letter &quot;P&quot; is next in upper or lower case.</p><p>There are then four sections, each consisting of a number and a suffix. At least one of
-the four sections must be present. The sections have suffixes in ASCII of &quot;Y&quot;, &quot;M&quot;, &quot;W&quot;
-and &quot;D&quot; for years, months, weeks and days, accepted in upper or lower case.</p><p>The suffixes must occur in order. The number part of each section must consist of ASCII
-digits. The number may be prefixed by the ASCII negative or positive symbol. The
-number must parse to an int.</p><p>The leading plus/minus sign, and negative values for other units are not part of the
-ISO-8601 standard.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Period">Period</a> → PeriodFactory</dd><div class="block">Example:
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from text based on the ISO-8601 Period format - PnDTnHnMn.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> from text based on the ISO-8601 Period format - PnDTnHnMn.nS - PnYnMnD and PnW.</p><h6> Text Format </h6><p>The string starts with an optional sign, denoted by the ASCII negative or positive symbol. If negative, the whole
+period is negated.</p><p>The ASCII letter &quot;P&quot; is next in upper or lower case.</p><p>There are then four sections, each consisting of a number and a suffix. At least one of the four sections must be
+present. The sections have suffixes in ASCII of &quot;Y&quot;, &quot;M&quot;, &quot;W&quot; and &quot;D&quot; for years, months, weeks and days, accepted
+in upper or lower case.</p><p>The suffixes must occur in order. The number part of each section must consist of ASCII digits. The number may be
+prefixed by the ASCII negative or positive symbol. The number must parse to an int.</p><p>The leading plus/minus sign, and negative values for other units are not part of the ISO-8601 standard.
+</p></div><dl class="attributes block"> <div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Parses as 1 year, 2 months, 3 days</span>
@@ -586,7 +574,7 @@ ISO-8601 standard.
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Period#weeks" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.Period#weeks" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="weeks(weeks:Int):codes.reactive.scalatime.Period"></a>
       <a id="weeks(Int):scalatime.Period"></a>
       <h4 class="signature">
@@ -602,10 +590,8 @@ ISO-8601 standard.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of weeks.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of weeks.
-</p></div><dl class="paramcmts block"><dt class="param">weeks</dt><dd class="cmt"><p>the number of weeks to represent as a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a></p></dd><dt>returns</dt><dd class="cmt"><p>a new Duration instance
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Period">Period</a> → PeriodFactory</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Period#years" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">Obtains a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> representing a number of weeks.</p>
+    </li><li name="codes.reactive.scalatime.Period#years" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="years(years:Int):codes.reactive.scalatime.Period"></a>
       <a id="years(Int):scalatime.Period"></a>
       <h4 class="signature">
@@ -621,9 +607,7 @@ ISO-8601 standard.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of years.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instance representing a number of years.
-</p></div><dl class="paramcmts block"><dt class="param">years</dt><dd class="cmt"><p>the number of years to represent as a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a></p></dd><dt>returns</dt><dd class="cmt"><p>a new Duration instance
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="codes.reactive.scalatime.Period">Period</a> → PeriodFactory</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> representing a number of years.</p>
     </li></ol>
             </div>
 
@@ -633,9 +617,7 @@ ISO-8601 standard.
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="codes.reactive.scalatime.PeriodFactory">
-              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.PeriodFactory">PeriodFactory</span></h3>
-            </div><div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
@@ -654,7 +636,7 @@ ISO-8601 standard.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 87fb4fa) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. d94b24b) Scala 2.11 API Documentation. </div>
 
 
     </body>
