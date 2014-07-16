@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides a standard set of <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> instances, and factory methods for their creation.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/5ebf79b/src/main/scala/codes/reactive/scalatime/DateTimeFormatter.scala" target="_blank">DateTimeFormatter.scala</a></dd><dt>Since</dt><dd><p>0.1.0
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides a standard set of <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> instances, and factory methods for their creation.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/8391a72/src/main/scala/codes/reactive/scalatime/DateTimeFormatter.scala" target="_blank">DateTimeFormatter.scala</a></dd><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="format/TimeFormatters.html" class="extype" name="codes.reactive.scalatime.format.TimeFormatters">TimeFormatters</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -197,48 +197,46 @@
     </span>
       <p class="shortcomment cmt">Formats or parses an RFC-1123 / RFC822 (internet) date-time</p><div class="fullcomment"><div class="comment cmt"><p>Formats or parses an RFC-1123 / RFC822 (internet) date-time</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="format/TimeFormatters.html" class="extype" name="codes.reactive.scalatime.format.TimeFormatters">TimeFormatters</a></dd></dl></div>
     </li><li name="codes.reactive.scalatime.format.TimeFormatters#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(pattern:String,locale:java.util.Locale):codes.reactive.scalatime.DateTimeFormatter"></a>
-      <a id="apply(String,Locale):scalatime.DateTimeFormatter"></a>
+      <a id="apply(pattern:String,locale:java.util.Locale):scala.util.Try[codes.reactive.scalatime.DateTimeFormatter]"></a>
+      <a id="apply(String,Locale):Try[scalatime.DateTimeFormatter]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="pattern">pattern: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="locale">locale: <span class="extype" name="java.util.Locale">Locale</span></span>)</span><span class="result">: <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">scalatime.DateTimeFormatter</a></span>
+        <span class="name">apply</span><span class="params">(<span name="pattern">pattern: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="locale">locale: <span class="extype" name="java.util.Locale">Locale</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">scalatime.DateTimeFormatter</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.DateTimeFormatter$@apply(pattern:String,locale:java.util.Locale):codes.reactive.scalatime.DateTimeFormatter" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.DateTimeFormatter$@apply(pattern:String,locale:java.util.Locale):scala.util.Try[codes.reactive.scalatime.DateTimeFormatter]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on a string pattern of letters and symbols and the provided locale.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on a string pattern of letters and symbols and the provided locale. This can
-be changed using <code>withLocale(Locale)</code> on the returned formatter. See the
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on a text pattern of letters and symbols and the provided locale.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on a text pattern of letters and symbols and the provided locale.
+This can be changed using <code>withLocale(Locale)</code> on the returned formatter. See the
 <a href="http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html" target="_blank">java API documentation</a> for
 a full list of symbols and meanings. For example, d MMM uuuu will format 2014-06-07 as '7 Jun 2014'.
-</p></div><dl class="paramcmts block"><dt class="param">pattern</dt><dd class="cmt"><p>the pattern to use</p></dd><dt class="param">locale</dt><dd class="cmt"><p>the locale to use</p></dd><dt>returns</dt><dd class="cmt"><p>a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on the pattern and locale
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="format/TimeFormatters.html" class="extype" name="codes.reactive.scalatime.format.TimeFormatters">TimeFormatters</a></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="format/TimeFormatters.html" class="extype" name="codes.reactive.scalatime.format.TimeFormatters">TimeFormatters</a></dd></dl></div>
     </li><li name="codes.reactive.scalatime.format.TimeFormatters#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(pattern:String):codes.reactive.scalatime.DateTimeFormatter"></a>
-      <a id="apply(String):scalatime.DateTimeFormatter"></a>
+      <a id="apply(pattern:String):scala.util.Try[codes.reactive.scalatime.DateTimeFormatter]"></a>
+      <a id="apply(String):Try[scalatime.DateTimeFormatter]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="pattern">pattern: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">scalatime.DateTimeFormatter</a></span>
+        <span class="name">apply</span><span class="params">(<span name="pattern">pattern: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">scalatime.DateTimeFormatter</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.DateTimeFormatter$@apply(pattern:String):codes.reactive.scalatime.DateTimeFormatter" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.DateTimeFormatter$@apply(pattern:String):scala.util.Try[codes.reactive.scalatime.DateTimeFormatter]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on a string pattern of letters and symbols.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on a string pattern of letters and symbols. See the
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on a text pattern of letters and symbols.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on a text pattern of letters and symbols. See the
 <a href="http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html" target="_blank">java API documentation</a> for
 a full list of symbols and meanings. For example, d MMM uuuu will format 2014-06-07 as '7 Jun 2014'.
-</p></div><dl class="paramcmts block"><dt class="param">pattern</dt><dd class="cmt"><p>the pattern to use</p></dd><dt>returns</dt><dd class="cmt"><p>a <a href="package.html#DateTimeFormatter=java.time.format.DateTimeFormatter" class="extmbr" name="codes.reactive.scalatime.DateTimeFormatter">DateTimeFormatter</a> based on the pattern
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="format/TimeFormatters.html" class="extype" name="codes.reactive.scalatime.format.TimeFormatters">TimeFormatters</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt">IllegalArgumentException<p>- if the pattern is invalid</p></span></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="format/TimeFormatters.html" class="extype" name="codes.reactive.scalatime.format.TimeFormatters">TimeFormatters</a></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -571,7 +569,7 @@ a full list of symbols and meanings. For example, d MMM uuuu will format 2014-06
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 5ebf79b) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 8391a72) Scala 2.11 API Documentation. </div>
 
 
     </body>
