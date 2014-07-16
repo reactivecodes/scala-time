@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for creation of <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1a657f7/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/LocalDateTime.scala" target="_blank">LocalDateTime.scala</a></dd><dt>Since</dt><dd><p>0.1.0
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for creation of <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/5ebf79b/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/LocalDateTime.scala" target="_blank">LocalDateTime.scala</a></dd><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -413,118 +413,122 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int):codes.reactive.scalatime.LocalDateTime"></a>
-      <a id="of(Int,scalatime.Month,Int,Int,Int):scalatime.LocalDateTime"></a>
+      <a id="of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
+      <a id="of(Int,scalatime.Month,Int,Int,Int):Try[scalatime.LocalDateTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="package.html#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">scalatime.Month</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a></span>
+        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="package.html#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">scalatime.Month</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int):codes.reactive.scalatime.LocalDateTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from year, month, day, hour and minute, setting the second and nanosecond to zero.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from year, month, day, hour and minute, setting the second and nanosecond to zero.
-The values of all fields must be within range, and the day must be valid for the year and month.
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from year, month, day, hour and minute, setting the second and nanosecond to
+zero.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from year, month, day, hour and minute, setting the second and nanosecond to
+zero. The values of all fields must be within range, and the day must be valid for the year and month.
 </p></div></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int,second:Int):codes.reactive.scalatime.LocalDateTime"></a>
-      <a id="of(Int,scalatime.Month,Int,Int,Int,Int):scalatime.LocalDateTime"></a>
+      <a id="of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int,second:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
+      <a id="of(Int,scalatime.Month,Int,Int,Int,Int):Try[scalatime.LocalDateTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="package.html#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">scalatime.Month</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a></span>
+        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="package.html#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">scalatime.Month</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int,second:Int):codes.reactive.scalatime.LocalDateTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int,second:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute and second, setting the nanosecond to zero.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute and second, setting the nanosecond to zero.
-The values of all fields must be within range, and the day must be valid for the year and month.
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute and second, setting the nanosecond to
+zero.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute and second, setting the nanosecond to
+zero. The values of all fields must be within range, and the day must be valid for the year and month.
 </p></div></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int,second:Int,nano:Int):codes.reactive.scalatime.LocalDateTime"></a>
-      <a id="of(Int,scalatime.Month,Int,Int,Int,Int,Int):scalatime.LocalDateTime"></a>
+      <a id="of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int,second:Int,nano:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
+      <a id="of(Int,scalatime.Month,Int,Int,Int,Int,Int):Try[scalatime.LocalDateTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="package.html#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">scalatime.Month</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="nano">nano: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a></span>
+        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="package.html#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">scalatime.Month</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="nano">nano: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int,second:Int,nano:Int):codes.reactive.scalatime.LocalDateTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:codes.reactive.scalatime.Month,day:Int,hour:Int,minute:Int,second:Int,nano:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute, second and nanosecond.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute, second and nanosecond. The values of all fields
-must be within range, and the day must be valid for the year and month.
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute, second and nanosecond.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute, second and nanosecond. The values of
+all fields must be within range, and the day must be valid for the year and month.
 </p></div></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="of(year:Int,month:Int,day:Int,hour:Int,minute:Int):codes.reactive.scalatime.LocalDateTime"></a>
-      <a id="of(Int,Int,Int,Int,Int):scalatime.LocalDateTime"></a>
+      <a id="of(year:Int,month:Int,day:Int,hour:Int,minute:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
+      <a id="of(Int,Int,Int,Int,Int):Try[scalatime.LocalDateTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a></span>
+        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:Int,day:Int,hour:Int,minute:Int):codes.reactive.scalatime.LocalDateTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:Int,day:Int,hour:Int,minute:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour and minute, setting the second and nanosecond to zero.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour and minute, setting the second and nanosecond to zero.
-The values of all fields must be within range, and the day must be valid for the year and month.
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour and minute, setting the second and nanosecond to
+zero.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour and minute, setting the second and nanosecond to
+zero. The values of all fields must be within range, and the day must be valid for the year and month.
 </p></div></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="of(year:Int,month:Int,day:Int,hour:Int,minute:Int,second:Int):codes.reactive.scalatime.LocalDateTime"></a>
-      <a id="of(Int,Int,Int,Int,Int,Int):scalatime.LocalDateTime"></a>
+      <a id="of(year:Int,month:Int,day:Int,hour:Int,minute:Int,second:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
+      <a id="of(Int,Int,Int,Int,Int,Int):Try[scalatime.LocalDateTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a></span>
+        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:Int,day:Int,hour:Int,minute:Int,second:Int):codes.reactive.scalatime.LocalDateTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:Int,day:Int,hour:Int,minute:Int,second:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute and second, setting the nanosecond to zero.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute and second, setting the nanosecond to zero. The
-values of all fields must be within range, and the day must be valid for the year and month.
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute and second, setting the nanosecond to
+zero.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute and second, setting the nanosecond to
+zero. The values of all fields must be within range, and the day must be valid for the year and month.
 </p></div></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="of(year:Int,month:Int,day:Int,hour:Int,minute:Int,second:Int,nano:Int):codes.reactive.scalatime.LocalDateTime"></a>
-      <a id="of(Int,Int,Int,Int,Int,Int,Int):scalatime.LocalDateTime"></a>
+      <a id="of(year:Int,month:Int,day:Int,hour:Int,minute:Int,second:Int,nano:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
+      <a id="of(Int,Int,Int,Int,Int,Int,Int):Try[scalatime.LocalDateTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="nano">nano: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a></span>
+        <span class="name">of</span><span class="params">(<span name="year">year: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="month">month: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="day">day: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="nano">nano: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">scalatime.LocalDateTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:Int,day:Int,hour:Int,minute:Int,second:Int,nano:Int):codes.reactive.scalatime.LocalDateTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.LocalDateTime$@of(year:Int,month:Int,day:Int,hour:Int,minute:Int,second:Int,nano:Int):scala.util.Try[codes.reactive.scalatime.LocalDateTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute, second and nanosecond.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute, second and nanosecond. The values of all fields
-must be within range, and the day must be valid for the year and month.
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute, second and nanosecond.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> from a year, month, day, hour, minute, second and nanosecond. The values of
+all fields must be within range, and the day must be valid for the year and month.
 </p></div></div>
     </li><li name="codes.reactive.scalatime.LocalDateTime#parse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):scala.util.Try[codes.reactive.scalatime.LocalDateTime]"></a>
@@ -695,7 +699,7 @@ must be within range, and the day must be valid for the year and month.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1a657f7) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 5ebf79b) Scala 2.11 API Documentation. </div>
 
 
     </body>

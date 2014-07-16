@@ -48,7 +48,7 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>.</p><p>Instant is an instantaneous point on the time-line.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1a657f7/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Instant.scala" target="_blank">Instant.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/5ebf79b/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/Instant.scala" target="_blank">Instant.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain the current instant of a Clock</span>
@@ -353,25 +353,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Instant#milli" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="milli(epochMilli:Long):codes.reactive.scalatime.Instant"></a>
-      <a id="milli(Long):scalatime.Instant"></a>
+    </li><li name="codes.reactive.scalatime.Instant#milli" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="milli(epochMilli:Long):scala.util.Try[codes.reactive.scalatime.Instant]"></a>
+      <a id="milli(Long):Try[scalatime.Instant]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">milli</span><span class="params">(<span name="epochMilli">epochMilli: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a></span>
+        <span class="name">milli</span><span class="params">(<span name="epochMilli">epochMilli: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.Instant$@milli(epochMilli:Long):codes.reactive.scalatime.Instant" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.Instant$@milli(epochMilli:Long):scala.util.Try[codes.reactive.scalatime.Instant]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains the current instance from milliseconds from the epoch of 1970-01-01T00:00:00Z.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains the current instance from milliseconds from the epoch of 1970-01-01T00:00:00Z.
-</p></div><dl class="paramcmts block"><dt class="param">epochMilli</dt><dd class="cmt"><p>the number of milliseconds from 1970-01-01T00:00:00Z</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the instant exceeds the maximum or minimum instant
-</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> from specified milliseconds from the epoch of 1970-01-01T00:00:00Z.</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -441,44 +439,41 @@
     </span>
       <p class="shortcomment cmt">Tries to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> from text formatted according to <span class="extype" name="DateTimeFormatter.Iso.Instant">DateTimeFormatter.Iso.Instant</span>, such as
 <code>2014-07-15T14:47:00.00Z</code>.</p>
-    </li><li name="codes.reactive.scalatime.Instant#second" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="second(epochSecond:Long,nanoAdjustment:Long):codes.reactive.scalatime.Instant"></a>
-      <a id="second(Long,Long):scalatime.Instant"></a>
+    </li><li name="codes.reactive.scalatime.Instant#second" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="second(epochSecond:Long,nanoAdjustment:Long):scala.util.Try[codes.reactive.scalatime.Instant]"></a>
+      <a id="second(Long,Long):Try[scalatime.Instant]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">second</span><span class="params">(<span name="epochSecond">epochSecond: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="nanoAdjustment">nanoAdjustment: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a></span>
+        <span class="name">second</span><span class="params">(<span name="epochSecond">epochSecond: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="nanoAdjustment">nanoAdjustment: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.Instant$@second(epochSecond:Long,nanoAdjustment:Long):codes.reactive.scalatime.Instant" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.Instant$@second(epochSecond:Long,nanoAdjustment:Long):scala.util.Try[codes.reactive.scalatime.Instant]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains the current instance from seconds from the epoch of 1970-01-01T00:00:00Z, and nanosecond fraction.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains the current instance from seconds from the epoch of 1970-01-01T00:00:00Z, and nanosecond fraction.
-</p></div><dl class="paramcmts block"><dt class="param">epochSecond</dt><dd class="cmt"><p>the number of seconds from 1970-01-01T00:00:00Z</p></dd><dt class="param">nanoAdjustment</dt><dd class="cmt"><p>the nanosecond adjustment to the number of seconds, positive or negative</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">ArithmeticException<p>- if numeric overflow occurs
-</p></span><span class="cmt">DateTimeException<p>- if the instant exceeds the maximum or minimum instant</p></span></dd></dl></div>
-    </li><li name="codes.reactive.scalatime.Instant#second" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="second(epochSecond:Long):codes.reactive.scalatime.Instant"></a>
-      <a id="second(Long):scalatime.Instant"></a>
+      <p class="shortcomment cmt">Tries to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> from specified seconds from the epoch of 1970-01-01T00:00:00Z, and nanosecond
+fraction.</p>
+    </li><li name="codes.reactive.scalatime.Instant#second" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="second(epochSecond:Long):scala.util.Try[codes.reactive.scalatime.Instant]"></a>
+      <a id="second(Long):Try[scalatime.Instant]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">second</span><span class="params">(<span name="epochSecond">epochSecond: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a></span>
+        <span class="name">second</span><span class="params">(<span name="epochSecond">epochSecond: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.Instant$@second(epochSecond:Long):codes.reactive.scalatime.Instant" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.Instant$@second(epochSecond:Long):scala.util.Try[codes.reactive.scalatime.Instant]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains the current instance from seconds from the epoch of 1970-01-01T00:00:00Z.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains the current instance from seconds from the epoch of 1970-01-01T00:00:00Z.
-</p></div><dl class="paramcmts block"><dt class="param">epochSecond</dt><dd class="cmt"><p>the number of seconds from 1970-01-01T00:00:00Z</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the instant exceeds the maximum or minimum instant
-</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain an <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a> from specified seconds from the epoch of 1970-01-01T00:00:00Z.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -610,7 +605,7 @@
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1a657f7) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 5ebf79b) Scala 2.11 API Documentation. </div>
 
 
     </body>

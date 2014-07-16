@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instances.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1a657f7/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/OffsetTime.scala" target="_blank">OffsetTime.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instances.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/5ebf79b/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/OffsetTime.scala" target="_blank">OffsetTime.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -450,22 +450,24 @@ maximum offset)
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="codes.reactive.scalatime.OffsetTime#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="of(hour:Int,minute:Int,second:Int,nano:Int,offset:codes.reactive.scalatime.ZoneOffset):codes.reactive.scalatime.OffsetTime"></a>
-      <a id="of(Int,Int,Int,Int,scalatime.ZoneOffset):scalatime.OffsetTime"></a>
+      <a id="of(hour:Int,minute:Int,second:Int,nano:Int,offset:codes.reactive.scalatime.ZoneOffset):scala.util.Try[codes.reactive.scalatime.OffsetTime]"></a>
+      <a id="of(Int,Int,Int,Int,scalatime.ZoneOffset):Try[scalatime.OffsetTime]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="nano">nano: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="offset">offset: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>)</span><span class="result">: <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">scalatime.OffsetTime</a></span>
+        <span class="name">of</span><span class="params">(<span name="hour">hour: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minute">minute: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="second">second: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="nano">nano: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="offset">offset: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">scalatime.OffsetTime</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.OffsetTime$@of(hour:Int,minute:Int,second:Int,nano:Int,offset:codes.reactive.scalatime.ZoneOffset):codes.reactive.scalatime.OffsetTime" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.OffsetTime$@of(hour:Int,minute:Int,second:Int,nano:Int,offset:codes.reactive.scalatime.ZoneOffset):scala.util.Try[codes.reactive.scalatime.OffsetTime]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from an hour, minute, second and nanosecond.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from an hour, minute, second and nanosecond. All values must be within range.</p></div></div>
+      <p class="shortcomment cmt">Tries to obtain an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from an hour, minute, second and nanosecond.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain an <a href="package.html#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instance from an hour, minute, second and nanosecond. All values must be within
+range.
+</p></div></div>
     </li><li name="codes.reactive.scalatime.OffsetTime#parse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="parse(text:String,formatter:codes.reactive.scalatime.DateTimeFormatter):scala.util.Try[codes.reactive.scalatime.OffsetTime]"></a>
       <a id="parse(String,scalatime.DateTimeFormatter):Try[scalatime.OffsetTime]"></a>
@@ -633,7 +635,7 @@ maximum offset)
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1a657f7) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 5ebf79b) Scala 2.11 API Documentation. </div>
 
 
     </body>
