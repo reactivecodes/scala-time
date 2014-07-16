@@ -27,7 +27,7 @@ import org.scalatest.{Matchers, Outcome, fixture}
 class TimeFormattersSuite extends fixture.FreeSpec with Matchers {
 
   case class FormatFixture(subject: TimeFormatters = new TimeFormatters {},
-                           date: ZonedDateTime = ZonedDateTime.of(2014, 6, 10, 22, 35, 29, 978, ZoneID.UTC),
+                           date: ZonedDateTime = ZonedDateTime.of(2014, 6, 10, 22, 35, 29, 978, ZoneID.UTC).get,
                            internet: String = "Tue, 10 Jun 2014 22:35:29 GMT",
                            offset: String = "2014-06-10T22:35:29.000000978Z",
                            offsetTruncated: String = "2014-06-10T22:35:29Z",

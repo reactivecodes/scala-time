@@ -46,8 +46,11 @@ object OffsetTime {
   /** Tries to obtain an [[OffsetTime]] instance from valid text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[OffsetTime] = Try(OT.parse(text, formatter))
 
-  /** Obtains an [[OffsetTime]] instance from an hour, minute, second and nanosecond. All values must be within range. */
-  def of(hour: Int, minute: Int, second: Int, nano: Int, offset: ZoneOffset): OffsetTime = OT.of(hour, minute, second, nano, offset)
+  /** Tries to obtain an [[OffsetTime]] instance from an hour, minute, second and nanosecond. All values must be within
+    * range.
+    */
+  def of(hour: Int, minute: Int, second: Int, nano: Int, offset: ZoneOffset): Try[OffsetTime] =
+    Try(OT.of(hour, minute, second, nano, offset))
 
   /** The maximum supported [[OffsetTime]] ('23:59:59.999999999-18:00' - the time just before midnight at the end of
     * the day in the minimum offset)

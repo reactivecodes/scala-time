@@ -27,24 +27,24 @@ class RichTemporalSuite extends fixture.FreeSpec with Matchers {
 
   override type FixtureParam = RichTemporal
 
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new RichTemporal(LocalDate.of(2014, 6, 7))))
+  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new RichTemporal(LocalDate.of(2014, 6, 7).get)))
 
   "RichTemporal instances" - {
 
     "have a '+' method for adding a 'TemporalAmount' to an underlying 'Temporal'" in {
-      _ + Period.days(1) should equal (LocalDate.of(2014, 6, 8))
+      _ + Period.days(1) should equal (LocalDate.of(2014, 6, 8).get)
     }
 
     "have a '+' method for adding an amount of 'TemporalUnit's to an underlying 'Temporal'" in { p =>
-      (p +(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 8))
+      (p +(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 8).get)
     }
 
     "have a '-' method for subtracting a TemporalAmount from an underlying Temporal" in {
-      _ - Period.days(1) should equal (LocalDate.of(2014, 6, 6))
+      _ - Period.days(1) should equal (LocalDate.of(2014, 6, 6).get)
     }
 
     "have a '-' method for subtracting  an amount of 'TemporalUnit's from  an underlying 'Temporal'" in { p =>
-      (p -(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 6))
+      (p -(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 6).get)
     }
 
  }

@@ -66,11 +66,11 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
     }
 
     "can create an Instant from an Epoch millisecond value" in { _ =>
-      Instant.milli(1402331329505L).atZone(ZoneID.UTC) shouldEqual ZonedDateTime.of(2014, 6, 9, 16, 28, 49, 505000000, ZoneID.UTC)
+      Instant.milli(1402331329505L).get.atZone(ZoneID.UTC) shouldEqual ZonedDateTime.of(2014, 6, 9, 16, 28, 49, 505000000, ZoneID.UTC).get
     }
 
     "can create an 'Instant' instance from a parsed String" in { _ =>
-      Instant.parse("2014-06-09T16:28:49.505000000Z").get shouldEqual Instant.milli(1402331329505L)
+      Instant.parse("2014-06-09T16:28:49.505000000Z") shouldEqual Instant.milli(1402331329505L)
     }
   }
 

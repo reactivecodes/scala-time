@@ -30,7 +30,7 @@ class TemporalConversionsSuite extends FreeSpec with Matchers {
     import subject._
 
     "provides an implicit conversion of a 'Temporal' to a 'RichTemporal'" in {
-      val v: RichTemporal = LocalDate.of(2014, 6, 7)
+      val v: RichTemporal = LocalDate.of(2014, 6, 7).get
       v.isInstanceOf[RichTemporal] should be(right = true)
     }
 

@@ -47,28 +47,16 @@ object Instant {
   /** Queries the provided [[Clock]] to obtain the current instant **/
   def apply(clock: Clock): Instant = I.now(clock)
 
-  /** Obtains the current instance from milliseconds from the epoch of 1970-01-01T00:00:00Z.
-    *
-    * @param epochMilli the number of milliseconds from 1970-01-01T00:00:00Z
-    * @throws DateTimeException - if the instant exceeds the maximum or minimum instant
-    */
-  def milli(epochMilli: Long): Instant = I.ofEpochMilli(epochMilli)
+  /** Tries to obtain an [[Instant]] from specified milliseconds from the epoch of 1970-01-01T00:00:00Z. */
+  def milli(epochMilli: Long): Try[Instant] = Try(I.ofEpochMilli(epochMilli))
 
-  /** Obtains the current instance from seconds from the epoch of 1970-01-01T00:00:00Z.
-    *
-    * @param epochSecond the number of seconds from 1970-01-01T00:00:00Z
-    * @throws DateTimeException - if the instant exceeds the maximum or minimum instant
-    */
-  def second(epochSecond: Long): Instant = I.ofEpochSecond(epochSecond)
+  /** Tries to obtain an [[Instant]] from specified seconds from the epoch of 1970-01-01T00:00:00Z. */
+  def second(epochSecond: Long): Try[Instant] = Try(I.ofEpochSecond(epochSecond))
 
-  /** Obtains the current instance from seconds from the epoch of 1970-01-01T00:00:00Z, and nanosecond fraction.
-    *
-    * @param epochSecond the number of seconds from 1970-01-01T00:00:00Z
-    * @param nanoAdjustment the nanosecond adjustment to the number of seconds, positive or negative
-    * @throws DateTimeException - if the instant exceeds the maximum or minimum instant
-    * @throws ArithmeticException - if numeric overflow occurs
+  /** Tries to obtain an [[Instant]] from specified seconds from the epoch of 1970-01-01T00:00:00Z, and nanosecond
+    * fraction.
     */
-  def second(epochSecond: Long, nanoAdjustment: Long): Instant = I.ofEpochSecond(epochSecond, nanoAdjustment)
+  def second(epochSecond: Long, nanoAdjustment: Long): Try[Instant] = Try(I.ofEpochSecond(epochSecond, nanoAdjustment))
 
   /** Tries to query a [[Temporal]] to obtain an [[Instant]]. */
   def from(from: TemporalAccessor): Try[Instant] = Try(I.from(from))

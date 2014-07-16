@@ -43,20 +43,20 @@ object LocalTime {
   /** Tries to obtain a [[LocalTime]] instance from valid text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[LocalTime] = Try(LT.parse(text, formatter))
 
-  /** Obtains a [[LocalTime]] from an hour, minute, second and nanosecond. All values must be within range. */
-  def of(hour: Int, minute: Int, second: Int, nano: Int): LocalTime = LT.of(hour, minute, second, nano)
+  /** Tries to obtain a [[LocalTime]] from an hour, minute, second and nanosecond. All values must be within range. */
+  def of(hour: Int, minute: Int, second: Int, nano: Int): Try[LocalTime] = Try(LT.of(hour, minute, second, nano))
 
-  /** Obtains a [[LocalTime]] from an hour, minute and second. All values must be within range. */
-  def of(hour: Int, minute: Int, second: Int): LocalTime = LT.of(hour, minute, second)
+  /** Tries to obtain a [[LocalTime]] from an hour, minute and second. All values must be within range. */
+  def of(hour: Int, minute: Int, second: Int): Try[LocalTime] = Try(LT.of(hour, minute, second))
 
-  /** Obtains a [[LocalTime]] from an hour and minute. Both values must be within range. */
-  def of(hour: Int, minute: Int): LocalTime = LT.of(hour, minute)
+  /** Tries to obtain a [[LocalTime]] from an hour and minute. Both values must be within range. */
+  def of(hour: Int, minute: Int): Try[LocalTime] = Try(LT.of(hour, minute))
 
-  /** Obtains a [[LocalTime]] instance from from a nanos-of-day value - from 0 to 24 * 60 * 60 * 1,000,000,000 - 1 */
-  def ofNano(nanoOfDay: Long): LocalTime = LT.ofNanoOfDay(nanoOfDay)
+  /** Tries to obtain a [[LocalTime]] instance from from a nanos-of-day value - from 0 to 24 * 60 * 60 * 1,000,000,000 - 1 */
+  def ofNano(nanoOfDay: Long): Try[LocalTime] = Try(LT.ofNanoOfDay(nanoOfDay))
 
-  /** Obtains a [[LocalTime]] instance from from a second-of-day value - from 0 to 24 * 60 * 60 - 1 */
-  def ofSecond(secondOfDay: Long): LocalTime = LT.ofSecondOfDay(secondOfDay)
+  /** Tries to obtain a [[LocalTime]] instance from from a second-of-day value - from 0 to 24 * 60 * 60 - 1 */
+  def ofSecond(secondOfDay: Long): Try[LocalTime] = Try(LT.ofSecondOfDay(secondOfDay))
 
   /** The maximum supported LocalTime ('23:59:59.999999999' - just before midnight at the end of the day). */
   val Max: LocalTime = LT.MAX

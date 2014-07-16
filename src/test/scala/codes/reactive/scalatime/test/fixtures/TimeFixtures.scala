@@ -25,9 +25,9 @@ import codes.reactive.scalatime._
  */
 trait TimeFixtures {
 
-  val localDate = LocalDate.of(2014, 6, 10)
+  val localDate = LocalDate.of(2014, 6, 10).get
 
-  val localTime = LocalTime.of(22, 35, 29, 978)
+  val localTime = LocalTime.of(22, 35, 29, 978).get
 
   val offsetTime = OffsetTime(localTime, ZoneOffset.UTC)
 
