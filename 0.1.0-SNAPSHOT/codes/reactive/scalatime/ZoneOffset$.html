@@ -50,7 +50,7 @@
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>. Also provides default instances <a href="#UTC:codes.reactive.scalatime.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset#UTC">ZoneOffset.UTC</a>, and
 <a href="#EAT:codes.reactive.scalatime.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset#EAT">ZoneOffset.EAT</a> which correspond to time zone ids representing Coordinated Universal Time, and East African Time
 respectively.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/d94b24b/src/main/scala/codes/reactive/scalatime/ZoneOffset.scala" target="_blank">ZoneOffset.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1a657f7/src/main/scala/codes/reactive/scalatime/ZoneOffset.scala" target="_blank">ZoneOffset.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain the UTC zone</span>
@@ -228,78 +228,77 @@ respectively.
     </span>
       <p class="shortcomment cmt">The time-zone offset representing UTC (Coordinated Universal Time), with an offset of '0'.</p><div class="fullcomment"><div class="comment cmt"><p>The time-zone offset representing UTC (Coordinated Universal Time), with an offset of '0'.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets</dd></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneOffsets#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(offsetId:String):codes.reactive.scalatime.ZoneOffset"></a>
-      <a id="apply(String):scalatime.ZoneOffset"></a>
+      <a id="apply(offsetId:String):scala.util.Try[codes.reactive.scalatime.ZoneOffset]"></a>
+      <a id="apply(String):Try[scalatime.ZoneOffset]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="offsetId">offsetId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>
+        <span class="name">apply</span><span class="params">(<span name="offsetId">offsetId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@apply(offsetId:String):codes.reactive.scalatime.ZoneOffset" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@apply(offsetId:String):scala.util.Try[codes.reactive.scalatime.ZoneOffset]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Parses a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">scala.Predef.String</a> producing a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>
-See <a href="http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#of-java.lang.String-" target="_blank">Java API.</a>
-</p><div class="fullcomment"><div class="comment cmt"><p>Parses a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">scala.Predef.String</a> producing a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>
-See <a href="http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#of-java.lang.String-" target="_blank">Java API.</a>
-</p></div><dl class="paramcmts block"><dt class="param">offsetId</dt><dd class="cmt"><p>the offset ID</p></dd><dt>returns</dt><dd class="cmt"><p>the <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>- if the offset ID is invalid</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from text.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from text.
+See <a href="http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#of-java.lang.String-" target="_blank">Java API.</a> for more
+detail.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets</dd><dt>Note</dt><dd><span class="cmt"><p>Returns <code>Failure[DateTimeException]</code> if the offset ID is invalid.
+</p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneOffsets#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(hours:Int,minutes:Int,seconds:Int):codes.reactive.scalatime.ZoneOffset"></a>
-      <a id="apply(Int,Int,Int):scalatime.ZoneOffset"></a>
+      <a id="apply(hours:Int,minutes:Int,seconds:Int):scala.util.Try[codes.reactive.scalatime.ZoneOffset]"></a>
+      <a id="apply(Int,Int,Int):Try[scalatime.ZoneOffset]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="hours">hours: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minutes">minutes: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="seconds">seconds: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>
+        <span class="name">apply</span><span class="params">(<span name="hours">hours: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minutes">minutes: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="seconds">seconds: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@apply(hours:Int,minutes:Int,seconds:Int):codes.reactive.scalatime.ZoneOffset" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@apply(hours:Int,minutes:Int,seconds:Int):scala.util.Try[codes.reactive.scalatime.ZoneOffset]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours (from 0 to ±18), minutes and seconds  (0 to ±59 respectively).</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours (from 0 to ±18), minutes and seconds  (0 to ±59 respectively).</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets</dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtains a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours (from 0 to ±18), minutes and seconds (both 0 to ±59).</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtains a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours (from 0 to ±18), minutes and seconds (both 0 to ±59).</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets</dd></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneOffsets#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(hours:Int,minutes:Int):codes.reactive.scalatime.ZoneOffset"></a>
-      <a id="apply(Int,Int):scalatime.ZoneOffset"></a>
+      <a id="apply(hours:Int,minutes:Int):scala.util.Try[codes.reactive.scalatime.ZoneOffset]"></a>
+      <a id="apply(Int,Int):Try[scalatime.ZoneOffset]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="hours">hours: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minutes">minutes: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>
+        <span class="name">apply</span><span class="params">(<span name="hours">hours: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="minutes">minutes: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@apply(hours:Int,minutes:Int):codes.reactive.scalatime.ZoneOffset" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@apply(hours:Int,minutes:Int):scala.util.Try[codes.reactive.scalatime.ZoneOffset]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours (from 0 to ±18) and minutes (0 to ±59).</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours (from 0 to ±18) and minutes (0 to ±59).</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets</dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours (from 0 to ±18) and minutes (0 to ±59).</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours (from 0 to ±18) and minutes (0 to ±59).</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets</dd></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneOffsets#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(hours:Int):codes.reactive.scalatime.ZoneOffset"></a>
-      <a id="apply(Int):scalatime.ZoneOffset"></a>
+      <a id="apply(hours:Int):scala.util.Try[codes.reactive.scalatime.ZoneOffset]"></a>
+      <a id="apply(Int):Try[scalatime.ZoneOffset]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="hours">hours: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>
+        <span class="name">apply</span><span class="params">(<span name="hours">hours: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@apply(hours:Int):codes.reactive.scalatime.ZoneOffset" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneOffset$@apply(hours:Int):scala.util.Try[codes.reactive.scalatime.ZoneOffset]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours - from 0 to ±18.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours - from 0 to ±18.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets</dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours - from 0 to ±18.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from an offset of hours - from 0 to ±18.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneOffsets</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -649,7 +648,7 @@ See <a href="http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. d94b24b) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1a657f7) Scala 2.11 API Documentation. </div>
 
 
     </body>

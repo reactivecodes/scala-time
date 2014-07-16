@@ -51,7 +51,7 @@
 <a href="#EAT:codes.reactive.scalatime.ZoneID" class="extmbr" name="codes.reactive.scalatime.ZoneID#EAT">ZoneID.EAT</a> which correspond to time zone ids representing Coordinated Universal Time, and East African Time
 respectively.</p><p>In addition to factory methods, <a href="#entries:Set[String]" class="extmbr" name="codes.reactive.scalatime.ZoneID#entries">ZoneID.entries</a> obtains a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a> of all currently
 available region based zone ids.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/d94b24b/src/main/scala/codes/reactive/scalatime/ZoneID.scala" target="_blank">ZoneID.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1a657f7/src/main/scala/codes/reactive/scalatime/ZoneID.scala" target="_blank">ZoneID.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain the UTC zone</span>
@@ -195,68 +195,64 @@ available region based zone ids.
     </span>
       <p class="shortcomment cmt">The time-zone ID representing UTC (Coordinated Universal Time), with an ID of 'Z'.</p><div class="fullcomment"><div class="comment cmt"><p>The time-zone ID representing UTC (Coordinated Universal Time), with an ID of 'Z'.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneIDs#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(prefix:String,offset:codes.reactive.scalatime.ZoneOffset):codes.reactive.scalatime.ZoneID"></a>
-      <a id="apply(String,scalatime.ZoneOffset):scalatime.ZoneID"></a>
+      <a id="apply(prefix:String,offset:codes.reactive.scalatime.ZoneOffset):scala.util.Try[codes.reactive.scalatime.ZoneID]"></a>
+      <a id="apply(String,scalatime.ZoneOffset):Try[scalatime.ZoneID]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="prefix">prefix: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="offset">offset: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>)</span><span class="result">: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>
+        <span class="name">apply</span><span class="params">(<span name="prefix">prefix: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="offset">offset: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@apply(prefix:String,offset:codes.reactive.scalatime.ZoneOffset):codes.reactive.scalatime.ZoneID" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@apply(prefix:String,offset:codes.reactive.scalatime.ZoneOffset):scala.util.Try[codes.reactive.scalatime.ZoneID]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains an instance of <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> wrapping an offset.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains an instance of <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> wrapping an offset.
-If the prefix is &quot;GMT&quot;, &quot;UTC&quot;, or &quot;UT&quot; a ZoneId with the prefix and the non-zero offset is returned.
-If the prefix is empty &quot;&quot; the ZoneOffset is returned.
-</p></div><dl class="paramcmts block"><dt class="param">prefix</dt><dd class="cmt"><p>the time-zone ID</p></dd><dt class="param">offset</dt><dd class="cmt"><p>the offset</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the prefix is not one of &quot;GMT&quot;, &quot;UTC&quot;, or &quot;UT&quot;, or &quot;&quot;
-</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> wrapping an offset.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> wrapping an offset. If the prefix is &quot;GMT&quot;, &quot;UTC&quot;, or &quot;UT&quot; a ZoneId with the prefix
+and the non-zero offset is returned. If the prefix is empty &quot;&quot; the ZoneOffset is returned.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneIDs#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(zoneID:String,aliasMap:Map[String,String]):codes.reactive.scalatime.ZoneID"></a>
-      <a id="apply(String,Map[String,String]):scalatime.ZoneID"></a>
+      <a id="apply(zoneID:String,aliasMap:Map[String,String]):scala.util.Try[codes.reactive.scalatime.ZoneID]"></a>
+      <a id="apply(String,Map[String,String]):Try[scalatime.ZoneID]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="zoneID">zoneID: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="aliasMap">aliasMap: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>
+        <span class="name">apply</span><span class="params">(<span name="zoneID">zoneID: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="aliasMap">aliasMap: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@apply(zoneID:String,aliasMap:Map[String,String]):codes.reactive.scalatime.ZoneID" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@apply(zoneID:String,aliasMap:Map[String,String]):scala.util.Try[codes.reactive.scalatime.ZoneID]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Similar to <code>apply(zoneID: String)</code>, but allows supplementing the existing <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>s with a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@Map[A,+B]=scala.collection.immutable.Map[A,B]" class="extype" target="_top">scala.Predef.Map</a> of
-aliases.</p><div class="fullcomment"><div class="comment cmt"><p>Similar to <code>apply(zoneID: String)</code>, but allows supplementing the existing <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>s with a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@Map[A,+B]=scala.collection.immutable.Map[A,B]" class="extype" target="_top">scala.Predef.Map</a> of
-aliases.
-</p></div><dl class="paramcmts block"><dt class="param">zoneID</dt><dd class="cmt"><p>the time-zone ID</p></dd><dt class="param">aliasMap</dt><dd class="cmt"><p>a map of alias zone IDs (typically abbreviations) to real zone ID</p></dd><dt>returns</dt><dd class="cmt"><p>the <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the converted zone ID has an invalid format</p></span><span class="cmt">ZoneRulesException<p>if the converted zone region ID cannot be found</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Similar to <code>apply(zone: String)</code>, but allows supplementing the existing <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>s with a
+<a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.collection.immutable.Map" class="extype" target="_top">Map</a> of aliases to real zone IDs.</p><div class="fullcomment"><div class="comment cmt"><p>Similar to <code>apply(zone: String)</code>, but allows supplementing the existing <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>s with a
+<a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.collection.immutable.Map" class="extype" target="_top">Map</a> of aliases to real zone IDs.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneIDs#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(zoneID:String):codes.reactive.scalatime.ZoneID"></a>
-      <a id="apply(String):scalatime.ZoneID"></a>
+      <a id="apply(zone:String):scala.util.Try[codes.reactive.scalatime.ZoneID]"></a>
+      <a id="apply(String):Try[scalatime.ZoneID]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="zoneID">zoneID: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>
+        <span class="name">apply</span><span class="params">(<span name="zone">zone: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@apply(zoneID:String):codes.reactive.scalatime.ZoneID" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@apply(zone:String):scala.util.Try[codes.reactive.scalatime.ZoneID]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Parses a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">scala.Predef.String</a> producing a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> or <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Parses a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">scala.Predef.String</a> producing a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> or <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>. A <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> is returned
-if the String is 'Z', or starts with '+' or '-'. The result will always be a valid ID for which ZoneRules
-can be obtained.
-</p></div><dl class="paramcmts block"><dt class="param">zoneID</dt><dd class="cmt"><p>the time-zone ID</p></dd><dt>returns</dt><dd class="cmt"><p>the <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the converted zone ID has an invalid format</p></span><span class="cmt">ZoneRulesException<p>if the converted zone region ID cannot be found</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to obtains a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> or <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from text.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtains a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> or <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from text. A <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> is returned if the text is 'Z', or
+starts with '+' or '-'. If successfuly, the result will always be a valid ID for which ZoneRules can be obtained.
+</p></div><dl class="paramcmts block"><dt class="param">zone</dt><dd class="cmt"><p>the time-zone ID
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd><dt>Note</dt><dd><span class="cmt"><p>will return <code>Failure[ZoneRulesException]</code> if the converted zone region ID cannot be found.</p></span>, <span class="cmt"><p>will return <code>Failure[DateTimeException]</code> if the converted zone ID has an invalid format.</p></span></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -313,11 +309,7 @@ can be obtained.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a> of the <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">String</a> form of all currently
-available region based zone IDs.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a> of the <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.Predef$@String=String" class="extype" target="_top">String</a> form of all currently
-available region based zone IDs.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the set of all currently available zone ID
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.collection.immutable.Set" class="extype" target="_top">scala.collection.immutable.Set</a> of the text form of all currently available region based zone IDs.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.collection.immutable.Set" class="extype" target="_top">scala.collection.immutable.Set</a> of the text form of all currently available region based zone IDs.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -512,24 +504,24 @@ available region based zone IDs.
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneIDs#system" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="system:codes.reactive.scalatime.ZoneID"></a>
-      <a id="system:scalatime.ZoneID"></a>
+      <a id="system:scala.util.Try[codes.reactive.scalatime.ZoneID]"></a>
+      <a id="system:Try[scalatime.ZoneID]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">system</span><span class="result">: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>
+        <span class="name">system</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.1/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@system:codes.reactive.scalatime.ZoneID" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@system:scala.util.Try[codes.reactive.scalatime.ZoneID]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Queries TimeZone.</p><div class="fullcomment"><div class="comment cmt"><p>Queries TimeZone.getDefault() to find the current default time-zone and converts it to a ZoneId.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the current system default time <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd><dt>Exceptions thrown</dt><dd><span class="cmt">DateTimeException<p>if the converted zone ID has an invalid format</p></span><span class="cmt">ZoneRulesException<p>if the converted zone region ID cannot be found</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Tries to query TimeZone.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to query TimeZone.getDefault() to find the current default time-zone and convert it to a ZoneId.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>ZoneIDs</dd><dt>Note</dt><dd><span class="cmt"><p>will return <code>Failure[ZoneRulesException]</code> if the converted zone region ID cannot be found.
+</p></span>, <span class="cmt"><p>will return <code>Failure[DateTimeException]</code> if the converted zone ID has an invalid format.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <a id="toString():String"></a>
@@ -646,7 +638,7 @@ available region based zone IDs.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. d94b24b) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1a657f7) Scala 2.11 API Documentation. </div>
 
 
     </body>
