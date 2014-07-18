@@ -17,7 +17,7 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package dsl.conversions
+package syntax.conversions
 
 import temporal._
 

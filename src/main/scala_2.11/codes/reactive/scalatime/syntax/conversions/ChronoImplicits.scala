@@ -17,18 +17,17 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package dsl.conversions
+package syntax.conversions
 
-import codes.reactive.scalatime.chrono.{RichChronoZonedDateTime, RichChronoLocalDateTime, RichChronoLocalDate}
-import codes.reactive.scalatime.dsl.conversions.ChronoConverters
-import language.implicitConversions
+import chrono.{RichChronoLocalDate, RichChronoLocalDateTime, RichChronoZonedDateTime}
+
 
 private[conversions] trait ChronoImplicits extends ChronoConverters {
 
-  implicit def augmentChronoLocalDate(localDate: ChronoLocalDate): RichChronoLocalDate = richChronoLocalDate(localDate)
+  implicit val augmentChronoLocalDate: ChronoLocalDate => RichChronoLocalDate = richChronoLocalDate
 
-  implicit def augmentChronoLocalDateTime[A <: ChronoLocalDate](localDateTime: ChronoLocalDateTime[A]): RichChronoLocalDateTime[A] = richChronoLocalDateTime(localDateTime)
+  implicit val augmentChronoLocalDateTime: ChronoLocalDateTime[_] => RichChronoLocalDateTime[_] = richChronoLocalDateTime(_)
 
-  implicit def augmentChronoZonedDateTime[A <: ChronoLocalDate](zonedDateTime: ChronoZonedDateTime[A]): RichChronoZonedDateTime[A] = richChronoZonedDateTime(zonedDateTime)
+  implicit val augmentChronoZonedDateTime: ChronoZonedDateTime[_] => RichChronoZonedDateTime[_] = richChronoZonedDateTime(_)
 
 }

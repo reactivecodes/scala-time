@@ -17,38 +17,7 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package dsl
-
-import format.TimeFormatters
-import temporal.{ChronoUnits, ChronoFields, IsoUnits, IsoFields}
+package syntax
 
 
-protected[dsl] trait UnitHelpers {
-
-  /** Provides a standard set of date period fields as [[TemporalField]] instances, including those
-    * specific to the ISO-8601 calendar system.
-    */
-  val field = new ChronoFields with IsoFields {}
-
-  /** Provides a standard set of date period units as [[TemporalUnit]] instances, including those
-    * specific to the ISO-8601 calendar system.
-    */
-  val unit = new ChronoUnits with IsoUnits {}
-
-}
-
-protected[dsl] trait FormatterHelpers {
-
-  /** Provides a standard set of [[DateTimeFormatter]] instances, as well as methods to create them **/
-  val formatter = new TimeFormatters {}
-
-}
-
-protected[dsl] trait ZoneHelpers {
-
-  /** Provides a standard set of time zone [[ZoneID]] instances, as well as methods to create them. **/
-  val zone = new ZoneIDs {}
-
-  /** Provides a standard set of time zone [[ZoneOffset]] instances, as well as methods to create them. **/
-  val offset = new ZoneOffsets {}
-}
+object TimeConverters extends conversions.AnnotateEnrichTemporal with conversions.AnnotateEnrichChrono

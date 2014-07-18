@@ -16,25 +16,18 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.dsl
+package codes.reactive.scalatime
+package syntax.conversions
 
-import codes.reactive.scalatime.chrono.RichChronoLocalDate
-import codes.reactive.scalatime._
-import codes.reactive.scalatime.temporal.RichDuration
-import org.scalatest.{Matchers, FreeSpec}
+import codes.reactive.scalatime.chrono.{RichChronoZonedDateTime, RichChronoLocalDateTime, RichChronoLocalDate}
+import language.implicitConversions
 
+private[conversions] trait ChronoImplicits extends ChronoConverters {
 
-class TimeConvertersSuite extends FreeSpec with Matchers {
+  implicit def augmentChronoLocalDate(localDate: ChronoLocalDate): RichChronoLocalDate = richChronoLocalDate(localDate)
 
-  "TimeConverters object provides decorators for converting java.time objects to their 'Rich' counterparts" - {
+  implicit def augmentChronoLocalDateTime[A <: ChronoLocalDate](localDateTime: ChronoLocalDateTime[A]): RichChronoLocalDateTime[A] = richChronoLocalDateTime(localDateTime)
 
-    import TimeConverters._
-
-    val fixed = Clock.fixed(Instant())
-
-    LocalDate(fixed).enrich shouldBe new RichChronoLocalDate(LocalDate(fixed))
-
-    Duration.seconds(2).enrich shouldBe new RichDuration(Duration.seconds(2))
-  }
+  implicit def augmentChronoZonedDateTime[A <: ChronoLocalDate](zonedDateTime: ChronoZonedDateTime[A]): RichChronoZonedDateTime[A] = richChronoZonedDateTime(zonedDateTime)
 
 }

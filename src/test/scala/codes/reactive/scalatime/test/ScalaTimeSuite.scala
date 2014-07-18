@@ -39,7 +39,7 @@ class ScalaTimeSuite extends FeatureSpec with Matchers {
 
   feature("'extended' usage with additional implicits import of 'conversions._'") {
     import codes.reactive.scalatime._
-    import dsl._
+    import syntax._
 
     val duration: Duration = 1L day
 

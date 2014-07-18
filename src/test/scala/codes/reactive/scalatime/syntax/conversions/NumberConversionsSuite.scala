@@ -16,37 +16,26 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.dsl.conversions
+package codes.reactive.scalatime.syntax.conversions
 
-import codes.reactive.scalatime.temporal.{RichDuration, RichPeriod, RichTemporal, RichTemporalAmount}
-import codes.reactive.scalatime.{Duration, LocalDate, Period}
+import codes.reactive.scalatime.{Duration, Period}
 import org.scalatest.{FreeSpec, Matchers}
 
 
-class TemporalConversionsSuite extends FreeSpec with Matchers {
+class NumberConversionsSuite extends FreeSpec with Matchers {
 
-  "A TemporalImplicits instance" - {
-    val subject = new TemporalImplicits {}
-    import subject._
+  val subject = new NumberImplicits {}
 
-    "provides an implicit conversion of a 'Temporal' to a 'RichTemporal'" in {
-      val v: RichTemporal = LocalDate.of(2014, 6, 7).get
-      v.isInstanceOf[RichTemporal] should be(right = true)
+  import subject._
+
+  "A NumberImplicits instance" - {
+
+    "provides an implicit conversion of an 'Int' to an 'IntPeriod'" in {
+      (1 day).isInstanceOf[Period] should be(right = true)
     }
 
-    "provides an implicit conversion of a 'TemporalAmount' to a 'RichTemporalAmount'" in {
-      val v: RichTemporalAmount = Duration.days(1)
-      v.isInstanceOf[RichTemporalAmount] should be(right = true)
-    }
-
-    "provides an implicit conversion of a 'Duration' to a 'RichDuration'" in {
-      val v: RichDuration = Duration.days(1)
-      v.isInstanceOf[RichDuration] should be(right = true)
-    }
-
-    "provides an implicit conversion of a 'Period' to a 'RichPeriod'" in {
-      val v: RichPeriod = Period.days(1)
-      v.isInstanceOf[RichPeriod] should be(right = true)
+    "provides an implicit conversion of a 'Long' to a 'LongDuration'" in {
+      (1L day).isInstanceOf[Duration] should be(right = true)
     }
   }
 

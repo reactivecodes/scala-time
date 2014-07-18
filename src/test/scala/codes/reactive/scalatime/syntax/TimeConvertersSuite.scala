@@ -16,27 +16,25 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.dsl.conversions
+package codes.reactive.scalatime.syntax
 
-import codes.reactive.scalatime.{Duration, Period}
-import org.scalatest.{FreeSpec, Matchers}
+import codes.reactive.scalatime.chrono.RichChronoLocalDate
+import codes.reactive.scalatime._
+import codes.reactive.scalatime.temporal.RichDuration
+import org.scalatest.{Matchers, FreeSpec}
 
 
-class NumberConversionsSuite extends FreeSpec with Matchers {
+class TimeConvertersSuite extends FreeSpec with Matchers {
 
-  val subject = new NumberImplicits {}
+  "TimeConverters object provides decorators for converting java.time objects to their 'Rich' counterparts" - {
 
-  import subject._
+    import TimeConverters._
 
-  "A NumberImplicits instance" - {
+    val fixed = Clock.fixed(Instant())
 
-    "provides an implicit conversion of an 'Int' to an 'IntPeriod'" in {
-      (1 day).isInstanceOf[Period] should be(right = true)
-    }
+    LocalDate(fixed).enrich shouldBe new RichChronoLocalDate(LocalDate(fixed))
 
-    "provides an implicit conversion of a 'Long' to a 'LongDuration'" in {
-      (1L day).isInstanceOf[Duration] should be(right = true)
-    }
+    Duration.seconds(2).enrich shouldBe new RichDuration(Duration.seconds(2))
   }
 
 }

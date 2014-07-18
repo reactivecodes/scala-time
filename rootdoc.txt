@@ -7,17 +7,17 @@ factory objects for core '''java.time''' types and constant values.
 
 It is further divided into packages corresponding to the underlying
 [[http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html java.time]] package - with the exception of
-the [[codes.reactive.scalatime.dsl dsl]] package which includes additional implicit conversion functions as well as
+the [[codes.reactive.scalatime.syntax syntax]] package which includes additional implicit conversion functions as well as
 methods for easier use of the underlying java types; and the [[codes.reactive.scalatime.control control]] package
 which provides default [[scala.util.control.Exception.Catcher]] instances for exceptions which may be thrown by the
-underlying library.
+underlying library, and type aliases for those exceptions.
 
 ==== Package Structure ====
   - [[codes.reactive.scalatime.temporal temporal]]  - Access to date and time using fields and units, and date time adjusters.
   - [[codes.reactive.scalatime.chrono chrono]]  - Generic API for calendar systems other than the default ISO.
   - [[codes.reactive.scalatime.control control]]    - [[scala.util.control.Exception.Catcher]] instances.
   - [[codes.reactive.scalatime.format format]]  - Provides classes to print and parse dates and times.
-  - [[codes.reactive.scalatime.dsl dsl]]    - Implicit functions, and methods for easier use of time APIs.
+  - [[codes.reactive.scalatime.syntax syntax]]    - Implicit functions, and methods for easier use of time APIs.
 
 
 

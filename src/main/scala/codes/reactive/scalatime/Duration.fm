@@ -27,7 +27,7 @@ import scala.util.Try
   * Duration is a time-based amount of time, such as '34.5 seconds'.
   *
   * @note   Direct use of this object is not the only mechanism to obtain [[Duration]] instances. See also
-  *         the [[dsl]] package for alternatives.
+  *         the [[syntax]] syntax for alternatives.
   *
   * @example
   *          {{{

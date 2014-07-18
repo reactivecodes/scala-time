@@ -27,7 +27,7 @@ import scala.util.Try
   * Period is a date-based amount of time in the ISO-8601 calendar system, such as '2 years, 3 months and 4 days'.
   *
   * @note   Direct use of this object is not the only mechanism to obtain [[Period]] instances. See also
-  *         the [[dsl]] package for alternatives.
+  *         [[syntax]] for alternatives.
   *
   * @example
   *          {{{

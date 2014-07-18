@@ -17,7 +17,7 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package dsl.conversions
+package syntax.conversions
 
 import chrono.{RichChronoLocalDate, RichChronoLocalDateTime, RichChronoZonedDateTime}
 
@@ -35,7 +35,7 @@ private[conversions] trait ChronoConverters {
 }
 
 
-private[dsl] trait AnnotateEnrichChrono extends ChronoConverters with Decorators {
+private[syntax] trait AnnotateEnrichChrono extends ChronoConverters with Decorators {
 
   import scala.language.implicitConversions
 

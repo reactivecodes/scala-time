@@ -17,12 +17,15 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
+package syntax.conversions
 
 
-/** Provides all implicit conversion functions, as well as a standard set of units, formatters and additional
-  * helpers.
-  *
-  * @since  0.1.0
-  */
-package object dsl extends conversions.PredefImplicits with conversions.NumberImplicits with
-    UnitHelpers with FormatterHelpers with ZoneHelpers
+private[conversions] trait Decorators {
+
+  /** Generic class containing the `enrich` converter method */
+  class Enrich[A](f: => A) {
+    /** Converts an object to the corresponding 'Rich' object */
+    def enrich: A = f
+  }
+
+}

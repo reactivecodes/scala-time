@@ -17,7 +17,7 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package dsl.conversions
+package syntax.conversions
 
 import temporal.{IntPeriod, LongDuration}
 
@@ -39,7 +39,7 @@ private[conversions] trait NumberConverters {
   def longDuration(in: Long): LongDuration = new LongDuration(in)
 }
 
-private[dsl] trait NumberImplicits extends NumberConverters {
+private[syntax] trait NumberImplicits extends NumberConverters {
 
   /** Implicit function to convert an Int to an [[temporal.IntPeriod]]
     * We use a val to avoid having to explicitly enable
