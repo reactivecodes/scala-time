@@ -5,7 +5,7 @@ val jdkVersion = settingKey[String]("Revision of the JDK used to build this proj
 
 lazy val scalaTime = project.in(file(".")).configs(Fmpp)
 
-name <<= (name, jdkVersion)((n, v) => if (v == "1.7") s"$n Threeten" else n)
+name <<= (name, jdkVersion)((n, v) => matchJava(v, s"$n Threeten", n))
 
 site.settings
 
@@ -31,17 +31,14 @@ publishOSS
 
 jdkVersion := System.getProperty("java.specification.version")
 
-scalaVersion := "2.11.1"
+scalaVersion := crossScalaVersions.value.head
 
-crossScalaVersions := Seq("2.11.1", "2.10.4")
+crossScalaVersions := Seq("2.11.2", "2.10.4")
 
 libraryDependencies ++= {
   def dependencies = Seq(scalaTest)
-  jdkVersion.value match {
-    case "1.8" => dependencies
-    case "1.7" => dependencies :+ threeten
-    case _ => sys.error("Java JDK version not supported. Use JDK 1.8 or 1.7.")
-  }
+  def j7Dependencies = threeten +: dependencies
+  matchJava(jdkVersion.value, j7Dependencies, dependencies )
 }
 
 codesCompileOpts
@@ -67,7 +64,7 @@ StylePluginKeys.config <<= baseDirectory(_ / "project/scalastyle-config.xml")
 SiteKeys.siteMappings := Seq(baseDirectory.value / "project/site.html" -> "index.html")
 
 SiteKeys.siteMappings <++= (mappings in (ScalaUnidoc, packageDoc), version) map {(m,v) =>
-        for ((f, d) <- m) yield (f, s"$v/$d") }
+  for ((f, d) <- m) yield (f, s"$v/$d") }
 
 git.remoteRepo := codesGithubRepo.value.developerConnection.drop(8)
 
@@ -75,4 +72,14 @@ def scalaTest = "org.scalatest" %% "scalatest" % "2.1.5" % "test"
 
 def threeten = "org.threeten" % "threetenbp" % "1.0"
 
-fmppArgs ++= Seq(s"-DunderlyingBase:${if (jdkVersion.value == "1.7") "org.threeten.bp" else "java.time"}")
+fmppArgs ++= Seq(
+  s"-DunderlyingBase:${matchJava(jdkVersion.value, "org.threeten.bp", "java.time")}",
+  s"-DunderlyingDoc:${matchJava(jdkVersion.value, "", "")}"
+)
+
+def matchJava[A](v: String, jdk7: =>A, other: => A) = v.takeRight(1).toInt match {
+  case 7 => jdk7
+  case x if x > 7 => other
+  case _ => sys.error("Java JDK version not supported. Use JDK 1.7 (Java 7) or greater.")
+}
+
