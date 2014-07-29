@@ -46,7 +46,7 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
         val localDate = LocalDate.of(2014, 6, 7)
         localDate.foreach { d =>
           d.getYear shouldBe 2014
-          d.getMonth.getValue shouldBe 6
+          d.getMonth shouldBe Month.June
           d.getDayOfMonth shouldBe 7
         }
       }
