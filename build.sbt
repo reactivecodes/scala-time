@@ -73,8 +73,7 @@ def scalaTest = "org.scalatest" %% "scalatest" % "2.1.5" % "test"
 def threeten = "org.threeten" % "threetenbp" % "1.0"
 
 fmppArgs ++= Seq(
-  s"-DunderlyingBase:${matchJava(jdkVersion.value, "org.threeten.bp", "java.time")}",
-  s"-DunderlyingDoc:${matchJava(jdkVersion.value, "", "")}"
+  s"-DunderlyingBase:${matchJava(jdkVersion.value, "org.threeten.bp", "java.time")}"
 )
 
 def matchJava[A](v: String, jdk7: =>A, other: => A) = v.takeRight(1).toInt match {
