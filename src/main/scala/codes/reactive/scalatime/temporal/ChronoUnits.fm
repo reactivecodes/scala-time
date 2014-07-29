@@ -19,45 +19,101 @@
 package codes.reactive.scalatime
 package temporal
 
-import ${underlyingBase}.temporal. {
-ChronoUnit => CU
-}
+import ${underlyingBase}.temporal.{ChronoUnit => CU}
 
 
-/** Provides a standard set of date period units as [[TemporalUnit]] instances
+/** Provides a standard set of date period units as [[TemporalUnit]] instances.
+  *
   * @since  0.1.0
+  *
+  * @define Unit  [[ChronoUnit]] representing the concept of
+  * @define Iso   For the ISO calendar system,
   */
-trait ChronoUnits extends AbstractChronoUnits {
+trait ChronoUnits {
 
-  val Centuries: ChronoUnit = CU.CENTURIES
+  /** $Unit a century. $Iso equal to 100 years. */
+  final val Centuries = CU.CENTURIES
 
-  val Days: ChronoUnit = CU.DAYS
+  /** $Unit a day. $Iso equal to the standard day from midnight to midnight. The estimated duration of a day is
+    * 24 Hours.
+    *
+    * ==== Non  ISO Calendar Systems ====
+    * When used with other calendar systems a [[Day]] must correspond to the day defined by the rising and setting of
+    * the Sun on Earth.
+    *
+    * It is not required that days begin at midnight; however the date should be equivalent at midday.
+    */
+  final val Days = CU.DAYS
 
-  val Decades: ChronoUnit = CU.DECADES
+  /** $Unit a decade. $Iso equal to 10 years.
+    *
+    * ==== Non  ISO Calendar Systems ====
+    * When used with other calendar systems [[Decades]] must correspond to an integral number of days, and is normally
+    * an integral number of years.
+    */
+  final val Decades = CU.DECADES
 
-  val Eras: ChronoUnit = CU.ERAS
+  /** $Unit an era. The ISO calendar system doesn't have eras thus it is impossible to add an era to a date or date-time.
+    * The estimated duration of the era is artificially defined as 1,000,000,000 Years.
+    */
+  final val Eras = CU.ERAS
 
-  val Forever: ChronoUnit = CU.FOREVER
+  /** $Unit Forever. This is primarily used with [[TemporalField]] to represent unbounded fields such as the year or era.
+    * The estimated duration of the era is artificially defined as the largest duration supported by [[Duration]].
+    */
+  final val Forever = CU.FOREVER
 
-  val HalfDays: ChronoUnit = CU.HALF_DAYS
+  /** $Unit half a day, as used in AM/PM. $Iso equal to 12 hours. */
+  final val HalfDays = CU.HALF_DAYS
 
-  val Hours: ChronoUnit = CU.HOURS
+  /** $Unit an hour. $Iso equal to 60 minutes. */
+  final val Hours = CU.HOURS
 
-  val Micros: ChronoUnit = CU.MICROS
+  /** $Unit a microsecond. $Iso equal to the 1,000,000th part of the second unit. */
+  final val Micros = CU.MICROS
 
-  val Millenia: ChronoUnit = CU.MILLENNIA
+  /** $Unit a millenium. $Iso equal to 1000 years.
+    *
+    * ==== Non  ISO Calendar Systems ====
+    * When used with other calendar systems it must correspond to an integral number of days and is normally an integral
+    * number of years.
+    */
+  final val Millenia = CU.MILLENNIA
 
-  val Millis: ChronoUnit = CU.MILLIS
+  /** $Unit a millisecond. $Iso equal to the 1,000th part of the second unit. */
+  final val Millis = CU.MILLIS
 
-  val Minutes: ChronoUnit = CU.MINUTES
+  /** $Unit a minute. $Iso equal to the 60 seconds. */
+  final val Minutes = CU.MINUTES
 
-  val Months: ChronoUnit = CU.MONTHS
+  /** $Unit a month. $Iso the length of the month varies by month-of-year. The estimated duration of a month is one
+    * twelfth of 365.2425 Days.
+    *
+    * ==== Non  ISO Calendar Systems ====
+    * When used with other calendar systems it must correspond to an integral number of days.
+    */
+  final val Months = CU.MONTHS
 
-  val Nanos: ChronoUnit = CU.NANOS
+  /** $Unit a nanosecond, the smallest supported unit of time. $Iso equal to the 1,000,000,000th  part of the second
+    * unit.
+    */
+  final val Nanos = CU.NANOS
 
-  val Seconds: ChronoUnit = CU.SECONDS
+  /** $Unit a second. $Iso equal to the second in the SI system of units, except around a leap-second. */
+  final val Seconds = CU.SECONDS
 
-  val Weeks: ChronoUnit = CU.WEEKS
+  /** $Unit a week. $Iso equal to 7 days.
+    *
+    * ==== Non  ISO Calendar Systems ====
+    * When used with other calendar systems it must correspond to an integral number of days.
+    */
+  final val Weeks = CU.WEEKS
 
-  val Years: ChronoUnit = CU.YEARS
+  /** $Unit a year. $Iso equal to 12 months. The estimated duration of a year is 365.2425 Days.
+    *
+    * ==== Non  ISO Calendar Systems ====
+    * When used with other calendar systems it must correspond to an integral number of days or months roughly equal
+    * to a year defined by the passage of the Earth around the Sun.
+    */
+  final val Years = CU.YEARS
 }

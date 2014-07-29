@@ -23,68 +23,70 @@ import ${underlyingBase}.temporal. {
 ChronoField => CF
 }
 
-/** Provides a standard set of date period fields as [[TemporalField]] instances
+/** Provides a standard set of date period fields as [[TemporalField]] instances.
+  *
   * @since  0.1.0
+  *
   */
-trait ChronoFields extends AbstractChronoFields {
+trait ChronoFields {
 
-  val AlignedDayOfWeekInMonth: ChronoField = CF.ALIGNED_DAY_OF_WEEK_IN_MONTH
+  final val AlignedDayOfWeekInMonth = CF.ALIGNED_DAY_OF_WEEK_IN_MONTH
 
-  val AlignedDayOfWeekInYear: ChronoField = CF.ALIGNED_DAY_OF_WEEK_IN_YEAR
+  final val AlignedDayOfWeekInYear = CF.ALIGNED_DAY_OF_WEEK_IN_YEAR
 
-  val AlignedWeekOfMonth: ChronoField = CF.ALIGNED_WEEK_OF_MONTH
+  final val AlignedWeekOfMonth = CF.ALIGNED_WEEK_OF_MONTH
 
-  val AlignedWeedOfYear: ChronoField = CF.ALIGNED_WEEK_OF_YEAR
+  final val AlignedWeedOfYear = CF.ALIGNED_WEEK_OF_YEAR
 
-  val AmPmOfDay: ChronoField = CF.AMPM_OF_DAY
+  final val AmPmOfDay = CF.AMPM_OF_DAY
 
-  val ClockHourOfAmPm: ChronoField = CF.CLOCK_HOUR_OF_AMPM
+  final val ClockHourOfAmPm = CF.CLOCK_HOUR_OF_AMPM
 
-  val ClockHourOfDay: ChronoField = CF.CLOCK_HOUR_OF_DAY
+  final val ClockHourOfDay = CF.CLOCK_HOUR_OF_DAY
 
-  val DayOfMonth: ChronoField = CF.DAY_OF_MONTH
+  final val DayOfMonth = CF.DAY_OF_MONTH
 
-  val DayOfWeek: ChronoField = CF.DAY_OF_WEEK
+  final val DayOfWeek = CF.DAY_OF_WEEK
 
-  val DayOfYear: ChronoField = CF.DAY_OF_YEAR
+  final val DayOfYear = CF.DAY_OF_YEAR
 
-  val EpochDay: ChronoField = CF.EPOCH_DAY
+  final val EpochDay = CF.EPOCH_DAY
 
-  val Era: ChronoField = CF.ERA
+  final val Era = CF.ERA
 
-  val HourOfMonth: ChronoField = CF.HOUR_OF_AMPM
+  final val HourOfMonth = CF.HOUR_OF_AMPM
 
-  val HourOfDay: ChronoField = CF.HOUR_OF_DAY
+  final val HourOfDay = CF.HOUR_OF_DAY
 
-  val InstantSeconds: ChronoField = CF.INSTANT_SECONDS
+  final val InstantSeconds = CF.INSTANT_SECONDS
 
-  val MicroOfDay: ChronoField = CF.MICRO_OF_DAY
+  final val MicroOfDay = CF.MICRO_OF_DAY
 
-  val MicroOfSecond: ChronoField = CF.MICRO_OF_SECOND
+  final val MicroOfSecond = CF.MICRO_OF_SECOND
 
-  val MilliOfDay: ChronoField = CF.MILLI_OF_DAY
+  final val MilliOfDay = CF.MILLI_OF_DAY
 
-  val MilliOfSecond: ChronoField = CF.MILLI_OF_SECOND
+  final val MilliOfSecond = CF.MILLI_OF_SECOND
 
-  val MinuteOfDay: ChronoField = CF.MINUTE_OF_DAY
+  final val MinuteOfDay = CF.MINUTE_OF_DAY
 
-  val MinuteOfMonth: ChronoField = CF.MINUTE_OF_HOUR
+  final val MinuteOfMonth = CF.MINUTE_OF_HOUR
 
-  val MonthOfYear: ChronoField = CF.MONTH_OF_YEAR
+  final val MonthOfYear = CF.MONTH_OF_YEAR
 
-  val MonthOfday: ChronoField = CF.NANO_OF_DAY
+  final val MonthOfday = CF.NANO_OF_DAY
 
-  val NanoOfSecond: ChronoField = CF.NANO_OF_SECOND
+  final val NanoOfSecond = CF.NANO_OF_SECOND
 
-  val OffsetSeconds: ChronoField = CF.OFFSET_SECONDS
+  final val OffsetSeconds = CF.OFFSET_SECONDS
 
-  val ProlepticMonth: ChronoField = CF.PROLEPTIC_MONTH
+  final val ProlepticMonth = CF.PROLEPTIC_MONTH
 
-  val SecondOfDay: ChronoField = CF.SECOND_OF_DAY
+  final val SecondOfDay = CF.SECOND_OF_DAY
 
-  val SecondOfMinute: ChronoField = CF.SECOND_OF_MINUTE
+  final val SecondOfMinute = CF.SECOND_OF_MINUTE
 
-  val Year: ChronoField = CF.YEAR
+  final val Year = CF.YEAR
 
-  val YearOfEra: ChronoField = CF.YEAR_OF_ERA
+  final val YearOfEra = CF.YEAR_OF_ERA
 }

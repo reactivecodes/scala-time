@@ -19,21 +19,26 @@
 package codes.reactive.scalatime
 package temporal
 
-import ${underlyingBase}.temporal. {
-IsoFields => IF
-}
+import ${underlyingBase}.temporal.{IsoFields => IF}
 
-/** Provides fields specific to the ISO-8601 calendar system as [[TemporalField]] instances
+/** Provides fields specific to the ISO-8601 calendar system as [[TemporalField]] instances.
+  *
   * @since  0.1.0
+  *
+  * @define Field   [[TemporalField]] representing the
   */
-trait IsoFields extends AbstractIsoFields {
+trait IsoFields {
 
-  val DayOfQuarter: TemporalField = IF.DAY_OF_QUARTER
+  /** $Field day-of-quarter. */
+  final val DayOfQuarter = IF.DAY_OF_QUARTER
 
-  val QuarterOfYear: TemporalField = IF.QUARTER_OF_YEAR
+  /** $Field quarter-of-year. */
+  final val QuarterOfYear = IF.QUARTER_OF_YEAR
 
-  val WeekBasedYear: TemporalField = IF.WEEK_BASED_YEAR
+  /** $Field week-based-year. */
+  final val WeekBasedYear = IF.WEEK_BASED_YEAR
 
-  val WeekOfWeekBasedYear: TemporalField = IF.WEEK_OF_WEEK_BASED_YEAR
+  /** $Field week-of-week-based-year. */
+  final val WeekOfWeekBasedYear = IF.WEEK_OF_WEEK_BASED_YEAR
 
 }
