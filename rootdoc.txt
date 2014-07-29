@@ -25,7 +25,7 @@ underlying library, and type aliases for those exceptions.
 {{{
     // Import the required classes path:
     import codes.reactive.scalatime._
-    import dsl._
+    import syntax._
 
     // Create a Duration instance from a Long
     val duration = 10L minutes

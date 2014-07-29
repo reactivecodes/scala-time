@@ -36,7 +36,7 @@ See the [project website][9] for links to current documentation.
 #### Examples:
 ```scala
 import codes.reactive.scalatime._
-import dsl._
+import syntax._
 
 // Create a Duration instance from a Long
 val duration = 10L minutes
