@@ -32,7 +32,7 @@ object Month {
 
   /** Obtains the [[Month]] of an int value (from 1 to 12). */
   @throws[DateTimeException]("if the month-of-year is invalid.")
-  def apply(month: Int): Try[Month] = Try(M.of(month))
+  def apply(month: Int): Month = M.of(month)
 
   /** Tries to obtain the month from a [[Temporal]]. */
   def from(temporal: TemporalAccessor): Try[Month] = Try(M.from(temporal))
