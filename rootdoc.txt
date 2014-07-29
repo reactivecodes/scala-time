@@ -27,26 +27,26 @@ underlying library, and type aliases for those exceptions.
     import codes.reactive.scalatime._
     import syntax._
 
-    // Create a Duration instance from a Long
+    // Obtain a Duration instance from a Long
     val duration = 10L minutes
 
     val otherDuration = 1L minute
 
-    // Create a Period instance from an Int
+    // Tries to obtain a Period instance from an Int
     val period = 2 weeks
 
-    // Create a LocalDate instance
+    // Obtain a LocalDate instance
     val localDate = LocalDate.of(2014, 6, 7)
 
-    // Create a Duration instance from a sum of Durations
+    // Obtain a Duration instance from a sum of Durations
     duration + otherDuration
 
     //  Add a TemporalAmount to a Temporal
-    localDate + period
+    localDate.get + period
 
     //  Add a TemporalAmount to a Temporal
-    period <+= localDate
+    period <+= localDate.get
 
     // Subtract a TemporalAmount from a Temporal
-    localDate - period
+    localDate.get - period
 }}}

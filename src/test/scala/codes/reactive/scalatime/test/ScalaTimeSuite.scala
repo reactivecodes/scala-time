@@ -18,14 +18,75 @@
 
 package codes.reactive.scalatime.test
 
-import org.scalatest.{Matchers, FeatureSpec}
+import org.scalatest.{FreeSpec, Matchers}
 
 
-class ScalaTimeSuite extends FeatureSpec with Matchers {
+class ScalaTimeSuite extends FreeSpec with Matchers {
 
-  info("Scala Time allows use with only core implicit conversions in scope")
+  "code examples provided by documentation are current." - {
+    import codes.reactive.scalatime._
+    import syntax._
+    "readme / rootdoc examples" - {
 
-  feature("'simple' usage via import of 'ke.co.sbsproperties.scalatime._'") {
+      "create a Duration from a Long" in {
+        def duration = {
+          10L minutes
+        }
+        duration shouldBe DurationTestHelpers.minutes(10L)
+      }
+
+      "create a Period from a Long" in {
+        def period = {
+          10 days
+        }
+        period shouldBe PeriodTestHelpers.days(10)
+      }
+
+      "Try to create a LocalDate" in {
+        val localDate = LocalDate.of(2014, 6, 7)
+        localDate.foreach { d =>
+          d.getYear shouldBe 2014
+          d.getMonth.getValue shouldBe 6
+          d.getDayOfMonth shouldBe 7
+        }
+      }
+
+      "Create a Duration from the sum of Durations" in {
+        val duration = {
+          10L minutes
+        }
+        val otherDuration = {
+          1L minute
+        }
+
+        (duration + otherDuration) shouldBe (11L minutes)
+      }
+
+      "Obtain a Temporal from a TemporalAmount added to a Period" in {
+        val period = {
+          2 weeks
+        }
+        val localDate = LocalDate.of(2014, 6, 7)
+
+        (period <+= localDate.get) shouldBe LocalDate.of(2014, 6, 21).get
+        (localDate.get + period) shouldBe LocalDate.of(2014, 6, 21).get
+      }
+
+
+      "Obtain a Temporal from a TemporalAmount subtracted from a Period" in {
+        val period = {
+          2 weeks
+        }
+        val localDate = LocalDate.of(2014, 6, 7)
+
+        (period <-= localDate.get) shouldBe LocalDate.of(2014, 5, 24).get
+        (localDate.get - period) shouldBe LocalDate.of(2014, 5, 24).get
+      }
+    }
+
+  }
+
+  "'simple' usage via import of 'ke.co.sbsproperties.scalatime._'" in {
     import codes.reactive.scalatime._
 
     val period: Period = Period.days(1)
@@ -37,7 +98,7 @@ class ScalaTimeSuite extends FeatureSpec with Matchers {
     period shouldBe PeriodTestHelpers.days(1)
   }
 
-  feature("'extended' usage with additional implicits import of 'conversions._'") {
+  "'extended' usage with additional implicits import of 'conversions._'" in {
     import codes.reactive.scalatime._
     import syntax._
 
