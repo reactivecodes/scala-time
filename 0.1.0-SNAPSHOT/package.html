@@ -58,28 +58,28 @@ underlying library, and type aliases for those exceptions.</p><h6> Package Struc
 <span class="kw">import</span> codes.reactive.scalatime._
 <span class="kw">import</span> syntax._
 
-<span class="cmt">// Create a Duration instance from a Long</span>
+<span class="cmt">// Obtain a Duration instance from a Long</span>
 <span class="kw">val</span> duration = <span class="num">10</span>L minutes
 
 <span class="kw">val</span> otherDuration = <span class="num">1</span>L minute
 
-<span class="cmt">// Create a Period instance from an Int</span>
+<span class="cmt">// Tries to obtain a Period instance from an Int</span>
 <span class="kw">val</span> period = <span class="num">2</span> weeks
 
-<span class="cmt">// Create a LocalDate instance</span>
+<span class="cmt">// Obtain a LocalDate instance</span>
 <span class="kw">val</span> localDate = LocalDate.of(<span class="num">2014</span>, <span class="num">6</span>, <span class="num">7</span>)
 
-<span class="cmt">// Create a Duration instance from a sum of Durations</span>
+<span class="cmt">// Obtain a Duration instance from a sum of Durations</span>
 duration + otherDuration
 
 <span class="cmt">//  Add a TemporalAmount to a Temporal</span>
-localDate + period
+localDate.get + period
 
 <span class="cmt">//  Add a TemporalAmount to a Temporal</span>
-period &lt;+= localDate
+period &lt;+= localDate.get
 
 <span class="cmt">// Subtract a TemporalAmount from a Temporal</span>
-localDate - period</pre></li></ol>
+localDate.get - period</pre></li></ol>
             </div></dl></div>
         
 
@@ -144,7 +144,7 @@ localDate - period</pre></li></ol>
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. c35642b) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 51b33b8) Scala 2.11 API Documentation. </div>
 
 
     </body>
