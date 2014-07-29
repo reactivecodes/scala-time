@@ -21,6 +21,8 @@ package codes.reactive.scalatime
 import ${underlyingBase}.{Instant => I}
 import scala.util.Try
 
+import format.DateTimeFormatter
+
 
 /** Factory object for obtaining instances of [[Instant]].
   *
@@ -61,7 +63,7 @@ object Instant {
   /** Tries to query a [[Temporal]] to obtain an [[Instant]]. */
   def from(from: TemporalAccessor): Try[Instant] = Try(I.from(from))
 
-  /** Tries to obtain an [[Instant]] from text formatted according to [[DateTimeFormatter.Iso.Instant]], such as
+  /** Tries to obtain an [[Instant]] from text formatted according to [[format.DateTimeFormatter.Iso.Instant]], such as
     * `2014-07-15T14:47:00.00Z`.
     */
   def parse(text: String): Try[Instant] = Try(I.parse(text))

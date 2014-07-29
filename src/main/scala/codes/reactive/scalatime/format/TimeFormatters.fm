@@ -27,7 +27,7 @@ import codes.reactive.scalatime._
 /** Provides standard [[DateTimeFormatter]] instances, as well as methods to create them.
   * @since 0.1.0
   */
-trait TimeFormatters {
+private[scalatime] trait TimeFormatters {
 
   /** Provides members providing default ISO-8601 [[DateTimeFormatter]] instances. */
   val Iso = new {

@@ -21,6 +21,8 @@ package codes.reactive.scalatime
 import ${underlyingBase}.{OffsetDateTime => OD}
 import util.Try
 
+import format.DateTimeFormatter
+
 
 /** Factory object for obtaining [[OffsetDateTime]] instances. */
 object OffsetDateTime {

@@ -16,10 +16,7 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime
-
-
-import format.TimeFormatters
+package codes.reactive.scalatime.format
 
 /** Provides a standard set of [[DateTimeFormatter]] instances, and factory methods for their creation.
   * @since 0.1.0

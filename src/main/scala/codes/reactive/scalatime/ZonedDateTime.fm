@@ -21,6 +21,8 @@ package codes.reactive.scalatime
 import ${underlyingBase}.{ZonedDateTime => ZD}
 import util.Try
 
+import format.DateTimeFormatter
+
 
 /** Factory object for creation of [[ZonedDateTime]] instances
   * @since 0.1.0
