@@ -19,9 +19,7 @@
 package codes.reactive.scalatime
 package temporal
 
-import ${underlyingBase}.temporal. {
-ChronoField => CF
-}
+import ${tPac}.temporal.{ChronoField => CF}
 
 /** Provides a standard set of date period fields as [[TemporalField]] instances.
   *

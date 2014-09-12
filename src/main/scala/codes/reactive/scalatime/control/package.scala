@@ -19,8 +19,8 @@
 package codes.reactive.scalatime
 
 
-/** Provides functionality relating to Exception handling, validation and control structures
+/** Provides functionality relating to Exception handling, validation and control structures.
   *
-  * @since  0.1.0
+  * @see  [[control.Catcher]]
   */
 package object control

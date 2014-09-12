@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{LocalDate => LD}
+import impl.TimeSupport.{LocalDate => LD}
 import scala.util.Try
 
 
@@ -39,7 +39,7 @@ object LocalDate {
   /** Tries to obtain a [[LocalDate]] from a year, month and day. The values of all fields must be within range, and
     * the day must be valid for the year and month.
     */
-  def of(year: Int, month: Int, day: Int): Try[LocalDate] = Try(LD.of(year, month, day))
+  def of(year: Int, month: Int, day: Int): Try[LocalDate] = Try(LD.of(year, Month(month), day))
 
   /** Tries to obtain a [[LocalDate]] from a year, [[Month]] and day. The values of all fields must be within range,
     * and the day must be valid for the year and month.
@@ -47,7 +47,7 @@ object LocalDate {
   def of(year: Int, month: Month, day: Int): Try[LocalDate] = Try(LD.of(year, month, day))
 
   /** Tries to obtain a [[LocalDate]] from text formatted according to [[DateTimeFormatter.Iso.LocalDate]]. */
-  def parse(text: String): Try[LocalDate] = Try(LD.parse(text))
+  def parse(text: String): Try[LocalDate] = Try(LD.parse(text, format.DateTimeFormatter.Iso.LocalDate))
 
   /** Tries to obtain a [[LocalDate]] text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[LocalDate] = Try(LD.parse(text, formatter))

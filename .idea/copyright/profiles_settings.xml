@@ -1,18 +1,10 @@
 <component name="CopyrightManager">
-  <settings default="ASF, 2.0">
-    <LanguageOptions name="XML">
-      <option name="fileTypeOverride" value="3" />
-      <option name="separateBefore" value="true" />
-      <option name="separateAfter" value="true" />
-      <option name="prefixLines" value="false" />
-      <option name="lenBefore" value="66" />
-      <option name="lenAfter" value="66" />
-    </LanguageOptions>
+  <settings default="">
     <LanguageOptions name="__TEMPLATE__">
       <option name="separateBefore" value="true" />
       <option name="separateAfter" value="true" />
-      <option name="lenBefore" value="69" />
-      <option name="lenAfter" value="69" />
+      <option name="lenBefore" value="70" />
+      <option name="lenAfter" value="70" />
       <option name="box" value="true" />
     </LanguageOptions>
   </settings>

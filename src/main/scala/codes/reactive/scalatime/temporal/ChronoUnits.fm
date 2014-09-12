@@ -19,7 +19,7 @@
 package codes.reactive.scalatime
 package temporal
 
-import ${underlyingBase}.temporal.{ChronoUnit => CU}
+import ${tPac}.temporal.{ChronoUnit => CU}
 
 
 /** Provides a standard set of date period units as [[TemporalUnit]] instances.

@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{Duration => JD}
+import impl.TimeSupport.{Duration => JD}
 import scala.util.Try
 
 
@@ -91,7 +91,10 @@ object Duration {
   def millis(millis: Long): Duration = JD.ofMillis(millis)
 
   /** Obtains a [[Duration]] representing a number of seconds. */
-  def seconds(seconds: Long): Duration = JD.ofSeconds(seconds)
+  def seconds(seconds: Long): Duration = JD.ofSeconds(seconds, 0)
+
+  /** Obtains a [[Duration]] representing a number of seconds adjusted by a number of nano-seconds. */
+  def seconds(seconds: Long, nanoAdjuster: Long): Duration = JD.ofSeconds(seconds, nanoAdjuster)
 
   /** Obtains a [[Duration]] representing a number of minutes. */
   def minutes(minutes: Long): Duration = JD.ofMinutes(minutes)
@@ -103,5 +106,5 @@ object Duration {
   def days(days: Long): Duration = JD.ofDays(days)
 
   /** Obtains a [[Duration]] of zero. */
-  val Nil: Duration = JD.ZERO
+  val Nil: Duration = JD.zero
 }

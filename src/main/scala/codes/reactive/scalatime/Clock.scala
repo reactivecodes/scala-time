@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{Clock => JC}
+import impl.TimeSupport.{Clock => JC}
 
 
 /** Factory object for obtaining instances of [[Clock]].
@@ -43,13 +43,13 @@ import ${underlyingBase}.{Clock => JC}
 object Clock {
 
   /** Obtains a [[Clock]] from the current instant converted to UTC from the best available system clock. */
-  def apply(): Clock = JC.systemUTC()
+  def apply(): Clock = apply(ZoneOffset.UTC)
 
   /** Obtains a [[Clock]] from the current instant at the specified time zone from the best available system clock. */
   def apply(zone: ZoneID): Clock = JC.system(zone)
 
   /** Obtains a [[Clock]] from the current instant at the system time zone from the best available system clock. */
-  def systemZone: Clock = JC.systemDefaultZone()
+  def systemZone: Clock = JC.systemDefaultZone
 
   /** Obtains a [[Clock]] fixed to a specific instant, at a specific time zone */
   def fixed(instant: Instant, zone: ZoneID): Clock = JC.fixed(instant, zone)

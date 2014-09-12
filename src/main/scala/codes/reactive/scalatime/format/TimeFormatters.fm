@@ -18,15 +18,13 @@
 
 package codes.reactive.scalatime.format
 
-import ${underlyingBase}.format.{DateTimeFormatter => DF}
+import ${tPac}.format.{DateTimeFormatter => DF}
 import java.util.Locale
 import util.Try
 import codes.reactive.scalatime._
 
 
-/** Provides standard [[DateTimeFormatter]] instances, as well as methods to create them.
-  * @since 0.1.0
-  */
+/** Provides standard [[DateTimeFormatter]] instances, as well as methods to create them. */
 private[scalatime] trait TimeFormatters {
 
   /** Provides access to default ISO-8601 [[DateTimeFormatter]] singleton instances. */

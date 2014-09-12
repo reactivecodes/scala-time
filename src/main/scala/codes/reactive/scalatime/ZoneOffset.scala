@@ -18,6 +18,10 @@
 
 package codes.reactive.scalatime
 
+import impl.TimeSupport.{ZoneOffset => ZO}
+
+import util.Try
+
 
 /** Factory object for obtaining instances of [[ZoneOffset]]. Also provides default instances [[ZoneOffset.UTC]], and
   * [[ZoneOffset.EAT]] which correspond to time zone ids representing Coordinated Universal Time, and East African Time
@@ -38,7 +42,42 @@ package codes.reactive.scalatime
   *          }}}
   * @since  0.1.0
   */
-object ZoneOffset extends ZoneOffsets
+object ZoneOffset {
+
+  /** Tries to obtain a [[ZoneOffset]] from an offset of hours - from 0 to ±18. */
+  def apply(hours: Int): Try[ZoneOffset] = Try(ZO.h(hours))
+
+  /** Tries to obtain a [[ZoneOffset]] from an offset of hours (from 0 to ±18) and minutes (0 to ±59). */
+  def apply(hours: Int, minutes: Int): Try[ZoneOffset] = Try(ZO.hm(hours, minutes))
+
+  /** Tries to obtains a [[ZoneOffset]] from an offset of hours (from 0 to ±18), minutes and seconds (both 0 to ±59). */
+  def apply(hours: Int, minutes: Int, seconds: Int): Try[ZoneOffset] =
+    Try(ZO.hms(hours, minutes, seconds))
+
+  /** Tries to obtain a [[ZoneOffset]] from text.
+    * See [[http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#of-java.lang.String- Java API.]] for more
+    * detail.
+    *
+    * @note Returns `Failure[DateTimeException]` if the offset ID is invalid.
+    */
+  def apply(offsetId: String): Try[ZoneOffset] = Try(ZO.of(offsetId))
+
+  /** Tries to query a [[Temporal]] instance to obtain its [[ZoneOffset]]. */
+  def from(temporal: TemporalAccessor): Try[ZoneOffset] = Try(ZO.from(temporal))
+
+  /** The time-zone offset representing EAT (Eastern Africa Time), with an offset of '+03:00'. */
+  val EAT: ZoneOffset = apply(3).get
+
+  /** The time-zone offset representing UTC (Coordinated Universal Time), with an offset of '0'. */
+  val UTC: ZoneOffset = ZO.utc
+
+  /** The time-zone offset representing the minimum supported offset. */
+  val MIN: ZoneOffset = ZO.min
+
+  /** The time-zone offset representing the maximum supported offset. */
+  val MAX: ZoneOffset = ZO.max
+
+}
 
 
 

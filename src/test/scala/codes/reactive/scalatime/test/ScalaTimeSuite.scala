@@ -68,7 +68,7 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
         }
         val localDate = LocalDate.of(2014, 6, 7)
 
-        (period <+= localDate.get) shouldBe LocalDate.of(2014, 6, 21).get
+        (period <<+ localDate.get) shouldBe LocalDate.of(2014, 6, 21).get
         (localDate.get + period) shouldBe LocalDate.of(2014, 6, 21).get
       }
 
@@ -79,7 +79,7 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
         }
         val localDate = LocalDate.of(2014, 6, 7)
 
-        (period <-= localDate.get) shouldBe LocalDate.of(2014, 5, 24).get
+        (period <<- localDate.get) shouldBe LocalDate.of(2014, 5, 24).get
         (localDate.get - period) shouldBe LocalDate.of(2014, 5, 24).get
       }
     }

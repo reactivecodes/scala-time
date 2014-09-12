@@ -2,7 +2,7 @@
   <copyright>
     <option name="notice" value="See the NOTICE file distributed with this work for additional &#10;information regarding Copyright ownership.  The author/authors &#10;license this file to you under the terms of the Apache License, &#10;Version 2.0 (the &quot;License&quot;); you may not use this file except &#10;in compliance with the License.  You may obtain a copy of the &#10;License at:&#10;&#10;    http://www.apache.org/licenses/LICENSE-2.0&#10;&#10;Unless required by applicable law or agreed to in writing,&#10;software distributed under the License is distributed on an&#10;&quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY&#10;KIND, either express or implied.  See the License for the&#10;specific language governing permissions and limitations&#10;under the License." />
     <option name="keyword" value="Copyright" />
-    <option name="allowReplaceKeyword" value="See the NOTICE file" />
+    <option name="allowReplaceKeyword" value="" />
     <option name="myName" value="ASF, 2.0" />
     <option name="myLocal" value="true" />
   </copyright>

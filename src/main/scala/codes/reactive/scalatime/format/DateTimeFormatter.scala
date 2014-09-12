@@ -18,8 +18,6 @@
 
 package codes.reactive.scalatime.format
 
-/** Provides a standard set of [[DateTimeFormatter]] instances, and factory methods for their creation.
-  * @since 0.1.0
-  */
+/** Provides factory methods for obtaining [[DateTimeFormatter]] instances, as well as common default instances. */
 object DateTimeFormatter extends TimeFormatters
 

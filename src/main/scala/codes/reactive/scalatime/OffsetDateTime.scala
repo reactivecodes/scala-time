@@ -18,11 +18,8 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{OffsetDateTime => OD}
+import impl.TimeSupport.{OffsetDateTime => OD}
 import util.Try
-
-import format.DateTimeFormatter
-
 
 /** Factory object for obtaining [[OffsetDateTime]] instances. */
 object OffsetDateTime {
@@ -68,19 +65,19 @@ object OffsetDateTime {
          zone: ZoneOffset): Try[OffsetDateTime] =
     Try(OD.of(year, month.getValue, day, hour, minute, second, nano, zone))
 
-  /** Tries to obtain an [[OffsetDateTime]] from text formatted according to [[DateTimeFormatter.Iso.OffsetDateTime]].
+  /** Tries to obtain an [[OffsetDateTime]] from text formatted according to [[format.DateTimeFormatter.Iso.OffsetDateTime]].
     *
     * @param text the text to parse such as "2007-12-03T10:15:30+01:00"
     */
-  def parse(text: String): Try[OffsetDateTime] = Try(OD.parse(text))
+  def parse(text: String): Try[OffsetDateTime] = Try(OD.parse(text, format.DateTimeFormatter.Iso.OffsetDateTime))
 
   /** Tries to obtain an [[OffsetDateTime]] from valid text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[OffsetDateTime] = Try(OD.parse(text, formatter))
 
   /** The maximum supported OffsetDateTime, '+999999999-12-31T23:59:59.999999999-18:00' - or 'far future'. */
-  val Max: OffsetDateTime = OD.MAX
+  val Max: OffsetDateTime = OD.max
 
   /** The minimum supported OffsetDateTime, '-999999999-01-01T00:00:00+18:00' - or 'far past'. */
-  val Min: OffsetDateTime = OD.MIN
+  val Min: OffsetDateTime = OD.min
 
 }

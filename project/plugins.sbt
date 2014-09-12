@@ -1,6 +1,6 @@
 
 lazy val plugins = (project in file("."))
-  .dependsOn(sbtFmpp)
+  .dependsOn(sbtFmpp, sbtOsgi)
 
 logLevel := Level.Warn
 
@@ -18,3 +18,5 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-site" % "0.8.1")
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 lazy val sbtFmpp = uri("git://github.com/sumito3478/sbt-fmpp.git#97e9f168")
+
+lazy val sbtOsgi = uri("git://github.com/arashi01/sbt-osgi.git#ecaaf509")

@@ -37,7 +37,6 @@ import scala.util.control.Exception.Catcher
   *             val recovered = Try(LocalDate.parse(")(&#)(@*@&#%@#%@#%)")).recover(catchAllLocalDate)
   *          }}}
   *
-  * @since  0.1.0
   */
 object Catcher {
 

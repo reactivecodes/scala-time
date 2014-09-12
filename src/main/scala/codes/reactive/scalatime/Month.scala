@@ -18,59 +18,59 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{Month => M}
+import impl.TimeSupport.{Month => M}
 
 import scala.util.Try
 
-/** Factory for obtaining singleton instances of [[Month]]
-  *
-  * @since  0.1.0
+/** Factory for obtaining singleton instances of [[Month]].
   *
   * @define Repr  The singleton instance for the month of
   */
 object Month {
 
-  /** Obtains the [[Month]] of an int value (from 1 to 12). */
-  @throws[DateTimeException]("if the month-of-year is invalid.")
+  /** Obtains the [[Month]] of an int value (from 1 to 12).
+    *
+    * @throws DateTimeException if the month-of-year is invalid.
+    */
   def apply(month: Int): Month = M.of(month)
 
   /** Tries to obtain the month from a [[Temporal]]. */
   def from(temporal: TemporalAccessor): Try[Month] = Try(M.from(temporal))
 
   /** $Repr January, with 31 days and a numeric value of `1`. */
-  final val January = M.JANUARY
+  final val January = apply(1)
 
   /** $Repr February, with 28 days (or 29 in a leap year) and a numeric value of `2`. */
-  final val February = M.FEBRUARY
+  final val February = apply(2)
 
   /** $Repr March, with 31 days and a numeric value of `3`. */
-  final val March = M.MARCH
+  final val March = apply(3)
 
   /** $Repr April, with 30 days and a numeric value of `4`. */
-  final val April = M.APRIL
+  final val April = apply(4)
 
   /** $Repr May, with 31 days and a numeric value of `5`. */
-  final val May = M.MAY
+  final val May = apply(5)
 
   /** $Repr June, with 30 days and a numeric value of `6`. */
-  final val June = M.JUNE
+  final val June = apply(6)
 
   /** $Repr July, with 31 days and a numeric value of `7`. */
-  final val July = M.JULY
+  final val July = apply(7)
 
   /** $Repr August, with 31 days and a numeric value of `8`. */
-  final val August = M.AUGUST
+  final val August = apply(8)
 
   /** $Repr September, with 30 days and a numeric value of `9`. */
-  final val September = M.SEPTEMBER
+  final val September = apply(9)
 
   /** $Repr October, with 31 days and a numeric value of `10`. */
-  final val October = M.OCTOBER
+  final val October = apply(10)
 
   /** $Repr November, with 30 days and a numeric value of `11`. */
-  final val November = M.NOVEMBER
+  final val November = apply(11)
 
   /** $Repr December, with 31 days and a numeric value of `12`. */
-  final val December = M.DECEMBER
+  final val December = apply(12)
 
 }

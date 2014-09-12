@@ -18,10 +18,8 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{LocalDateTime => LD}
+import impl.TimeSupport.{LocalDateTime => LD}
 import scala.util.Try
-
-import format.DateTimeFormatter
 
 
 /** Factory object for creation of [[LocalDateTime]] instances
@@ -45,19 +43,19 @@ object LocalDateTime {
     * all fields must be within range, and the day must be valid for the year and month.
     */
   def of(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nano: Int): Try[LocalDateTime] =
-    Try(LD.of(year, month, day, hour, minute, second, nano))
+    Try(LD.of(year, Month(month), day, hour, minute, second, nano))
 
   /** Tries to obtain a [[LocalDateTime]] from a year, month, day, hour, minute and second, setting the nanosecond to
     * zero. The values of all fields must be within range, and the day must be valid for the year and month.
     */
   def of(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int): Try[LocalDateTime] =
-    Try(LD.of(year, month, day, hour, minute, second))
+    Try(LD.of(year, Month(month), day, hour, minute, second, 0))
 
   /** Tries to obtain a [[LocalDateTime]] from a year, month, day, hour and minute, setting the second and nanosecond to
     * zero. The values of all fields must be within range, and the day must be valid for the year and month.
     */
   def of(year: Int, month: Int, day: Int, hour: Int, minute: Int): Try[LocalDateTime] =
-    Try(LD.of(year, month, day, hour, minute))
+    Try(LD.of(year, Month(month), day, hour, minute, 0, 0))
 
   /** Tries to obtain a [[LocalDateTime]] from a year, month, day, hour, minute, second and nanosecond. The values of
     * all fields must be within range, and the day must be valid for the year and month.
@@ -69,20 +67,20 @@ object LocalDateTime {
     * zero. The values of all fields must be within range, and the day must be valid for the year and month.
     */
   def of(year: Int, month: Month, day: Int, hour: Int, minute: Int, second: Int): Try[LocalDateTime] =
-    Try(LD.of(year, month, day, hour, minute, second))
+    Try(LD.of(year, month, day, hour, minute, second, 0))
 
   /** Tries to obtain a [[LocalDateTime]] from year, month, day, hour and minute, setting the second and nanosecond to
     * zero. The values of all fields must be within range, and the day must be valid for the year and month.
     */
   def of(year: Int, month: Month, day: Int, hour: Int, minute: Int): Try[LocalDateTime] =
-    Try(LD.of(year, month, day, hour, minute))
+    Try(LD.of(year, month, day, hour, minute, 0, 0))
 
   /** Tries to obtain a [[LocalDateTime]] instance from text formatted according to
-    * [[DateTimeFormatter.Iso.LocalDateTime]].
+    * [[format.DateTimeFormatter.Iso.LocalDateTime]].
     *
     * @param text the text to parse such as "2007-12-03T10:15:30"
     */
-  def parse(text: String): Try[LocalDateTime] = Try(LD.parse(text))
+  def parse(text: String): Try[LocalDateTime] = Try(LD.parse(text, format.DateTimeFormatter.Iso.LocalDateTime))
 
   /** Tries to obtain a [[LocalDateTime]] instance from valid text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[LocalDateTime] = Try(LD.parse(text, formatter))

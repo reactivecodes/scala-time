@@ -19,7 +19,7 @@
 package codes.reactive.scalatime
 package temporal
 
-import ${underlyingBase}.temporal.{IsoFields => IF}
+import ${tPac}.temporal.{IsoFields => IF}
 
 
 /** Provides units specific to the ISO-8601 calendar system as [[TemporalUnit]] instances.

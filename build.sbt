@@ -3,7 +3,9 @@ import org.scalastyle.sbt.{PluginKeys => StylePluginKeys, ScalastylePlugin}
 
 val jdkVersion = settingKey[String]("Revision of the JDK used to build this project.")
 
-lazy val scalaTime = project.in(file(".")).configs(Fmpp)
+lazy val scalaTime = project.in(file("."))
+  .enablePlugins(CodesOsgi)
+  .configs(Fmpp)
 
 name <<= (name, jdkVersion)((n, v) => matchJava(v, s"$n Threeten", n))
 
@@ -49,13 +51,23 @@ codesUnidocOpts
 
 scalacOptions in (Compile, compile) += "-language:postfixOps"
 
-unmanagedSourceDirectories in Compile += (sourceDirectory in Compile).value / s"scala_${scalaBinaryVersion.value}"
-
 unmanagedSourceDirectories in Compile += (sourceDirectory in Compile).value / s"jdk_${jdkVersion.value}"
 
 unmanagedSourceDirectories in Test += (sourceDirectory in Test).value / s"jdk_${jdkVersion.value}"
 
 codesDevelopers := Some(Seq(Developer("Ali Salim Rashid", "arashi01")))
+
+OsgiKeys.bundleSymbolicName := "codes.reactive.scalatime"
+
+OsgiKeys.bundleSymbolicName := {
+  import OsgiKeys.{bundleSymbolicName => n}
+  matchJava(jdkVersion.value, s"${n.value}-threeten", n.value) }
+
+OsgiKeys.bundleRequiredExecutionEnvironment := matchJava(jdkVersion.value, Seq("JavaSE-1.7"), Seq("JavaSE-1.8"))
+
+OsgiKeys.privatePackage := Seq("codes.reactive.scalatime*")
+
+OsgiKeys.exportPackage := Seq("codes.reactive.scalatime*")
 
 ScalastylePlugin.Settings
 
@@ -73,10 +85,12 @@ def scalaTest = "org.scalatest" %% "scalatest" % "2.1.5" % "test"
 def threeten = "org.threeten" % "threetenbp" % "1.0"
 
 fmppArgs ++= Seq(
-  s"-DunderlyingBase:${matchJava(jdkVersion.value, "org.threeten.bp", "java.time")}"
+  s"-DtPac:${matchJava(jdkVersion.value, "org.threeten.bp", "java.time")}," +
+    s"tDoc:${matchJava(jdkVersion.value, "www.threeten.org/threetenbp/apidocs/org/threeten/bp",
+    "docs.oracle.com/javase/8/docs/api/java/time")}"
 )
 
-def matchJava[A](v: String, jdk7: =>A, other: => A) = v.takeRight(1).toInt match {
+def matchJava[A](v: String, jdk7: => A, other: => A) = v.takeRight(1).toInt match {
   case 7 => jdk7
   case x if x > 7 => other
   case _ => sys.error("Java JDK version not supported. Use JDK 1.7 (Java 7) or greater.")

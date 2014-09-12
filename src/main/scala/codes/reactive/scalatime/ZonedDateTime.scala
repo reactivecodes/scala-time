@@ -18,15 +18,11 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{ZonedDateTime => ZD}
+import impl.TimeSupport.{ZonedDateTime => ZD}
 import util.Try
 
-import format.DateTimeFormatter
 
-
-/** Factory object for creation of [[ZonedDateTime]] instances
-  * @since 0.1.0
-  */
+/** Factory object for obtaining [[ZonedDateTime]] instances.  */
 object ZonedDateTime {
 
   /** Obtains a [[ZonedDateTime]] by querying the current system clock at UTC for the current date. */
@@ -70,11 +66,11 @@ object ZonedDateTime {
          zone: ZoneID): Try[ZonedDateTime] =
     Try(ZD.of(year, month.getValue, day, hour, minute, second, nano, zone))
 
-  /** Tries to obtain a [[ZonedDateTime]] from text formatted according to [[DateTimeFormatter.Iso.ZonedDateTime]].
+  /** Tries to obtain a [[ZonedDateTime]] from text formatted according to [[format.DateTimeFormatter.Iso.ZonedDateTime]].
     *
     * @param text the text to parse such as "2011-12-03T10:15:30+01:00[Europe/Paris]".
     */
-  def parse(text: String): Try[ZonedDateTime] = Try(ZD.parse(text))
+  def parse(text: String): Try[ZonedDateTime] = Try(ZD.parse(text, format.DateTimeFormatter.Iso.ZonedDateTime))
 
   /** Tries to obtain a [[ZonedDateTime]] from valid text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[ZonedDateTime] = Try(ZD.parse(text, formatter))

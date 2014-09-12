@@ -24,32 +24,19 @@ import temporal.{IntPeriod, LongDuration}
 
 private[conversions] trait NumberConverters {
 
-  /** Creates a new [[temporal.IntPeriod]] from an [[scala.Int]]
-    *
-    * @param in the Int to be converted
-    * @return a new [[temporal.IntPeriod]]
-    */
+  /** Obtains a [[temporal.IntPeriod]] from an [[scala.Int]]. */
   def intPeriod(in: Int): IntPeriod = new IntPeriod(in)
 
-  /** Creates a new [[temporal.LongDuration]] from a [[scala.Long]]
-    *
-    * @param in the Long to be converted
-    * @return a new [[temporal.LongDuration]]
-    */
+  /** Obtains a [[temporal.LongDuration]] from a [[scala.Long]]. */
   def longDuration(in: Long): LongDuration = new LongDuration(in)
 }
 
+
 private[syntax] trait NumberImplicits extends NumberConverters {
 
-  /** Implicit function to convert an Int to an [[temporal.IntPeriod]]
-    * We use a val to avoid having to explicitly enable
-    * implicit conversions.
-    */
+  /** Implicit function to convert an Int to an [[temporal.IntPeriod]]. */
   implicit val augmentInt: Int => IntPeriod = intPeriod
 
-  /** Implicit function to convert a Long to a [[temporal.LongDuration]]
-    * We use a val to avoid having to explicitly enable
-    * implicit conversions.
-    */
+  /** Implicit function to convert a Long to a [[temporal.LongDuration]]. */
   implicit val augmentLong: Long => LongDuration = longDuration
 }

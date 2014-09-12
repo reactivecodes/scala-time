@@ -18,10 +18,8 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{OffsetTime => OT}
+import impl.TimeSupport.{OffsetTime => OT}
 import util.Try
-
-import format.DateTimeFormatter
 
 
 /** Factory object for obtaining [[OffsetTime]] instances. */
@@ -39,11 +37,12 @@ object OffsetTime {
   /** Tries to query a [[Temporal]] instance to obtain an [[OffsetTime]]. */
   def from(from: TemporalAccessor): Try[OffsetTime] = Try(OT.from(from))
 
-  /** Tries to obtain an [[OffsetTime]] instance from text formatted according to [[DateTimeFormatter.Iso.OffsetTime]].
+  /** Tries to obtain an [[OffsetTime]] instance from text formatted according to
+    * [[format.DateTimeFormatter.Iso.OffsetTime]].
     *
     * @param text the text to parse such as "10:15:30"
     */
-  def parse(text: String): Try[OffsetTime] = Try(OT.parse(text))
+  def parse(text: String): Try[OffsetTime] = Try(OT.parse(text, format.DateTimeFormatter.Iso.OffsetTime))
 
   /** Tries to obtain an [[OffsetTime]] instance from valid text formatted according to the provided `formatter`. */
   def parse(text: String, formatter: DateTimeFormatter): Try[OffsetTime] = Try(OT.parse(text, formatter))
@@ -57,10 +56,10 @@ object OffsetTime {
   /** The maximum supported [[OffsetTime]] ('23:59:59.999999999-18:00' - the time just before midnight at the end of
     * the day in the minimum offset)
     */
-  val Max: OffsetTime = OT.MAX
+  val Max: OffsetTime = OT.max
 
   /** The minimum supported [[OffsetTime]] ('00:00:00+18:00' - the time of midnight at the start of the day in the
     * maximum offset)
     */
-  val Min: OffsetTime = OT.MIN
+  val Min: OffsetTime = OT.min
 }

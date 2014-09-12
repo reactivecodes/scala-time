@@ -19,12 +19,14 @@
 package codes.reactive.scalatime
 package temporal
 
-/** Enriches a [[TemporalAdjuster]] with Scala friendly method syntax
-  * @since 0.1.0
-  */
+/** Enriches a [[TemporalAdjuster]] with Scala friendly methods. */
 final class RichTemporalAdjuster(val underlying: TemporalAdjuster) extends AnyVal {
 
-  /** Adjusts the provided temporal object using the logic encapsulated in this. **/
-  def <~=(temporal: Temporal): Temporal = underlying.adjustInto(temporal)
+  /** Adjusts the provided temporal object using the logic encapsulated in this.
+    *
+    * @throws DateTimeException if unable to make the adjustment.
+    * @throws ArithmeticException if numeric overflow occurs.
+    */
+  def >>| (temporal: Temporal): Temporal = underlying.adjustInto(temporal)
 
 }

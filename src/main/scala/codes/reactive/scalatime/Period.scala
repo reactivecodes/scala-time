@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{Period => JP}
+import impl.TimeSupport.{Period => JP}
 import scala.util.Try
 
 
@@ -95,5 +95,5 @@ object Period {
   def years(years: Int): Period = JP.ofYears(years)
 
   /** Obtains a [[Period]] of zero. */
-  val Nil: Period = JP.ZERO
+  val Nil: Period = JP.zero
 }

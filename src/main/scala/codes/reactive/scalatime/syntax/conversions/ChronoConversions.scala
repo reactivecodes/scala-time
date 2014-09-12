@@ -21,6 +21,8 @@ package syntax.conversions
 
 import chrono.{RichChronoLocalDate, RichChronoLocalDateTime, RichChronoZonedDateTime}
 
+import language.implicitConversions
+
 
 private[conversions] trait ChronoConverters {
 
@@ -49,5 +51,14 @@ private[syntax] trait AnnotateEnrichChrono extends ChronoConverters with Decorat
     new Enrich[RichChronoZonedDateTime[A]](richChronoZonedDateTime(u))
 }
 
-// See Scala version specific source folder for ChronoImplicits
+private[conversions] trait ChronoImplicits extends ChronoConverters {
 
+  implicit def augmentChronoLocalDate(d: ChronoLocalDate): RichChronoLocalDate = richChronoLocalDate(d)
+
+  implicit def augmentChronoLocalDateTime[A <: ChronoLocalDate](d: ChronoLocalDateTime[A]): RichChronoLocalDateTime[A] =
+    richChronoLocalDateTime(d)
+
+  implicit def augmentChronoZonedDateTime[A <: ChronoLocalDate](d: ChronoZonedDateTime[A]): RichChronoZonedDateTime[A] =
+    richChronoZonedDateTime(d)
+
+}

@@ -18,10 +18,9 @@
 
 package codes.reactive.scalatime
 
-import ${underlyingBase}.{Instant => I}
+import impl.TimeSupport.{Instant => I}
 import scala.util.Try
 
-import format.DateTimeFormatter
 
 
 /** Factory object for obtaining instances of [[Instant]].
@@ -50,15 +49,15 @@ object Instant {
   def apply(clock: Clock): Instant = I.now(clock)
 
   /** Tries to obtain an [[Instant]] from specified milliseconds from the epoch of 1970-01-01T00:00:00Z. */
-  def milli(epochMilli: Long): Try[Instant] = Try(I.ofEpochMilli(epochMilli))
+  def milli(epochMilli: Long): Try[Instant] = Try(I.epochMilli(epochMilli))
 
   /** Tries to obtain an [[Instant]] from specified seconds from the epoch of 1970-01-01T00:00:00Z. */
-  def second(epochSecond: Long): Try[Instant] = Try(I.ofEpochSecond(epochSecond))
+  def second(epochSecond: Long): Try[Instant] = Try(I.epochSec(epochSecond, 0))
 
   /** Tries to obtain an [[Instant]] from specified seconds from the epoch of 1970-01-01T00:00:00Z, and nanosecond
     * fraction.
     */
-  def second(epochSecond: Long, nanoAdjustment: Long): Try[Instant] = Try(I.ofEpochSecond(epochSecond, nanoAdjustment))
+  def second(epochSecond: Long, nanoAdjustment: Long): Try[Instant] = Try(I.epochSec(epochSecond, nanoAdjustment))
 
   /** Tries to query a [[Temporal]] to obtain an [[Instant]]. */
   def from(from: TemporalAccessor): Try[Instant] = Try(I.from(from))

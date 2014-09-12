@@ -22,53 +22,76 @@ package temporal
 
 final class LongDuration(val underlying: Long) extends AnyVal {
 
+  /** Obtains a [[Duration]] representing a number of nanoseconds. */
   def nano: Duration = nanos
 
+  /** Obtains a [[Duration]] representing a number of nanoseconds. */
   def nanos: Duration = Duration.nanos(underlying)
 
+  /** Obtains a [[Duration]] representing a number of milliseconds. */
   def milli: Duration = millis
 
+  /** Obtains a [[Duration]] representing a number of milliseconds. */
   def millis: Duration = Duration.millis(underlying)
 
+  /** Obtains a [[Duration]] representing a number of seconds. */
   def second: Duration = seconds
 
+  /** Obtains a [[Duration]] representing a number of seconds. */
   def seconds: Duration = Duration.seconds(underlying)
 
+  /** Obtains a [[Duration]] representing a number of minutes. */
   def minute: Duration = minutes
 
+  /** Obtains a [[Duration]] representing a number of minutes. */
   def minutes: Duration = Duration.minutes(underlying)
 
+  /** Obtains a [[Duration]] representing a number of hours. */
   def hour: Duration = hours
 
+  /** Obtains a [[Duration]] representing a number of hours. */
   def hours: Duration = Duration.hours(underlying)
 
+  /** Obtains a [[Duration]] representing a number of days. */
   def day: Duration = days
 
+  /** Obtains a [[Duration]] representing a number of days. */
   def days: Duration = Duration.days(underlying)
 
 }
 
 
+/** Provides additional factory methods for obtaining [[Period]] instances from */
 final class IntPeriod(val underlying: Int) extends AnyVal {
 
+  /** Obtains a [[Period]] representing a number of days. */
   def day: Period = days
 
+  /** Obtains a [[Period]] representing a number of days. */
   def days: Period = Period.days(underlying) // FIXME: Better way to overload day/days. Take a type argument?
 
+  /** Obtains a [[Period]] representing a number of weeks. */
   def week: Period = weeks
 
+  /** Obtains a [[Period]] representing a number of weeks. */
   def weeks: Period = Period.weeks(underlying)
 
+  /** Obtains a [[Period]] representing a number of fortnights. */
   def fortnight: Period = fortnights
 
+  /** Obtains a [[Period]] representing a number of fortnights. */
   def fortnights: Period = Period.fortnights(underlying)
 
+  /** Obtains a [[Period]] representing a number of months. */
   def month: Period = months
 
+  /** Obtains a [[Period]] representing a number of months. */
   def months: Period = Period.months(underlying)
 
+  /** Obtains a [[Period]] representing a number of years. */
   def year: Period = years
 
+  /** Obtains a [[Period]] representing a number of years. */
   def years: Period = Period.years(underlying)
 
 }
