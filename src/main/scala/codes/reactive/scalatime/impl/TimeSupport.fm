@@ -1,0 +1,143 @@
+package codes.reactive.scalatime
+package impl
+
+
+
+/** Provides shims for underlying factory methods. */
+private[scalatime] object TimeSupport {
+
+  object Clock {
+    import ${tPac}.{Clock => T}
+    def fixed(a: Instant, b: ZoneID) = T.fixed(a, b)
+    def systemDefaultZone = T.systemDefaultZone
+    def system(a: ZoneID) = T.system(a)
+  }
+
+  object Duration {
+    import ${tPac}.{Duration => T}
+    def of(a: Long, b: TemporalUnit) = T.of(a, b)
+    def ofDays(a: Long) = T.ofDays(a)
+    def ofHours(a: Long) = T.ofHours(a)
+    def ofMillis(a: Long) = T.ofMillis(a)
+    def ofMinutes(a: Long) = T.ofMinutes(a)
+    def ofSeconds(a: Long, b: Long) = T.ofSeconds(a, b)
+    def ofNanos(a: Long) = T.ofNanos(a)
+    def parse(a: CharSequence) = T.parse(a)
+    def zero = T.ZERO
+    def from(a: TemporalAmount) = T.from(a)
+  }
+
+  object Instant {
+    import ${tPac}.{Instant => T}
+    def now(a: Clock) = T.now(a)
+    def from(a: TemporalAccessor) = T.from(a)
+    def epochMilli(a: Long) = T.ofEpochMilli(a)
+    def epochSec(a: Long, b: Long) = T.ofEpochSecond(a, b)
+    def parse(a: CharSequence) = T.parse(a)
+  }
+
+  object LocalDate {
+    import ${tPac}.{LocalDate => T}
+    def now(a: Clock) = T.now(a)
+    def from(t: TemporalAccessor) = T.from(t)
+    def of(a: Int, b: Month, c: Int) = T.of(a, b, c)
+    def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
+  }
+
+  object LocalDateTime {
+    import ${tPac}.{LocalDateTime => T}
+    def now(c: Clock) = T.now(c)
+    def from(t: TemporalAccessor) = T.from(t)
+    def of(a: Int, b: Month, c: Int, d: Int, e: Int, f: Int, g: Int) = T.of(a, b, c, d, e, f, g)
+    def of(a: LocalDate, b: LocalTime) = T.of(a, b)
+    def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
+  }
+
+  object LocalTime {
+    import ${tPac}.{LocalTime => T}
+    def now(c: Clock) = T.now(c)
+    def from(t: TemporalAccessor) = T.from(t)
+    def of(a: Int, b: Int, c: Int, d: Int) = T.of(a, b, c, d)
+    def ofNano(a: Long) = T.ofNanoOfDay(a)
+    def ofSec(a: Long) = T.ofSecondOfDay(a)
+    def max = T.MAX
+    def min = T.MIN
+    def noon = T.NOON
+    def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
+  }
+
+  object Month {
+    import ${tPac}.{Month => T}
+    def of(a: Int) = T.of(a)
+    def from(a: TemporalAccessor) = T.from(a)
+  }
+
+  object OffsetDateTime {
+    import ${tPac}.{OffsetDateTime => T}
+    def now(c: Clock) = T.now(c)
+    def from(t: TemporalAccessor) = T.from(t)
+    def of(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: ZoneOffset) = T.of(a, b, c, d, e, f, g, h)
+    def of(a: LocalDateTime, b: ZoneOffset) = T.of(a, b)
+    def of(a: LocalDate, b: LocalTime, c: ZoneOffset) = T.of(a, b, c)
+    def max = T.MAX
+    def min = T.MIN
+    def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
+  }
+
+  object OffsetTime {
+    import ${tPac}.{OffsetTime => T}
+    def now(c: Clock) = T.now(c)
+    def from(t: TemporalAccessor) = T.from(t)
+    def of(a: Int, b: Int, c: Int, d: Int, e: ZoneOffset) = T.of(a, b, c, d, e)
+    def of(a: LocalTime, b: ZoneOffset) = T.of(a, b)
+    def of(a: Instant, b: ZoneOffset) = T.ofInstant(a, b)
+    def max = T.MAX
+    def min = T.MIN
+    def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
+  }
+
+  object Period {
+    import ${tPac}.{Period => T}
+    def of(a: Int, b: Int, c: Int)  = T.of(a, b, c)
+    def ofDays(a: Int) = T.ofDays(a)
+    def ofWeeks(a: Int) = T.ofWeeks(a)
+    def ofMonths(a: Int) = T.ofMonths(a)
+    def ofYears(a: Int) = T.ofYears(a)
+    def parse(a: CharSequence) = T.parse(a)
+    def zero = T.ZERO
+    def from(a: TemporalAmount) = T.from(a)
+  }
+
+  object ZonedDateTime {
+    import ${tPac}.{ZonedDateTime => T}
+    def now(c: Clock) = T.now(c)
+    def from(t: TemporalAccessor) = T.from(t)
+    def of(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: ZoneID) = T.of(a, b, c, d, e, f, g, h)
+    def of(a: LocalDateTime, b: ZoneID) = T.of(a, b)
+    def of(a: LocalDate, b: LocalTime, c: ZoneID) = T.of(a, b, c)
+    def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
+  }
+
+  object ZoneID {
+    import ${tPac}.{ZoneId => T}
+    def from(a: TemporalAccessor) = T.from(a)
+    def of(a: String) = T.of(a)
+    def of(a: String, b: java.util.Map[String, String]) = T.of(a, b)
+    def offset(a: String, b: ZoneOffset) = T.ofOffset(a, b)
+    def default = T.systemDefault()
+    def available = T.getAvailableZoneIds
+  }
+
+  object ZoneOffset {
+    import ${tPac}.{ZoneOffset => T}
+    def from(a: TemporalAccessor) = T.from(a)
+    def of(a: String) = T.of(a)
+    def h(a: Int) = T.ofHours(a)
+    def hm(a: Int, b: Int) = T.ofHoursMinutes(a, b)
+    def hms(a: Int, b: Int, c: Int) = T.ofHoursMinutesSeconds(a, b, c)
+    def max = T.MAX
+    def min = T.MAX
+    def utc = T.UTC
+  }
+
+}
