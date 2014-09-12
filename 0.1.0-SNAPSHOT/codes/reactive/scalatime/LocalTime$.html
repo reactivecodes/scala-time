@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for creating <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> instances *</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/7cd4e11/target/scala-2.11/src_managed/main/fmpp/codes/reactive/scalatime/LocalTime.scala" target="_blank">LocalTime.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> instances. *</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1957673/src/main/scala/codes/reactive/scalatime/LocalTime.scala" target="_blank">LocalTime.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -478,7 +478,9 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from an hour and minute.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from an hour and minute. Both values must be within range.</p></div></div>
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from an hour and minute, setting seconds and nanoseconds to zero.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from an hour and minute, setting seconds and nanoseconds to zero. Both values
+must be within range.
+</p></div></div>
     </li><li name="codes.reactive.scalatime.LocalTime#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="of(hour:Int,minute:Int,second:Int):scala.util.Try[codes.reactive.scalatime.LocalTime]"></a>
       <a id="of(Int,Int,Int):Try[scalatime.LocalTime]"></a>
@@ -495,7 +497,9 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from an hour, minute and second.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from an hour, minute and second. All values must be within range.</p></div></div>
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from an hour, minute and second, setting nanoseconds to zero.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from an hour, minute and second, setting nanoseconds to zero. All values
+ must be within range.
+</p></div></div>
     </li><li name="codes.reactive.scalatime.LocalTime#of" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="of(hour:Int,minute:Int,second:Int,nano:Int):scala.util.Try[codes.reactive.scalatime.LocalTime]"></a>
       <a id="of(Int,Int,Int,Int):Try[scalatime.LocalTime]"></a>
@@ -580,7 +584,7 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from text formatted according to <span class="extype" name="DateTimeFormatter.Iso.LocalTime">DateTimeFormatter.Iso.LocalTime</span>.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from text formatted according to <span class="extype" name="DateTimeFormatter.Iso.LocalTime">DateTimeFormatter.Iso.LocalTime</span>.
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from text formatted according to <span class="extype" name="format.DateTimeFormatter.Iso.LocalTime">format.DateTimeFormatter.Iso.LocalTime</span>.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> from text formatted according to <span class="extype" name="format.DateTimeFormatter.Iso.LocalTime">format.DateTimeFormatter.Iso.LocalTime</span>.
 </p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the text to parse such as &quot;10:15:30&quot;
 </p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -714,7 +718,7 @@
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 7cd4e11) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1957673) Scala 2.11 API Documentation. </div>
 
 
     </body>

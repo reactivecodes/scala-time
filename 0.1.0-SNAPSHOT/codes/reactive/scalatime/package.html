@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Basic Scala wrapper for easier use of JSR-310 compatible time APIs.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/7cd4e11/src/main/scala/codes/reactive/scalatime/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Basic Scala wrapper for easier use of JSR-310 compatible time APIs.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1957673/src/main/scala/codes/reactive/scalatime/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.impl.TimeAliases">TimeAliases</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -777,7 +777,7 @@ further information.
     </span>
       <p class="shortcomment cmt">Alias for <i>java.time.zone</i> <code>ZoneRulesException</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.zone</i> <code>ZoneRulesException</code>. ZoneRulesException is used to indicate a problems with the
 configured time-zone rules. See the <i>java.time.zone</i>
-<a href="http://docs.oracle.com/javase/8/docs/api/java/zone/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+<a href="http://docs/temporal/package-summary.html" target="_blank">API Documentation</a> for further
 information.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
     </li><li name="codes.reactive.scalatime.impl.TimeAliases.ZonedDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -1001,7 +1001,7 @@ or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr
     </span>
       <p class="shortcomment cmt">Factory object for creation of <a href="#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for creation of <a href="#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
 </p></dd></dl></div>
-    </li><li name="codes.reactive.scalatime.LocalTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.LocalTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="LocalTime"></a>
       <a id="LocalTime:LocalTime"></a>
       <h4 class="signature">
@@ -1017,8 +1017,8 @@ or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Factory object for creating <a href="#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> instances *</p>
-    </li><li name="codes.reactive.scalatime.Month" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">Factory object for obtaining <a href="#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> instances.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining <a href="#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> instances. *</p></div></div>
+    </li><li name="codes.reactive.scalatime.Month" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Month"></a>
       <a id="Month:Month"></a>
       <h4 class="signature">
@@ -1034,9 +1034,7 @@ or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Factory for obtaining singleton instances of <a href="#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">Month</a>
-</p><div class="fullcomment"><div class="comment cmt"><p>Factory for obtaining singleton instances of <a href="#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">Month</a>
-</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0</p></dd></dl></div>
+      <p class="shortcomment cmt">Factory for obtaining singleton instances of <a href="#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">Month</a>.</p>
     </li><li name="codes.reactive.scalatime.OffsetDateTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="OffsetDateTime"></a>
       <a id="OffsetDateTime:OffsetDateTime"></a>
@@ -1109,7 +1107,7 @@ or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="ZoneID$.html"><span class="name">ZoneID</span></a><span class="result"> extends <span class="extype" name="codes.reactive.scalatime.ZoneIDs">ZoneIDs</span></span>
+        <a href="ZoneID$.html"><span class="name">ZoneID</span></a>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.package@ZoneID" title="Permalink" target="_top">
@@ -1142,7 +1140,7 @@ available region based zone ids.
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="ZoneOffset$.html"><span class="name">ZoneOffset</span></a><span class="result"> extends <span class="extype" name="codes.reactive.scalatime.ZoneOffsets">ZoneOffsets</span></span>
+        <a href="ZoneOffset$.html"><span class="name">ZoneOffset</span></a>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#codes.reactive.scalatime.package@ZoneOffset" title="Permalink" target="_top">
@@ -1165,7 +1163,7 @@ respectively.
 <span class="kw">val</span> plusFive = ZoneOffset(<span class="num">5</span>)</pre></li></ol>
             </div><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl></div>
-    </li><li name="codes.reactive.scalatime.ZonedDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.ZonedDateTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ZonedDateTime"></a>
       <a id="ZonedDateTime:ZonedDateTime"></a>
       <h4 class="signature">
@@ -1181,8 +1179,7 @@ respectively.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Factory object for creation of <a href="#ZonedDateTime=java.time.ZonedDateTime" class="extmbr" name="codes.reactive.scalatime.ZonedDateTime">ZonedDateTime</a> instances</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for creation of <a href="#ZonedDateTime=java.time.ZonedDateTime" class="extmbr" name="codes.reactive.scalatime.ZonedDateTime">ZonedDateTime</a> instances</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
+      <p class="shortcomment cmt">Factory object for obtaining <a href="#ZonedDateTime=java.time.ZonedDateTime" class="extmbr" name="codes.reactive.scalatime.ZonedDateTime">ZonedDateTime</a> instances.</p>
     </li><li name="codes.reactive.scalatime.chrono" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="chrono"></a>
       <a id="chrono:chrono"></a>
@@ -1216,10 +1213,9 @@ respectively.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Provides functionality relating to Exception handling, validation and control structures
-</p><div class="fullcomment"><div class="comment cmt"><p>Provides functionality relating to Exception handling, validation and control structures
-</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
+      <p class="shortcomment cmt">Provides functionality relating to Exception handling, validation and control structures.</p><div class="fullcomment"><div class="comment cmt"><p>Provides functionality relating to Exception handling, validation and control structures.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="control/Catcher$.html" class="extype" name="codes.reactive.scalatime.control.Catcher">control.Catcher</a>
+</p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.format" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="format"></a>
       <a id="format:format"></a>
@@ -1305,7 +1301,7 @@ helpers.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 7cd4e11) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1957673) Scala 2.11 API Documentation. </div>
 
 
     </body>

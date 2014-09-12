@@ -49,7 +49,7 @@
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides all implicit conversion functions, as well as a standard set of units, formatters and additional
 helpers.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/7cd4e11/src/main/scala/codes/reactive/scalatime/syntax/package.scala" target="_blank">package.scala</a></dd><dt>Since</dt><dd><p>0.1.0
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1957673/src/main/scala/codes/reactive/scalatime/syntax/package.scala" target="_blank">package.scala</a></dd><dt>Since</dt><dd><p>0.1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="ZoneHelpers.html" class="extype" name="codes.reactive.scalatime.syntax.ZoneHelpers">ZoneHelpers</a>, <a href="FormatterHelpers.html" class="extype" name="codes.reactive.scalatime.syntax.FormatterHelpers">FormatterHelpers</a>, <a href="UnitHelpers.html" class="extype" name="codes.reactive.scalatime.syntax.UnitHelpers">UnitHelpers</a>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.NumberImplicits">NumberImplicits</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.NumberConverters">NumberConverters</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.PredefImplicits">PredefImplicits</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits">ChronoImplicits</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.ChronoConverters">ChronoConverters</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.TemporalImplicits">TemporalImplicits</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.TemporalConverters">TemporalConverters</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -168,52 +168,52 @@ helpers.
     </span>
       
     </li><li name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits#augmentChronoLocalDate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="augmentChronoLocalDate:codes.reactive.scalatime.ChronoLocalDate=&gt;codes.reactive.scalatime.chrono.RichChronoLocalDate"></a>
-      <a id="augmentChronoLocalDate:(scalatime.ChronoLocalDate)⇒RichChronoLocalDate"></a>
+      <a id="augmentChronoLocalDate(d:codes.reactive.scalatime.ChronoLocalDate):codes.reactive.scalatime.chrono.RichChronoLocalDate"></a>
+      <a id="augmentChronoLocalDate(scalatime.ChronoLocalDate):RichChronoLocalDate"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
-        <span class="kind">val</span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">augmentChronoLocalDate</span><span class="result">: (<a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">scalatime.ChronoLocalDate</a>) ⇒ <a href="../chrono/RichChronoLocalDate.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoLocalDate">RichChronoLocalDate</a></span>
+        <span class="name">augmentChronoLocalDate</span><span class="params">(<span name="d">d: <a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">scalatime.ChronoLocalDate</a></span>)</span><span class="result">: <a href="../chrono/RichChronoLocalDate.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoLocalDate">RichChronoLocalDate</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@augmentChronoLocalDate:codes.reactive.scalatime.ChronoLocalDate=&gt;codes.reactive.scalatime.chrono.RichChronoLocalDate" title="Permalink" target="_top">
+      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@augmentChronoLocalDate(d:codes.reactive.scalatime.ChronoLocalDate):codes.reactive.scalatime.chrono.RichChronoLocalDate" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ChronoImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits#augmentChronoLocalDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="augmentChronoLocalDateTime:codes.reactive.scalatime.ChronoLocalDateTime[_]=&gt;codes.reactive.scalatime.chrono.RichChronoLocalDateTime[_]"></a>
-      <a id="augmentChronoLocalDateTime:(scalatime.ChronoLocalDateTime[_])⇒RichChronoLocalDateTime[_]"></a>
+      <a id="augmentChronoLocalDateTime[A&lt;:codes.reactive.scalatime.ChronoLocalDate](d:codes.reactive.scalatime.ChronoLocalDateTime[A]):codes.reactive.scalatime.chrono.RichChronoLocalDateTime[A]"></a>
+      <a id="augmentChronoLocalDateTime[A&lt;:scalatime.ChronoLocalDate](scalatime.ChronoLocalDateTime[A]):RichChronoLocalDateTime[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
-        <span class="kind">val</span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">augmentChronoLocalDateTime</span><span class="result">: (<a href="../package.html#ChronoLocalDateTime[A&lt;:TimeAliases.this.ChronoLocalDate]=java.time.chrono.ChronoLocalDateTime[A]" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDateTime">scalatime.ChronoLocalDateTime</a>[_]) ⇒ <a href="../chrono/RichChronoLocalDateTime.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoLocalDateTime">RichChronoLocalDateTime</a>[_]</span>
+        <span class="name">augmentChronoLocalDateTime</span><span class="tparams">[<span name="A">A &lt;: <a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">scalatime.ChronoLocalDate</a></span>]</span><span class="params">(<span name="d">d: <a href="../package.html#ChronoLocalDateTime[A&lt;:TimeAliases.this.ChronoLocalDate]=java.time.chrono.ChronoLocalDateTime[A]" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDateTime">scalatime.ChronoLocalDateTime</a>[<span class="extype" name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits.augmentChronoLocalDateTime.A">A</span>]</span>)</span><span class="result">: <a href="../chrono/RichChronoLocalDateTime.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoLocalDateTime">RichChronoLocalDateTime</a>[<span class="extype" name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits.augmentChronoLocalDateTime.A">A</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@augmentChronoLocalDateTime:codes.reactive.scalatime.ChronoLocalDateTime[_]=&gt;codes.reactive.scalatime.chrono.RichChronoLocalDateTime[_]" title="Permalink" target="_top">
+      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@augmentChronoLocalDateTime[A&lt;:codes.reactive.scalatime.ChronoLocalDate](d:codes.reactive.scalatime.ChronoLocalDateTime[A]):codes.reactive.scalatime.chrono.RichChronoLocalDateTime[A]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ChronoImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits#augmentChronoZonedDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="augmentChronoZonedDateTime:codes.reactive.scalatime.ChronoZonedDateTime[_]=&gt;codes.reactive.scalatime.chrono.RichChronoZonedDateTime[_]"></a>
-      <a id="augmentChronoZonedDateTime:(scalatime.ChronoZonedDateTime[_])⇒RichChronoZonedDateTime[_]"></a>
+      <a id="augmentChronoZonedDateTime[A&lt;:codes.reactive.scalatime.ChronoLocalDate](d:codes.reactive.scalatime.ChronoZonedDateTime[A]):codes.reactive.scalatime.chrono.RichChronoZonedDateTime[A]"></a>
+      <a id="augmentChronoZonedDateTime[A&lt;:scalatime.ChronoLocalDate](scalatime.ChronoZonedDateTime[A]):RichChronoZonedDateTime[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
-        <span class="kind">val</span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">augmentChronoZonedDateTime</span><span class="result">: (<a href="../package.html#ChronoZonedDateTime[A&lt;:TimeAliases.this.ChronoLocalDate]=java.time.chrono.ChronoZonedDateTime[A]" class="extmbr" name="codes.reactive.scalatime.ChronoZonedDateTime">scalatime.ChronoZonedDateTime</a>[_]) ⇒ <a href="../chrono/RichChronoZonedDateTime.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoZonedDateTime">RichChronoZonedDateTime</a>[_]</span>
+        <span class="name">augmentChronoZonedDateTime</span><span class="tparams">[<span name="A">A &lt;: <a href="../package.html#ChronoLocalDate=java.time.chrono.ChronoLocalDate" class="extmbr" name="codes.reactive.scalatime.ChronoLocalDate">scalatime.ChronoLocalDate</a></span>]</span><span class="params">(<span name="d">d: <a href="../package.html#ChronoZonedDateTime[A&lt;:TimeAliases.this.ChronoLocalDate]=java.time.chrono.ChronoZonedDateTime[A]" class="extmbr" name="codes.reactive.scalatime.ChronoZonedDateTime">scalatime.ChronoZonedDateTime</a>[<span class="extype" name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits.augmentChronoZonedDateTime.A">A</span>]</span>)</span><span class="result">: <a href="../chrono/RichChronoZonedDateTime.html" class="extype" name="codes.reactive.scalatime.chrono.RichChronoZonedDateTime">RichChronoZonedDateTime</a>[<span class="extype" name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits.augmentChronoZonedDateTime.A">A</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@augmentChronoZonedDateTime:codes.reactive.scalatime.ChronoZonedDateTime[_]=&gt;codes.reactive.scalatime.chrono.RichChronoZonedDateTime[_]" title="Permalink" target="_top">
+      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@augmentChronoZonedDateTime[A&lt;:codes.reactive.scalatime.ChronoLocalDate](d:codes.reactive.scalatime.ChronoZonedDateTime[A]):codes.reactive.scalatime.chrono.RichChronoZonedDateTime[A]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
@@ -234,9 +234,7 @@ helpers.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Implicit function which returns a new <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit function which returns a new <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a>.
-We make it a val to avoid having to explicitly enable implicit conversions
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
+      <p class="shortcomment cmt">$implV <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a>.</p><div class="fullcomment"><div class="comment cmt"><p>$implV <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.NumberImplicits#augmentInt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="augmentInt:Int=&gt;codes.reactive.scalatime.temporal.IntPeriod"></a>
       <a id="augmentInt:(Int)⇒IntPeriod"></a>
@@ -253,12 +251,7 @@ We make it a val to avoid having to explicitly enable implicit conversions
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Implicit function to convert an Int to an <a href="../temporal/IntPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.IntPeriod">temporal.IntPeriod</a>
-We use a val to avoid having to explicitly enable
-implicit conversions.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit function to convert an Int to an <a href="../temporal/IntPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.IntPeriod">temporal.IntPeriod</a>
-We use a val to avoid having to explicitly enable
-implicit conversions.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumberImplicits</dd></dl></div>
+      <p class="shortcomment cmt">Implicit function to convert an Int to an <a href="../temporal/IntPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.IntPeriod">temporal.IntPeriod</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit function to convert an Int to an <a href="../temporal/IntPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.IntPeriod">temporal.IntPeriod</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumberImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.NumberImplicits#augmentLong" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="augmentLong:Long=&gt;codes.reactive.scalatime.temporal.LongDuration"></a>
       <a id="augmentLong:(Long)⇒LongDuration"></a>
@@ -275,12 +268,7 @@ implicit conversions.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Implicit function to convert a Long to a <a href="../temporal/LongDuration.html" class="extype" name="codes.reactive.scalatime.temporal.LongDuration">temporal.LongDuration</a>
-We use a val to avoid having to explicitly enable
-implicit conversions.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit function to convert a Long to a <a href="../temporal/LongDuration.html" class="extype" name="codes.reactive.scalatime.temporal.LongDuration">temporal.LongDuration</a>
-We use a val to avoid having to explicitly enable
-implicit conversions.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumberImplicits</dd></dl></div>
+      <p class="shortcomment cmt">Implicit function to convert a Long to a <a href="../temporal/LongDuration.html" class="extype" name="codes.reactive.scalatime.temporal.LongDuration">temporal.LongDuration</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit function to convert a Long to a <a href="../temporal/LongDuration.html" class="extype" name="codes.reactive.scalatime.temporal.LongDuration">temporal.LongDuration</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumberImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalImplicits#augmentPeriod" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="augmentPeriod:codes.reactive.scalatime.Period=&gt;codes.reactive.scalatime.temporal.RichPeriod"></a>
       <a id="augmentPeriod:(scalatime.Period)⇒RichPeriod"></a>
@@ -297,9 +285,7 @@ implicit conversions.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Implicit function which returns a new <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit function which returns a new <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a>.
-We make it a val to avoid having to explicitly enable implicit conversions
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
+      <p class="shortcomment cmt">$implV <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a>.</p><div class="fullcomment"><div class="comment cmt"><p>$implV <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalImplicits#augmentTemporal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="augmentTemporal:codes.reactive.scalatime.Temporal=&gt;codes.reactive.scalatime.temporal.RichTemporal"></a>
       <a id="augmentTemporal:(scalatime.Temporal)⇒RichTemporal"></a>
@@ -316,9 +302,7 @@ We make it a val to avoid having to explicitly enable implicit conversions
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Implicit function which returns a new <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit function which returns a new <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a>.
-We make it a val to avoid having to explicitly enable implicit conversions
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
+      <p class="shortcomment cmt">$implV <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a>.</p><div class="fullcomment"><div class="comment cmt"><p>$implV <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalImplicits#augmentTemporalAdjuster" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="augmentTemporalAdjuster:codes.reactive.scalatime.TemporalAdjuster=&gt;codes.reactive.scalatime.temporal.RichTemporalAdjuster"></a>
       <a id="augmentTemporalAdjuster:(scalatime.TemporalAdjuster)⇒RichTemporalAdjuster"></a>
@@ -335,9 +319,7 @@ We make it a val to avoid having to explicitly enable implicit conversions
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Implicit function which returns a new <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit function which returns a new <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a>.
-We make it a val to avoid having to explicitly enable implicit conversions
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
+      <p class="shortcomment cmt">$implV <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a>.</p><div class="fullcomment"><div class="comment cmt"><p>$implV <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalImplicits#augmentTemporalAmount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="augmentTemporalAmount:codes.reactive.scalatime.TemporalAmount=&gt;codes.reactive.scalatime.temporal.RichTemporalAmount"></a>
       <a id="augmentTemporalAmount:(scalatime.TemporalAmount)⇒RichTemporalAmount"></a>
@@ -354,9 +336,24 @@ We make it a val to avoid having to explicitly enable implicit conversions
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Implicit function which returns a new <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit function which returns a new <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a>.
-We make it a val to avoid having to explicitly enable implicit conversions
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
+      <p class="shortcomment cmt">$implV <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a>.</p><div class="fullcomment"><div class="comment cmt"><p>$implV <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalImplicits#augmentTemporalQuery" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="augmentTemporalQuery:codes.reactive.scalatime.TemporalQuery[_]=&gt;codes.reactive.scalatime.temporal.RichTemporalQuery[_]"></a>
+      <a id="augmentTemporalQuery:(scalatime.TemporalQuery[_])⇒RichTemporalQuery[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">augmentTemporalQuery</span><span class="result">: (<a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">scalatime.TemporalQuery</a>[_]) ⇒ <a href="../temporal/RichTemporalQuery.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalQuery">RichTemporalQuery</a>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@augmentTemporalQuery:codes.reactive.scalatime.TemporalQuery[_]=&gt;codes.reactive.scalatime.temporal.RichTemporalQuery[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.UnitHelpers#field" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="field:codes.reactive.scalatime.temporal.ChronoFieldswithcodes.reactive.scalatime.temporal.IsoFields"></a>
       <a id="field:ChronoFieldswithIsoFields"></a>
@@ -410,10 +407,7 @@ specific to the ISO-8601 calendar system.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Creates a new <a href="../temporal/IntPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.IntPeriod">temporal.IntPeriod</a> from an <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Int" class="extype" target="_top">scala.Int</a>
-</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="../temporal/IntPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.IntPeriod">temporal.IntPeriod</a> from an <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Int" class="extype" target="_top">scala.Int</a>
-</p></div><dl class="paramcmts block"><dt class="param">in</dt><dd class="cmt"><p>the Int to be converted</p></dd><dt>returns</dt><dd class="cmt"><p>a new <a href="../temporal/IntPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.IntPeriod">temporal.IntPeriod</a>
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumberConverters</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="../temporal/IntPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.IntPeriod">temporal.IntPeriod</a> from an <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Int" class="extype" target="_top">scala.Int</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="../temporal/IntPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.IntPeriod">temporal.IntPeriod</a> from an <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Int" class="extype" target="_top">scala.Int</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumberConverters</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.NumberConverters#longDuration" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="longDuration(in:Long):codes.reactive.scalatime.temporal.LongDuration"></a>
       <a id="longDuration(Long):LongDuration"></a>
@@ -430,23 +424,20 @@ specific to the ISO-8601 calendar system.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Creates a new <a href="../temporal/LongDuration.html" class="extype" name="codes.reactive.scalatime.temporal.LongDuration">temporal.LongDuration</a> from a <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Long" class="extype" target="_top">scala.Long</a>
-</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <a href="../temporal/LongDuration.html" class="extype" name="codes.reactive.scalatime.temporal.LongDuration">temporal.LongDuration</a> from a <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Long" class="extype" target="_top">scala.Long</a>
-</p></div><dl class="paramcmts block"><dt class="param">in</dt><dd class="cmt"><p>the Long to be converted</p></dd><dt>returns</dt><dd class="cmt"><p>a new <a href="../temporal/LongDuration.html" class="extype" name="codes.reactive.scalatime.temporal.LongDuration">temporal.LongDuration</a>
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumberConverters</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="../temporal/LongDuration.html" class="extype" name="codes.reactive.scalatime.temporal.LongDuration">temporal.LongDuration</a> from a <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Long" class="extype" target="_top">scala.Long</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="../temporal/LongDuration.html" class="extype" name="codes.reactive.scalatime.temporal.LongDuration">temporal.LongDuration</a> from a <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Long" class="extype" target="_top">scala.Long</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumberConverters</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.ZoneHelpers#offset" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="offset:codes.reactive.scalatime.ZoneOffsets"></a>
-      <a id="offset:ZoneOffsets"></a>
+      <a id="offset:codes.reactive.scalatime.ZoneOffset.type"></a>
+      <a id="offset:ZoneOffset.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">offset</span><span class="result">: <span class="extype" name="codes.reactive.scalatime.ZoneOffsets">ZoneOffsets</span></span>
+        <span class="name">offset</span><span class="result">: <a href="../ZoneOffset$.html" class="extype" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>.type</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@offset:codes.reactive.scalatime.ZoneOffsets" title="Permalink" target="_top">
+      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@offset:codes.reactive.scalatime.ZoneOffset.type" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
@@ -518,7 +509,7 @@ specific to the ISO-8601 calendar system.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="../temporal/RichDuration.html" class="extype" name="codes.reactive.scalatime.temporal.RichDuration">temporal.RichDuration</a> from a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalConverters#richPeriod" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="richPeriod(period:codes.reactive.scalatime.Period):codes.reactive.scalatime.temporal.RichPeriod"></a>
       <a id="richPeriod(scalatime.Period):RichPeriod"></a>
@@ -535,7 +526,7 @@ specific to the ISO-8601 calendar system.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="../temporal/RichPeriod.html" class="extype" name="codes.reactive.scalatime.temporal.RichPeriod">temporal.RichPeriod</a> from a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalConverters#richTemporal" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="richTemporal(temporal:codes.reactive.scalatime.Temporal):codes.reactive.scalatime.temporal.RichTemporal"></a>
       <a id="richTemporal(scalatime.Temporal):RichTemporal"></a>
@@ -552,7 +543,7 @@ specific to the ISO-8601 calendar system.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="../temporal/RichTemporal.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporal">temporal.RichTemporal</a> from a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalConverters#richTemporalAdjuster" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="richTemporalAdjuster(temporalAdjuster:codes.reactive.scalatime.TemporalAdjuster):codes.reactive.scalatime.temporal.RichTemporalAdjuster"></a>
       <a id="richTemporalAdjuster(scalatime.TemporalAdjuster):RichTemporalAdjuster"></a>
@@ -569,7 +560,7 @@ specific to the ISO-8601 calendar system.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="../temporal/RichTemporalAdjuster.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAdjuster">temporal.RichTemporalAdjuster</a> from a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalConverters#richTemporalAmount" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="richTemporalAmount(temporalAmount:codes.reactive.scalatime.TemporalAmount):codes.reactive.scalatime.temporal.RichTemporalAmount"></a>
       <a id="richTemporalAmount(scalatime.TemporalAmount):RichTemporalAmount"></a>
@@ -586,7 +577,24 @@ specific to the ISO-8601 calendar system.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Returns a new <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+      <p class="shortcomment cmt">Obtains a <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="../temporal/RichTemporalAmount.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalAmount">temporal.RichTemporalAmount</a> from a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.syntax.conversions.TemporalConverters#richTemporalQuery" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richTemporalQuery(query:codes.reactive.scalatime.TemporalQuery[_]):codes.reactive.scalatime.temporal.RichTemporalQuery[_]"></a>
+      <a id="richTemporalQuery(scalatime.TemporalQuery[_]):RichTemporalQuery[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richTemporalQuery</span><span class="params">(<span name="query">query: <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">scalatime.TemporalQuery</a>[_]</span>)</span><span class="result">: <a href="../temporal/RichTemporalQuery.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalQuery">RichTemporalQuery</a>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@richTemporalQuery(query:codes.reactive.scalatime.TemporalQuery[_]):codes.reactive.scalatime.temporal.RichTemporalQuery[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains a <a href="../temporal/RichTemporalQuery.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalQuery">temporal.RichTemporalQuery</a> from a <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">TemporalQuery</a> *</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a <a href="../temporal/RichTemporalQuery.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalQuery">temporal.RichTemporalQuery</a> from a <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">TemporalQuery</a> *</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TemporalConverters</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.UnitHelpers#unit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="unit:codes.reactive.scalatime.temporal.ChronoUnitswithcodes.reactive.scalatime.temporal.IsoUnits"></a>
       <a id="unit:ChronoUnitswithIsoUnits"></a>
@@ -608,18 +616,18 @@ specific to the ISO-8601 calendar system.</p><div class="fullcomment"><div class
 specific to the ISO-8601 calendar system.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="UnitHelpers.html" class="extype" name="codes.reactive.scalatime.syntax.UnitHelpers">UnitHelpers</a></dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.ZoneHelpers#zone" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="zone:codes.reactive.scalatime.ZoneIDs"></a>
-      <a id="zone:ZoneIDs"></a>
+      <a id="zone:codes.reactive.scalatime.ZoneID.type"></a>
+      <a id="zone:ZoneID.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">zone</span><span class="result">: <span class="extype" name="codes.reactive.scalatime.ZoneIDs">ZoneIDs</span></span>
+        <span class="name">zone</span><span class="result">: <a href="../ZoneID$.html" class="extype" name="codes.reactive.scalatime.ZoneID">ZoneID</a>.type</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@zone:codes.reactive.scalatime.ZoneIDs" title="Permalink" target="_top">
+      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@zone:codes.reactive.scalatime.ZoneID.type" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
@@ -672,7 +680,7 @@ specific to the ISO-8601 calendar system.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 7cd4e11) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1957673) Scala 2.11 API Documentation. </div>
 
 
     </body>
