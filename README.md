@@ -53,7 +53,7 @@ val localDate = LocalDate.of(2014, 6, 7)
 duration + otherDuration
 
 //  Add a TemporalAmount to a Temporal
-period <+= localDate.get
+period <<+ localDate.get
 
 //  Add a TemporalAmount to a Temporal
 localDate.get + period
