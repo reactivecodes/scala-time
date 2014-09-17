@@ -31,4 +31,3 @@ object IsoUnit extends IsoUnits
   * @since  0.1.0
   */
 object IsoField extends IsoFields
-

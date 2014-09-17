@@ -64,7 +64,7 @@ private[conversions] trait TemporalImplicits extends TemporalConverters {
   /** $implV [[temporal.RichPeriod]] from a [[Period]]. */
   implicit val augmentPeriod: Period => RichPeriod = richPeriod
 
-
+  /** $implV [[temporal.RichTemporalQuery]] from a [[TemporalQuery]]. */
   implicit val augmentTemporalQuery: (TemporalQuery[_]) => RichTemporalQuery[_] = richTemporalQuery
 
 }

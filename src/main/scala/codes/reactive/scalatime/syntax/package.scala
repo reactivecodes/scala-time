@@ -19,10 +19,9 @@
 package codes.reactive.scalatime
 
 
-/** Provides all implicit conversion functions, as well as a standard set of units, formatters and additional
-  * helpers.
-  *
-  * @since  0.1.0
-  */
-package object syntax extends conversions.PredefImplicits with conversions.NumberImplicits with
-    UnitHelpers with FormatterHelpers with ZoneHelpers
+/** Provides all implicit conversion functions as well as a standard set of units, formatters and additional helpers. */
+package object syntax extends conversions.PredefImplicits
+    with conversions.NumberImplicits
+    with UnitHelpers
+    with FormatterHelpers
+    with ZoneHelpers

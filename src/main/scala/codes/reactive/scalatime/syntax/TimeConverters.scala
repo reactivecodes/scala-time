@@ -19,5 +19,5 @@
 package codes.reactive.scalatime
 package syntax
 
-
+/** Provides conversions for providing an `enrich` method for obtaining Rich representations of supported objects. */
 object TimeConverters extends conversions.AnnotateEnrichTemporal with conversions.AnnotateEnrichChrono

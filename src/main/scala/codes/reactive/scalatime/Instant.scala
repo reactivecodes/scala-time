@@ -22,7 +22,6 @@ import impl.TimeSupport.{Instant => I}
 import scala.util.Try
 
 
-
 /** Factory object for obtaining instances of [[Instant]].
   *
   * Instant is an instantaneous point on the time-line.

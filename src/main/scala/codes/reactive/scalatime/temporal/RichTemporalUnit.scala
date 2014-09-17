@@ -19,10 +19,14 @@
 package codes.reactive.scalatime
 package temporal
 
-/**
- * Created by arashid on 17/06/14.
- */
+
+/** Enriches [[TemporalUnit]] with additional methods. */
 final class RichTemporalUnit(val underlying: TemporalUnit) {
 
+  /** Returns a copy of the specified temporal object with the specified amount of this unit added.
+    *
+    * @throws DateTimeException if the amount cannot be added.
+    */
+  def <<+[A <: Temporal](temporal: A, amount: Long): A = underlying.addTo(temporal, amount)
 
 }

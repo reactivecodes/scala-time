@@ -19,7 +19,7 @@
 package codes.reactive.scalatime
 package syntax
 
-import format.TimeFormatters
+import format.DateTimeFormatter
 import temporal.{ChronoUnits, ChronoFields, IsoUnits, IsoFields}
 
 
@@ -28,27 +28,27 @@ protected[syntax] trait UnitHelpers {
   /** Provides a standard set of date period fields as [[TemporalField]] instances, including those
     * specific to the ISO-8601 calendar system.
     */
-  val field = new ChronoFields with IsoFields {}
+  lazy val field = new ChronoFields with IsoFields {}
 
   /** Provides a standard set of date period units as [[TemporalUnit]] instances, including those
     * specific to the ISO-8601 calendar system.
     */
-  val unit = new ChronoUnits with IsoUnits {}
+  lazy val unit = new ChronoUnits with IsoUnits {}
 
 }
 
 protected[syntax] trait FormatterHelpers {
 
   /** Provides a standard set of [[DateTimeFormatter]] instances, as well as methods to create them **/
-  val formatter = new TimeFormatters {}
+  def formatter: DateTimeFormatter.type = DateTimeFormatter
 
 }
 
 protected[syntax] trait ZoneHelpers {
 
   /** Provides a standard set of time zone [[ZoneID]] instances, as well as methods to create them. **/
-  def zone = ZoneID
+  def zone: ZoneID.type = ZoneID
 
   /** Provides a standard set of time zone [[ZoneOffset]] instances, as well as methods to create them. **/
-  def offset = ZoneOffset
+  def offset: ZoneOffset.type = ZoneOffset
 }

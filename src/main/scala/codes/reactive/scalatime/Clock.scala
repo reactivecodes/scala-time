@@ -23,26 +23,25 @@ import impl.TimeSupport.{Clock => JC}
 
 /** Factory object for obtaining instances of [[Clock]].
   *
-  * The default no-argument `apply` method differs from the underlying constructor in that it explicitly returns
-  * the '''UTC''' Zone Clock from the current system time. Use `apply(ZoneID)` to specify an alternative zone,
-  * or [[Clock.systemZone]] to obtain a Clock from the current system time and zone.
+  * The default no-argument `apply` method differs from the underlying library no-argument constructor in that it
+  * explicitly returns the '''UTC''' Zone Clock from the current system time. Use `apply(ZoneID)` to specify an
+  * alternative zone, or [[Clock.systemZone]] to obtain a Clock from the current system time and zone.
   *
   * @example
   * {{{
-  *             import codes.reactive.scalatime._
+  *              import codes.reactive.scalatime._
   *
-  *             // Obtain a Clock from the current system UTC time
-  *             val utcClock = Clock()
+  *              // Obtain a Clock from the current system UTC time
+  *              val utcClock = Clock()
   *
-  *             // Obtain a Clock fixed to the current instant
-  *             val fixed = Clock.fixed(Instant())
+  *              // Obtain a Clock fixed to the current instant
+  *              val fixed = Clock.fixed(Instant())
   * }}}
   *
-  * @since 0.1.0
   */
 object Clock {
 
-  /** Obtains a [[Clock]] from the current instant converted to UTC from the best available system clock. */
+  /** Obtains a [[Clock]] from the current instant at UTC from the best available system clock. */
   def apply(): Clock = apply(ZoneOffset.UTC)
 
   /** Obtains a [[Clock]] from the current instant at the specified time zone from the best available system clock. */

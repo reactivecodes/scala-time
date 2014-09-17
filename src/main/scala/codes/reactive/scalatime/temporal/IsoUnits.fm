@@ -24,8 +24,6 @@ import ${tPac}.temporal.{IsoFields => IF}
 
 /** Provides units specific to the ISO-8601 calendar system as [[TemporalUnit]] instances.
   *
-  * @since  0.1.0
-  *
   * @define Unit  [[TemporalUnit]] representing the concept of
   */
 trait IsoUnits {

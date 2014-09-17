@@ -25,7 +25,7 @@ startYear := Some(2014)
 
 homepage := Some(url("https://oss.reactive.codes/scala-time"))
 
-apiURL := Some(url(s"http://oss.reactive.codes/scala-time/${version.value}/"))
+apiURL := Some(url(s"http://oss.reactive.codes/scala-time/${version.value}"))
 
 apacheLicensed
 

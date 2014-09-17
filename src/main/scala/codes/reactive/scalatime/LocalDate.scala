@@ -22,9 +22,7 @@ import impl.TimeSupport.{LocalDate => LD}
 import scala.util.Try
 
 
-/** Factory object for creation of [[LocalDate]] instances
-  * @since 0.1.0
-  */
+/** Factory object for creation of [[LocalDate]] instances. */
 object LocalDate {
 
   /** Obtains a [[LocalDate]] by querying the current system clock at UTC for the current date. */
@@ -53,4 +51,3 @@ object LocalDate {
   def parse(text: String, formatter: DateTimeFormatter): Try[LocalDate] = Try(LD.parse(text, formatter))
 
 }
-

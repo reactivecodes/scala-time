@@ -16,7 +16,8 @@
  * under the License.                                              *
  *******************************************************************/
 
-package codes.reactive.scalatime.format
+package codes.reactive.scalatime
+package format
 
 /** Provides factory methods for obtaining [[DateTimeFormatter]] instances, as well as common default instances. */
 object DateTimeFormatter extends TimeFormatters

@@ -43,7 +43,6 @@ import util.Try
   *            // Obtain a time zone from the region zone id 'Europe/Lisbon'
   *            val lisbonZone = ZoneID("Europe/Lisbon")
   *          }}}
-  * @since  0.1.0
   */
 object ZoneID {
 
@@ -87,5 +86,3 @@ object ZoneID {
   def entries: Set[String] = collection.JavaConversions.asScalaSet(ZI.available).toSet
 
 }
-
-

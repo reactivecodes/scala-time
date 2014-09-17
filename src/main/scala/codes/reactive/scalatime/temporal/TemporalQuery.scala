@@ -21,16 +21,18 @@ package temporal
 
 import util.Try
 
+
 /** Factory object for obtaining instances of [[TemporalQuery]]. */
 object TemporalQuery {
 
   /** Obtains a [[TemporalQuery]] from a function ([[TemporalAccessor]])  => `A`. */
-  def apply[A](f: TemporalAccessor => A) = new TemporalQuery[A] {
+  def apply[A](f: TemporalAccessor => A) : TemporalQuery[A] = new TemporalQuery[A] {
     override def queryFrom(temporal: TemporalAccessor): A = f(temporal)
   }
 
 }
 
+/** Enriches instances of [[TemporalQuery]] with additional methods. */
 class RichTemporalQuery[A](val underlying: TemporalQuery[A]) extends AnyVal {
 
   /** Tries to query the specified [[TemporalAccessor]] using this query strategy. */

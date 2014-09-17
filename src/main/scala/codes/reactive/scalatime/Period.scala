@@ -40,7 +40,6 @@ import scala.util.Try
   *            val zero = Period.Nil
   *          }}}
   *
-  * @since  0.1.0
   */
 object Period {
 

@@ -30,15 +30,15 @@ import scala.util.Try
   *         the [[syntax]] syntax for alternatives.
   *
   * @example
-  *          {{{
-  *            import codes.reactive.scalatime._
+  * {{{
+  *             import codes.reactive.scalatime._
   *
-  *            // Obtain a Duration of 10 nano seconds
-  *            val tenNanos = Duration.nanos(10)
+  *             // Obtain a Duration of 10 nano seconds
+  *             val tenNanos = Duration.nanos(10)
   *
-  *            // Obtain a Duration of zero
-  *            val zero = Duration.Nil
-  *          }}}
+  *             // Obtain a Duration of zero
+  *             val zero = Duration.Nil
+  * }}}
   *
   * @since  0.1.0
   */
@@ -69,18 +69,18 @@ object Duration {
     * The leading plus/minus sign, and negative values for other units are not part of the ISO-8601 standard.
     *
     * @example
-    *          {{{
-    *            import codes.reactive.scalatime._
+    * {{{
+    *             import codes.reactive.scalatime._
     *
-    *            // Parses as 20.345 seconds
-    *            val dur1 = Duration.parse("PT20.345S")
+    *             // Parses as 20.345 seconds
+    *             val dur1 = Duration.parse("PT20.345S")
     *
-    *            // Parses as 2 days, 3 hours, 4 minutes
-    *            val dur2 = Duration.parse("P2DT3H4M")
+    *             // Parses as 2 days, 3 hours, 4 minutes
+    *             val dur2 = Duration.parse("P2DT3H4M")
     *
-    *            // Parses as minus 6 hours, 3 minutes
-    *            val dur3 = Duration.parse("P-6H3M")
-    *          }}}
+    *             // Parses as minus 6 hours, 3 minutes
+    *             val dur3 = Duration.parse("P-6H3M")
+    * }}}
     */
   def parse(text: String): Try[Duration] = Try(JD.parse(text))
 

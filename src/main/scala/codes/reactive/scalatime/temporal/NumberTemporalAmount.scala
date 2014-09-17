@@ -19,7 +19,7 @@
 package codes.reactive.scalatime
 package temporal
 
-
+/** Enriches a [[scala.Int]] with methods for obtaining [[Duration]] instances. */
 final class LongDuration(val underlying: Long) extends AnyVal {
 
   /** Obtains a [[Duration]] representing a number of nanoseconds. */
@@ -61,14 +61,14 @@ final class LongDuration(val underlying: Long) extends AnyVal {
 }
 
 
-/** Provides additional factory methods for obtaining [[Period]] instances from */
+/** Enriches a [[scala.Long]] with methods for obtaining [[Period]] instances. */
 final class IntPeriod(val underlying: Int) extends AnyVal {
 
   /** Obtains a [[Period]] representing a number of days. */
   def day: Period = days
 
   /** Obtains a [[Period]] representing a number of days. */
-  def days: Period = Period.days(underlying) // FIXME: Better way to overload day/days. Take a type argument?
+  def days: Period = Period.days(underlying) // TODO: Better way to overload day/days when used on literals?
 
   /** Obtains a [[Period]] representing a number of weeks. */
   def week: Period = weeks

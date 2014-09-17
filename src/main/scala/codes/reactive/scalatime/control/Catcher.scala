@@ -23,26 +23,26 @@ import scala.reflect.ClassTag
 import scala.util.control.Exception
 import scala.util.control.Exception.Catcher
 
-/** Provides methods for obtaining default [[scala.util.control.Exception.Catcher]]s for possible
-  * [[DateTimeException]]s thrown by the underlying Java API.
+/** Provides methods for obtaining default [[scala.util.control.Exception.Catcher Catchers]] for possible
+  * [[DateTimeException DateTimeExceptions]] thrown by the underlying Java API.
   *
   * @example
-  *          {{{
-  *            import codes.reactive.scalatime._
+  * {{{
+  *             import codes.reactive.scalatime._
   *
-  *             // Obtain a TimeCatcher for all DateTimeExceptions
-  *             val catchAllLocalDate = Catcher.all(_ => LocalDate())
-  *             
-  *             // Use the catcher to recover from a parse error
-  *             val recovered = Try(LocalDate.parse(")(&#)(@*@&#%@#%@#%)")).recover(catchAllLocalDate)
-  *          }}}
+  *              // Obtain a TimeCatcher for all DateTimeExceptions
+  *              val catchAllLocalDate = Catcher.all(_ => LocalDate())
+  *
+  *              // Use the catcher to recover from a parse error
+  *              val recovered = Try(LocalDate.parse(")(&#)(@*@&#%@#%@#%)")).recover(catchAllLocalDate)
+  * }}}
   *
   */
 object Catcher {
 
   /** Returns a new [[scala.util.control.Exception.Catcher]] for exception `Ex` */
-  private def catcher[A, Ex <: Throwable: ClassTag](f: Ex => A): Catcher[A] =
-    Exception.mkCatcher((x: Ex) => x match { case _: Ex => true; case _ => false}, f)(implicitly[ClassTag[Ex]])
+  private def catcher[A, Ex <: Throwable : ClassTag](f: Ex => A): Catcher[A] =
+    Exception.mkCatcher((x: Ex) => x match { case _: Ex => true; case _ => false }, f)(implicitly[ClassTag[Ex]])
 
 
   /** Returns a [[scala.util.control.Exception.Catcher]] for all [[DateTimeException]]s. */

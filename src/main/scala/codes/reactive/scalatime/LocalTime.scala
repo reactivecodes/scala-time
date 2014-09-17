@@ -73,4 +73,5 @@ object LocalTime {
 
   /** The LocalTime of noon in the middle of the day, '12:00'. */
   val Noon: LocalTime = LT.noon
+
 }

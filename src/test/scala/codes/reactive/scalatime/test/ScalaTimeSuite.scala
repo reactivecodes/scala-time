@@ -20,6 +20,8 @@ package codes.reactive.scalatime.test
 
 import org.scalatest.{FreeSpec, Matchers}
 
+import util.Try
+
 
 class ScalaTimeSuite extends FreeSpec with Matchers {
 
@@ -84,6 +86,13 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
       }
     }
 
+    "control.Catcher api doc" - {
+      import codes.reactive.scalatime._
+      val catchAllLocalDate = control.Catcher.all(_ => LocalDate.of(2014, 9, 14).get)
+      val recovered = Try(LocalDate.parse(")(&#)(@*@&#%@#%@#%)")).recover(catchAllLocalDate)
+      recovered.map(_ shouldBe LocalDate.of(2014, 9, 14).get)
+    }
+
   }
 
   "'simple' usage via import of 'ke.co.sbsproperties.scalatime._'" in {
@@ -113,4 +122,103 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
     period + otherPeriod shouldBe PeriodTestHelpers.days(3)
   }
 
+}
+import org.threeten.bp.temporal.{ChronoField => CF}
+import codes.reactive.scalatime._
+
+/** Provides a standard set of date period fields as [[TemporalField]] instances.
+  *
+  * @define cf  [[ChronoField]] representing the
+  */
+trait ChronoFields {
+
+  /** $cf the aligned day-of-week within a month. */
+  final val AlignedDayOfWeekInMonth = CF.ALIGNED_DAY_OF_WEEK_IN_MONTH
+
+  /** $cf the aligned day-of-week within a year. */
+  final val AlignedDayOfWeekInYear = CF.ALIGNED_DAY_OF_WEEK_IN_YEAR
+
+  /** $cf the aligned week within a month. */
+  final val AlignedWeekOfMonth = CF.ALIGNED_WEEK_OF_MONTH
+
+  /** $cf the aligned week within a year. */
+  final val AlignedWeekOfYear = CF.ALIGNED_WEEK_OF_YEAR
+
+  /** $cf the am-pm-of-day. */
+  final val AmPmOfDay = CF.AMPM_OF_DAY
+
+  /** $cf the clock-hour-of-am-pm. */
+  final val ClockHourOfAmPm = CF.CLOCK_HOUR_OF_AMPM
+
+  /** $cf the clock-hour-of-day. */
+  final val ClockHourOfDay = CF.CLOCK_HOUR_OF_DAY
+
+  /** $cf the day-of-month. */
+  final val DayOfMonth = CF.DAY_OF_MONTH
+
+  /** $cf the day-of-week, such as Tuesday. */
+  final val DayOfWeek = CF.DAY_OF_WEEK
+
+  /** $cf the day-of-year. */
+  final val DayOfYear = CF.DAY_OF_YEAR
+
+  /** $cf the epoch-day, based on the Java epoch of 1970-01-01 (ISO). */
+  final val EpochDay = CF.EPOCH_DAY
+
+  /** $cf the era. */
+  final val Era = CF.ERA
+
+  /** $cf the hour-of-am-pm. */
+  final val HourOfAmPm = CF.HOUR_OF_AMPM
+
+  /** $cf the hour-of-day. */
+  final val HourOfDay = CF.HOUR_OF_DAY
+
+  /** $cf the instant epoch-seconds. */
+  final val InstantSeconds = CF.INSTANT_SECONDS
+
+  /** $cf the micro-of-day. */
+  final val MicroOfDay = CF.MICRO_OF_DAY
+
+  /** $cf the micro-of-second. */
+  final val MicroOfSecond = CF.MICRO_OF_SECOND
+
+  /** $cf the milli-of-day. */
+  final val MilliOfDay = CF.MILLI_OF_DAY
+
+  /** $cf the milli-of-second. */
+  final val MilliOfSecond = CF.MILLI_OF_SECOND
+
+  /** $cf the minute-of-day. */
+  final val MinuteOfDay = CF.MINUTE_OF_DAY
+
+  /** $cf the minute-of-hour. */
+  final val MinuteOfHour = CF.MINUTE_OF_HOUR
+
+  /** $cf the month-of-year, such as March. */
+  final val MonthOfYear = CF.MONTH_OF_YEAR
+
+  /** $cf the nano-of-day. */
+  final val NanoOfDay = CF.NANO_OF_DAY
+
+  /** $cf the nano-of-second. */
+  final val NanoOfSecond = CF.NANO_OF_SECOND
+
+  /** $cf the offset from UTC/Greenwich. */
+  final val OffsetSeconds = CF.OFFSET_SECONDS
+
+  /** $cf the proleptic-month based, counting months sequentially from year 0. */
+  final val ProlepticMonth = CF.PROLEPTIC_MONTH
+
+  /** $cf the second-of-day. */
+  final val SecondOfDay = CF.SECOND_OF_DAY
+
+  /** $cf the second-of-minute. */
+  final val SecondOfMinute = CF.SECOND_OF_MINUTE
+
+  /** $cf the proleptic year, such as 2012. */
+  final val Year = CF.YEAR
+
+  /** $cf the year within the era. */
+  final val YearOfEra = CF.YEAR_OF_ERA
 }

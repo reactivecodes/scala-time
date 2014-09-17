@@ -40,7 +40,6 @@ import util.Try
   *            // Obtain a time zone from the time offset of +5:00
   *            val plusFive = ZoneOffset(5)
   *          }}}
-  * @since  0.1.0
   */
 object ZoneOffset {
 
@@ -78,6 +77,3 @@ object ZoneOffset {
   val MAX: ZoneOffset = ZO.max
 
 }
-
-
-
