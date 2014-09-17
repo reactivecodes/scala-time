@@ -21,11 +21,8 @@ package temporal
 
 
 import impl.TimeSupport
-import org.threeten.bp
 
 import util.Try
-
-import org.threeten.bp.temporal.TemporalQueries
 
 /** Factory object for obtaining instances of [[TemporalQuery]].
   *
