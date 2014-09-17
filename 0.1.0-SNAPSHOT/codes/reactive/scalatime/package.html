@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Basic Scala wrapper for easier use of JSR-310 compatible time APIs.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1957673/src/main/scala/codes/reactive/scalatime/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Basic Scala wrapper for easier use of JSR-310 compatible time APIs.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/adc8f1e/src/main/scala/codes/reactive/scalatime/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.impl.TimeAliases">TimeAliases</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -808,7 +808,7 @@ information.
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="codes.reactive.scalatime.ChronoField" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="codes.reactive.scalatime.ChronoField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ChronoField"></a>
       <a id="ChronoField:ChronoField"></a>
       <h4 class="signature">
@@ -824,9 +824,8 @@ information.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Provides a standard set of date period fields as <a href="#TemporalField=java.time.temporal.TemporalField" class="extmbr" name="codes.reactive.scalatime.TemporalField">TemporalField</a> instances</p><div class="fullcomment"><div class="comment cmt"><p>Provides a standard set of date period fields as <a href="#TemporalField=java.time.temporal.TemporalField" class="extmbr" name="codes.reactive.scalatime.TemporalField">TemporalField</a> instances</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
-    </li><li name="codes.reactive.scalatime.ChronoUnit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">Provides a standard set of date period fields as <a href="#TemporalField=java.time.temporal.TemporalField" class="extmbr" name="codes.reactive.scalatime.TemporalField">TemporalField</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.ChronoUnit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ChronoUnit"></a>
       <a id="ChronoUnit:ChronoUnit"></a>
       <h4 class="signature">
@@ -842,8 +841,7 @@ information.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Provides a standard set of date period units as <a href="#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances</p><div class="fullcomment"><div class="comment cmt"><p>Provides a standard set of date period units as <a href="#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
+      <p class="shortcomment cmt">Provides a standard set of date period units as <a href="#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances.</p>
     </li><li name="codes.reactive.scalatime.Clock" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Clock"></a>
       <a id="Clock:Clock"></a>
@@ -860,9 +858,9 @@ information.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><p>The default no-argument <code>apply</code> method differs from the underlying constructor in that it explicitly returns
-the <b>UTC</b> Zone Clock from the current system time. Use <code>apply(ZoneID)</code> to specify an alternative zone,
-or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="codes.reactive.scalatime.Clock#systemZone">Clock.systemZone</a> to obtain a Clock from the current system time and zone.
+      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><p>The default no-argument <code>apply</code> method differs from the underlying library no-argument constructor in that it
+explicitly returns the <b>UTC</b> Zone Clock from the current system time. Use <code>apply(ZoneID)</code> to specify an
+alternative zone, or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="codes.reactive.scalatime.Clock#systemZone">Clock.systemZone</a> to obtain a Clock from the current system time and zone.
 </p></div><dl class="attributes block"> <div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
@@ -871,8 +869,7 @@ or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr
 
 <span class="cmt">// Obtain a Clock fixed to the current instant</span>
 <span class="kw">val</span> fixed = Clock.fixed(Instant())</pre></li></ol>
-            </div><dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
+            </div></dl></div>
     </li><li name="codes.reactive.scalatime.Duration" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Duration"></a>
       <a id="Duration:Duration"></a>
@@ -965,7 +962,7 @@ or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr
     </span>
       <p class="shortcomment cmt">Provides units specific to the ISO-8601 calendar system as <a href="#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances</p><div class="fullcomment"><div class="comment cmt"><p>Provides units specific to the ISO-8601 calendar system as <a href="#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
 </p></dd></dl></div>
-    </li><li name="codes.reactive.scalatime.LocalDate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.LocalDate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="LocalDate"></a>
       <a id="LocalDate:LocalDate"></a>
       <h4 class="signature">
@@ -981,9 +978,8 @@ or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Factory object for creation of <a href="#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instances</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for creation of <a href="#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instances</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
-    </li><li name="codes.reactive.scalatime.LocalDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">Factory object for creation of <a href="#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.LocalDateTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="LocalDateTime"></a>
       <a id="LocalDateTime:LocalDateTime"></a>
       <h4 class="signature">
@@ -999,8 +995,7 @@ or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Factory object for creation of <a href="#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for creation of <a href="#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
+      <p class="shortcomment cmt">Factory object for creation of <a href="#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances.</p>
     </li><li name="codes.reactive.scalatime.LocalTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="LocalTime"></a>
       <a id="LocalTime:LocalTime"></a>
@@ -1094,8 +1089,7 @@ or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr
 
 <span class="cmt">// Obtain a Period of zero</span>
 <span class="kw">val</span> zero = Period.Nil</pre></li></ol>
-            </div><dt>Since</dt><dd><p>0.1.0
-</p></dd><dt>Note</dt><dd><span class="cmt"><p>Direct use of this object is not the only mechanism to obtain <a href="#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instances. See also
+            </div><dt>Note</dt><dd><span class="cmt"><p>Direct use of this object is not the only mechanism to obtain <a href="#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instances. See also
         <a href="syntax/package.html" class="extype" name="codes.reactive.scalatime.syntax">syntax</a> for alternatives.
 </p></span></dd></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneID" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -1129,8 +1123,7 @@ available region based zone ids.
 
 <span class="cmt">// Obtain a time zone from the region zone id 'Europe/Lisbon'</span>
 <span class="kw">val</span> lisbonZone = ZoneID(<span class="lit">"Europe/Lisbon"</span>)</pre></li></ol>
-            </div><dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
+            </div></dl></div>
     </li><li name="codes.reactive.scalatime.ZoneOffset" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ZoneOffset"></a>
       <a id="ZoneOffset:ZoneOffset"></a>
@@ -1161,8 +1154,7 @@ respectively.
 
 <span class="cmt">// Obtain a time zone from the time offset of +5:00</span>
 <span class="kw">val</span> plusFive = ZoneOffset(<span class="num">5</span>)</pre></li></ol>
-            </div><dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
+            </div></dl></div>
     </li><li name="codes.reactive.scalatime.ZonedDateTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ZonedDateTime"></a>
       <a id="ZonedDateTime:ZonedDateTime"></a>
@@ -1233,7 +1225,7 @@ respectively.
       </a>
     </span>
       
-    </li><li name="codes.reactive.scalatime.syntax" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.syntax" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="syntax"></a>
       <a id="syntax:syntax"></a>
       <h4 class="signature">
@@ -1249,11 +1241,7 @@ respectively.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Provides all implicit conversion functions, as well as a standard set of units, formatters and additional
-helpers.</p><div class="fullcomment"><div class="comment cmt"><p>Provides all implicit conversion functions, as well as a standard set of units, formatters and additional
-helpers.
-</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>0.1.0
-</p></dd></dl></div>
+      <p class="shortcomment cmt">Provides all implicit conversion functions as well as a standard set of units, formatters and additional helpers.</p>
     </li><li name="codes.reactive.scalatime.temporal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="temporal"></a>
       <a id="temporal:temporal"></a>
@@ -1301,7 +1289,7 @@ helpers.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1957673) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. adc8f1e) Scala 2.11 API Documentation. </div>
 
 
     </body>

@@ -47,10 +47,10 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><p>The default no-argument <code>apply</code> method differs from the underlying constructor in that it explicitly returns
-the <b>UTC</b> Zone Clock from the current system time. Use <code>apply(ZoneID)</code> to specify an alternative zone,
-or <a href="#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="codes.reactive.scalatime.Clock#systemZone">Clock.systemZone</a> to obtain a Clock from the current system time and zone.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1957673/src/main/scala/codes/reactive/scalatime/Clock.scala" target="_blank">Clock.scala</a></dd><div class="block">Example:
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><p>The default no-argument <code>apply</code> method differs from the underlying library no-argument constructor in that it
+explicitly returns the <b>UTC</b> Zone Clock from the current system time. Use <code>apply(ZoneID)</code> to specify an
+alternative zone, or <a href="#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="codes.reactive.scalatime.Clock#systemZone">Clock.systemZone</a> to obtain a Clock from the current system time and zone.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/adc8f1e/src/main/scala/codes/reactive/scalatime/Clock.scala" target="_blank">Clock.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain a Clock from the current system UTC time</span>
@@ -58,8 +58,7 @@ or <a href="#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="cod
 
 <span class="cmt">// Obtain a Clock fixed to the current instant</span>
 <span class="kw">val</span> fixed = Clock.fixed(Instant())</pre></li></ol>
-            </div><dt>Since</dt><dd><p>0.1.0
-</p></dd></dl><div class="toggleContainer block">
+            </div></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -189,7 +188,7 @@ or <a href="#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="cod
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> from the current instant converted to UTC from the best available system clock.</p>
+      <p class="shortcomment cmt">Obtains a <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> from the current instant at UTC from the best available system clock.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -571,7 +570,7 @@ or <a href="#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="cod
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1957673) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. adc8f1e) Scala 2.11 API Documentation. </div>
 
 
     </body>

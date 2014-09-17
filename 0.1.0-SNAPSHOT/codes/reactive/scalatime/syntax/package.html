@@ -47,10 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides all implicit conversion functions, as well as a standard set of units, formatters and additional
-helpers.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/1957673/src/main/scala/codes/reactive/scalatime/syntax/package.scala" target="_blank">package.scala</a></dd><dt>Since</dt><dd><p>0.1.0
-</p></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides all implicit conversion functions as well as a standard set of units, formatters and additional helpers.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/adc8f1e/src/main/scala/codes/reactive/scalatime/syntax/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="ZoneHelpers.html" class="extype" name="codes.reactive.scalatime.syntax.ZoneHelpers">ZoneHelpers</a>, <a href="FormatterHelpers.html" class="extype" name="codes.reactive.scalatime.syntax.FormatterHelpers">FormatterHelpers</a>, <a href="UnitHelpers.html" class="extype" name="codes.reactive.scalatime.syntax.UnitHelpers">UnitHelpers</a>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.NumberImplicits">NumberImplicits</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.NumberConverters">NumberConverters</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.PredefImplicits">PredefImplicits</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits">ChronoImplicits</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.ChronoConverters">ChronoConverters</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.TemporalImplicits">TemporalImplicits</span>, <span class="extype" name="codes.reactive.scalatime.syntax.conversions.TemporalConverters">TemporalConverters</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -166,7 +163,7 @@ helpers.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Provides conversions for providing an <code>enrich</code> method for obtaining Rich representations of supported objects.</p>
     </li><li name="codes.reactive.scalatime.syntax.conversions.ChronoImplicits#augmentChronoLocalDate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="augmentChronoLocalDate(d:codes.reactive.scalatime.ChronoLocalDate):codes.reactive.scalatime.chrono.RichChronoLocalDate"></a>
       <a id="augmentChronoLocalDate(scalatime.ChronoLocalDate):RichChronoLocalDate"></a>
@@ -353,14 +350,14 @@ helpers.
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
+      <p class="shortcomment cmt">$implV <a href="../temporal/RichTemporalQuery.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalQuery">temporal.RichTemporalQuery</a> from a <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">TemporalQuery</a>.</p><div class="fullcomment"><div class="comment cmt"><p>$implV <a href="../temporal/RichTemporalQuery.html" class="extype" name="codes.reactive.scalatime.temporal.RichTemporalQuery">temporal.RichTemporalQuery</a> from a <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">TemporalQuery</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TemporalImplicits</dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.UnitHelpers#field" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="field:codes.reactive.scalatime.temporal.ChronoFieldswithcodes.reactive.scalatime.temporal.IsoFields"></a>
       <a id="field:ChronoFieldswithIsoFields"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">lazy val</span>
       </span>
       <span class="symbol">
         <span class="name">field</span><span class="result">: <a href="../temporal/ChronoFields.html" class="extype" name="codes.reactive.scalatime.temporal.ChronoFields">ChronoFields</a> with <a href="../temporal/IsoFields.html" class="extype" name="codes.reactive.scalatime.temporal.IsoFields">IsoFields</a></span>
@@ -375,18 +372,18 @@ specific to the ISO-8601 calendar system.</p><div class="fullcomment"><div class
 specific to the ISO-8601 calendar system.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="UnitHelpers.html" class="extype" name="codes.reactive.scalatime.syntax.UnitHelpers">UnitHelpers</a></dd></dl></div>
     </li><li name="codes.reactive.scalatime.syntax.FormatterHelpers#formatter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="formatter:codes.reactive.scalatime.format.TimeFormatters"></a>
-      <a id="formatter:TimeFormatters"></a>
+      <a id="formatter:codes.reactive.scalatime.format.DateTimeFormatter.type"></a>
+      <a id="formatter:DateTimeFormatter.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">formatter</span><span class="result">: <span class="extype" name="codes.reactive.scalatime.format.TimeFormatters">TimeFormatters</span></span>
+        <span class="name">formatter</span><span class="result">: <a href="../format/DateTimeFormatter$.html" class="extype" name="codes.reactive.scalatime.format.DateTimeFormatter">DateTimeFormatter</a>.type</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@formatter:codes.reactive.scalatime.format.TimeFormatters" title="Permalink" target="_top">
+      <a href="../../../../index.html#codes.reactive.scalatime.syntax.package@formatter:codes.reactive.scalatime.format.DateTimeFormatter.type" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
@@ -601,7 +598,7 @@ specific to the ISO-8601 calendar system.
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">lazy val</span>
       </span>
       <span class="symbol">
         <span class="name">unit</span><span class="result">: <a href="../temporal/ChronoUnits.html" class="extype" name="codes.reactive.scalatime.temporal.ChronoUnits">ChronoUnits</a> with <a href="../temporal/IsoUnits.html" class="extype" name="codes.reactive.scalatime.temporal.IsoUnits">IsoUnits</a></span>
@@ -680,7 +677,7 @@ specific to the ISO-8601 calendar system.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 1957673) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. adc8f1e) Scala 2.11 API Documentation. </div>
 
 
     </body>
