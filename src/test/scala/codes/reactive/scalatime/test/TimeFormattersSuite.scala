@@ -20,14 +20,14 @@ package codes.reactive.scalatime.test
 
 
 import codes.reactive.scalatime.format.TimeFormatters
-import codes.reactive.scalatime.{ChronoUnit, ZoneID, LocalDateTime, ZonedDateTime}
+import codes.reactive.scalatime.{ChronoUnit, ZoneId, LocalDateTime, ZonedDateTime}
 import org.scalatest.{Matchers, Outcome, fixture}
 
 
 class TimeFormattersSuite extends fixture.FreeSpec with Matchers {
 
   case class FormatFixture(subject: TimeFormatters = new TimeFormatters {},
-                           date: ZonedDateTime = ZonedDateTime.of(2014, 6, 10, 22, 35, 29, 978, ZoneID.UTC).get,
+                           date: ZonedDateTime = ZonedDateTime.of(2014, 6, 10, 22, 35, 29, 978, ZoneId.UTC).get,
                            internet: String = "Tue, 10 Jun 2014 22:35:29 GMT",
                            offset: String = "2014-06-10T22:35:29.000000978Z",
                            offsetTruncated: String = "2014-06-10T22:35:29Z",

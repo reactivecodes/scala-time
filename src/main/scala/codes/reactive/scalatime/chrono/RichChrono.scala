@@ -37,7 +37,7 @@ final class RichChronoLocalDate(val underlying: ChronoLocalDate) extends AnyVal 
 final class RichChronoLocalDateTime[A <: ChronoLocalDate](val underlying: ChronoLocalDateTime[A]) extends AnyVal {
 
   /** Combines this date-time with a time-zone to create a ZonedDateTime. **/
-  def :: (zone: ZoneID): ChronoZonedDateTime[A] = underlying.atZone(zone)
+  def :: (zone: ZoneId): ChronoZonedDateTime[A] = underlying.atZone(zone)
 
   /** Formats this date using the specified formatter.
     * @throws DateTimeException - if an error occurs during printing

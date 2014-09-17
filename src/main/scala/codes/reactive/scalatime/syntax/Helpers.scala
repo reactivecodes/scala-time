@@ -46,8 +46,8 @@ protected[syntax] trait FormatterHelpers {
 
 protected[syntax] trait ZoneHelpers {
 
-  /** Provides a standard set of time zone [[ZoneID]] instances, as well as methods to create them. **/
-  def zone: ZoneID.type = ZoneID
+  /** Provides a standard set of time zone [[ZoneId]] instances, as well as methods to create them. **/
+  def zone: ZoneId.type = ZoneId
 
   /** Provides a standard set of time zone [[ZoneOffset]] instances, as well as methods to create them. **/
   def offset: ZoneOffset.type = ZoneOffset

@@ -37,7 +37,6 @@ import scala.util.Try
   *            val currentInstant = Instant()
   *          }}}
   *
-  * @since  0.1.0
   */
 object Instant {
 

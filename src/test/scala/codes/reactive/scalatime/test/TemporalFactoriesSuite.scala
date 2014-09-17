@@ -38,8 +38,8 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
       Clock() should be(utcClock)
     }
 
-    "can create a 'Clock' instance from the current System clock at a specific ZoneID" in { _ =>
-      Clock(ZoneID EAT) should be(eatClock)
+    "can create a 'Clock' instance from the current System clock at a specific ZoneId" in { _ =>
+      Clock(ZoneId EAT) should be(eatClock)
     }
 
     "can create a 'Clock' instance from the current System clock at with the default system time zone" in { _ =>
@@ -47,11 +47,11 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
     }
 
     "can create UTC 'Clock' instance which is fixed to a specific instant" in { f =>
-      Clock.fixed(f _1) should be(fixedClock(f _1, ZoneID.UTC))
+      Clock.fixed(f _1) should be(fixedClock(f _1, ZoneId.UTC))
     }
 
-    "can create 'Clock' instance at a specific ZoneID which is fixed to a specific instant" in { f =>
-      Clock.fixed(f _1, ZoneID.EAT) should be(fixedClock(f _1, ZoneID.EAT))
+    "can create 'Clock' instance at a specific ZoneId which is fixed to a specific instant" in { f =>
+      Clock.fixed(f _1, ZoneId.EAT) should be(fixedClock(f _1, ZoneId.EAT))
     }
   }
 
@@ -66,7 +66,7 @@ class TemporalFactoriesSuite extends fixture.FreeSpec with Matchers {
     }
 
     "can create an Instant from an Epoch millisecond value" in { _ =>
-      Instant.milli(1402331329505L).get.atZone(ZoneID.UTC) shouldEqual ZonedDateTime.of(2014, 6, 9, 16, 28, 49, 505000000, ZoneID.UTC).get
+      Instant.milli(1402331329505L).get.atZone(ZoneId.UTC) shouldEqual ZonedDateTime.of(2014, 6, 9, 16, 28, 49, 505000000, ZoneId.UTC).get
     }
 
     "can create an 'Instant' instance from a parsed String" in { _ =>

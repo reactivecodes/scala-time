@@ -24,7 +24,7 @@ import impl.TimeSupport.{Clock => JC}
 /** Factory object for obtaining instances of [[Clock]].
   *
   * The default no-argument `apply` method differs from the underlying library no-argument constructor in that it
-  * explicitly returns the '''UTC''' Zone Clock from the current system time. Use `apply(ZoneID)` to specify an
+  * explicitly returns the '''UTC''' Zone Clock from the current system time. Use `apply(ZoneId)` to specify an
   * alternative zone, or [[Clock.systemZone]] to obtain a Clock from the current system time and zone.
   *
   * @example
@@ -45,13 +45,13 @@ object Clock {
   def apply(): Clock = apply(ZoneOffset.UTC)
 
   /** Obtains a [[Clock]] from the current instant at the specified time zone from the best available system clock. */
-  def apply(zone: ZoneID): Clock = JC.system(zone)
+  def apply(zone: ZoneId): Clock = JC.system(zone)
 
   /** Obtains a [[Clock]] from the current instant at the system time zone from the best available system clock. */
   def systemZone: Clock = JC.systemDefaultZone
 
   /** Obtains a [[Clock]] fixed to a specific instant, at a specific time zone */
-  def fixed(instant: Instant, zone: ZoneID): Clock = JC.fixed(instant, zone)
+  def fixed(instant: Instant, zone: ZoneId): Clock = JC.fixed(instant, zone)
 
   /** Obtains a [[Clock]] fixed to a specific instant */
   def fixed(instant: Instant): Clock = JC.fixed(instant, ZoneOffset.UTC)

@@ -26,10 +26,10 @@ object ClockTestHelpers {
 
   def utcClock = C.systemUTC()
 
-  def eatClock = C.system(ZoneID.EAT)
+  def eatClock = C.system(ZoneId.EAT)
 
   def systemDefault = C.systemDefaultZone()
 
-  def fixedClock(instant: Instant, zone: ZoneID) = C.fixed(instant, zone)
+  def fixedClock(instant: Instant, zone: ZoneId) = C.fixed(instant, zone)
 
 }

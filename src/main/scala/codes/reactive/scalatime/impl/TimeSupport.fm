@@ -8,9 +8,9 @@ private[scalatime] object TimeSupport {
 
   object Clock {
     import ${tPac}.{Clock => T}
-    def fixed(a: Instant, b: ZoneID) = T.fixed(a, b)
+    def fixed(a: Instant, b: ZoneId) = T.fixed(a, b)
     def systemDefaultZone = T.systemDefaultZone
-    def system(a: ZoneID) = T.system(a)
+    def system(a: ZoneId) = T.system(a)
   }
 
   object Duration {
@@ -112,13 +112,13 @@ private[scalatime] object TimeSupport {
     import ${tPac}.{ZonedDateTime => T}
     def now(c: Clock) = T.now(c)
     def from(t: TemporalAccessor) = T.from(t)
-    def of(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: ZoneID) = T.of(a, b, c, d, e, f, g, h)
-    def of(a: LocalDateTime, b: ZoneID) = T.of(a, b)
-    def of(a: LocalDate, b: LocalTime, c: ZoneID) = T.of(a, b, c)
+    def of(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: ZoneId) = T.of(a, b, c, d, e, f, g, h)
+    def of(a: LocalDateTime, b: ZoneId) = T.of(a, b)
+    def of(a: LocalDate, b: LocalTime, c: ZoneId) = T.of(a, b, c)
     def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
   }
 
-  object ZoneID {
+  object ZoneId {
     import ${tPac}.{ZoneId => T}
     def from(a: TemporalAccessor) = T.from(a)
     def of(a: String) = T.of(a)
@@ -140,4 +140,14 @@ private[scalatime] object TimeSupport {
     def utc = T.UTC
   }
 
+  // temporal
+  object TemporalQuery {
+    import ${tPac}.temporal.{TemporalQueries => T}
+    def chronology = T.chronology()
+    def localDate = T.localDate()
+    def localTime = T.localTime()
+    def offset = T.offset()
+    def precision = T.precision()
+    def zone = T.zone()
+    def zoneId = T.zoneId()  }
 }

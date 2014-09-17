@@ -31,11 +31,11 @@ object ZonedDateTime {
   /** Obtains a [[ZonedDateTime]] by querying the specified clock for the current time. */
   def apply(clock: Clock): ZonedDateTime = ZD.now(clock)
 
-  /** Obtains a [[ZonedDateTime]] from the specified [[LocalDate]], [[LocalTime]], and [[ZoneID]]. */
-  def apply(date: LocalDate, time: LocalTime, zone: ZoneID): ZonedDateTime = ZD.of(date, time, zone)
+  /** Obtains a [[ZonedDateTime]] from the specified [[LocalDate]], [[LocalTime]], and [[ZoneId]]. */
+  def apply(date: LocalDate, time: LocalTime, zone: ZoneId): ZonedDateTime = ZD.of(date, time, zone)
 
-  /** Obtains a [[ZonedDateTime]] from the specified [[LocalDateTime]] and [[ZoneID]]. */
-  def apply(dateTime: LocalDateTime, zone: ZoneID): ZonedDateTime = ZD.of(dateTime, zone)
+  /** Obtains a [[ZonedDateTime]] from the specified [[LocalDateTime]] and [[ZoneId]]. */
+  def apply(dateTime: LocalDateTime, zone: ZoneId): ZonedDateTime = ZD.of(dateTime, zone)
 
   /** Tries to query a [[Temporal]] instance to obtain a [[ZonedDateTime]]. */
   def from(from: TemporalAccessor): Try[ZonedDateTime] = Try(ZD.from(from))
@@ -50,7 +50,7 @@ object ZonedDateTime {
          minute: Int,
          second: Int,
          nano: Int,
-         zone: ZoneID): Try[ZonedDateTime] =
+         zone: ZoneId): Try[ZonedDateTime] =
     Try(ZD.of(year, month, day, hour, minute, second, nano, zone))
 
   /** Tries to obtain a [[ZonedDateTime]] from a year, month, day, hour, minute, second, nanosecond and zone. The values
@@ -63,7 +63,7 @@ object ZonedDateTime {
          minute: Int,
          second: Int,
          nano: Int,
-         zone: ZoneID): Try[ZonedDateTime] =
+         zone: ZoneId): Try[ZonedDateTime] =
     Try(ZD.of(year, month.getValue, day, hour, minute, second, nano, zone))
 
   /** Tries to obtain a [[ZonedDateTime]] from text formatted according to [[format.DateTimeFormatter.Iso.ZonedDateTime]].

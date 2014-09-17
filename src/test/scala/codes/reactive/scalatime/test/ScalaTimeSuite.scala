@@ -18,6 +18,7 @@
 
 package codes.reactive.scalatime.test
 
+import codes.reactive.scalatime.impl.TimeSupport.TemporalQuery
 import org.scalatest.{FreeSpec, Matchers}
 
 import util.Try
@@ -51,6 +52,16 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
           d.getMonth shouldBe Month.June
           d.getDayOfMonth shouldBe 7
         }
+      }
+
+      "Create a ZonedDateTime from the current UTC instant" in {
+        val zonedDateTime = ZonedDateTime()
+        zonedDateTime.getZone shouldBe ZoneId.UTC
+      }
+
+      "Obtains a default TemporalQuery for ZoneId" in {
+        val query = TemporalQuery.zone
+        (query << ZonedDateTime()) shouldBe ZoneId.UTC
       }
 
       "Create a Duration from the sum of Durations" in {
@@ -93,9 +104,27 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
       recovered.map(_ shouldBe LocalDate.of(2014, 9, 14).get)
     }
 
+    "Clock api doc" - {
+      import codes.reactive.scalatime._
+      val utcClock = Clock()
+      val inst = Instant()
+      val fixed = Clock.fixed(inst)
+      utcClock.getZone shouldBe ZoneId.UTC
+      fixed.instant() shouldBe inst
+    }
+
+    "Duration api doc" - {
+      import codes.reactive.scalatime._
+      val utcClock = Clock()
+      val inst = Instant()
+      val fixed = Clock.fixed(inst)
+      utcClock.getZone shouldBe ZoneId.UTC
+      fixed.instant() shouldBe inst
+    }
+
   }
 
-  "'simple' usage via import of 'ke.co.sbsproperties.scalatime._'" in {
+  "'simple' usage via import of 'codes.reactive.scalatime._'" in {
     import codes.reactive.scalatime._
 
     val period: Period = Period.days(1)

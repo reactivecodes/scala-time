@@ -21,13 +21,9 @@ package codes.reactive.scalatime
 
 import temporal.{IsoUnits, IsoFields}
 
-/** Provides units specific to the ISO-8601 calendar system as [[TemporalUnit]] instances
-  * @since  0.1.0
-  */
+/** Provides units specific to the ISO-8601 calendar system as [[TemporalUnit]] instances. */
 object IsoUnit extends IsoUnits
 
 
-/** Provides fields specific to the ISO-8601 calendar system as [[TemporalField]] instances
-  * @since  0.1.0
-  */
+/** Provides fields specific to the ISO-8601 calendar system as [[TemporalField]] instances. */
 object IsoField extends IsoFields

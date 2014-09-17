@@ -1,3 +1,0 @@
-== Scala Time ==
-'''scala-time''' is a simple Scala wrapper for easier use Java 1.8.0 (JSR-310) time APIs
-

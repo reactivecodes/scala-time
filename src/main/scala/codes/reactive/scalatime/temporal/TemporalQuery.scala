@@ -19,16 +19,45 @@
 package codes.reactive.scalatime
 package temporal
 
+
+import impl.TimeSupport
+import org.threeten.bp
+
 import util.Try
 
+import org.threeten.bp.temporal.TemporalQueries
 
-/** Factory object for obtaining instances of [[TemporalQuery]]. */
+/** Factory object for obtaining instances of [[TemporalQuery]].
+  *
+  * @define obt Obtains a query for a
+  */
 object TemporalQuery {
 
-  /** Obtains a [[TemporalQuery]] from a function ([[TemporalAccessor]])  => `A`. */
-  def apply[A](f: TemporalAccessor => A) : TemporalQuery[A] = new TemporalQuery[A] {
+  /** Obtains a query from a function ([[TemporalAccessor]])  => `A`. */
+  def apply[A](f: TemporalAccessor => A): TemporalQuery[A] = new TemporalQuery[A] {
     override def queryFrom(temporal: TemporalAccessor): A = f(temporal)
   }
+
+  /** $obt [[Chronology]]. */
+  def chronology: TemporalQuery[Chronology] = TimeSupport.TemporalQuery.chronology
+
+  /** $obt [[LocalDate]]. */
+  def localDate: TemporalQuery[LocalDate] = TimeSupport.TemporalQuery.localDate
+
+  /** $obt [[LocalTime]]. */
+  def localTime: TemporalQuery[LocalTime] = TimeSupport.TemporalQuery.localTime
+
+  /** $obt [[ZoneOffset]]. */
+  def offset: TemporalQuery[ZoneOffset] = TimeSupport.TemporalQuery.offset
+
+  /** $obt [[TemporalUnit]] representing the smallest supported precision. */
+  def precision: TemporalQuery[TemporalUnit] = TimeSupport.TemporalQuery.precision
+
+  /** $obt [[ZoneId]], falling back to the [[ZoneOffset]]. */
+  def zone: TemporalQuery[ZoneId] = TimeSupport.TemporalQuery.zone
+
+  /** Obtains a strict query for a [[ZoneId]]. */
+  def zoneId: TemporalQuery[ZoneId] = TimeSupport.TemporalQuery.zoneId
 
 }
 

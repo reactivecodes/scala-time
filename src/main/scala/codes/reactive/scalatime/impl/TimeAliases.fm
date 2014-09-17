@@ -134,7 +134,7 @@ private[scalatime] abstract class TimeAliases {
     * [[http://${tDoc}/package-summary.html API Documentation]] for further
     * information.
     */
-  type ZoneID = ${tPac}.ZoneId
+  type ZoneId = ${tPac}.ZoneId
 
   /** Alias for ''java.time'' `ZoneOffset`. A time-zone offset from Greenwich/UTC, such as +02:00. Consult the
     * `java.time` [[http://${tDoc}/package-summary.html API Documentation]] for
@@ -144,6 +144,11 @@ private[scalatime] abstract class TimeAliases {
 
 
   // java.time.chrono
+  /** Alias for ''java.time.chrono'' `Chronology`, a calendar system, used to organize and identify dates. Consult the
+    * `java.time.chrono` [[http://${tDoc}/chrono/package-summary.html API Documentation]] for further information.
+    */
+  type Chronology = ${tPac}.chrono.Chronology
+
   /** Alias for ''java.time.chrono'' `ChronoLocalDate`. A date without time-of-day or time-zone in an arbitrary
     * chronology, intended for advanced globalization use cases. Consult the `java.time.chrono`
     * [[http://${tDoc}/chrono/package-summary.html API Documentation]] for further

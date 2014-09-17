@@ -43,11 +43,17 @@ val duration = 10L minutes
 
 val otherDuration = 1L minute
 
-// Obtain aPeriod instance from an Int
+// Obtain a Period instance from an Int
 val period = 2 weeks
 
 // Tries to obtain a LocalDate instance
 val localDate = LocalDate.of(2014, 6, 7)
+
+// Obtain the current UTC ZonedDateTime
+val zonedDateTime = ZonedDateTime()
+
+// Obtain a default TemporalQuery for the ZoneId
+val query = temporal.TemporalQuery.zone
 
 // Obtain a Duration instance from a sum of Durations
 duration + otherDuration
@@ -60,6 +66,9 @@ localDate.get + period
 
 // Subtract a TemporalAmount from a Temporal
 localDate.get - period
+
+// Query a specified Temporal
+val result = query << zonedDateTime
 ```
 
 

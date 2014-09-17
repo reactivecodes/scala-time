@@ -38,6 +38,12 @@ underlying library, and type aliases for those exceptions.
     // Obtain a LocalDate instance
     val localDate = LocalDate.of(2014, 6, 7)
 
+    // Obtain the current UTC ZonedDateTime
+    val zonedDateTime = ZonedDateTime()
+
+    // Obtain a default TemporalQuery for the ZoneId
+    val query = temporal.TemporalQuery.zone
+
     // Obtain a Duration instance from a sum of Durations
     duration + otherDuration
 
@@ -45,8 +51,11 @@ underlying library, and type aliases for those exceptions.
     localDate.get + period
 
     //  Add a TemporalAmount to a Temporal
-    period <+= localDate.get
+    period <<+ localDate.get
 
     // Subtract a TemporalAmount from a Temporal
     localDate.get - period
+
+    // Query a specified Temporal
+    val result = query << zonedDateTime
 }}}
