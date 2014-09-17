@@ -69,6 +69,12 @@ underlying library, and type aliases for those exceptions.</p><h6> Package Struc
 <span class="cmt">// Obtain a LocalDate instance</span>
 <span class="kw">val</span> localDate = LocalDate.of(<span class="num">2014</span>, <span class="num">6</span>, <span class="num">7</span>)
 
+<span class="cmt">// Obtain the current UTC ZonedDateTime</span>
+<span class="kw">val</span> zonedDateTime = ZonedDateTime()
+
+<span class="cmt">// Obtain a default TemporalQuery for the ZoneId</span>
+<span class="kw">val</span> query = temporal.TemporalQuery.zone
+
 <span class="cmt">// Obtain a Duration instance from a sum of Durations</span>
 duration + otherDuration
 
@@ -76,10 +82,13 @@ duration + otherDuration
 localDate.get + period
 
 <span class="cmt">//  Add a TemporalAmount to a Temporal</span>
-period &lt;+= localDate.get
+period &lt;&lt;+ localDate.get
 
 <span class="cmt">// Subtract a TemporalAmount from a Temporal</span>
-localDate.get - period</pre></li></ol>
+localDate.get - period
+
+<span class="cmt">// Query a specified Temporal</span>
+<span class="kw">val</span> result = query &lt;&lt; zonedDateTime</pre></li></ol>
             </div></dl></div>
         
 
@@ -144,7 +153,7 @@ localDate.get - period</pre></li></ol>
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. adc8f1e) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 5c377e2) Scala 2.11 API Documentation. </div>
 
 
     </body>

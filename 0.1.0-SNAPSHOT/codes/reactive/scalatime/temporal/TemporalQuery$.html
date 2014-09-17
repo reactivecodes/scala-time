@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="" class="extype" name="codes.reactive.scalatime.temporal.TemporalQuery">TemporalQuery</a>.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/adc8f1e/src/main/scala/codes/reactive/scalatime/temporal/TemporalQuery.scala" target="_blank">TemporalQuery.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="" class="extype" name="codes.reactive.scalatime.temporal.TemporalQuery">TemporalQuery</a>.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/5c377e2/src/main/scala/codes/reactive/scalatime/temporal/TemporalQuery.scala" target="_blank">TemporalQuery.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -160,7 +160,7 @@
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Obtains a <a href="" class="extype" name="codes.reactive.scalatime.temporal.TemporalQuery">TemporalQuery</a> from a function (<a href="../package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">TemporalAccessor</a>)  =&gt; <code>A</code>.</p>
+      <p class="shortcomment cmt">Obtains a query from a function (<a href="../package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">TemporalAccessor</a>)  =&gt; <code>A</code>.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -178,6 +178,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.temporal.TemporalQuery#chronology" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="chronology:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.Chronology]"></a>
+      <a id="chronology:scalatime.TemporalQuery[scalatime.Chronology]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">chronology</span><span class="result">: <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">scalatime.TemporalQuery</a>[<a href="../package.html#Chronology=java.time.chrono.Chronology" class="extmbr" name="codes.reactive.scalatime.Chronology">scalatime.Chronology</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.TemporalQuery$@chronology:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.Chronology]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains a query for a <a href="../package.html#Chronology=java.time.chrono.Chronology" class="extmbr" name="codes.reactive.scalatime.Chronology">Chronology</a>.</p>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -309,6 +326,40 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.temporal.TemporalQuery#localDate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="localDate:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.LocalDate]"></a>
+      <a id="localDate:scalatime.TemporalQuery[scalatime.LocalDate]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">localDate</span><span class="result">: <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">scalatime.TemporalQuery</a>[<a href="../package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">scalatime.LocalDate</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.TemporalQuery$@localDate:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.LocalDate]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains a query for a <a href="../package.html#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a>.</p>
+    </li><li name="codes.reactive.scalatime.temporal.TemporalQuery#localTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="localTime:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.LocalTime]"></a>
+      <a id="localTime:scalatime.TemporalQuery[scalatime.LocalTime]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">localTime</span><span class="result">: <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">scalatime.TemporalQuery</a>[<a href="../package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">scalatime.LocalTime</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.TemporalQuery$@localTime:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.LocalTime]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains a query for a <a href="../package.html#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a>.</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -360,6 +411,40 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.temporal.TemporalQuery#offset" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="offset:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.ZoneOffset]"></a>
+      <a id="offset:scalatime.TemporalQuery[scalatime.ZoneOffset]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">offset</span><span class="result">: <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">scalatime.TemporalQuery</a>[<a href="../package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.TemporalQuery$@offset:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.ZoneOffset]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains a query for a <a href="../package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>.</p>
+    </li><li name="codes.reactive.scalatime.temporal.TemporalQuery#precision" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="precision:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.TemporalUnit]"></a>
+      <a id="precision:scalatime.TemporalQuery[scalatime.TemporalUnit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">precision</span><span class="result">: <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">scalatime.TemporalQuery</a>[<a href="../package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">scalatime.TemporalUnit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.TemporalQuery$@precision:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.TemporalUnit]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains a query for a <a href="../package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> representing the smallest supported precision.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -463,6 +548,40 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="codes.reactive.scalatime.temporal.TemporalQuery#zone" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="zone:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.ZoneId]"></a>
+      <a id="zone:scalatime.TemporalQuery[scalatime.ZoneId]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">zone</span><span class="result">: <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">scalatime.TemporalQuery</a>[<a href="../package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.TemporalQuery$@zone:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.ZoneId]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains a query for a <a href="../package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a>, falling back to the <a href="../package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>.</p>
+    </li><li name="codes.reactive.scalatime.temporal.TemporalQuery#zoneId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="zoneId:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.ZoneId]"></a>
+      <a id="zoneId:scalatime.TemporalQuery[scalatime.ZoneId]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">zoneId</span><span class="result">: <a href="../package.html#TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" class="extmbr" name="codes.reactive.scalatime.TemporalQuery">scalatime.TemporalQuery</a>[<a href="../package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.TemporalQuery$@zoneId:codes.reactive.scalatime.TemporalQuery[codes.reactive.scalatime.ZoneId]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains a strict query for a <a href="../package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a>.</p>
     </li></ol>
             </div>
 
@@ -491,7 +610,7 @@
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. adc8f1e) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 5c377e2) Scala 2.11 API Documentation. </div>
 
 
     </body>

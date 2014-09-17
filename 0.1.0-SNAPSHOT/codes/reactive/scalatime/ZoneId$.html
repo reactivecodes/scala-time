@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>ZoneID - Scala Time 0.1.0-SNAPSHOT - codes.reactive.scalatime.ZoneID</title>
-          <meta name="description" content="ZoneID - Scala Time 0.1.0 - SNAPSHOT - codes.reactive.scalatime.ZoneID" />
-          <meta name="keywords" content="ZoneID Scala Time 0.1.0 SNAPSHOT codes.reactive.scalatime.ZoneID" />
+          <title>ZoneId - Scala Time 0.1.0-SNAPSHOT - codes.reactive.scalatime.ZoneId</title>
+          <meta name="description" content="ZoneId - Scala Time 0.1.0 - SNAPSHOT - codes.reactive.scalatime.ZoneId" />
+          <meta name="keywords" content="ZoneId Scala Time 0.1.0 SNAPSHOT codes.reactive.scalatime.ZoneId" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
-            var hash = 'codes.reactive.scalatime.ZoneID$';
+            var hash = 'codes.reactive.scalatime.ZoneId$';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -30,8 +30,8 @@
       <div id="definition">
         <img src="../../../lib/object_big.png" />
         <p id="owner"><a href="../../package.html" class="extype" name="codes">codes</a>.<a href="../package.html" class="extype" name="codes.reactive">reactive</a>.<a href="package.html" class="extype" name="codes.reactive.scalatime">scalatime</a></p>
-        <h1>ZoneID</h1> <span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$" title="Permalink" target="_top">
+        <h1>ZoneId</h1> <span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -43,25 +43,25 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">ZoneID</span>
+        <span class="name">ZoneId</span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>. Also provides default instances <a href="#UTC:codes.reactive.scalatime.ZoneID" class="extmbr" name="codes.reactive.scalatime.ZoneID#UTC">ZoneID.UTC</a>, and
-<a href="#EAT:codes.reactive.scalatime.ZoneID" class="extmbr" name="codes.reactive.scalatime.ZoneID#EAT">ZoneID.EAT</a> which correspond to time zone ids representing Coordinated Universal Time, and East African Time
-respectively.</p><p>In addition to factory methods, <a href="#entries:Set[String]" class="extmbr" name="codes.reactive.scalatime.ZoneID#entries">ZoneID.entries</a> obtains a <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a> of all currently
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a>. Also provides default instances <a href="#UTC:codes.reactive.scalatime.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId#UTC">ZoneId.UTC</a>, and
+<a href="#EAT:codes.reactive.scalatime.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId#EAT">ZoneId.EAT</a> which correspond to time zone ids representing Coordinated Universal Time, and East African Time
+respectively.</p><p>In addition to factory methods, <a href="#entries:Set[String]" class="extmbr" name="codes.reactive.scalatime.ZoneId#entries">ZoneId.entries</a> obtains a <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a> of all currently
 available region based zone ids.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/adc8f1e/src/main/scala/codes/reactive/scalatime/ZoneID.scala" target="_blank">ZoneID.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/5c377e2/src/main/scala/codes/reactive/scalatime/ZoneID.scala" target="_blank">ZoneID.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain the UTC zone</span>
-<span class="kw">val</span> utcZone = ZoneID.UTC
+<span class="kw">val</span> utcZone = ZoneId.UTC
 
 <span class="cmt">// Obtain the current system zone</span>
-<span class="kw">val</span> systemZone = ZoneID.system
+<span class="kw">val</span> systemZone = ZoneId.system
 
 <span class="cmt">// Obtain a time zone from the region zone id 'Europe/Lisbon'</span>
-<span class="kw">val</span> lisbonZone = ZoneID(<span class="lit">"Europe/Lisbon"</span>)</pre></li></ol>
+<span class="kw">val</span> lisbonZone = ZoneId(<span class="lit">"Europe/Lisbon"</span>)</pre></li></ol>
             </div></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -82,7 +82,7 @@ available region based zone ids.
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="codes.reactive.scalatime.ZoneID"><span>ZoneID</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="codes.reactive.scalatime.ZoneId"><span>ZoneId</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -120,7 +120,7 @@ available region based zone ids.
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -137,7 +137,7 @@ available region based zone ids.
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@##():Int" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@##():Int" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -154,99 +154,99 @@ available region based zone ids.
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.ZoneID#EAT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="EAT:codes.reactive.scalatime.ZoneID"></a>
-      <a id="EAT:scalatime.ZoneID"></a>
+    </li><li name="codes.reactive.scalatime.ZoneId#EAT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EAT:codes.reactive.scalatime.ZoneId"></a>
+      <a id="EAT:scalatime.ZoneId"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">EAT</span><span class="result">: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>
+        <span class="name">EAT</span><span class="result">: <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@EAT:codes.reactive.scalatime.ZoneID" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@EAT:codes.reactive.scalatime.ZoneId" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">The time-zone ID representing EAT (Eastern Africa Time), with an ID of 'Africa/Nairobi'.</p>
-    </li><li name="codes.reactive.scalatime.ZoneID#UTC" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="UTC:codes.reactive.scalatime.ZoneID"></a>
-      <a id="UTC:scalatime.ZoneID"></a>
+    </li><li name="codes.reactive.scalatime.ZoneId#UTC" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UTC:codes.reactive.scalatime.ZoneId"></a>
+      <a id="UTC:scalatime.ZoneId"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">UTC</span><span class="result">: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>
+        <span class="name">UTC</span><span class="result">: <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@UTC:codes.reactive.scalatime.ZoneID" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@UTC:codes.reactive.scalatime.ZoneId" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">The time-zone ID representing UTC (Coordinated Universal Time), with an ID of 'Z'.</p>
-    </li><li name="codes.reactive.scalatime.ZoneID#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(prefix:String,offset:codes.reactive.scalatime.ZoneOffset):scala.util.Try[codes.reactive.scalatime.ZoneID]"></a>
-      <a id="apply(String,scalatime.ZoneOffset):Try[scalatime.ZoneID]"></a>
+    </li><li name="codes.reactive.scalatime.ZoneId#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(prefix:String,offset:codes.reactive.scalatime.ZoneOffset):scala.util.Try[codes.reactive.scalatime.ZoneId]"></a>
+      <a id="apply(String,scalatime.ZoneOffset):Try[scalatime.ZoneId]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="prefix">prefix: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="offset">offset: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a>]</span>
+        <span class="name">apply</span><span class="params">(<span name="prefix">prefix: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="offset">offset: <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">scalatime.ZoneOffset</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@apply(prefix:String,offset:codes.reactive.scalatime.ZoneOffset):scala.util.Try[codes.reactive.scalatime.ZoneID]" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@apply(prefix:String,offset:codes.reactive.scalatime.ZoneOffset):scala.util.Try[codes.reactive.scalatime.ZoneId]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> wrapping an offset.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> wrapping an offset. If the prefix is &quot;GMT&quot;, &quot;UTC&quot;, or &quot;UT&quot; a ZoneId with the prefix
+      <p class="shortcomment cmt">Tries to obtain a <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a> wrapping an offset.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtain a <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a> wrapping an offset. If the prefix is &quot;GMT&quot;, &quot;UTC&quot;, or &quot;UT&quot; a ZoneId with the prefix
 and the non-zero offset is returned. If the prefix is empty &quot;&quot; the ZoneOffset is returned.
 </p></div></div>
-    </li><li name="codes.reactive.scalatime.ZoneID#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(zoneID:String,aliasMap:Map[String,String]):scala.util.Try[codes.reactive.scalatime.ZoneID]"></a>
-      <a id="apply(String,Map[String,String]):Try[scalatime.ZoneID]"></a>
+    </li><li name="codes.reactive.scalatime.ZoneId#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(zoneId:String,aliasMap:Map[String,String]):scala.util.Try[codes.reactive.scalatime.ZoneId]"></a>
+      <a id="apply(String,Map[String,String]):Try[scalatime.ZoneId]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="zoneID">zoneID: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="aliasMap">aliasMap: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a>]</span>
+        <span class="name">apply</span><span class="params">(<span name="zoneId">zoneId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="aliasMap">aliasMap: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@apply(zoneID:String,aliasMap:Map[String,String]):scala.util.Try[codes.reactive.scalatime.ZoneID]" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@apply(zoneId:String,aliasMap:Map[String,String]):scala.util.Try[codes.reactive.scalatime.ZoneId]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Similar to <code>apply(zone: String)</code>, but allows supplementing the existing <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>s with a
+      <p class="shortcomment cmt">Similar to <code>apply(zone: String)</code>, but allows supplementing the existing <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a>s with a
 <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.collection.immutable.Map" class="extype" target="_top">Map</a> of aliases to real zone IDs.</p>
-    </li><li name="codes.reactive.scalatime.ZoneID#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(zone:String):scala.util.Try[codes.reactive.scalatime.ZoneID]"></a>
-      <a id="apply(String):Try[scalatime.ZoneID]"></a>
+    </li><li name="codes.reactive.scalatime.ZoneId#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(zone:String):scala.util.Try[codes.reactive.scalatime.ZoneId]"></a>
+      <a id="apply(String):Try[scalatime.ZoneId]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="zone">zone: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a>]</span>
+        <span class="name">apply</span><span class="params">(<span name="zone">zone: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@apply(zone:String):scala.util.Try[codes.reactive.scalatime.ZoneID]" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@apply(zone:String):scala.util.Try[codes.reactive.scalatime.ZoneId]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tries to obtains a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> or <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from text.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtains a <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a> or <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from text. A <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> is returned if the text is 'Z', or
+      <p class="shortcomment cmt">Tries to obtains a <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a> or <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from text.</p><div class="fullcomment"><div class="comment cmt"><p>Tries to obtains a <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a> or <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> from text. A <a href="package.html#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a> is returned if the text is 'Z', or
 starts with '+' or '-'. If successful, the result will always be a valid ID for which ZoneRules can be obtained.
 </p></div><dl class="paramcmts block"><dt class="param">zone</dt><dd class="cmt"><p>the time-zone ID
 </p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>will return <code>Failure[ZoneRulesException]</code> if the converted zone region ID cannot be found.</p></span>, <span class="cmt"><p>will return <code>Failure[DateTimeException]</code> if the converted zone ID has an invalid format.</p></span></dd></dl></div>
@@ -262,7 +262,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -279,7 +279,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@clone():Object" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@clone():Object" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -290,7 +290,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="codes.reactive.scalatime.ZoneID#entries" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="codes.reactive.scalatime.ZoneId#entries" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="entries:Set[String]"></a>
       <a id="entries:Set[String]"></a>
       <h4 class="signature">
@@ -302,7 +302,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">entries</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@entries:Set[String]" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@entries:Set[String]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -319,7 +319,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -336,7 +336,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -353,7 +353,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@finalize():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@finalize():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -364,23 +364,23 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="codes.reactive.scalatime.ZoneID#from" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="from(temporal:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.ZoneID]"></a>
-      <a id="from(scalatime.TemporalAccessor):Try[scalatime.ZoneID]"></a>
+    </li><li name="codes.reactive.scalatime.ZoneId#from" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="from(temporal:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.ZoneId]"></a>
+      <a id="from(scalatime.TemporalAccessor):Try[scalatime.ZoneId]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">from</span><span class="params">(<span name="temporal">temporal: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a>]</span>
+        <span class="name">from</span><span class="params">(<span name="temporal">temporal: <a href="package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">scalatime.TemporalAccessor</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@from(temporal:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.ZoneID]" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@from(temporal:codes.reactive.scalatime.TemporalAccessor):scala.util.Try[codes.reactive.scalatime.ZoneId]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tries to query a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> instance to obtain its <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">ZoneID</a>.</p>
+      <p class="shortcomment cmt">Tries to query a <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> instance to obtain its <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a>.</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -393,7 +393,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@getClass():Class[_]" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@getClass():Class[_]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -410,7 +410,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@hashCode():Int" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@hashCode():Int" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -427,7 +427,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -444,7 +444,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -461,7 +461,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@notify():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@notify():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -478,7 +478,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@notifyAll():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@notifyAll():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -495,24 +495,24 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.ZoneID#system" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="system:scala.util.Try[codes.reactive.scalatime.ZoneID]"></a>
-      <a id="system:Try[scalatime.ZoneID]"></a>
+    </li><li name="codes.reactive.scalatime.ZoneId#system" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="system:scala.util.Try[codes.reactive.scalatime.ZoneId]"></a>
+      <a id="system:Try[scalatime.ZoneId]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">system</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a>]</span>
+        <span class="name">system</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.Try" class="extype" target="_top">Try</a>[<a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@system:scala.util.Try[codes.reactive.scalatime.ZoneID]" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@system:scala.util.Try[codes.reactive.scalatime.ZoneId]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -531,7 +531,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@toString():String" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@toString():String" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -548,7 +548,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@wait():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@wait():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -571,7 +571,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -594,7 +594,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.ZoneID$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.ZoneId$@wait(x$1:Long):Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -633,7 +633,7 @@ starts with '+' or '-'. If successful, the result will always be a valid ID for 
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. adc8f1e) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 5c377e2) Scala 2.11 API Documentation. </div>
 
 
     </body>

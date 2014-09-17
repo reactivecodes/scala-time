@@ -48,9 +48,9 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><p>The default no-argument <code>apply</code> method differs from the underlying library no-argument constructor in that it
-explicitly returns the <b>UTC</b> Zone Clock from the current system time. Use <code>apply(ZoneID)</code> to specify an
+explicitly returns the <b>UTC</b> Zone Clock from the current system time. Use <code>apply(ZoneId)</code> to specify an
 alternative zone, or <a href="#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="codes.reactive.scalatime.Clock#systemZone">Clock.systemZone</a> to obtain a Clock from the current system time and zone.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/adc8f1e/src/main/scala/codes/reactive/scalatime/Clock.scala" target="_blank">Clock.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/5c377e2/src/main/scala/codes/reactive/scalatime/Clock.scala" target="_blank">Clock.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain a Clock from the current system UTC time</span>
@@ -156,18 +156,18 @@ alternative zone, or <a href="#systemZone:codes.reactive.scalatime.Clock" class=
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="codes.reactive.scalatime.Clock#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(zone:codes.reactive.scalatime.ZoneID):codes.reactive.scalatime.Clock"></a>
-      <a id="apply(scalatime.ZoneID):scalatime.Clock"></a>
+      <a id="apply(zone:codes.reactive.scalatime.ZoneId):codes.reactive.scalatime.Clock"></a>
+      <a id="apply(scalatime.ZoneId):scalatime.Clock"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="zone">zone: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>
+        <span class="name">apply</span><span class="params">(<span name="zone">zone: <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.Clock$@apply(zone:codes.reactive.scalatime.ZoneID):codes.reactive.scalatime.Clock" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.Clock$@apply(zone:codes.reactive.scalatime.ZoneId):codes.reactive.scalatime.Clock" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -304,18 +304,18 @@ alternative zone, or <a href="#systemZone:codes.reactive.scalatime.Clock" class=
     </span>
       <p class="shortcomment cmt">Obtains a <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a> fixed to a specific instant</p>
     </li><li name="codes.reactive.scalatime.Clock#fixed" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="fixed(instant:codes.reactive.scalatime.Instant,zone:codes.reactive.scalatime.ZoneID):codes.reactive.scalatime.Clock"></a>
-      <a id="fixed(scalatime.Instant,scalatime.ZoneID):scalatime.Clock"></a>
+      <a id="fixed(instant:codes.reactive.scalatime.Instant,zone:codes.reactive.scalatime.ZoneId):codes.reactive.scalatime.Clock"></a>
+      <a id="fixed(scalatime.Instant,scalatime.ZoneId):scalatime.Clock"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fixed</span><span class="params">(<span name="instant">instant: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a></span>, <span name="zone">zone: <a href="package.html#ZoneID=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneID">scalatime.ZoneID</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>
+        <span class="name">fixed</span><span class="params">(<span name="instant">instant: <a href="package.html#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">scalatime.Instant</a></span>, <span name="zone">zone: <a href="package.html#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">scalatime.ZoneId</a></span>)</span><span class="result">: <a href="package.html#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">scalatime.Clock</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#codes.reactive.scalatime.Clock$@fixed(instant:codes.reactive.scalatime.Instant,zone:codes.reactive.scalatime.ZoneID):codes.reactive.scalatime.Clock" title="Permalink" target="_top">
+      <a href="../../../index.html#codes.reactive.scalatime.Clock$@fixed(instant:codes.reactive.scalatime.Instant,zone:codes.reactive.scalatime.ZoneId):codes.reactive.scalatime.Clock" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -570,7 +570,7 @@ alternative zone, or <a href="#systemZone:codes.reactive.scalatime.Clock" class=
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. adc8f1e) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 5c377e2) Scala 2.11 API Documentation. </div>
 
 
     </body>
