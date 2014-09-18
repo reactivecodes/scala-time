@@ -32,6 +32,12 @@ object TemporalQuery {
 
   /** Obtains a query from a function ([[TemporalAccessor]])  => `A`. */
   def apply[A](f: TemporalAccessor => A): TemporalQuery[A] = new TemporalQuery[A] {
+
+    /** Queries the specified temporal object.
+      *
+      * @throws DateTimeException if unable to query.
+      * @throws ArithmeticException if numeric overflow occurs.
+      */
     override def queryFrom(temporal: TemporalAccessor): A = f(temporal)
   }
 

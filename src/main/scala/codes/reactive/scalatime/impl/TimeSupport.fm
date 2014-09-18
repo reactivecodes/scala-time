@@ -140,6 +140,39 @@ private[scalatime] object TimeSupport {
     def utc = T.UTC
   }
 
+  object MonthDay {
+    import ${tPac}.{MonthDay => T}
+    def from(a: TemporalAccessor) = T.from(a)
+    def of(a: Month, b: Int) = T.of(a, b)
+    def now(a: Clock) = T.now(a)
+    def now(a: ZoneId) = T.now(a)
+    def parse(a: CharSequence) = T.parse(a)
+    def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
+  }
+
+  object Year {
+    import ${tPac}.{Year => T}
+    def from(a: TemporalAccessor) = T.from(a)
+    def of(a: Int) = T.of(a)
+    def now(a: Clock) = T.now(a)
+    def now(a: ZoneId) = T.now(a)
+    def parse(a: CharSequence) = T.parse(a)
+    def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
+    def max = T.MAX_VALUE
+    def min = T.MIN_VALUE
+    def isLeap(a: Int) = T.isLeap(a)
+  }
+
+  object YearMonth {
+    import ${tPac}.{YearMonth => T}
+    def of(a: Int, b: Month) = T.of(a, b)
+    def from(a: TemporalAccessor) = T.from(a)
+    def now(a: Clock) = T.now(a)
+    def now(a: ZoneId) = T.now(a)
+    def parse(a: CharSequence) = T.parse(a)
+    def parse(a: CharSequence, b: DateTimeFormatter) = T.parse(a, b)
+  }
+
   // temporal
   object TemporalQuery {
     import ${tPac}.temporal.{TemporalQueries => T}

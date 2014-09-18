@@ -44,7 +44,7 @@ object LocalDate {
     */
   def of(year: Int, month: Month, day: Int): Try[LocalDate] = Try(LD.of(year, month, day))
 
-  /** Tries to obtain a [[LocalDate]] from text formatted according to [[DateTimeFormatter.Iso.LocalDate]]. */
+  /** Tries to obtain a [[LocalDate]] from text formatted according to [[format.DateTimeFormatter.Iso.LocalDate]]. */
   def parse(text: String): Try[LocalDate] = Try(LD.parse(text, format.DateTimeFormatter.Iso.LocalDate))
 
   /** Tries to obtain a [[LocalDate]] text formatted according to the provided `formatter`. */
