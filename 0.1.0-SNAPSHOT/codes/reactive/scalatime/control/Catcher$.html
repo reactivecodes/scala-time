@@ -49,14 +49,14 @@
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides methods for obtaining default <a href="http://www.scala-lang.org/api/2.11.2/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">Catchers</a> for possible
 <a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException">DateTimeExceptions</a> thrown by the underlying Java API.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/5c377e2/src/main/scala/codes/reactive/scalatime/control/Catcher.scala" target="_blank">Catcher.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/e8734b9/src/main/scala/codes/reactive/scalatime/control/Catcher.scala" target="_blank">Catcher.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain a TimeCatcher for all DateTimeExceptions</span>
 <span class="kw">val</span> catchAllLocalDate = Catcher.all(_ <span class="kw">=&gt;</span> LocalDate())
 
 <span class="cmt">// Use the catcher to recover from a parse error</span>
-<span class="kw">val</span> recovered = Try(LocalDate.parse(<span class="lit">")(&#)(@*@&#%@#%@#%)"</span>)).recover(catchAllLocalDate)</pre></li></ol>
+<span class="kw">val</span> recovered = LocalDate.parse(<span class="lit">")(&#)(@*@&#%@#%@#%)"</span>).recover(catchAllLocalDate)</pre></li></ol>
             </div></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -598,7 +598,7 @@ indicating a problems with the configured time-zone rules.</p>
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. 5c377e2) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.1.0-SNAPSHOT (Rev. e8734b9) Scala 2.11 API Documentation. </div>
 
 
     </body>
