@@ -1,5 +1,7 @@
 .idea/*
 !.idea/copyright/
+!.idea/inspectionProfiles/
+!.idea/codeStyleSettings.xml
 .idea_modules/
 target/
 out/
