@@ -18,36 +18,86 @@
 
 package codes.reactive.scalatime.syntax.conversions
 
-import codes.reactive.scalatime.temporal.{RichDuration, RichPeriod, RichTemporal, RichTemporalAmount}
-import codes.reactive.scalatime.{Duration, LocalDate, Period}
+import codes.reactive.scalatime.temporal._
+import codes.reactive.scalatime._
+import org.scalatest.mock.MockitoSugar
 import org.scalatest.{FreeSpec, Matchers}
 
 
-class TemporalConversionsSuite extends FreeSpec with Matchers {
+class TemporalConversionsSuite extends FreeSpec with Matchers with MockitoSugar {
 
   "A TemporalImplicits instance" - {
     val subject = new TemporalImplicits {}
     import subject._
 
-    "provides an implicit conversion of a 'Temporal' to a 'RichTemporal'" in {
-      val v: RichTemporal = LocalDate.of(2014, 6, 7).get
+    val t = "provides an implicit conversion of a"
+
+    s"$t 'Temporal' to a 'RichTemporal'" in {
+      val v: RichTemporal = mock[Temporal]
       v.isInstanceOf[RichTemporal] should be(right = true)
     }
 
-    "provides an implicit conversion of a 'TemporalAmount' to a 'RichTemporalAmount'" in {
-      val v: RichTemporalAmount = Duration.days(1)
+    s"$t 'TemporalAccessor' to a 'RichTemporalAccessor'" in {
+      val v: RichTemporalAccessor = mock[TemporalAccessor]
+      v.isInstanceOf[RichTemporalAccessor] should be(right = true)
+    }
+
+
+    s"$t 'TemporalAdjuster' to a 'RichTemporalAdjuster'" in {
+      val v: RichTemporalAdjuster = mock[TemporalAdjuster]
+      v.isInstanceOf[RichTemporalAdjuster] should be(right = true)
+    }
+
+    s"$t 'Function (Temporal) => (Temporal) to a 'TemporalAdjuster'" in {
+      val v: TemporalAdjuster = mock[(Temporal) => Temporal]
+      v.isInstanceOf[TemporalAdjuster] should be(right = true)
+    }
+
+    s"$t 'Function (Temporal) => (Temporal) to a 'RichTemporalAdjuster'" in {
+      val v: RichTemporalAdjuster = mock[(Temporal) => Temporal]
+      v.isInstanceOf[RichTemporalAdjuster] should be(right = true)
+    }
+
+    s"$t 'TemporalAmount' to a 'RichTemporalAmount'" in {
+      val v: RichTemporalAmount = mock[TemporalAmount]
       v.isInstanceOf[RichTemporalAmount] should be(right = true)
     }
 
-    "provides an implicit conversion of a 'Duration' to a 'RichDuration'" in {
+    s"$t 'Duration' to a 'RichDuration'" in {
       val v: RichDuration = Duration.days(1)
       v.isInstanceOf[RichDuration] should be(right = true)
     }
 
-    "provides an implicit conversion of a 'Period' to a 'RichPeriod'" in {
+    s"$t 'Period' to a 'RichPeriod'" in {
       val v: RichPeriod = Period.days(1)
       v.isInstanceOf[RichPeriod] should be(right = true)
     }
+
+    s"$t 'TemporalQuery' to a 'RichTemporalQuery'" in {
+      val v: RichTemporalQuery[_] = mock[TemporalQuery[_]]
+      v.isInstanceOf[RichTemporalQuery[_]] should be(right = true)
+    }
+
+    s"$t 'Month' to a 'RichMonth'" in {
+      val v: RichMonth = Month(1)
+      v.isInstanceOf[RichMonth] should be(right = true)
+    }
+
+    s"$t 'Year' to a 'RichYear'" in {
+      val v: RichYear = Year()
+      v.isInstanceOf[RichYear] should be(right = true)
+    }
+
+    s"$t 'YearMonth' to a 'RichYearMonth'" in {
+      val v: RichYearMonth = YearMonth()
+      v.isInstanceOf[RichYearMonth] should be(right = true)
+    }
+
+    s"$t 'MonthDay' to a 'RichMonthDay'" in {
+      val v: RichMonthDay = MonthDay()
+      v.isInstanceOf[RichMonthDay] should be(right = true)
+    }
+
   }
 
 }

@@ -19,22 +19,28 @@
 package codes.reactive.scalatime
 package temporal
 
-/** Enriches a [[TemporalAdjuster]] with additional methods. */
-final class RichTemporalAdjuster(val underlying: TemporalAdjuster) extends AnyVal {
+import util.Try
 
-  /** Adjusts the provided temporal object using the logic encapsulated in this.
+/** Enriches a [[TemporalAccessor]] with additional methods. */
+final class RichTemporalAccessor(val underlying: TemporalAccessor) extends AnyVal {
+
+  /** Queries this object using the specified [[TemporalQuery]] strategy object.
     *
-    * @throws DateTimeException if unable to make the adjustment.
-    * @throws ArithmeticException if numeric overflow occurs.
+    * @throws DateTimeException - if unable to query.
+    * @throws ArithmeticException - if numeric overflow occurs.
     */
-  def =~[A <: Temporal](temporal: A): A = underlying.adjustInto(temporal).asInstanceOf[A]
+  def >>[A](query: TemporalQuery[A]): A = underlying.query(query)
 
-}
+  /** Queries this object using the specified [[TemporalQuery]] strategy object. */
+  def >>?[A](query: TemporalQuery[A]): Try[A] = Try(underlying.query(query))
 
-object TemporalAdjuster {
+  /** Obtains the value of the specified field as a `Long` by querying for the value of the specified field.
+    *
+    * @throws DateTimeException - if a value for the field cannot be obtained.
+    * @throws ArithmeticException - if numeric overflow occurs.
+    */
+  def >> (field: TemporalField): Long = underlying.getLong(field)
 
-  /** Obtains a [[TemporalAdjuster]] from a function `([[Temporal]]) => [[Temporal]]`. */
-  def apply[A <: Temporal](f: A => A) = new codes.reactive.scalatime.TemporalAdjuster {
-    override def adjustInto(temporal: Temporal): Temporal = f(temporal.asInstanceOf[A]).asInstanceOf[Temporal]
-  }
+  /** Tries to obtain the value of the specified field as a `Long` by querying for the value of the specified field. */
+  def >>? (field: TemporalField): Long = underlying.getLong(field)
 }

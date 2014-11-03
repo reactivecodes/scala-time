@@ -24,7 +24,8 @@ package chrono
 final class RichChronoLocalDate(val underlying: ChronoLocalDate) extends AnyVal {
 
   /** Combines this date with a time to create a LocalDateTime. **/
-  def :: (time: LocalTime): ChronoLocalDateTime[_] = underlying.atTime(time)
+  def %%[A <: underlying.type ] (time: LocalTime): ChronoLocalDateTime[A] =
+    underlying.atTime(time).asInstanceOf[ChronoLocalDateTime[A]]
 
   /** Formats this date using the specified formatter.
     * @throws DateTimeException - if an error occurs during printing
@@ -36,8 +37,12 @@ final class RichChronoLocalDate(val underlying: ChronoLocalDate) extends AnyVal 
 /** Enriches a [[ChronoLocalDateTime]] with Scala friendly method syntax. */
 final class RichChronoLocalDateTime[A <: ChronoLocalDate](val underlying: ChronoLocalDateTime[A]) extends AnyVal {
 
+
   /** Combines this date-time with a time-zone to create a ZonedDateTime. **/
-  def :: (zone: ZoneId): ChronoZonedDateTime[A] = underlying.atZone(zone)
+  def %%(zone: ZoneId) = underlying.atZone(zone)
+
+  /** Combines this date-time with a time-zone to create a ZonedDateTime. **/
+  def ± (zone: ZoneId) = %%(zone)
 
   /** Formats this date using the specified formatter.
     * @throws DateTimeException - if an error occurs during printing

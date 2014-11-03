@@ -54,3 +54,43 @@ object Year {
   val Min: Year = TimeSupport.Year.of(TimeSupport.Year.min)
 
 }
+
+
+/** Enriches [[Year]] instances with additional methods. */
+final class RichYear(val underlying: Year) extends AnyVal {
+
+  /** Obtains a year with the specified number of years added. */
+  def + (years: Int) = underlying.plusYears(years)
+
+  /** Obtains a year with the specified number of years subtracted. */
+  def - (years: Int): Year = underlying.minusYears(years)
+
+  /** Returns `true` if this year is before the specified one. */
+  def < (other: Year): Boolean = underlying.isBefore(other)
+
+  /** Returns `true` if this year is equal to or before the specified one. */
+  def <= (other: Year): Boolean = underlying.equals(other) || underlying.isBefore(other)
+
+  /** Returns `true` if this year is after the specified one. */
+  def > (other: Year): Boolean = underlying.isAfter(other)
+
+  /** Returns `true` if this year is equal to or after the specified one. */
+  def >= (other: Year): Boolean = underlying.equals(other) || underlying.isAfter(other)
+
+  /** Obtains a [[YearMonth]] by combining this year with the specified [[Month]]. */
+  def / (month: Month): YearMonth = underlying.atMonth(month)
+
+  /** Obtains a [[YearMonth]] by combining this year with the specified month, from 1 (January) to 12 (December).
+    * @throws DateTimeException if the month is invalid.
+    */
+  def / (month: Int): YearMonth = underlying.atMonth(month)
+
+  /** Obtains a [[LocalDate]] by combining this year with the specified [[MonthDay]]. */
+  def / (monthDay: MonthDay): LocalDate = underlying.atMonthDay(monthDay)
+
+  /** Formats this year using the specified formatter.
+    * @throws DateTimeException - if an error occurs during printing
+    */
+  def >> (formatter: DateTimeFormatter): String = underlying.format(formatter)
+
+}

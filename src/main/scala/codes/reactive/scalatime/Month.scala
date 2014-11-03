@@ -28,6 +28,9 @@ import scala.util.Try
   */
 object Month {
 
+  /** Obtains the current [[Month]] at UTC. */
+  def apply(): Month = from(OffsetDateTime()).get
+
   /** Obtains the [[Month]] of an int value (from 1 to 12).
     *
     * @throws DateTimeException if the month-of-year is invalid.
@@ -72,5 +75,25 @@ object Month {
 
   /** $Repr December, with 31 days and a numeric value of `12`. */
   final val December = apply(12)
+
+}
+
+
+/** Enriches a [[Month]] with additional methods. */
+final class RichMonth(val underlying: Month) extends AnyVal {
+
+  /** Obtains the month-of-year which is the specified number of months after this one. */
+  def + (months: Int) = underlying.plus(months)
+
+  /** Obtains the month-of-year which is the specified number of months before this one. */
+  def - (months: Int) = underlying.minus(months)
+
+  /** Obtains a [[MonthDay]] by combining this month with the specified day-of-month.
+    * @throws DateTimeException if the day-of-month is invalid for the month.
+    */
+  def / (day: Int): MonthDay = MonthDay.of(underlying, day).get
+
+
+  def =~ (temporal: Temporal) = underlying.adjustInto(temporal)
 
 }

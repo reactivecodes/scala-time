@@ -19,18 +19,22 @@
 package codes.reactive.scalatime
 package temporal
 
-/** Enriches a [[Temporal]] with Scala friendly methods.
+import language.implicitConversions
+
+/** Enriches a [[Temporal]] with additional methods.
   *
   * @define  sameType  Obtains an object of the same type as this object
   */
 final class RichTemporal(val underlying: Temporal) extends AnyVal {
+
+  private type T = underlying.type
 
   /** $sameType with an amount added.
     *
     * @throws DateTimeException - if the addition cannot be made.
     * @throws ArithmeticException - if numeric overflow occurs.
     */
-  def + (amount: TemporalAmount): Temporal = underlying.plus(amount)
+  def + (amount: TemporalAmount): T = underlying.plus(amount)
 
   /** $sameType with an amount added.
     *
@@ -38,14 +42,14 @@ final class RichTemporal(val underlying: Temporal) extends AnyVal {
     * @throws UnsupportedTemporalTypeException - if the unit is not supported.
     * @throws ArithmeticException - if numeric overflow occurs.
     */
-  def + (amount: Long, unit: TemporalUnit): Temporal = underlying.plus(amount, unit)
+  def + (amount: Long, unit: TemporalUnit): T = underlying.plus(amount, unit)
 
   /** $sameType with an amount subtracted.
     *
     * @throws DateTimeException - if the subtraction cannot be made
     * @throws ArithmeticException - if numeric overflow occurs
     */
-  def -(amount: TemporalAmount): Temporal = underlying.minus(amount)
+  def - (amount: TemporalAmount): T = underlying.minus(amount)
 
   /** $sameType with an amount subtracted.
     *
@@ -53,14 +57,14 @@ final class RichTemporal(val underlying: Temporal) extends AnyVal {
     * @throws UnsupportedTemporalTypeException - if the unit is not supported
     * @throws ArithmeticException - if numeric overflow occurs
     */
-  def - (amount: Long, unit: TemporalUnit): Temporal = underlying.minus(amount, unit)
+  def - (amount: Long, unit: TemporalUnit): T = underlying.minus(amount, unit)
 
   /** Obtains an adjusted object of the same type as this object with the adjustment made.
     *
     * @throws DateTimeException - if unable to make the adjustment
     * @throws  ArithmeticException - if numeric overflow occurs
     */
-  def ~= (adjuster: TemporalAdjuster): Temporal = underlying.`with`(adjuster)
+  def ~= (adjuster: TemporalAdjuster): T = underlying.`with`(adjuster)
 
   /** Obtains an adjusted object of the same type as this object with the adjustment made.
     *
@@ -68,23 +72,7 @@ final class RichTemporal(val underlying: Temporal) extends AnyVal {
     * @throws  UnsupportedTemporalTypeException - if the field is not supported
     * @throws  ArithmeticException - if numeric overflow occurs
     */
-  def ~= (field: TemporalField, fieldValue: Long): Temporal = underlying.`with`(field, fieldValue)
-
-  /** Queries this object using the specified [[TemporalQuery]] strategy object.
-    *
-    * @throws DateTimeException - if unable to query
-    * @throws ArithmeticException - if numeric overflow occurs
-    */
-  def ?[A](query: TemporalQuery[A]): A = underlying.query(query)
-
-  /** Calculates the amount of time until another temporal in terms of the specified unit.
-    *
-    * @throws DateTimeException - if the amount cannot be calculated, or the end temporal cannot be converted
-    *                           to the same type as this temporal
-    * @throws  UnsupportedTemporalTypeException - if the unit is not supported
-    * @throws  ArithmeticException - if numeric overflow occurs
-    */
-  def +~ (end: Temporal, inUnits: TemporalUnit): Long = underlying.until(end, inUnits)
+  def ~= (field: TemporalField, fieldValue: Long): T = underlying.`with`(field, fieldValue)
 
   /** Calculates the amount of time until this temporal in terms of the specified unit.
     *
@@ -93,5 +81,8 @@ final class RichTemporal(val underlying: Temporal) extends AnyVal {
     * @throws  UnsupportedTemporalTypeException - if the unit is not supported.
     * @throws  ArithmeticException - if numeric overflow occurs.
     */
-  def ~+ (begin: Temporal, inUnits: TemporalUnit): Long = begin.until(underlying, inUnits)
+  def from(begin: Temporal, inUnits: TemporalUnit): Long = begin.until(underlying, inUnits)
+
+  private implicit def t(t: Temporal): T = t.asInstanceOf[T]
+
 }

@@ -16,25 +16,20 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
-package temporal
+import codes.reactive.sbt.CodesPlugin.autoImport.Codes
+import sbt._
 
-/** Enriches a [[TemporalAdjuster]] with additional methods. */
-final class RichTemporalAdjuster(val underlying: TemporalAdjuster) extends AnyVal {
+object Dependencies {
 
-  /** Adjusts the provided temporal object using the logic encapsulated in this.
-    *
-    * @throws DateTimeException if unable to make the adjustment.
-    * @throws ArithmeticException if numeric overflow occurs.
-    */
-  def =~[A <: Temporal](temporal: A): A = underlying.adjustInto(temporal).asInstanceOf[A]
+  def scalaTest = Codes.deps.scalaTest("2.1.5")
 
-}
+  def mockito = Codes.deps.mockitoCore("1.10.8")
 
-object TemporalAdjuster {
+  def threeten = "org.threeten" % "threetenbp" % "1.1"
 
-  /** Obtains a [[TemporalAdjuster]] from a function `([[Temporal]]) => [[Temporal]]`. */
-  def apply[A <: Temporal](f: A => A) = new codes.reactive.scalatime.TemporalAdjuster {
-    override def adjustInto(temporal: Temporal): Temporal = f(temporal.asInstanceOf[A]).asInstanceOf[Temporal]
+  def matchJava[A](v: String, jdk7: => A, other: => A) = v.takeRight(1).toInt match {
+    case 7 => jdk7
+    case x if x > 7 => other
+    case _ => sys.error("Java JDK version not supported. Use JDK 1.7 (Java 7) or greater.")
   }
 }

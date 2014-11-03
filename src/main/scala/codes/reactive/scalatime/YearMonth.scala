@@ -52,3 +52,41 @@ object YearMonth {
     Try(TimeSupport.YearMonth.parse(text, formatter))
 
 }
+
+
+/** Enriches [[YearMonth]] instances with additional methods. */
+final class RichYearMonth(val underlying: YearMonth) extends AnyVal {
+
+  /** Obtains a [[YearMonth]] with the specified number of months added.
+    * @throws DateTimeException if the result exceeds the supported range.
+    */
+  def + (months: Int): YearMonth = underlying.plusMonths(months)
+
+  /** Obtains a [[YearMonth]] with the specified number of months subtracted.
+    * @throws DateTimeException if the result exceeds the supported range.
+    */
+  def - (months: Int): YearMonth = underlying.minusMonths(months)
+
+  /** Returns `true` if this year-month is before the specified one. */
+  def < (other: YearMonth): Boolean = underlying.isBefore(other)
+
+  /** Returns `true` if this year-month is equal to or before the specified one. */
+  def <= (other: YearMonth): Boolean = underlying.equals(other) || underlying.isBefore(other)
+
+  /** Returns `true` if this year-month is after the specified one. */
+  def > (other: YearMonth): Boolean = underlying.isAfter(other)
+
+  /** Returns `true` if this year-month is equal to or after the specified one. */
+  def >= (other: YearMonth): Boolean = underlying.equals(other) || underlying.isAfter(other)
+
+  /** Obtains a [[LocalDate]] by combining this year-month with the specified day.
+    * @throws DateTimeException if the day is invalid for the year-month
+    */
+  def / (day: Int): LocalDate = underlying.atDay(day)
+
+  /** Formats this year-month using the specified formatter.
+    * @throws DateTimeException - if an error occurs during printing
+    */
+  def >> (formatter: DateTimeFormatter): String = underlying.format(formatter)
+
+}

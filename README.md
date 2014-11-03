@@ -1,7 +1,7 @@
 scala-time
 ==========
 
-Basic Scala utilities allowing for easier use of *JSR-310 compatible* APIs, with the aim of providing a single
+Basic Scala utilities allowing for easier use of *`java.time` compatible* APIs, with the aim of providing a single
 Scala API (and migration point) between [JDK 1.8 Time][2], and the [Threeten BP][12] JDK 7 backport.
 
 ###### [Build:][11]

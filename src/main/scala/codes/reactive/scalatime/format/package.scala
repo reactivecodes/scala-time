@@ -17,24 +17,11 @@
  ******************************************************************/
 
 package codes.reactive.scalatime
-package temporal
 
-/** Enriches a [[TemporalAdjuster]] with additional methods. */
-final class RichTemporalAdjuster(val underlying: TemporalAdjuster) extends AnyVal {
+/** Provides functionality relating to date and time object formatting / parsing.
+  *
+  * @see  [[format.DateTimeFormatter]]
+  */
+package object format {
 
-  /** Adjusts the provided temporal object using the logic encapsulated in this.
-    *
-    * @throws DateTimeException if unable to make the adjustment.
-    * @throws ArithmeticException if numeric overflow occurs.
-    */
-  def =~[A <: Temporal](temporal: A): A = underlying.adjustInto(temporal).asInstanceOf[A]
-
-}
-
-object TemporalAdjuster {
-
-  /** Obtains a [[TemporalAdjuster]] from a function `([[Temporal]]) => [[Temporal]]`. */
-  def apply[A <: Temporal](f: A => A) = new codes.reactive.scalatime.TemporalAdjuster {
-    override def adjustInto(temporal: Temporal): Temporal = f(temporal.asInstanceOf[A]).asInstanceOf[Temporal]
-  }
 }

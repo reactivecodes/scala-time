@@ -52,3 +52,48 @@ object MonthDay {
     Try(TimeSupport.MonthDay.parse(text, formatter))
 
 }
+
+
+/** Enriches [[MonthDay]] instances with additional methods. */
+final class RichMonthDay(val underlying: MonthDay) extends AnyVal {
+
+  /** Returns `true` if this month-day is before the specified one. */
+  def < (other: MonthDay): Boolean = underlying.isBefore(other)
+
+  /** Returns `true` if this month-day is equal to or before the specified one. */
+  def <= (other: MonthDay): Boolean = underlying.equals(other) || underlying.isBefore(other)
+
+  /** Returns `true` if this month-day is after the specified one. */
+  def > (other: MonthDay): Boolean = underlying.isAfter(other)
+
+  /** Returns `true` if this month-day is equal to or after the specified one. */
+  def >= (other: MonthDay): Boolean = underlying.equals(other) || underlying.isAfter(other)
+
+  /** Obtains a copy of this MonthDay with the month-of-year altered. */
+  def ~= (month: Month): MonthDay = underlying.`with`(month)
+
+  /** Obtains a copy of this MonthDay with the day-of-month altered.
+    *
+    * @throws DateTimeException if the day-of-month value is invalid.
+    * @throws DateTimeException if the day-of-month value is invalid for the month.
+    */
+  def ~= (day: Int): MonthDay = underlying.withDayOfMonth(day)
+
+  /** Obtains a copy of this MonthDay with the month-of-year and/or day-of-month altered.
+    *
+    * @throws DateTimeException if the day-of-month value is invalid.
+    * @throws DateTimeException if the day-of-month value is invalid for the month.
+    */
+  def ~= (month: Option[Month], day: Option[Int]): MonthDay = {
+    def replaceMonth = if (month.nonEmpty) underlying.withMonth(month.get.getValue) else underlying
+    def replaceDay = if (day.nonEmpty) underlying.withDayOfMonth(day.get) else underlying
+    replaceMonth
+    replaceDay
+  }
+
+  /** Formats this month-day using the specified formatter.
+    * @throws DateTimeException - if an error occurs during printing
+    */
+  def >> (formatter: DateTimeFormatter): String = underlying.format(formatter)
+
+}
