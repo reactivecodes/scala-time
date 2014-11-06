@@ -28,93 +28,184 @@ import ${tPac}.temporal.{ChronoField => CF}
   */
 trait ChronoFields {
 
-  /** $cf the aligned day-of-week within a month. */
+  /** $cf the aligned day-of-week within a month.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#ALIGNED_DAY_OF_WEEK_IN_MONTH ALIGNED_DAY_OF_WEEK_IN_MONTH]]
+    */
   final val AlignedDayOfWeekInMonth = CF.ALIGNED_DAY_OF_WEEK_IN_MONTH
 
-  /** $cf the aligned day-of-week within a year. */
+  /** $cf the aligned day-of-week within a year.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#ALIGNED_DAY_OF_WEEK_IN_YEAR ALIGNED_DAY_OF_WEEK_IN_YEAR]]
+    */
   final val AlignedDayOfWeekInYear = CF.ALIGNED_DAY_OF_WEEK_IN_YEAR
 
-  /** $cf the aligned week within a month. */
+  /** $cf the aligned week within a month.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#ALIGNED_WEEK_OF_MONTH ALIGNED_WEEK_OF_MONTH]]
+    */
   final val AlignedWeekOfMonth = CF.ALIGNED_WEEK_OF_MONTH
 
-  /** $cf the aligned week within a year. */
+  /** $cf the aligned week within a year.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#ALIGNED_WEEK_OF_YEAR ALIGNED_WEEK_OF_YEAR]]
+    */
   final val AlignedWeekOfYear = CF.ALIGNED_WEEK_OF_YEAR
 
-  /** $cf the am-pm-of-day. */
+  /** $cf the am-pm-of-day.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#AMPM_OF_DAY AMPM_OF_DAY]]
+    */
   final val AmPmOfDay = CF.AMPM_OF_DAY
 
-  /** $cf the clock-hour-of-am-pm. */
+  /** $cf the clock-hour-of-am-pm.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#CLOCK_HOUR_OF_AMPM]]
+    */
   final val ClockHourOfAmPm = CF.CLOCK_HOUR_OF_AMPM
 
-  /** $cf the clock-hour-of-day. */
+  /** $cf the clock-hour-of-day.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#CLOCK_HOUR_OF_DAY CLOCK_HOUR_OF_DAY]]
+    */
   final val ClockHourOfDay = CF.CLOCK_HOUR_OF_DAY
 
-  /** $cf the day-of-month. */
+  /** $cf the day-of-month.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#DAY_OF_MONTH DAY_OF_MONTH]]
+    */
   final val DayOfMonth = CF.DAY_OF_MONTH
 
-  /** $cf the day-of-week, such as Tuesday. */
+  /** $cf the day-of-week, such as Tuesday.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#DAY_OF_WEEK DAY_OF_WEEK]]
+    */
   final val DayOfWeek = CF.DAY_OF_WEEK
 
-  /** $cf the day-of-year. */
+  /** $cf the day-of-year.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#DAY_OF_YEAR DAY_OF_YEAR]]
+    */
   final val DayOfYear = CF.DAY_OF_YEAR
 
-  /** $cf the epoch-day, based on the Java epoch of 1970-01-01 (ISO). */
+  /** $cf the epoch-day, based on the Java epoch of 1970-01-01 (ISO).
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#EPOCH_DAY EPOCH_DAY]]
+    */
   final val EpochDay = CF.EPOCH_DAY
 
-  /** $cf the era. */
+  /** $cf the era.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#ERA ERA]]
+    */
   final val Era = CF.ERA
 
-  /** $cf the hour-of-am-pm. */
+  /** $cf the hour-of-am-pm.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#HOUR_OF_AMPM HOUR_OF_AMPM]]
+    */
   final val HourOfAmPm = CF.HOUR_OF_AMPM
 
-  /** $cf the hour-of-day. */
+  /** $cf the hour-of-day.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#HOUR_OF_DAY HOUR_OF_DAY]]
+    */
   final val HourOfDay = CF.HOUR_OF_DAY
 
-  /** $cf the instant epoch-seconds. */
+  /** $cf the instant epoch-seconds.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#INSTANT_SECONDS INSTANT_SECONDS]]
+    */
   final val InstantSeconds = CF.INSTANT_SECONDS
 
-  /** $cf the micro-of-day. */
+  /** $cf the micro-of-day.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#MICRO_OF_DAY MICRO_OF_DAY]]
+    */
   final val MicroOfDay = CF.MICRO_OF_DAY
 
-  /** $cf the micro-of-second. */
+  /** $cf the micro-of-second.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#MICRO_OF_SECOND MICRO_OF_SECOND]]
+    */
   final val MicroOfSecond = CF.MICRO_OF_SECOND
 
-  /** $cf the milli-of-day. */
+  /** $cf the milli-of-day.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#MILLI_OF_DAY MILLI_OF_DAY]]
+    */
   final val MilliOfDay = CF.MILLI_OF_DAY
 
-  /** $cf the milli-of-second. */
+  /** $cf the milli-of-second.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#MILLI_OF_SECOND MILLI_OF_SECOND]]
+    */
   final val MilliOfSecond = CF.MILLI_OF_SECOND
 
-  /** $cf the minute-of-day. */
+  /** $cf the minute-of-day.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#MINUTE_OF_DAY MINUTE_OF_DAY]]
+    */
   final val MinuteOfDay = CF.MINUTE_OF_DAY
 
-  /** $cf the minute-of-hour. */
+  /** $cf the minute-of-hour.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#MINUTE_OF_HOUR MINUTE_OF_HOUR]]
+    */
   final val MinuteOfHour = CF.MINUTE_OF_HOUR
 
-  /** $cf the month-of-year, such as March. */
+  /** $cf the month-of-year, such as March.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#MONTH_OF_YEAR MONTH_OF_YEAR]]
+    */
   final val MonthOfYear = CF.MONTH_OF_YEAR
 
-  /** $cf the nano-of-day. */
+  /** $cf the nano-of-day.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#NANO_OF_DAY NANO_OF_DAY]]
+    */
   final val NanoOfDay = CF.NANO_OF_DAY
 
-  /** $cf the nano-of-second. */
+  /** $cf the nano-of-second.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#NANO_OF_SECOND NANO_OF_SECOND]]
+    */
   final val NanoOfSecond = CF.NANO_OF_SECOND
 
-  /** $cf the offset from UTC/Greenwich. */
+  /** $cf the offset from UTC/Greenwich.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#OFFSET_SECONDS OFFSET_SECONDS]]
+    */
   final val OffsetSeconds = CF.OFFSET_SECONDS
 
-  /** $cf the proleptic-month based, counting months sequentially from year 0. */
+  /** $cf the proleptic-month based, counting months sequentially from year 0.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#PROLEPTIC_MONTH PROLEPTIC_MONTH]]
+    */
   final val ProlepticMonth = CF.PROLEPTIC_MONTH
 
-  /** $cf the second-of-day. */
+  /** $cf the second-of-day.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#SECOND_OF_DAY SECOND_OF_DAY]]
+    */
   final val SecondOfDay = CF.SECOND_OF_DAY
 
-  /** $cf the second-of-minute. */
+  /** $cf the second-of-minute.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#SECOND_OF_MINUTE SECOND_OF_MINUTE]]
+    */
   final val SecondOfMinute = CF.SECOND_OF_MINUTE
 
-  /** $cf the proleptic year, such as 2012. */
+  /** $cf the proleptic year, such as 2012.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#YEAR YEAR]]
+    */
   final val Year = CF.YEAR
 
-  /** $cf the year within the era. */
+  /** $cf the year within the era.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoField.html#YEAR_OF_ERA YEAR_OF_ERA]]
+    */
   final val YearOfEra = CF.YEAR_OF_ERA
+
 }

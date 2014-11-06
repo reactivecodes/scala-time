@@ -28,11 +28,16 @@ import ${tPac}.temporal.{IsoFields => IF}
   */
 trait IsoUnits {
 
-  /** $Unit a quarter year, equal to 3 months with an estimates duration of a quarter of 365.2425 Days.*/
+  /** $Unit a quarter year, equal to 3 months with an estimates duration of a quarter of 365.2425 Days.
+    *
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#QUARTER_YEARS QUARTER_YEARS]]
+    */
   final val QuarterYears = IF.QUARTER_YEARS
 
   /** $Unit week-based-years for the purpose of addition and subtraction with an estimated duration the same as that of
     * a standard ISO year at 365.2425 Days.
+    *
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#WEEK_BASED_YEARS WEEK_BASED_YEARS]]
     */
   final val WeekBasedYears = IF.WEEK_BASED_YEARS
 }

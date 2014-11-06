@@ -25,7 +25,7 @@ final class RichTemporalUnit(val underlying: TemporalUnit) {
 
   /** Returns a copy of the specified temporal object with the specified amount of this unit added.
     *
-    * @throws DateTimeException if the amount cannot be added.
+    * @throws DateTimeException - if the amount cannot be added.
     */
   def <<+[A <: Temporal](temporal: A, amount: Long): A = underlying.addTo(temporal, amount)
 

@@ -53,11 +53,14 @@ private[syntax] trait AnnotateEnrichChrono extends ChronoConverters with Decorat
 
 private[conversions] trait ChronoImplicits extends ChronoConverters {
 
+  /** Implicitly converts a [[ChronoLocalDate]] to a [[RichChronoLocalDate]] */
   implicit def augmentChronoLocalDate(d: ChronoLocalDate): RichChronoLocalDate = richChronoLocalDate(d)
 
+  /** Implicitly converts a [[ChronoLocalDateTime]] to a [[RichChronoLocalDateTime]] */
   implicit def augmentChronoLocalDateTime[A <: ChronoLocalDate](d: ChronoLocalDateTime[A]): RichChronoLocalDateTime[A] =
     richChronoLocalDateTime(d)
 
+  /** Implicitly converts a [[ChronoZonedDateTime]] to a [[RichChronoZonedDateTime]] */
   implicit def augmentChronoZonedDateTime[A <: ChronoLocalDate](d: ChronoZonedDateTime[A]): RichChronoZonedDateTime[A] =
     richChronoZonedDateTime(d)
 

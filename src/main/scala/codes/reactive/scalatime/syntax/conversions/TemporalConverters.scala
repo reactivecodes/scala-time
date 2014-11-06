@@ -26,50 +26,37 @@ import scala.language.implicitConversions
 
 private[conversions] trait TemporalConverters {
 
-  /** Obtains a [[temporal.RichTemporal]] from a [[Temporal]] */
   protected def richTemporal(temporal: Temporal): RichTemporal = new RichTemporal(temporal)
 
-  /** Obtains a [[temporal.RichTemporalAdjuster]] from a [[TemporalAdjuster]] */
   protected def richTemporalAccessor(temporalAccessor: TemporalAccessor) = new RichTemporalAccessor(temporalAccessor)
 
-  /** Obtains a [[temporal.RichTemporalAccessor]] from a [[TemporalAccessor]] */
   protected def richTemporalAdjuster(temporalAdjuster: TemporalAdjuster) = new RichTemporalAdjuster(temporalAdjuster)
 
-  /** Obtains a [[TemporalAdjuster]] from a function `(Temporal) => Temporal`. */
   protected def richTemporalAdjusterFun[A <: Temporal](f: A => A) = TemporalAdjuster(f)
 
-  /** Obtains a [[TemporalAdjuster]] from a function `(Temporal) => Temporal`. */
   protected def richTemporalAdjusterFunR[A <: Temporal](f: A => A) =
     new RichTemporalAdjuster(richTemporalAdjusterFun(f))
 
-  /** Obtains a [[temporal.RichTemporalAmount]] from a [[TemporalAmount]] */
   protected def richTemporalAmount(temporalAmount: TemporalAmount): RichTemporalAmount =
     new RichTemporalAmount(temporalAmount)
 
-  /** Obtains a [[temporal.RichDuration]] from a [[Duration]] */
   protected def richDuration(duration: Duration): RichDuration = new RichDuration(duration)
 
-  /** Obtains a [[temporal.RichPeriod]] from a [[Period]] */
   protected def richPeriod(period: Period): RichPeriod = new RichPeriod(period)
 
-  /** Obtains a [[temporal.RichTemporalQuery]] from a [[TemporalQuery]] */
   protected def richTemporalQuery[A](query: TemporalQuery[A]): RichTemporalQuery[A] = new RichTemporalQuery(query)
 
-  /** Obtains a [[RichMonth]] from a [[Month]] */
   protected def richMonth(month: Month): RichMonth = new RichMonth(month)
 
-  /** Obtains a [[RichYear]] from a [[Year]] */
   protected def richYear(year: Year): RichYear = new RichYear(year)
 
-  /** Obtains a [[RichYearMonth]] from a [[YearMonth]] */
   protected def richYearMonth(yearMonth: YearMonth): RichYearMonth = new RichYearMonth(yearMonth)
 
-  /** Obtains a [[RichMonthDay]] from a [[MonthDay]] */
   protected def richMonthDay(monthDay: MonthDay): RichMonthDay = new RichMonthDay(monthDay)
 }
 
 /**
- * @define  implV Implicit function for obtaining a
+ * @define  implV Implicitly converts a
  */
 private[conversions] trait TemporalImplicits extends TemporalConverters {
 
@@ -131,7 +118,8 @@ private[scalatime] trait AnnotateEnrichTemporal extends TemporalConverters with 
 
   implicit def enrichPeriod(u: Period): Enrich[RichPeriod] = new Enrich(richPeriod(u))
 
-  implicit def enrichTemporalQuery[A](u: TemporalQuery[A]): Enrich[RichTemporalQuery[A]] = new Enrich(richTemporalQuery[A](u))
+  implicit def enrichTemporalQuery[A](u: TemporalQuery[A]): Enrich[RichTemporalQuery[A]] =
+    new Enrich(richTemporalQuery[A](u))
 
   implicit def enrichMonth(m: Month): Enrich[RichMonth] = new Enrich(richMonth(m))
 

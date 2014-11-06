@@ -51,4 +51,5 @@ protected[syntax] trait ZoneHelpers {
 
   /** Provides a standard set of time zone [[ZoneOffset]] instances, as well as methods to create them. **/
   def offset: ZoneOffset.type = ZoneOffset
+
 }

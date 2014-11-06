@@ -20,44 +20,44 @@ package codes.reactive.scalatime
 package chrono
 
 
-/** Enriches a [[ChronoLocalDate]] with Scala friendly method syntax.  */
+/** Enriches a [[ChronoLocalDate]] with additional methods.  */
 final class RichChronoLocalDate(val underlying: ChronoLocalDate) extends AnyVal {
 
   /** Combines this date with a time to create a LocalDateTime. **/
-  def %%[A <: underlying.type ] (time: LocalTime): ChronoLocalDateTime[A] =
+  def %%[A <: underlying.type](time: LocalTime): ChronoLocalDateTime[A] =
     underlying.atTime(time).asInstanceOf[ChronoLocalDateTime[A]]
 
   /** Formats this date using the specified formatter.
-    * @throws DateTimeException - if an error occurs during printing
+    * @throws DateTimeException - if an error occurs during formatting.
     */
-  def >> (formatter: DateTimeFormatter): String = underlying.format(formatter)
+  def >>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 }
 
 
-/** Enriches a [[ChronoLocalDateTime]] with Scala friendly method syntax. */
+/** Enriches a [[ChronoLocalDateTime]] with additional methods. */
 final class RichChronoLocalDateTime[A <: ChronoLocalDate](val underlying: ChronoLocalDateTime[A]) extends AnyVal {
 
 
   /** Combines this date-time with a time-zone to create a ZonedDateTime. **/
   def %%(zone: ZoneId) = underlying.atZone(zone)
 
-  /** Combines this date-time with a time-zone to create a ZonedDateTime. **/
-  def ± (zone: ZoneId) = %%(zone)
+  /** Alias for [[%%]].Combines this date-time with a time-zone to create a ZonedDateTime. **/
+  def ±(zone: ZoneId) = %%(zone)
 
   /** Formats this date using the specified formatter.
-    * @throws DateTimeException - if an error occurs during printing
+    * @throws DateTimeException - if an error occurs during formatting.
     */
-  def >> (formatter: DateTimeFormatter): String = underlying.format(formatter)
+  def >>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
 }
 
 
-/** Enriches a [[ChronoZonedDateTime]] with Scala friendly method syntax. */
+/** Enriches a [[ChronoZonedDateTime]] with additional methods. */
 final class RichChronoZonedDateTime[A <: ChronoLocalDate](val underlying: ChronoZonedDateTime[A]) extends AnyVal {
 
   /** Formats this date using the specified formatter.
-    * @throws DateTimeException - if an error occurs during printing
+    * @throws DateTimeException - if an error occurs during formatting.
     */
-  def >> (formatter: DateTimeFormatter): String = underlying.format(formatter)
+  def >>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
 }

@@ -20,8 +20,6 @@ package codes.reactive.scalatime
 
 /** Provides functionality relating to date and time object formatting / parsing.
   *
-  * @see  [[format.DateTimeFormatter]]
+  * @see  [[format.DateTimeFormatter DateTimeFormatter]]
   */
-package object format {
-
-}
+package object format

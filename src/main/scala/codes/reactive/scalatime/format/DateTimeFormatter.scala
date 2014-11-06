@@ -21,4 +21,3 @@ package format
 
 /** Provides factory methods for obtaining [[DateTimeFormatter]] instances, as well as common default instances. */
 object DateTimeFormatter extends TimeFormatters
-

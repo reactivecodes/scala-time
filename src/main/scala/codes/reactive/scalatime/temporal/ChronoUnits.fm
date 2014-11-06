@@ -29,7 +29,10 @@ import ${tPac}.temporal.{ChronoUnit => CU}
   */
 trait ChronoUnits {
 
-  /** $Unit a century. $Iso equal to 100 years. */
+  /** $Unit a century. $Iso equal to 100 years.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#CENTURIES CENTURIES]]
+    */
   final val Centuries = CU.CENTURIES
 
   /** $Unit a day. $Iso equal to the standard day from midnight to midnight. The estimated duration of a day is
@@ -40,6 +43,8 @@ trait ChronoUnits {
     * the Sun on Earth.
     *
     * It is not required that days begin at midnight; however the date should be equivalent at midday.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#DAYS DAYS]]
     */
   final val Days = CU.DAYS
 
@@ -48,26 +53,41 @@ trait ChronoUnits {
     * ==== Non  ISO Calendar Systems ====
     * When used with other calendar systems [[Decades]] must correspond to an integral number of days, and is normally
     * an integral number of years.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#DECADES DECADES]]
     */
   final val Decades = CU.DECADES
 
   /** $Unit an era. The ISO calendar system doesn't have eras thus it is impossible to add an era to a date or date-time.
     * The estimated duration of the era is artificially defined as 1,000,000,000 Years.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#ERAS ERAS]]
     */
   final val Eras = CU.ERAS
 
   /** $Unit Forever. This is primarily used with [[TemporalField]] to represent unbounded fields such as the year or era.
     * The estimated duration of the era is artificially defined as the largest duration supported by [[Duration]].
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#FOREVER FOREVER]]
     */
   final val Forever = CU.FOREVER
 
-  /** $Unit half a day, as used in AM/PM. $Iso equal to 12 hours. */
+  /** $Unit half a day, as used in AM/PM. $Iso equal to 12 hours.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#HALF_DAYS HALF_DAYS]]
+    */
   final val HalfDays = CU.HALF_DAYS
 
-  /** $Unit an hour. $Iso equal to 60 minutes. */
+  /** $Unit an hour. $Iso equal to 60 minutes.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#HOURS HOURS]]
+    */
   final val Hours = CU.HOURS
 
-  /** $Unit a microsecond. $Iso equal to the 1,000,000th part of the second unit. */
+  /** $Unit a microsecond. $Iso equal to the 1,000,000th part of the second unit.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#MICROS MICROS]]
+    */
   final val Micros = CU.MICROS
 
   /** $Unit a millenium. $Iso equal to 1000 years.
@@ -75,13 +95,21 @@ trait ChronoUnits {
     * ==== Non  ISO Calendar Systems ====
     * When used with other calendar systems it must correspond to an integral number of days and is normally an integral
     * number of years.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#MILLENIA MILLENIA]]
     */
   final val Millenia = CU.MILLENNIA
 
-  /** $Unit a millisecond. $Iso equal to the 1,000th part of the second unit. */
+  /** $Unit a millisecond. $Iso equal to the 1,000th part of the second unit.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#MILLIS MILLIS]]
+    */
   final val Millis = CU.MILLIS
 
-  /** $Unit a minute. $Iso equal to the 60 seconds. */
+  /** $Unit a minute. $Iso equal to the 60 seconds.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#MINUTES MINUTES]]
+    */
   final val Minutes = CU.MINUTES
 
   /** $Unit a month. $Iso the length of the month varies by month-of-year. The estimated duration of a month is one
@@ -89,21 +117,30 @@ trait ChronoUnits {
     *
     * ==== Non  ISO Calendar Systems ====
     * When used with other calendar systems it must correspond to an integral number of days.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#MONTHS MONTHS]]
     */
   final val Months = CU.MONTHS
 
   /** $Unit a nanosecond, the smallest supported unit of time. $Iso equal to the 1,000,000,000th  part of the second
     * unit.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#NANOS NANOS]]
     */
   final val Nanos = CU.NANOS
 
-  /** $Unit a second. $Iso equal to the second in the SI system of units, except around a leap-second. */
+  /** $Unit a second. $Iso equal to the second in the SI system of units, except around a leap-second.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#SECONDS SECONDS]]
+    */
   final val Seconds = CU.SECONDS
 
   /** $Unit a week. $Iso equal to 7 days.
     *
     * ==== Non  ISO Calendar Systems ====
     * When used with other calendar systems it must correspond to an integral number of days.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#WEEKS WEEKS]]
     */
   final val Weeks = CU.WEEKS
 
@@ -112,6 +149,9 @@ trait ChronoUnits {
     * ==== Non  ISO Calendar Systems ====
     * When used with other calendar systems it must correspond to an integral number of days or months roughly equal
     * to a year defined by the passage of the Earth around the Sun.
+    *
+    * @see  [[http://${tDoc}/temporal/ChronoUnit.html#YEARS YEARS]]
     */
   final val Years = CU.YEARS
+
 }

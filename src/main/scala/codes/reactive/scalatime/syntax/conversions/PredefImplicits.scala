@@ -19,5 +19,5 @@
 package codes.reactive.scalatime.syntax.conversions
 
 
-/** Provides core implicit conversions which are included by default in [[codes.reactive.scalatime.syntax]] **/
+/** Provides core implicit conversions which are included by default in [[codes.reactive.scalatime.syntax]] */
 private[syntax] abstract class PredefImplicits extends TemporalImplicits with ChronoImplicits

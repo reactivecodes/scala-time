@@ -39,8 +39,8 @@ final class RichTemporalAccessor(val underlying: TemporalAccessor) extends AnyVa
     * @throws DateTimeException - if a value for the field cannot be obtained.
     * @throws ArithmeticException - if numeric overflow occurs.
     */
-  def >> (field: TemporalField): Long = underlying.getLong(field)
+  def >>(field: TemporalField): Long = underlying.getLong(field)
 
   /** Tries to obtain the value of the specified field as a `Long` by querying for the value of the specified field. */
-  def >>? (field: TemporalField): Long = underlying.getLong(field)
+  def >>?(field: TemporalField): Long = underlying.getLong(field)
 }

@@ -27,16 +27,24 @@ import ${tPac}.temporal.{IsoFields => IF}
   */
 trait IsoFields {
 
-  /** $Field day-of-quarter. */
+  /** $Field day-of-quarter.
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#DAY_OF_QUARTER DAY_OF_QUARTER]]
+    */
   final val DayOfQuarter = IF.DAY_OF_QUARTER
 
-  /** $Field quarter-of-year. */
+  /** $Field quarter-of-year.
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#QUARTER_OF_YEAR QUARTER_OF_YEAR]]
+    */
   final val QuarterOfYear = IF.QUARTER_OF_YEAR
 
-  /** $Field week-based-year. */
+  /** $Field week-based-year.
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#WEEK_BASED_YEAR WEEK_BASED_YEAR]]
+    */
   final val WeekBasedYear = IF.WEEK_BASED_YEAR
 
-  /** $Field week-of-week-based-year. */
+  /** $Field week-of-week-based-year.
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#WEEK_OF_WEEK_BASED_YEAR WEEK_OF_WEEK_BASED_YEAR]]
+    */
   final val WeekOfWeekBasedYear = IF.WEEK_OF_WEEK_BASED_YEAR
 
 }
