@@ -15,7 +15,7 @@ ghpages.settings
 
 fmppSettings
 
-version := "0.1.0-RC1"
+version := "0.2.0-SNAPSHOT"
 
 organization := "codes.reactive"
 
