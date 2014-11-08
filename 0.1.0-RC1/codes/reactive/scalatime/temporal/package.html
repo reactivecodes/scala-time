@@ -1,0 +1,403 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>temporal - Scala Time 0.1.0-RC1 - codes.reactive.scalatime.temporal</title>
+          <meta name="description" content="temporal - Scala Time 0.1.0 - RC1 - codes.reactive.scalatime.temporal" />
+          <meta name="keywords" content="temporal Scala Time 0.1.0 RC1 codes.reactive.scalatime.temporal" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'codes.reactive.scalatime.temporal.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="codes">codes</a>.<a href="../../package.html" class="extype" name="codes.reactive">reactive</a>.<a href="../package.html" class="extype" name="codes.reactive.scalatime">scalatime</a></p>
+        <h1>temporal</h1> <span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">temporal</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides date and time fields and units, and date time adjusters.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/7c123b0/src/main/scala/codes/reactive/scalatime/temporal/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="codes.reactive.scalatime.temporal"><span>temporal</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="codes.reactive.scalatime.temporal.ChronoFields" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ChronoFieldsextendsAnyRef"></a>
+      <a id="ChronoFields:ChronoFields"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ChronoFields.html"><span class="name">ChronoFields</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@ChronoFieldsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides a standard set of date period fields as <a href="../package.html#TemporalField=java.time.temporal.TemporalField" class="extmbr" name="codes.reactive.scalatime.TemporalField">TemporalField</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.temporal.ChronoUnits" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ChronoUnitsextendsAnyRef"></a>
+      <a id="ChronoUnits:ChronoUnits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ChronoUnits.html"><span class="name">ChronoUnits</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@ChronoUnitsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides a standard set of date period units as <a href="../package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.temporal.IntPeriod" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IntPeriodextendsAnyVal"></a>
+      <a id="IntPeriod:IntPeriod"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="IntPeriod.html"><span class="name">IntPeriod</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@IntPeriodextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches a <a href="http://www.scala-lang.org/api/2.11.4/index.html#scala.Long" class="extype" target="_top">scala.Long</a> with methods for obtaining <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.temporal.IsoFields" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="IsoFieldsextendsAnyRef"></a>
+      <a id="IsoFields:IsoFields"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IsoFields.html"><span class="name">IsoFields</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@IsoFieldsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides fields specific to the ISO-8601 calendar system as <a href="../package.html#TemporalField=java.time.temporal.TemporalField" class="extmbr" name="codes.reactive.scalatime.TemporalField">TemporalField</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.temporal.IsoUnits" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="IsoUnitsextendsAnyRef"></a>
+      <a id="IsoUnits:IsoUnits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IsoUnits.html"><span class="name">IsoUnits</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@IsoUnitsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides units specific to the ISO-8601 calendar system as <a href="../package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.temporal.LongDuration" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LongDurationextendsAnyVal"></a>
+      <a id="LongDuration:LongDuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LongDuration.html"><span class="name">LongDuration</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@LongDurationextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches a <a href="http://www.scala-lang.org/api/2.11.4/index.html#scala.Int" class="extype" target="_top">scala.Int</a> with methods for obtaining <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.temporal.RichDuration" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichDurationextendsAnyVal"></a>
+      <a id="RichDuration:RichDuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichDuration.html"><span class="name">RichDuration</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@RichDurationextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches a <a href="../package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> with scala friendly methods.</p>
+    </li><li name="codes.reactive.scalatime.temporal.RichPeriod" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichPeriodextendsAnyVal"></a>
+      <a id="RichPeriod:RichPeriod"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichPeriod.html"><span class="name">RichPeriod</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@RichPeriodextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches a <a href="../package.html#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> with scala friendly methods.</p>
+    </li><li name="codes.reactive.scalatime.temporal.RichTemporal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichTemporalextendsAnyVal"></a>
+      <a id="RichTemporal:RichTemporal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichTemporal.html"><span class="name">RichTemporal</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@RichTemporalextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches a <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">Temporal</a> with additional methods.</p>
+    </li><li name="codes.reactive.scalatime.temporal.RichTemporalAccessor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichTemporalAccessorextendsAnyVal"></a>
+      <a id="RichTemporalAccessor:RichTemporalAccessor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichTemporalAccessor.html"><span class="name">RichTemporalAccessor</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@RichTemporalAccessorextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches a <a href="../package.html#TemporalAccessor=java.time.temporal.TemporalAccessor" class="extmbr" name="codes.reactive.scalatime.TemporalAccessor">TemporalAccessor</a> with additional methods.</p>
+    </li><li name="codes.reactive.scalatime.temporal.RichTemporalAdjuster" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichTemporalAdjusterextendsAnyVal"></a>
+      <a id="RichTemporalAdjuster:RichTemporalAdjuster"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichTemporalAdjuster.html"><span class="name">RichTemporalAdjuster</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@RichTemporalAdjusterextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches a <a href="TemporalAdjuster$.html" class="extype" name="codes.reactive.scalatime.temporal.TemporalAdjuster">TemporalAdjuster</a> with additional methods.</p>
+    </li><li name="codes.reactive.scalatime.temporal.RichTemporalAmount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichTemporalAmountextendsAnyVal"></a>
+      <a id="RichTemporalAmount:RichTemporalAmount"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichTemporalAmount.html"><span class="name">RichTemporalAmount</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@RichTemporalAmountextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches a <a href="../package.html#TemporalAmount=java.time.temporal.TemporalAmount" class="extmbr" name="codes.reactive.scalatime.TemporalAmount">TemporalAmount</a> with scala friendly methods.</p>
+    </li><li name="codes.reactive.scalatime.temporal.RichTemporalQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichTemporalQuery[A]extendsAnyVal"></a>
+      <a id="RichTemporalQuery[A]:RichTemporalQuery[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichTemporalQuery.html"><span class="name">RichTemporalQuery</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@RichTemporalQuery[A]extendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches instances of <a href="TemporalQuery$.html" class="extype" name="codes.reactive.scalatime.temporal.TemporalQuery">TemporalQuery</a> with additional methods.</p>
+    </li><li name="codes.reactive.scalatime.temporal.RichTemporalUnit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichTemporalUnitextendsAnyRef"></a>
+      <a id="RichTemporalUnit:RichTemporalUnit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichTemporalUnit.html"><span class="name">RichTemporalUnit</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@RichTemporalUnitextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enriches <a href="../package.html#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> with additional methods.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="codes.reactive.scalatime.temporal.TemporalAdjuster" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TemporalAdjuster"></a>
+      <a id="TemporalAdjuster:TemporalAdjuster"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TemporalAdjuster$.html"><span class="name">TemporalAdjuster</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@TemporalAdjuster" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="codes.reactive.scalatime.temporal.TemporalQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TemporalQuery"></a>
+      <a id="TemporalQuery:TemporalQuery"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TemporalQuery$.html"><span class="name">TemporalQuery</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.temporal.package@TemporalQuery" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="TemporalQuery$.html" class="extype" name="codes.reactive.scalatime.temporal.TemporalQuery">TemporalQuery</a>.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer"> Scala Time 0.1.0-RC1 (Rev. 7c123b0) Scala 2.11 API Documentation. </div>
+
+
+    </body>
+      </html>
