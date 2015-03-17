@@ -1,0 +1,1538 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>scalatime - Scala Time 0.3.0-SNAPSHOT - codes.reactive.scalatime</title>
+          <meta name="description" content="scalatime - Scala Time 0.3.0 - SNAPSHOT - codes.reactive.scalatime" />
+          <meta name="keywords" content="scalatime Scala Time 0.3.0 SNAPSHOT codes.reactive.scalatime" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'codes.reactive.scalatime.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="codes">codes</a>.<a href="../package.html" class="extype" name="codes.reactive">reactive</a></p>
+        <h1>scalatime</h1><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">scalatime</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Basic Scala wrapper for easier use of JSR-310 compatible time APIs.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/d8181d0/src/main/scala/codes/reactive/scalatime/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.impl.TimeAliases">TimeAliases</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="codes.reactive.scalatime"><span>scalatime</span></li><li class="in" name="codes.reactive.scalatime.impl.TimeAliases"><span>TimeAliases</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="codes.reactive.scalatime.impl.TimeAliases.ChronoField" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ChronoField=java.time.temporal.ChronoField"></a>
+      <a id="ChronoField:ChronoField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ChronoField</span><span class="result"> = <span class="extype" name="java.time.temporal.ChronoField">java.time.temporal.ChronoField</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ChronoField=java.time.temporal.ChronoField" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>ChronoField</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>ChronoField</code>. A standard set of date periods fields.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.ChronoLocalDate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ChronoLocalDate=java.time.chrono.ChronoLocalDate"></a>
+      <a id="ChronoLocalDate:ChronoLocalDate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ChronoLocalDate</span><span class="result"> = <span class="extype" name="java.time.chrono.ChronoLocalDate">java.time.chrono.ChronoLocalDate</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ChronoLocalDate=java.time.chrono.ChronoLocalDate" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.chrono</i> <code>ChronoLocalDate</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.chrono</i> <code>ChronoLocalDate</code>. A date without time-of-day or time-zone in an arbitrary
+chronology, intended for advanced globalization use cases. Consult the <code>java.time.chrono</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/chrono/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.ChronoLocalDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ChronoLocalDateTime[A&lt;:TimeAliases.this.ChronoLocalDate]=java.time.chrono.ChronoLocalDateTime[A]"></a>
+      <a id="ChronoLocalDateTime[A&lt;:ChronoLocalDate]:ChronoLocalDateTime[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ChronoLocalDateTime</span><span class="tparams">[<span name="A">A &lt;: <span class="extype" name="codes.reactive.scalatime.impl.TimeAliases.ChronoLocalDate">ChronoLocalDate</span></span>]</span><span class="result"> = <span class="extype" name="java.time.chrono.ChronoLocalDateTime">java.time.chrono.ChronoLocalDateTime</span>[<span class="extype" name="codes.reactive.scalatime.impl.TimeAliases.ChronoLocalDateTime.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ChronoLocalDateTime[A&lt;:TimeAliases.this.ChronoLocalDate]=java.time.chrono.ChronoLocalDateTime[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.chrono</i> <code>ChronoLocalDateTime</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.chrono</i> <code>ChronoLocalDateTime</code>. A date-time without a time-zone in an arbitrary chronology,
+intended for advanced globalization use cases. Consult the <code>java.time.chrono</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/chrono/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.ChronoUnit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ChronoUnit=java.time.temporal.ChronoUnit"></a>
+      <a id="ChronoUnit:ChronoUnit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ChronoUnit</span><span class="result"> = <span class="extype" name="java.time.temporal.ChronoUnit">java.time.temporal.ChronoUnit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ChronoUnit=java.time.temporal.ChronoUnit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>ChronoUnit</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>ChronoUnit</code>. A standard set of date periods units.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.ChronoZonedDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ChronoZonedDateTime[A&lt;:TimeAliases.this.ChronoLocalDate]=java.time.chrono.ChronoZonedDateTime[A]"></a>
+      <a id="ChronoZonedDateTime[A&lt;:ChronoLocalDate]:ChronoZonedDateTime[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ChronoZonedDateTime</span><span class="tparams">[<span name="A">A &lt;: <span class="extype" name="codes.reactive.scalatime.impl.TimeAliases.ChronoLocalDate">ChronoLocalDate</span></span>]</span><span class="result"> = <span class="extype" name="java.time.chrono.ChronoZonedDateTime">java.time.chrono.ChronoZonedDateTime</span>[<span class="extype" name="codes.reactive.scalatime.impl.TimeAliases.ChronoZonedDateTime.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ChronoZonedDateTime[A&lt;:TimeAliases.this.ChronoLocalDate]=java.time.chrono.ChronoZonedDateTime[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.chrono</i> <code>ChronoZonedDateTime</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.chrono</i> <code>ChronoZonedDateTime</code>. A date-time with a time-zone in an arbitrary chronology,
+intended for advanced globalization use cases. Consult the <code>java.time.chrono</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/chrono/package-summary.html" target="_blank">API Documentation</a> for
+further information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.Chronology" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Chronology=java.time.chrono.Chronology"></a>
+      <a id="Chronology:Chronology"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Chronology</span><span class="result"> = <span class="extype" name="java.time.chrono.Chronology">java.time.chrono.Chronology</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Chronology=java.time.chrono.Chronology" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.chrono</i> <code>Chronology</code>, a calendar system, used to organize and identify dates.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.chrono</i> <code>Chronology</code>, a calendar system, used to organize and identify dates. Consult the
+<code>java.time.chrono</code> <a href="http://docs.oracle.com/javase/8/docs/api/java/time/chrono/package-summary.html" target="_blank">API Documentation</a> for further information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.Clock" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Clock=java.time.Clock"></a>
+      <a id="Clock:Clock"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Clock</span><span class="result"> = <span class="extype" name="java.time.Clock">java.time.Clock</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Clock=java.time.Clock" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>Clock</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>Clock</code>. A clock providing access to the current instant, date and time using a time-zone.
+Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.DateTimeException" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DateTimeException=java.time.DateTimeException"></a>
+      <a id="DateTimeException:DateTimeException"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DateTimeException</span><span class="result"> = <span class="extype" name="java.time.DateTimeException">java.time.DateTimeException</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@DateTimeException=java.time.DateTimeException" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>DateTimeException</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>DateTimeException</code>. This exception is used to indicate problems with creating, querying
+and manipulating date-time objects. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.DateTimeFormatter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DateTimeFormatter=java.time.format.DateTimeFormatter"></a>
+      <a id="DateTimeFormatter:DateTimeFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DateTimeFormatter</span><span class="result"> = <span class="extype" name="java.time.format.DateTimeFormatter">java.time.format.DateTimeFormatter</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@DateTimeFormatter=java.time.format.DateTimeFormatter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.format</i> <code>DateTimeFormatter</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.format</i> <code>DateTimeFormatter</code>. DateTimeFormatter is a formatter for printing and parsing
+date-time objects. See the <i>java.time.format</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/format/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.DateTimeFormatterBuilder" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DateTimeFormatterBuilder=java.time.format.DateTimeFormatterBuilder"></a>
+      <a id="DateTimeFormatterBuilder:DateTimeFormatterBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DateTimeFormatterBuilder</span><span class="result"> = <span class="extype" name="java.time.format.DateTimeFormatterBuilder">java.time.format.DateTimeFormatterBuilder</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@DateTimeFormatterBuilder=java.time.format.DateTimeFormatterBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.format</i> <code>DateTimeFormatterBuilder</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.format</i> <code>DateTimeFormatterBuilder</code>. DateTimeFormatterBuilder is a factory for creating
+date-time formatters. See the <i>java.time.format</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/format/package-summary.html" target="_blank">API Documentation</a> for further information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.DateTimeParseException" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DateTimeParseException=java.time.format.DateTimeParseException"></a>
+      <a id="DateTimeParseException:DateTimeParseException"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DateTimeParseException</span><span class="result"> = <span class="extype" name="java.time.format.DateTimeParseException">java.time.format.DateTimeParseException</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@DateTimeParseException=java.time.format.DateTimeParseException" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.format</i> <code>DateTimeParseException</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.format</i> <code>DateTimeParseException</code>. DateTimeParseException is an exception throws when an
+error occurs during parsing. See the <i>java.time.format</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/format/package-summary.html" target="_blank">API Documentation</a> for further information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.DayOfWeek" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DayOfWeek=java.time.DayOfWeek"></a>
+      <a id="DayOfWeek:DayOfWeek"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DayOfWeek</span><span class="result"> = <span class="extype" name="java.time.DayOfWeek">java.time.DayOfWeek</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@DayOfWeek=java.time.DayOfWeek" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>DayOfWeek</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>DayOfWeek</code>. DayOfWeek is an enum representing the 7 days of the week - Monday, Tuesday,
+Wednesday, Thursday, Friday, Saturday and Sunday. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.Duration" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Duration=java.time.Duration"></a>
+      <a id="Duration:Duration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Duration</span><span class="result"> = <span class="extype" name="java.time.Duration">java.time.Duration</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Duration=java.time.Duration" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>Duration</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>Duration</code>. Duration is a time-based amount of time, such as '34.5 seconds'. Consult the
+<code>java.time</code> <a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for
+further information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.Instant" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Instant=java.time.Instant"></a>
+      <a id="Instant:Instant"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Instant</span><span class="result"> = <span class="extype" name="java.time.Instant">java.time.Instant</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Instant=java.time.Instant" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>Instant</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>Instant</code>. Instant is an instantaneous point on the time-line. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.LocalDate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LocalDate=java.time.LocalDate"></a>
+      <a id="LocalDate:LocalDate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">LocalDate</span><span class="result"> = <span class="extype" name="java.time.LocalDate">java.time.LocalDate</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@LocalDate=java.time.LocalDate" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>LocalDate</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>LocalDate</code>. LocalDate is a date without a time-zone in the ISO-8601 calendar system, such
+as 2007-12-03. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.LocalDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LocalDateTime=java.time.LocalDateTime"></a>
+      <a id="LocalDateTime:LocalDateTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">LocalDateTime</span><span class="result"> = <span class="extype" name="java.time.LocalDateTime">java.time.LocalDateTime</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@LocalDateTime=java.time.LocalDateTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>LocalDateTime</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>LocalDateTime</code>. LocalDateTime is a date-time without a time-zone in the ISO-8601
+calendar system, such as 2007-12-03T10:15:30. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.LocalTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LocalTime=java.time.LocalTime"></a>
+      <a id="LocalTime:LocalTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">LocalTime</span><span class="result"> = <span class="extype" name="java.time.LocalTime">java.time.LocalTime</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@LocalTime=java.time.LocalTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>LocalTime</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>LocalTime</code>. LocalTime is a time without time-zone in the ISO-8601 calendar system, such
+as 10:15:30. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.Month" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Month=java.time.Month"></a>
+      <a id="Month:Month"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Month</span><span class="result"> = <span class="extype" name="java.time.Month">java.time.Month</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Month=java.time.Month" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>Month</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>Month</code>. Month is an enum representing the 12 months of the year - January, February,
+March, April, May, June, July, August, September, October, November and December. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.MonthDay" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MonthDay=java.time.MonthDay"></a>
+      <a id="MonthDay:MonthDay"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MonthDay</span><span class="result"> = <span class="extype" name="java.time.MonthDay">java.time.MonthDay</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@MonthDay=java.time.MonthDay" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>MonthDay</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>MonthDay</code>. A month-day in the ISO-8601 calendar system, such as --12-03. Consult the
+<code>java.time</code> <a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for
+further information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.OffsetDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OffsetDateTime=java.time.OffsetDateTime"></a>
+      <a id="OffsetDateTime:OffsetDateTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">OffsetDateTime</span><span class="result"> = <span class="extype" name="java.time.OffsetDateTime">java.time.OffsetDateTime</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@OffsetDateTime=java.time.OffsetDateTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>OffsetDateTime</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>OffsetDateTime</code>. An OffsetDateTime is a date-time with an offset from UTC/Greenwich in
+the ISO-8601 calendar system, such as 2007-12-03T10:15:30+01:00 Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.OffsetTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OffsetTime=java.time.OffsetTime"></a>
+      <a id="OffsetTime:OffsetTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">OffsetTime</span><span class="result"> = <span class="extype" name="java.time.OffsetTime">java.time.OffsetTime</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@OffsetTime=java.time.OffsetTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>OffsetTime</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>OffsetTime</code>. An OffsetTime is a time with an offset from UTC/Greenwich in the ISO-8601
+calendar system, such as 10:15:30+01:00. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.Period" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Period=java.time.Period"></a>
+      <a id="Period:Period"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Period</span><span class="result"> = <span class="extype" name="java.time.Period">java.time.Period</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Period=java.time.Period" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>Period</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>Period</code>. Period is a date-based amount of time in the ISO-8601 calendar system, such as
+'2 years, 3 months and 4 days'. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.Temporal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Temporal=java.time.temporal.Temporal"></a>
+      <a id="Temporal:Temporal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Temporal</span><span class="result"> = <span class="extype" name="java.time.temporal.Temporal">java.time.temporal.Temporal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Temporal=java.time.temporal.Temporal" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>Temporal</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>Temporal</code>. Temporal is the base interface type for date, time and offset objects
+that are complete enough to be manipulated using plus and minus.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.TemporalAccessor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TemporalAccessor=java.time.temporal.TemporalAccessor"></a>
+      <a id="TemporalAccessor:TemporalAccessor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TemporalAccessor</span><span class="result"> = <span class="extype" name="java.time.temporal.TemporalAccessor">java.time.temporal.TemporalAccessor</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@TemporalAccessor=java.time.temporal.TemporalAccessor" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>TemporalAccessor</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>TemporalAccessor</code>. Framework-level interface defining read-only access to a
+temporal object, such as a date, time, offset or some combination of these.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.TemporalAdjuster" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TemporalAdjuster=java.time.temporal.TemporalAdjuster"></a>
+      <a id="TemporalAdjuster:TemporalAdjuster"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TemporalAdjuster</span><span class="result"> = <span class="extype" name="java.time.temporal.TemporalAdjuster">java.time.temporal.TemporalAdjuster</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@TemporalAdjuster=java.time.temporal.TemporalAdjuster" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>TemporalAdjuster</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>TemporalAdjuster</code>. Strategy for adjusting a temporal object.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.TemporalAmount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TemporalAmount=java.time.temporal.TemporalAmount"></a>
+      <a id="TemporalAmount:TemporalAmount"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TemporalAmount</span><span class="result"> = <span class="extype" name="java.time.temporal.TemporalAmount">java.time.temporal.TemporalAmount</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@TemporalAmount=java.time.temporal.TemporalAmount" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>TemporalAmount</code> The base interface type for amounts of time.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>TemporalAmount</code> The base interface type for amounts of time. An amount is
+distinct from a date or time-of-day in that it is not tied to any specific point on the time-line.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.TemporalField" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TemporalField=java.time.temporal.TemporalField"></a>
+      <a id="TemporalField:TemporalField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TemporalField</span><span class="result"> = <span class="extype" name="java.time.temporal.TemporalField">java.time.temporal.TemporalField</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@TemporalField=java.time.temporal.TemporalField" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>TemporalField</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>TemporalField</code>. TemporalField is a field of date-time, such as month-of-year or
+hour-of-minute.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.TemporalQuery" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TemporalQuery[A]=java.time.temporal.TemporalQuery[A]"></a>
+      <a id="TemporalQuery[A]:TemporalQuery[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TemporalQuery</span><span class="tparams">[<span name="A">A</span>]</span><span class="result"> = <span class="extype" name="java.time.temporal.TemporalQuery">java.time.temporal.TemporalQuery</span>[<span class="extype" name="codes.reactive.scalatime.impl.TimeAliases.TemporalQuery.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@TemporalQuery[A]=java.time.temporal.TemporalQuery[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>TemporalQuery</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>TemporalQuery</code>. Strategy for querying a temporal object.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.TemporalUnit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TemporalUnit=java.time.temporal.TemporalUnit"></a>
+      <a id="TemporalUnit:TemporalUnit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TemporalUnit</span><span class="result"> = <span class="extype" name="java.time.temporal.TemporalUnit">java.time.temporal.TemporalUnit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@TemporalUnit=java.time.temporal.TemporalUnit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>TemporalUnit</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>TemporalUnit</code>. TemporalUnit is a unit of date-time, such as Days or Hours.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.UnsupportedTemporalTypeException" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnsupportedTemporalTypeException=java.time.temporal.UnsupportedTemporalTypeException"></a>
+      <a id="UnsupportedTemporalTypeException:UnsupportedTemporalTypeException"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">UnsupportedTemporalTypeException</span><span class="result"> = <span class="extype" name="java.time.temporal.UnsupportedTemporalTypeException">java.time.temporal.UnsupportedTemporalTypeException</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@UnsupportedTemporalTypeException=java.time.temporal.UnsupportedTemporalTypeException" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.temporal</i> <code>UnsupportedTemporalTypeException</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.temporal</i> <code>UnsupportedTemporalTypeException</code>. Exception indicating that a <a href="#ChronoField=java.time.temporal.ChronoField" class="extmbr" name="codes.reactive.scalatime.ChronoField">ChronoField</a> or <a href="#ChronoUnit=java.time.temporal.ChronoUnit" class="extmbr" name="codes.reactive.scalatime.ChronoUnit">ChronoUnit</a> is
+not supported for a Temporal class.
+See the <i>java.time.temporal</i>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.Year" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Year=java.time.Year"></a>
+      <a id="Year:Year"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Year</span><span class="result"> = <span class="extype" name="java.time.Year">java.time.Year</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Year=java.time.Year" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>Year</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>Year</code>. A year in the ISO-8601 calendar system, such as 2007. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.YearMonth" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="YearMonth=java.time.YearMonth"></a>
+      <a id="YearMonth:YearMonth"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">YearMonth</span><span class="result"> = <span class="extype" name="java.time.YearMonth">java.time.YearMonth</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@YearMonth=java.time.YearMonth" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>YearMonth</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>YearMonth</code>. A year-month in the ISO-8601 calendar system, such as 2007-12. Consult the
+<code>java.time</code> <a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for
+further information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.ZoneId" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ZoneId=java.time.ZoneId"></a>
+      <a id="ZoneId:ZoneId"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ZoneId</span><span class="result"> = <span class="extype" name="java.time.ZoneId">java.time.ZoneId</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ZoneId=java.time.ZoneId" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>ZoneId</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>ZoneId</code>. A time-zone ID, such as Europe/Paris. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.ZoneOffset" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ZoneOffset=java.time.ZoneOffset"></a>
+      <a id="ZoneOffset:ZoneOffset"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ZoneOffset</span><span class="result"> = <span class="extype" name="java.time.ZoneOffset">java.time.ZoneOffset</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ZoneOffset=java.time.ZoneOffset" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>ZoneOffset</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>ZoneOffset</code>. A time-zone offset from Greenwich/UTC, such as +02:00. Consult the
+<code>java.time</code> <a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for
+further information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.ZoneRulesException" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ZoneRulesException=java.time.zone.ZoneRulesException"></a>
+      <a id="ZoneRulesException:ZoneRulesException"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ZoneRulesException</span><span class="result"> = <span class="extype" name="java.time.zone.ZoneRulesException">java.time.zone.ZoneRulesException</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ZoneRulesException=java.time.zone.ZoneRulesException" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time.zone</i> <code>ZoneRulesException</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time.zone</i> <code>ZoneRulesException</code>. ZoneRulesException is used to indicate a problems with the
+configured time-zone rules. See the <i>java.time.zone</i>
+<a href="http://docs/temporal/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TimeAliases.ZonedDateTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ZonedDateTime=java.time.ZonedDateTime"></a>
+      <a id="ZonedDateTime:ZonedDateTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ZonedDateTime</span><span class="result"> = <span class="extype" name="java.time.ZonedDateTime">java.time.ZonedDateTime</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ZonedDateTime=java.time.ZonedDateTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Alias for <i>java.time</i> <code>ZonedDateTime</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias for <i>java.time</i> <code>ZonedDateTime</code>. ZonedDateTime is a date-time with a time-zone in the ISO-8601 calendar
+system, such as 2007-12-03T10:15:30+01:00 Europe/Paris. Consult the <code>java.time</code>
+<a href="http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank">API Documentation</a> for further
+information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>TimeAliases</dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.Any#getClass" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.Any###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.ChronoField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ChronoField"></a>
+      <a id="ChronoField:ChronoField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ChronoField$.html"><span class="name">ChronoField</span></a><span class="result"> extends <a href="impl/ChronoFields.html" class="extype" name="codes.reactive.scalatime.impl.ChronoFields">ChronoFields</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ChronoField" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides a standard set of date period fields as <a href="#TemporalField=java.time.temporal.TemporalField" class="extmbr" name="codes.reactive.scalatime.TemporalField">TemporalField</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.ChronoUnit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ChronoUnit"></a>
+      <a id="ChronoUnit:ChronoUnit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ChronoUnit$.html"><span class="name">ChronoUnit</span></a><span class="result"> extends <a href="impl/ChronoUnits.html" class="extype" name="codes.reactive.scalatime.impl.ChronoUnits">ChronoUnits</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ChronoUnit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides a standard set of date period units as <a href="#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.Clock" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Clock"></a>
+      <a id="Clock:Clock"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Clock$.html"><span class="name">Clock</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Clock" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><p>The default no-argument <code>apply</code> method differs from the underlying library no-argument constructor in that it
+explicitly returns the <b>UTC</b> Zone Clock from the current system time. Use <code>apply(ZoneId)</code> to specify an
+alternative zone, or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="codes.reactive.scalatime.Clock#systemZone">Clock.systemZone</a> to obtain a Clock from the current system time and zone.
+</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain a Clock from the current system UTC time</span>
+<span class="kw">val</span> utcClock = Clock()
+
+<span class="cmt">// Obtain a Clock fixed to the current instant</span>
+<span class="kw">val</span> fixed = Clock.fixed(Instant())</pre></li></ol>
+            </div></dl></div>
+    </li><li name="codes.reactive.scalatime.Duration" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Duration"></a>
+      <a id="Duration:Duration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Duration$.html"><span class="name">Duration</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Duration" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a>.</p><p>Duration is a time-based amount of time, such as '34.5 seconds'.
+</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain a Duration of 10 nano seconds</span>
+<span class="kw">val</span> tenNanos = Duration.nanos(<span class="num">10</span>)
+
+<span class="cmt">// Obtain a Duration of zero</span>
+<span class="kw">val</span> zero = Duration.Nil</pre></li></ol>
+            </div><dt>Note</dt><dd><span class="cmt"><p>Direct use of this object is not the only mechanism to obtain <a href="#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> instances. See also
+        the <span class="extype" name="syntax">syntax</span> syntax for alternatives.
+</p></span></dd></dl></div>
+    </li><li name="codes.reactive.scalatime.Instant" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Instant"></a>
+      <a id="Instant:Instant"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Instant$.html"><span class="name">Instant</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Instant" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#Instant=java.time.Instant" class="extmbr" name="codes.reactive.scalatime.Instant">Instant</a>.</p><p>Instant is an instantaneous point on the time-line.
+</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain the current instant of a Clock</span>
+<span class="kw">val</span> clockInstant = Instant(Clock())
+
+<span class="cmt">// Obtain the current instant</span>
+<span class="kw">val</span> currentInstant = Instant()</pre></li></ol>
+            </div></dl></div>
+    </li><li name="codes.reactive.scalatime.IsoField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IsoField"></a>
+      <a id="IsoField:IsoField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IsoField$.html"><span class="name">IsoField</span></a><span class="result"> extends <a href="impl/IsoFields.html" class="extype" name="codes.reactive.scalatime.impl.IsoFields">IsoFields</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@IsoField" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides fields specific to the ISO-8601 calendar system as <a href="#TemporalField=java.time.temporal.TemporalField" class="extmbr" name="codes.reactive.scalatime.TemporalField">TemporalField</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.IsoUnit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IsoUnit"></a>
+      <a id="IsoUnit:IsoUnit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IsoUnit$.html"><span class="name">IsoUnit</span></a><span class="result"> extends <a href="impl/IsoUnits.html" class="extype" name="codes.reactive.scalatime.impl.IsoUnits">IsoUnits</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@IsoUnit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides units specific to the ISO-8601 calendar system as <a href="#TemporalUnit=java.time.temporal.TemporalUnit" class="extmbr" name="codes.reactive.scalatime.TemporalUnit">TemporalUnit</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.LocalDate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LocalDate"></a>
+      <a id="LocalDate:LocalDate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalDate$.html"><span class="name">LocalDate</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@LocalDate" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for creation of <a href="#LocalDate=java.time.LocalDate" class="extmbr" name="codes.reactive.scalatime.LocalDate">LocalDate</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.LocalDateTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LocalDateTime"></a>
+      <a id="LocalDateTime:LocalDateTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalDateTime$.html"><span class="name">LocalDateTime</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@LocalDateTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for creation of <a href="#LocalDateTime=java.time.LocalDateTime" class="extmbr" name="codes.reactive.scalatime.LocalDateTime">LocalDateTime</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.LocalTime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LocalTime"></a>
+      <a id="LocalTime:LocalTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalTime$.html"><span class="name">LocalTime</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@LocalTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining <a href="#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> instances.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining <a href="#LocalTime=java.time.LocalTime" class="extmbr" name="codes.reactive.scalatime.LocalTime">LocalTime</a> instances. *</p></div></div>
+    </li><li name="codes.reactive.scalatime.Month" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Month"></a>
+      <a id="Month:Month"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Month$.html"><span class="name">Month</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Month" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for obtaining singleton instances of <a href="#Month=java.time.Month" class="extmbr" name="codes.reactive.scalatime.Month">Month</a>.</p>
+    </li><li name="codes.reactive.scalatime.MonthDay" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MonthDay"></a>
+      <a id="MonthDay:MonthDay"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MonthDay$.html"><span class="name">MonthDay</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@MonthDay" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for obtaining instances of <a href="#MonthDay=java.time.MonthDay" class="extmbr" name="codes.reactive.scalatime.MonthDay">MonthDay</a>.</p>
+    </li><li name="codes.reactive.scalatime.OffsetDateTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OffsetDateTime"></a>
+      <a id="OffsetDateTime:OffsetDateTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OffsetDateTime$.html"><span class="name">OffsetDateTime</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@OffsetDateTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining <a href="#OffsetDateTime=java.time.OffsetDateTime" class="extmbr" name="codes.reactive.scalatime.OffsetDateTime">OffsetDateTime</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.OffsetTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OffsetTime"></a>
+      <a id="OffsetTime:OffsetTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OffsetTime$.html"><span class="name">OffsetTime</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@OffsetTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining <a href="#OffsetTime=java.time.OffsetTime" class="extmbr" name="codes.reactive.scalatime.OffsetTime">OffsetTime</a> instances.</p>
+    </li><li name="codes.reactive.scalatime.Period" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Period"></a>
+      <a id="Period:Period"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Period$.html"><span class="name">Period</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Period" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a>.</p><p>Period is a date-based amount of time in the ISO-8601 calendar system, such as '2 years, 3 months and 4 days'.
+</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain a Period of 10 weeks</span>
+<span class="kw">val</span> tenWeeks = Period.weeks(<span class="num">10</span>)
+
+<span class="cmt">// Obtain a Period of zero</span>
+<span class="kw">val</span> zero = Period.Nil</pre></li></ol>
+            </div><dt>Note</dt><dd><span class="cmt"><p>Direct use of this object is not the only mechanism to obtain <a href="#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instances. See also
+        <span class="extype" name="syntax">syntax</span> for alternatives.
+</p></span></dd></dl></div>
+    </li><li name="codes.reactive.scalatime.Scalatime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Scalatime"></a>
+      <a id="Scalatime:Scalatime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Scalatime$.html"><span class="name">Scalatime</span></a><span class="result"> extends <a href="impl/ToAllOps.html" class="extype" name="codes.reactive.scalatime.impl.ToAllOps">ToAllOps</a> with <a href="impl/ToAllStd.html" class="extype" name="codes.reactive.scalatime.impl.ToAllStd">ToAllStd</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Scalatime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="codes.reactive.scalatime.Year" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Year"></a>
+      <a id="Year:Year"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Year$.html"><span class="name">Year</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@Year" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for obtaining instances of <a href="#Year=java.time.Year" class="extmbr" name="codes.reactive.scalatime.Year">Year</a>.</p>
+    </li><li name="codes.reactive.scalatime.YearMonth" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="YearMonth"></a>
+      <a id="YearMonth:YearMonth"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="YearMonth$.html"><span class="name">YearMonth</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@YearMonth" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for obtaining instances of <a href="#YearMonth=java.time.YearMonth" class="extmbr" name="codes.reactive.scalatime.YearMonth">YearMonth</a>.</p>
+    </li><li name="codes.reactive.scalatime.ZoneId" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ZoneId"></a>
+      <a id="ZoneId:ZoneId"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZoneId$.html"><span class="name">ZoneId</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ZoneId" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a>. Also provides default instances <a href="ZoneId$.html#UTC:codes.reactive.scalatime.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId#UTC">ZoneId.UTC</a>, and
+<a href="ZoneId$.html#EAT:codes.reactive.scalatime.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId#EAT">ZoneId.EAT</a> which correspond to time zone ids representing Coordinated Universal Time, and East African Time
+respectively.</p><p>In addition to factory methods, <a href="ZoneId$.html#entries:Set[String]" class="extmbr" name="codes.reactive.scalatime.ZoneId#entries">ZoneId.entries</a> obtains a set of all currently available region based zone ids.
+</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain the UTC zone</span>
+<span class="kw">val</span> utcZone = ZoneId.UTC
+
+<span class="cmt">// Obtain the current system zone</span>
+<span class="kw">val</span> systemZone = ZoneId.system
+
+<span class="cmt">// Obtain a time zone from the region zone id 'Europe/Lisbon'</span>
+<span class="kw">val</span> lisbonZone = ZoneId(<span class="lit">"Europe/Lisbon"</span>)</pre></li></ol>
+            </div></dl></div>
+    </li><li name="codes.reactive.scalatime.ZoneOffset" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ZoneOffset"></a>
+      <a id="ZoneOffset:ZoneOffset"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZoneOffset$.html"><span class="name">ZoneOffset</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ZoneOffset" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#ZoneOffset=java.time.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset">ZoneOffset</a>. Also provides default instances <a href="ZoneOffset$.html#UTC:codes.reactive.scalatime.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset#UTC">ZoneOffset.UTC</a>, and
+<a href="ZoneOffset$.html#EAT:codes.reactive.scalatime.ZoneOffset" class="extmbr" name="codes.reactive.scalatime.ZoneOffset#EAT">ZoneOffset.EAT</a> which correspond to time zone ids representing Coordinated Universal Time, and East African Time
+respectively.
+</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+
+<span class="cmt">// Obtain the UTC zone</span>
+<span class="kw">val</span> utcZone = ZoneOffset.UTC
+
+<span class="cmt">// Obtain the current system zone</span>
+<span class="kw">val</span> systemZone = ZoneOffset.system
+
+<span class="cmt">// Obtain a time zone from the time offset of +5:00</span>
+<span class="kw">val</span> plusFive = ZoneOffset(<span class="num">5</span>)</pre></li></ol>
+            </div></dl></div>
+    </li><li name="codes.reactive.scalatime.ZonedDateTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZonedDateTime"></a>
+      <a id="ZonedDateTime:ZonedDateTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZonedDateTime$.html"><span class="name">ZonedDateTime</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@ZonedDateTime" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for obtaining <a href="#ZonedDateTime=java.time.ZonedDateTime" class="extmbr" name="codes.reactive.scalatime.ZonedDateTime">ZonedDateTime</a> instances.</p>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.control" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="control"></a>
+      <a id="control:control"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="control/package.html"><span class="name">control</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@control" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides functionality relating to Exception handling, validation and control structures.</p><div class="fullcomment"><div class="comment cmt"><p>Provides functionality relating to Exception handling, validation and control structures.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="control/Catcher$.html" class="extype" name="codes.reactive.scalatime.control.Catcher">control.Catcher</a>
+</p></span></dd></dl></div>
+    </li><li name="scala.Any#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.format" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="format"></a>
+      <a id="format:format"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="format/package.html"><span class="name">format</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@format" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides functionality relating to date and time object formatting / parsing.</p><div class="fullcomment"><div class="comment cmt"><p>Provides functionality relating to date and time object formatting / parsing.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="format/DateTimeFormatter$.html" class="extype" name="codes.reactive.scalatime.format.DateTimeFormatter">DateTimeFormatter</a>
+</p></span></dd></dl></div>
+    </li><li name="scala.Any#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="impl"></a>
+      <a id="impl:impl"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="impl/package.html"><span class="name">impl</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@impl" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.temporal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="temporal"></a>
+      <a id="temporal:temporal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="temporal/package.html"><span class="name">temporal</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@temporal" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides date and time fields and units, and date time adjusters.</p>
+    </li><li name="scala.Any#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.package@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="codes.reactive.scalatime.impl.TimeAliases">
+              <h3>Inherited from <span class="extype" name="codes.reactive.scalatime.impl.TimeAliases">TimeAliases</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer"> Scala Time 0.3.0-SNAPSHOT (Rev. d8181d0) Scala 2.11 API Documentation. </div>
+
+
+    </body>
+      </html>
