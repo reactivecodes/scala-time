@@ -16,16 +16,16 @@
  * License.                                                       *
  ******************************************************************/
 
-import codes.reactive.sbt.CodesPlugin.autoImport.Codes
+import codes.reactive.sbt.CodesPlugin.autoImport.Deps
 import sbt._
 
-object Dependencies {
+object Dependencies extends Plugin {
 
-  def scalaTest = Codes.deps.scalaTest("2.1.5")
+  def scalaTest = Deps.scalaTest("2.1.5")
 
-  def mockito = Codes.deps.mockitoCore("1.10.8")
+  def mockito = Deps.mockitoCore("1.10.8")
 
-  def threeten = "org.threeten" % "threetenbp" % "1.1"
+  def threeten = "org.threeten" % "threetenbp" % "1.2"
 
   def matchJava[A](v: String, jdk7: => A, other: => A) = v.takeRight(1).toInt match {
     case 7 => jdk7

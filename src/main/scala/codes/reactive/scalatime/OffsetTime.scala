@@ -34,24 +34,34 @@ object OffsetTime {
   /** Obtains an [[OffsetTime]] from a specified [[LocalTime]] and [[ZoneOffset]]. */
   def apply(localTime: LocalTime, offset: ZoneOffset): OffsetTime = OT.of(localTime, offset)
 
-  /** Tries to query a [[Temporal]] instance to obtain an [[OffsetTime]]. */
-  def from(from: TemporalAccessor): Try[OffsetTime] = Try(OT.from(from))
+  /** Queries a [[Temporal]] instance to obtain an [[OffsetTime]].
+    * @throws DateTimeException if unable to convert to a OffsetTime.
+    */
+  def from(from: TemporalAccessor): OffsetTime = OT.from(from)
 
-  /** Tries to obtain an [[OffsetTime]] instance from text formatted according to
-    * [[format.DateTimeFormatter.Iso.OffsetTime]].
-    *
+  /** Obtains an [[OffsetTime]] instance from text formatted according to [[format.DateTimeFormatter.Iso.OffsetTime]].
     * @param text the text to parse such as "10:15:30"
+    * @throws DateTimeParseException if the text cannot be parsed.
     */
-  def parse(text: String): Try[OffsetTime] = Try(OT.parse(text, format.DateTimeFormatter.Iso.OffsetTime))
+  def parse(text: String): OffsetTime = OT.parse(text, format.DateTimeFormatter.Iso.OffsetTime)
 
-  /** Tries to obtain an [[OffsetTime]] instance from valid text formatted according to the provided `formatter`. */
-  def parse(text: String, formatter: DateTimeFormatter): Try[OffsetTime] = Try(OT.parse(text, formatter))
+  /** Obtains an [[OffsetTime]] instance from valid text formatted according to the provided `formatter`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String, formatter: DateTimeFormatter): OffsetTime = OT.parse(text, formatter)
 
-  /** Tries to obtain an [[OffsetTime]] instance from an hour, minute, second and nanosecond. All values must be within
+  /** Obtains an [[OffsetTime]] instance from an hour, minute, second and nanosecond. All values must be within
     * range.
+    * @throws DateTimeException if the value of any field is out of range.
     */
-  def of(hour: Int, minute: Int, second: Int, nano: Int, offset: ZoneOffset): Try[OffsetTime] =
-    Try(OT.of(hour, minute, second, nano, offset))
+  def of(hour: Int, minute: Int, second: Int, nano: Int, offset: ZoneOffset): OffsetTime =
+    OT.of(hour, minute, second, nano, offset)
+
+  /** Obtains an [[OffsetTime]] instance from a [[LocalTime]] and [[ZoneOffset]]. */
+  def of(localTime: LocalTime, zoneOffset: ZoneOffset): OffsetTime = OT.of(localTime, zoneOffset)
+
+  /** Obtains an [[OffsetTime]] instance from an [[Instant]] and [[ZoneOffset]]. */
+  def of(instant: Instant, zoneOffset: ZoneOffset): OffsetTime = OT.of(instant, zoneOffset)
 
   /** The maximum supported [[OffsetTime]] ('23:59:59.999999999-18:00' - the time just before midnight at the end of
     * the day in the minimum offset)

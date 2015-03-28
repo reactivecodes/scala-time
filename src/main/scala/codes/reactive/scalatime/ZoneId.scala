@@ -20,15 +20,12 @@ package codes.reactive.scalatime
 
 import impl.TimeSupport.{ZoneId => ZI}
 
-import util.Try
-
 
 /** Factory object for obtaining instances of [[ZoneId]]. Also provides default instances [[ZoneId.UTC]], and
   * [[ZoneId.EAT]] which correspond to time zone ids representing Coordinated Universal Time, and East African Time
   * respectively.
   *
-  * In addition to factory methods, [[ZoneId.entries]] obtains a [[scala.collection.immutable.Set Set]] of all currently
-  * available region based zone ids.
+  * In addition to factory methods, [[ZoneId.entries]] obtains a set of all currently available region based zone ids.
   *
   * @example
   *          {{{
@@ -47,42 +44,43 @@ import util.Try
 object ZoneId {
 
   /** The time-zone ID representing EAT (Eastern Africa Time), with an ID of 'Africa/Nairobi'. */
-  val EAT: ZoneId = apply(entries.find(_.contains("Nairobi")).get).get
+  val EAT: ZoneId = apply(entries.find(_.contains("Nairobi")).get)
 
   /** The time-zone ID representing UTC (Coordinated Universal Time), with an ID of 'Z'. */
-  val UTC: ZoneId = apply("Z").get
+  val UTC: ZoneId = apply("Z")
 
-  /** Tries to query a [[Temporal]] instance to obtain its [[ZoneId]]. */
-  def from(temporal: TemporalAccessor): Try[ZoneId] = Try(ZI.from(temporal))
+  /** Queries a [[Temporal]] instance to obtain its [[ZoneId]]. */
+  def from(temporal: TemporalAccessor): ZoneId = ZI.from(temporal)
 
-  /** Tries to obtains a [[ZoneId]] or [[ZoneOffset]] from text. A [[ZoneOffset]] is returned if the text is 'Z', or
+  /** Obtains a [[ZoneId]] or [[ZoneOffset]] from text. A [[ZoneOffset]] is returned if the text is 'Z', or
     * starts with '+' or '-'. If successful, the result will always be a valid ID for which ZoneRules can be obtained.
     *
-    * @note will return `Failure[DateTimeException]` if the converted zone ID has an invalid format.
-    * @note will return `Failure[ZoneRulesException]` if the converted zone region ID cannot be found.
-    * @param zone  the time-zone ID
+    * @throws DateTimeException if the converted zone ID has an invalid format.
+    * @throws ZoneRulesException if the converted zone region ID cannot be found.
     */
-  def apply(zone: String): Try[ZoneId] = Try(ZI.of(zone))
+  def apply(zone: String): ZoneId = ZI.of(zone)
 
   /** Similar to `apply(zone: String)`, but allows supplementing the existing [[ZoneId]]s with a
-    * [[scala.collection.immutable.Map Map]] of aliases to real zone IDs.
+    * map of aliases to real zone IDs.
     */
-  def apply(zoneId: String, aliasMap: Map[String, String]): Try[ZoneId] = Try(ZI.of(zoneId,
-    collection.JavaConversions.mapAsJavaMap(aliasMap)))
+  def apply(zoneId: String, aliasMap: Map[String, String]): ZoneId = ZI.of(zoneId,
+    collection.JavaConversions.mapAsJavaMap(aliasMap))
 
-  /** Tries to obtain a [[ZoneId]] wrapping an offset. If the prefix is "GMT", "UTC", or "UT" a ZoneId with the prefix
+  /** Obtains a [[ZoneId]] wrapping an offset. If the prefix is "GMT", "UTC", or "UT" a ZoneId with the prefix
     * and the non-zero offset is returned. If the prefix is empty "" the ZoneOffset is returned.
-    */
-  def apply(prefix: String, offset: ZoneOffset): Try[ZoneId] = Try(ZI.offset(prefix, offset))
-
-  /** Tries to query TimeZone.getDefault() to find the current default time-zone and convert it to a ZoneId.
     *
-    * @note will return `Failure[DateTimeException]` if the converted zone ID has an invalid format.
-    * @note will return `Failure[ZoneRulesException]` if the converted zone region ID cannot be found.
+    * @throws IllegalArgumentException if the prefix is not one of "GMT", "UTC", or "UT", or "".
     */
-  def system: Try[ZoneId] = Try(ZI.default)
+  def apply(prefix: String, offset: ZoneOffset): ZoneId = ZI.offset(prefix, offset)
 
-  /** Obtains a [[scala.collection.immutable.Set]] of the text form of all currently available region based zone IDs. */
+  /** Queries TimeZone.getDefault() to find the current default time-zone and convert it to a ZoneId.
+    *
+    * @throws DateTimeException if the converted zone ID has an invalid format.
+    * @throws ZoneRulesException if the converted zone region ID cannot be found.
+    */
+  def system: ZoneId = ZI.default
+
+  /** Obtains a set of the text form of all currently available region based zone IDs. */
   def entries: Set[String] = collection.JavaConversions.asScalaSet(ZI.available).toSet
 
 }

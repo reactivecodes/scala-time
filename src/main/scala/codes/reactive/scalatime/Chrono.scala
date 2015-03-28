@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime
 
-import codes.reactive.scalatime.temporal.{ChronoFields, ChronoUnits}
+import impl.{ChronoFields, ChronoUnits}
 
 
 /** Provides a standard set of date period units as [[TemporalUnit]] instances.  */

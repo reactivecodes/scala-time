@@ -17,27 +17,8 @@
  ******************************************************************/
 
 package codes.reactive.scalatime
-package syntax.conversions
 
-import temporal.{IntPeriod, LongDuration}
-
-
-private[conversions] trait NumberConverters {
-
-  /** Obtains a [[temporal.IntPeriod]] from an [[scala.Int]]. */
-  def intPeriod(in: Int): IntPeriod = new IntPeriod(in)
-
-  /** Obtains a [[temporal.LongDuration]] from a [[scala.Long]]. */
-  def longDuration(in: Long): LongDuration = new LongDuration(in)
-}
+import impl.{ToAllStd, ToAllOps}
 
 
-private[syntax] trait NumberImplicits extends NumberConverters {
-
-  /** Implicitly converts an Int to an [[IntPeriod]]. */
-  implicit val augmentInt: Int => IntPeriod = intPeriod
-
-  /** Implicitly converts a Long to a [[LongDuration]]. */
-  implicit val augmentLong: Long => LongDuration = longDuration
-
-}
+object Scalatime extends ToAllOps with ToAllStd

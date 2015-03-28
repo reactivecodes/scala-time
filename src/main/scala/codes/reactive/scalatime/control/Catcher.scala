@@ -34,7 +34,7 @@ import scala.util.control.Exception.Catcher
   *               val catchAllLocalDate = Catcher.all(_ => LocalDate())
   *
   *               // Use the catcher to recover from a parse error
-  *               val recovered = LocalDate.parse(")(&#)(@*@&#%@#%@#%)").recover(catchAllLocalDate)
+  *               val recovered = Try { LocalDate.parse(")(&#)(@*@&#%@#%@#%)") } recover catchAllLocalDate
   * }}}
   *
   * @define Obt Obtains a [[scala.util.control.Exception.Catcher Catcher]] for
@@ -56,11 +56,6 @@ object Catcher {
 
   /** $Obt an [[UnsupportedTemporalTypeException]], an exception indicating that a [[ChronoField]] or [[ChronoUnit]]is
     * not supported for a Temporal class.
-    */
-  def unsupportedTemporalType[A]: Catcher[A] = catcher[A, UnsupportedTemporalTypeException](throw _)
-
-  /** $Obt an [[UnsupportedTemporalTypeException]], an exception indicating that a [[ChronoField]] or [[ChronoUnit]]is
-    * not supported for a Temporal class.
     *
     * @param  f function to execute if the exception is encountered.
     */
@@ -68,10 +63,9 @@ object Catcher {
     catcher(f)
 
   /** $Obt a [[ZoneRulesException]], an exception indicating a problems with the configured time-zone rules. */
-  def zoneRules[A]: Catcher[A] = catcher[A, ZoneRulesException](throw _)
-
-  /** $Obt a [[ZoneRulesException]], an exception
-    * @param  f function to execute if the exception is encountered.
-    */
   def zoneRules[A](f: ZoneRulesException => A): Catcher[A] = catcher(f)
+
+  /** $Obt a [[DateTimeParseException]], an exception indicating when an error occurs during parsing. */
+  def dateTimeParseException[A](f: DateTimeParseException ⇒ A): Catcher[A] = catcher(f)
+
 }

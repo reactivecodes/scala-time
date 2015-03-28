@@ -16,12 +16,14 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
-package chrono
+package codes.reactive.scalatime.impl
 
+import codes.reactive.scalatime._
+
+import language.implicitConversions
 
 /** Enriches a [[ChronoLocalDate]] with additional methods.  */
-final class RichChronoLocalDate(val underlying: ChronoLocalDate) extends AnyVal {
+final class ChronoLocalDateOps(val underlying: ChronoLocalDate) extends AnyVal {
 
   /** Combines this date with a time to create a LocalDateTime. **/
   def %%[A <: underlying.type](time: LocalTime): ChronoLocalDateTime[A] =
@@ -30,12 +32,19 @@ final class RichChronoLocalDate(val underlying: ChronoLocalDate) extends AnyVal 
   /** Formats this date using the specified formatter.
     * @throws DateTimeException - if an error occurs during formatting.
     */
-  def >>(formatter: DateTimeFormatter): String = underlying.format(formatter)
+  def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
+
+  def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
+}
+
+trait ToChronoLocalDateOps {
+  implicit final def toChronoLocalDateOpsFromChronoLocalDate(f: ChronoLocalDate): ChronoLocalDateOps =
+    new ChronoLocalDateOps(f)
 }
 
 
 /** Enriches a [[ChronoLocalDateTime]] with additional methods. */
-final class RichChronoLocalDateTime[A <: ChronoLocalDate](val underlying: ChronoLocalDateTime[A]) extends AnyVal {
+final class ChronoLocalDateTimeOps[A <: ChronoLocalDate](val underlying: ChronoLocalDateTime[A]) extends AnyVal {
 
 
   /** Combines this date-time with a time-zone to create a ZonedDateTime. **/
@@ -47,17 +56,31 @@ final class RichChronoLocalDateTime[A <: ChronoLocalDate](val underlying: Chrono
   /** Formats this date using the specified formatter.
     * @throws DateTimeException - if an error occurs during formatting.
     */
-  def >>(formatter: DateTimeFormatter): String = underlying.format(formatter)
+  def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
+  def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
+
+}
+
+trait ToChronoLocalDateTimeOps {
+  implicit final def toChronoLocalDatetimeOpsFromChronoLocalDateTime[A <: ChronoLocalDate](f: ChronoLocalDateTime[A]): 
+    ChronoLocalDateTimeOps[A] = new ChronoLocalDateTimeOps(f)
 }
 
 
 /** Enriches a [[ChronoZonedDateTime]] with additional methods. */
-final class RichChronoZonedDateTime[A <: ChronoLocalDate](val underlying: ChronoZonedDateTime[A]) extends AnyVal {
+final class ChronoZonedDateTimeOps[A <: ChronoLocalDate](val underlying: ChronoZonedDateTime[A]) extends AnyVal {
 
   /** Formats this date using the specified formatter.
     * @throws DateTimeException - if an error occurs during formatting.
     */
-  def >>(formatter: DateTimeFormatter): String = underlying.format(formatter)
+  def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
+  def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
+
+}
+
+trait ToChronoZonedDateTimeOps {
+  implicit final def toChronoZonedDatetimeOpsFromChronoLocalDateTime[A <: ChronoLocalDate](f: ChronoZonedDateTime[A]):
+    ChronoZonedDateTimeOps[A] = new ChronoZonedDateTimeOps(f)
 }

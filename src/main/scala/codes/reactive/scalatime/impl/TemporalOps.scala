@@ -16,8 +16,9 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
-package temporal
+package codes.reactive.scalatime.impl
+
+import codes.reactive.scalatime._
 
 import language.implicitConversions
 
@@ -25,16 +26,14 @@ import language.implicitConversions
   *
   * @define  sameType  Obtains an object of the same type as this object
   */
-final class RichTemporal(val underlying: Temporal) extends AnyVal {
-
-  private type T = underlying.type
+final class TemporalOps(val underlying: Temporal) extends AnyVal {
 
   /** $sameType with an amount added.
     *
     * @throws DateTimeException - if the addition cannot be made.
     * @throws ArithmeticException - if numeric overflow occurs.
     */
-  def +(amount: TemporalAmount): T = underlying.plus(amount)
+  def +(amount: TemporalAmount): underlying.type = underlying.plus(amount)
 
   /** $sameType with an amount added.
     *
@@ -42,14 +41,14 @@ final class RichTemporal(val underlying: Temporal) extends AnyVal {
     * @throws UnsupportedTemporalTypeException - if the unit is not supported.
     * @throws ArithmeticException - if numeric overflow occurs.
     */
-  def +(amount: Long, unit: TemporalUnit): T = underlying.plus(amount, unit)
+  def +(amount: Long, unit: TemporalUnit): underlying.type = underlying.plus(amount, unit)
 
   /** $sameType with an amount subtracted.
     *
     * @throws DateTimeException - if the subtraction cannot be made
     * @throws ArithmeticException - if numeric overflow occurs
     */
-  def -(amount: TemporalAmount): T = underlying.minus(amount)
+  def -(amount: TemporalAmount): underlying.type = underlying.minus(amount)
 
   /** $sameType with an amount subtracted.
     *
@@ -57,14 +56,14 @@ final class RichTemporal(val underlying: Temporal) extends AnyVal {
     * @throws UnsupportedTemporalTypeException - if the unit is not supported
     * @throws ArithmeticException - if numeric overflow occurs
     */
-  def -(amount: Long, unit: TemporalUnit): T = underlying.minus(amount, unit)
+  def -(amount: Long, unit: TemporalUnit): underlying.type = underlying.minus(amount, unit)
 
   /** Obtains an adjusted object of the same type as this object with the adjustment made.
     *
     * @throws DateTimeException - if unable to make the adjustment
     * @throws  ArithmeticException - if numeric overflow occurs
     */
-  def ~=(adjuster: TemporalAdjuster): T = underlying.`with`(adjuster)
+  def ~=(adjuster: TemporalAdjuster): underlying.type = underlying.`with`(adjuster)
 
   /** Obtains an adjusted object of the same type as this object with the adjustment made.
     *
@@ -72,7 +71,7 @@ final class RichTemporal(val underlying: Temporal) extends AnyVal {
     * @throws  UnsupportedTemporalTypeException - if the field is not supported
     * @throws  ArithmeticException - if numeric overflow occurs
     */
-  def ~=(field: TemporalField, fieldValue: Long): T = underlying.`with`(field, fieldValue)
+  def ~=(field: TemporalField, fieldValue: Long): underlying.type = underlying.`with`(field, fieldValue)
 
   /** Calculates the amount of time until this temporal in terms of the specified unit.
     *
@@ -83,6 +82,12 @@ final class RichTemporal(val underlying: Temporal) extends AnyVal {
     */
   def from(begin: Temporal, inUnits: TemporalUnit): Long = begin.until(underlying, inUnits)
 
-  private implicit def t(t: Temporal): T = t.asInstanceOf[T]
+  private implicit def t(t: Temporal): underlying.type = t.asInstanceOf[underlying.type]
+
+}
+
+trait ToTemporalOps extends Any {
+
+  implicit final def toTemporalOpsFromTemporal(v: Temporal): TemporalOps = new TemporalOps(v)
 
 }

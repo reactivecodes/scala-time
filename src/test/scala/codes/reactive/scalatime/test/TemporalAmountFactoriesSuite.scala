@@ -51,7 +51,7 @@ class DurationSuite extends FunSuite with Matchers {
   }
 
   test("Duration can create an instance of Duration of zero") {
-    Duration.Nil shouldBe zero
+    Duration.empty shouldBe zero
   }
 
 }
@@ -69,10 +69,6 @@ class PeriodSuite extends FunSuite with Matchers {
     Period.weeks(10) shouldBe weeks(10)
   }
 
-  test("Period can create an instance of Period from Int fortnights") {
-    Period.fortnights(10) shouldBe weeks(20)
-  }
-
   test("Period can create an instance of Period from Int months") {
     Period.months(10) shouldBe months(10)
   }
@@ -82,7 +78,7 @@ class PeriodSuite extends FunSuite with Matchers {
   }
 
   test("Duration can create an instance of Period of zero") {
-    Period.Nil shouldBe zero
+    Period.empty shouldBe zero
   }
 
 }

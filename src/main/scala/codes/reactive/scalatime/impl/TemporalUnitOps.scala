@@ -16,8 +16,22 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
-package syntax
+package codes.reactive.scalatime.impl
 
-/** Provides conversions for providing an `enrich` method to obtain Rich representations of supported objects. */
-object TimeConverters extends conversions.AnnotateEnrichTemporal with conversions.AnnotateEnrichChrono
+import codes.reactive.scalatime._
+
+import scala.language.implicitConversions
+
+/** Enriches [[TemporalUnit]] with additional methods. */
+final class TemporalUnitOps(val underlying: TemporalUnit) {
+
+  /** Returns a copy of the specified temporal object with the specified amount of this unit added.
+    *
+    * @throws DateTimeException - if the amount cannot be added.
+    */
+  def <<+[A <: Temporal](temporal: A, amount: Long): A = underlying.addTo(temporal, amount)
+}
+
+trait ToTemporalUnitOps extends Any {
+  implicit final def toTemporalUnitOpsFromTemporalUnit(f: TemporalUnit): TemporalUnitOps = new TemporalUnitOps(f)
+}

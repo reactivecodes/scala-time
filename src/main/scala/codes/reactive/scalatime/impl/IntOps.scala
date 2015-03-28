@@ -16,53 +16,14 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
-package temporal
+package codes.reactive.scalatime.impl
 
-/** Enriches a [[scala.Int]] with methods for obtaining [[Duration]] instances. */
-final class LongDuration(val underlying: Long) extends AnyVal {
+import codes.reactive.scalatime._
 
-  /** Obtains a [[Duration]] representing a number of nanoseconds. */
-  def nano: Duration = nanos
-
-  /** Obtains a [[Duration]] representing a number of nanoseconds. */
-  def nanos: Duration = Duration.nanos(underlying)
-
-  /** Obtains a [[Duration]] representing a number of milliseconds. */
-  def milli: Duration = millis
-
-  /** Obtains a [[Duration]] representing a number of milliseconds. */
-  def millis: Duration = Duration.millis(underlying)
-
-  /** Obtains a [[Duration]] representing a number of seconds. */
-  def second: Duration = seconds
-
-  /** Obtains a [[Duration]] representing a number of seconds. */
-  def seconds: Duration = Duration.seconds(underlying)
-
-  /** Obtains a [[Duration]] representing a number of minutes. */
-  def minute: Duration = minutes
-
-  /** Obtains a [[Duration]] representing a number of minutes. */
-  def minutes: Duration = Duration.minutes(underlying)
-
-  /** Obtains a [[Duration]] representing a number of hours. */
-  def hour: Duration = hours
-
-  /** Obtains a [[Duration]] representing a number of hours. */
-  def hours: Duration = Duration.hours(underlying)
-
-  /** Obtains a [[Duration]] representing a number of days. */
-  def day: Duration = days
-
-  /** Obtains a [[Duration]] representing a number of days. */
-  def days: Duration = Duration.days(underlying)
-
-}
-
+import scala.language.implicitConversions
 
 /** Enriches a [[scala.Long]] with methods for obtaining [[Period]] instances. */
-final class IntPeriod(val underlying: Int) extends AnyVal {
+final class IntOps(val underlying: Int) extends AnyVal {
 
   /** Obtains a [[Period]] representing a number of days. */
   def day: Period = days
@@ -76,12 +37,6 @@ final class IntPeriod(val underlying: Int) extends AnyVal {
   /** Obtains a [[Period]] representing a number of weeks. */
   def weeks: Period = Period.weeks(underlying)
 
-  /** Obtains a [[Period]] representing a number of fortnights. */
-  def fortnight: Period = fortnights
-
-  /** Obtains a [[Period]] representing a number of fortnights. */
-  def fortnights: Period = Period.fortnights(underlying)
-
   /** Obtains a [[Period]] representing a number of months. */
   def month: Period = months
 
@@ -94,4 +49,8 @@ final class IntPeriod(val underlying: Int) extends AnyVal {
   /** Obtains a [[Period]] representing a number of years. */
   def years: Period = Period.years(underlying)
 
+}
+
+trait ToIntOps extends Any {
+  implicit final def toIntOpsFromLong(v: Int): IntOps = new IntOps(v)
 }

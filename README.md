@@ -17,17 +17,17 @@ __________________________________
 
 Usage:
 -----
-This project is not *yet* considered stable, and the API is subject to change, however `0.1.0-SNAPSHOT` binaries are
+This project is not *yet* considered stable, and the API is subject to change, however `0.3.0-SNAPSHOT` binaries are
 published to the [`Sonatype OSS Snapshots`][5] public repository.
 
 ###### [sbt][6] coordinates:
 
 ```scala
     // If using JDK 1.8 and above
-    "codes.reactive" %% "scala-time" % "0.1.0-SNAPSHOT"
+    "codes.reactive" %% "scala-time" % "0.3.0-SNAPSHOT"
     
     // If using JDK 1.7
-    "codes.reactive" %% "scala-time-threeten" % "0.1.0-SNAPSHOT"
+    "codes.reactive" %% "scala-time-threeten" % "0.3.0-SNAPSHOT"
 ```
 
 #### Documentation:
@@ -36,7 +36,7 @@ See the [project website][9] for links to current documentation.
 #### Examples:
 ```scala
 import codes.reactive.scalatime._
-import syntax._
+import Scalatime._
 
 // Obtain a Duration instance from a Long
 val duration = 10L minutes
@@ -46,7 +46,7 @@ val otherDuration = 1L minute
 // Obtain a Period instance from an Int
 val period = 2 weeks
 
-// Tries to obtain a LocalDate instance
+// Obtains a LocalDate instance
 val localDate = LocalDate.of(2014, 6, 7)
 
 // Obtain the current UTC ZonedDateTime
@@ -59,16 +59,16 @@ val query = temporal.TemporalQuery.zone
 duration + otherDuration
 
 //  Add a TemporalAmount to a Temporal
-period <<+ localDate.get
+period <<+ localDate
 
 //  Add a TemporalAmount to a Temporal
-localDate.get + period
+localDate + period
 
 // Subtract a TemporalAmount from a Temporal
-localDate.get - period
+localDate - period
 
 // Query a specified Temporal
-val result = query << zonedDateTime
+val result = query |> zonedDateTime
 ```
 
 

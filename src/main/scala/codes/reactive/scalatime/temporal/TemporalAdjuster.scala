@@ -16,38 +16,15 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime.syntax
-
-import codes.reactive.scalatime._
-import temporal._
-import chrono._
-import org.scalatest.{Matchers, Outcome, fixture}
+package codes.reactive.scalatime
+package temporal
 
 
-class TimeConvertersSuite extends fixture.FreeSpec with Matchers {
 
+object TemporalAdjuster {
 
-  "TimeConverters object provides decorators for converting java.time objects to their 'Rich' counterparts" - {
-
-    val fixed = Clock.fixed(Instant())
-
-    import TimeConverters._
-
-    "enriching LocalDate" in {
-      LocalDate(_).enrich shouldBe new RichChronoLocalDate(LocalDate(fixed))
-    }
-
-    "enriching LocalDateTime" in { c =>
-      LocalDateTime(c).enrich shouldBe new RichChronoLocalDateTime(LocalDateTime(c))
-    }
-
-    "enriching Duration" in { _ =>
-      Duration.seconds(2).enrich shouldBe new RichDuration(Duration.seconds(2))
-    }
-
-
+  /** Obtains a [[TemporalAdjuster]] from a function `([[Temporal]]) => [[Temporal]]`. */
+  def apply[A <: Temporal](f: A => A) = new codes.reactive.scalatime.TemporalAdjuster {
+    override def adjustInto(temporal: Temporal): Temporal = f(temporal.asInstanceOf[A]).asInstanceOf[Temporal]
   }
-  override type FixtureParam = Clock
-
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(Clock.fixed(Instant())))
 }

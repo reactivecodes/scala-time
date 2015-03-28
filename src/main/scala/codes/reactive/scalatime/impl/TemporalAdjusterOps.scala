@@ -16,12 +16,25 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
+package codes.reactive.scalatime.impl
 
+import codes.reactive.scalatime._
 
-/** Provides all implicit conversion functions as well as a standard set of units, formatters and additional helpers. */
-package object syntax extends conversions.PredefImplicits
-    with conversions.NumberImplicits
-    with UnitHelpers
-    with FormatterHelpers
-    with ZoneHelpers
+import scala.language.implicitConversions
+
+/** Enriches a [[TemporalAdjuster]] with additional methods. */
+final class TemporalAdjusterOps(val underlying: TemporalAdjuster) extends AnyVal {
+
+  /** Adjusts the provided temporal object using the logic encapsulated in this.
+    *
+    * @throws DateTimeException if unable to make the adjustment.
+    * @throws ArithmeticException if numeric overflow occurs.
+    */
+  def =~ [A <: Temporal](temporal: A): A = underlying.adjustInto(temporal).asInstanceOf[A]
+
+}
+
+trait ToTemporalAdjusterOps extends Any {
+
+  implicit final def toTemporalAdjusterOpsFromTemporalAdjuster(f: TemporalAdjuster): TemporalAdjusterOps = new TemporalAdjusterOps(f)
+}

@@ -16,25 +16,39 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
-package temporal
+package codes.reactive.scalatime.impl
 
-/** Enriches a [[TemporalAdjuster]] with additional methods. */
-final class RichTemporalAdjuster(val underlying: TemporalAdjuster) extends AnyVal {
+import codes.reactive.scalatime._
+import temporal.TemporalQuery
 
-  /** Adjusts the provided temporal object using the logic encapsulated in this.
+import scala.language.implicitConversions
+
+/** Enriches instances of [[TemporalQuery]] with additional methods. */
+class TemporalQueryOps[A](val underlying: TemporalQuery[A]) extends AnyVal {
+
+  /** Queries the specified [[TemporalAccessor]] using this query strategy.
     *
-    * @throws DateTimeException if unable to make the adjustment.
+    * @throws DateTimeException if unable to query.
     * @throws ArithmeticException if numeric overflow occurs.
     */
-  def =~[A <: Temporal](temporal: A): A = underlying.adjustInto(temporal).asInstanceOf[A]
+  def |>(temporal: TemporalAccessor): A = temporal.query(underlying)
 
+  /** Queries the specified [[TemporalAccessor]] using this query strategy.
+    *
+    * @throws DateTimeException if unable to query.
+    * @throws ArithmeticException if numeric overflow occurs.
+    */
+  def ▹(temporal: TemporalAccessor): A = temporal.query(underlying)
 }
 
-object TemporalAdjuster {
+trait ToTemporalQueryOps extends Any {
 
-  /** Obtains a [[TemporalAdjuster]] from a function `([[Temporal]]) => [[Temporal]]`. */
-  def apply[A <: Temporal](f: A => A) = new codes.reactive.scalatime.TemporalAdjuster {
-    override def adjustInto(temporal: Temporal): Temporal = f(temporal.asInstanceOf[A]).asInstanceOf[Temporal]
-  }
+  implicit final def toTemporalQueryOpsFromTemporalQuery[A](v: TemporalQuery[A]): TemporalQueryOps[A] = new TemporalQueryOps(v)
+
+  implicit final def toTemporalQueryOpsFromFunction1[A](f: (TemporalAccessor) ⇒ A): TemporalQueryOps[A] = new TemporalQueryOps(TemporalQuery(f))
+}
+
+trait ToTemporalQuery extends Any {
+
+  implicit final def toTemporalQueryFromFunction1[A](f: (TemporalAccessor) ⇒ A): TemporalQuery[A] = TemporalQuery(f)
 }

@@ -31,23 +31,34 @@ object LocalDate {
   /** Obtains a [[LocalDate]] by querying the specified clock for the current date. */
   def apply(clock: Clock): LocalDate = LD.now(clock)
 
-  /** Tries to query a [[Temporal]] instance to obtain a [[LocalDate]]. */
-  def from(from: TemporalAccessor): Try[LocalDate] = Try(LD.from(from))
+  /** Queries a [[Temporal]] instance to obtain a [[LocalDate]].
+    *
+    * @throws DateTimeException - if unable to convert to a LocalDate
+    */
+  def from(from: TemporalAccessor): LocalDate = LD.from(from)
 
-  /** Tries to obtain a [[LocalDate]] from a year, month and day. The values of all fields must be within range, and
+  /** Obtains a [[LocalDate]] from a year, month and day. The values of all fields must be within range, and
     * the day must be valid for the year and month.
+    * @throws DateTimeException if the value of any field is out of range, or if the day-of-month is invalid
+    *                           for the month-year.
     */
-  def of(year: Int, month: Int, day: Int): Try[LocalDate] = Try(LD.of(year, Month(month), day))
+  def of(year: Int, month: Int, day: Int): LocalDate = LD.of(year, Month(month), day)
 
-  /** Tries to obtain a [[LocalDate]] from a year, [[Month]] and day. The values of all fields must be within range,
+  /** Obtains a [[LocalDate]] from a year, [[Month]] and day. The values of all fields must be within range,
     * and the day must be valid for the year and month.
+    * @throws DateTimeException if the value of any field is out of range, or if the day-of-month is invalid
+    *                           for the month-year.
     */
-  def of(year: Int, month: Month, day: Int): Try[LocalDate] = Try(LD.of(year, month, day))
+  def of(year: Int, month: Month, day: Int): LocalDate = LD.of(year, month, day)
 
-  /** Tries to obtain a [[LocalDate]] from text formatted according to [[format.DateTimeFormatter.Iso.LocalDate]]. */
-  def parse(text: String): Try[LocalDate] = Try(LD.parse(text, format.DateTimeFormatter.Iso.LocalDate))
+  /** Obtains a [[LocalDate]] from text formatted according to [[format.DateTimeFormatter.Iso.LocalDate]].
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String): LocalDate = LD.parse(text, format.DateTimeFormatter.Iso.LocalDate)
 
-  /** Tries to obtain a [[LocalDate]] text formatted according to the provided `formatter`. */
-  def parse(text: String, formatter: DateTimeFormatter): Try[LocalDate] = Try(LD.parse(text, formatter))
+  /** Obtains a [[LocalDate]] text formatted according to the provided `formatter`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String, formatter: DateTimeFormatter): LocalDate = LD.parse(text, formatter)
 
 }

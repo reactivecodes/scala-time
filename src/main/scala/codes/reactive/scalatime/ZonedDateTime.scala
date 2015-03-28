@@ -37,11 +37,15 @@ object ZonedDateTime {
   /** Obtains a [[ZonedDateTime]] from the specified [[LocalDateTime]] and [[ZoneId]]. */
   def apply(dateTime: LocalDateTime, zone: ZoneId): ZonedDateTime = ZD.of(dateTime, zone)
 
-  /** Tries to query a [[Temporal]] instance to obtain a [[ZonedDateTime]]. */
-  def from(from: TemporalAccessor): Try[ZonedDateTime] = Try(ZD.from(from))
+  /** Queries a [[Temporal]] instance to obtain a [[ZonedDateTime]].
+    * @throws DateTimeException if unable to convert to a ZonedDateTime.
+    */
+  def from(from: TemporalAccessor): ZonedDateTime = ZD.from(from)
 
-  /** Tries to obtain a [[ZonedDateTime]] from a year, month, day, hour, minute, second, nanosecond and zone. The values
+  /** Obtains a [[ZonedDateTime]] from a year, month, day, hour, minute, second, nanosecond and zone. The values
     * of all fields must be within range, and the day must be valid for the year and month.
+    * @throws DateTimeException if the value of any field is out of range, or if the day-of-month is invalid for
+    *                           the month-year.
     */
   def of(year: Int,
          month: Int,
@@ -50,11 +54,13 @@ object ZonedDateTime {
          minute: Int,
          second: Int,
          nano: Int,
-         zone: ZoneId): Try[ZonedDateTime] =
-    Try(ZD.of(year, month, day, hour, minute, second, nano, zone))
+         zone: ZoneId): ZonedDateTime =
+    ZD.of(year, month, day, hour, minute, second, nano, zone)
 
-  /** Tries to obtain a [[ZonedDateTime]] from a year, month, day, hour, minute, second, nanosecond and zone. The values
+  /** Obtains a [[ZonedDateTime]] from a year, month, day, hour, minute, second, nanosecond and zone. The values
     * of all fields must be within range, and the day must be valid for the year and month.
+    * @throws DateTimeException if the value of any field is out of range, or if the day-of-month is invalid for
+    *                           the month-year.
     */
   def of(year: Int,
          month: Month,
@@ -63,16 +69,19 @@ object ZonedDateTime {
          minute: Int,
          second: Int,
          nano: Int,
-         zone: ZoneId): Try[ZonedDateTime] =
-    Try(ZD.of(year, month.getValue, day, hour, minute, second, nano, zone))
+         zone: ZoneId): ZonedDateTime =
+    ZD.of(year, month.getValue, day, hour, minute, second, nano, zone)
 
-  /** Tries to obtain a [[ZonedDateTime]] from text formatted according to [[format.DateTimeFormatter.Iso.ZonedDateTime]].
+  /** Obtains a [[ZonedDateTime]] from text formatted according to [[format.DateTimeFormatter.Iso.ZonedDateTime]].
     *
     * @param text the text to parse such as "2011-12-03T10:15:30+01:00[Europe/Paris]".
+    * @throws DateTimeParseException if the text cannot be parsed.
     */
-  def parse(text: String): Try[ZonedDateTime] = Try(ZD.parse(text, format.DateTimeFormatter.Iso.ZonedDateTime))
+  def parse(text: String): ZonedDateTime = ZD.parse(text, format.DateTimeFormatter.Iso.ZonedDateTime)
 
-  /** Tries to obtain a [[ZonedDateTime]] from valid text formatted according to the provided `formatter`. */
-  def parse(text: String, formatter: DateTimeFormatter): Try[ZonedDateTime] = Try(ZD.parse(text, formatter))
+  /** Obtains a [[ZonedDateTime]] from valid text formatted according to the provided `formatter`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String, formatter: DateTimeFormatter): ZonedDateTime = ZD.parse(text, formatter)
 
 }

@@ -16,27 +16,31 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime.syntax.conversions
+package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime.{Duration, Period}
-import org.scalatest.{FreeSpec, Matchers}
+import codes.reactive.scalatime._
+
+import scala.language.implicitConversions
+
+/** Enriches a [[Month]] with additional methods. */
+final class MonthOps(val underlying: Month) extends AnyVal {
+
+  /** Obtains the month-of-year which is the specified number of months after this one. */
+  def +(months: Int) = underlying.plus(months)
+
+  /** Obtains the month-of-year which is the specified number of months before this one. */
+  def -(months: Int) = underlying.minus(months)
+
+  /** Obtains a [[MonthDay]] by combining this month with the specified day-of-month.
+    * @throws DateTimeException if the day-of-month is invalid for the month.
+    */
+  def /(day: Int): MonthDay = MonthDay.of(underlying, day)
 
 
-class NumberConversionsSuite extends FreeSpec with Matchers {
+  def =~(temporal: Temporal) = underlying.adjustInto(temporal)
 
-  val subject = new NumberImplicits {}
+}
 
-  import subject._
-
-  "A NumberImplicits instance" - {
-
-    "provides an implicit conversion of an 'Int' to an 'IntPeriod'" in {
-      (1 day).isInstanceOf[Period] should be(right = true)
-    }
-
-    "provides an implicit conversion of a 'Long' to a 'LongDuration'" in {
-      (1L day).isInstanceOf[Duration] should be(right = true)
-    }
-  }
-
+trait ToMonthOps extends Any {
+  implicit final def toMonthOpsFromMonth(f: Month): MonthOps = new MonthOps(f)
 }

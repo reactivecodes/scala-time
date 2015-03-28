@@ -35,58 +35,32 @@ object YearMonth {
   /** Obtains the current [[YearMonth]] at the specified zone. */
   def apply(zone: ZoneId): YearMonth = TimeSupport.YearMonth.now(zone)
 
-  /** Tries to query a [[Temporal]] to obtain a [[YearMonth]]. */
-  def from(temporal: TemporalAccessor): Try[YearMonth] = Try(TimeSupport.YearMonth.from(temporal))
+  /** Queries a [[Temporal]] to obtain a [[YearMonth]].
+    * @throws DateTimeException if unable to convert to a YearMonth.
+    */
+  def from(temporal: TemporalAccessor): YearMonth = TimeSupport.YearMonth.from(temporal)
 
-  /** Tries to obtain a [[YearMonth]] from the specified proleptic year and month. */
-  def of(year: Int, month: Month): Try[YearMonth] = Try(TimeSupport.YearMonth.of(year, month))
+  /** Obtains a [[YearMonth]] from the specified proleptic year and month.
+    * @throws DateTimeException if the `year` value is invalid.
+    */
+  def of(year: Int, month: Month): YearMonth = TimeSupport.YearMonth.of(year, month)
 
-  /** Tries to obtain a [[YearMonth]] from the specified proleptic year and month. */
-  def of(year: Int, month: Int): Try[YearMonth] = Try(TimeSupport.YearMonth.of(year, Month(month)))
+  /** Obtains a [[YearMonth]] from the specified proleptic year and month.
+    * @throws DateTimeException if the `month` or `year` value is invalid.
+    */
+  def of(year: Int, month: Int): YearMonth = TimeSupport.YearMonth.of(year, Month(month))
 
-  /** Tries to obtain a [[YearMonth]] from text such as `2014-10`. */
-  def parse(text: String): Try[YearMonth] = Try(TimeSupport.YearMonth.parse(text))
+  /** Obtains a [[YearMonth]] from text such as `2014-10`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String): YearMonth = TimeSupport.YearMonth.parse(text)
 
-  /** Tries to obtain a [[YearMonth]] from text formatted according to the provided `formatter`. */
-  def parse(text: String, formatter: DateTimeFormatter): Try[YearMonth] =
-    Try(TimeSupport.YearMonth.parse(text, formatter))
+  /** Obtains a [[YearMonth]] from text formatted according to the provided `formatter`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String, formatter: DateTimeFormatter): YearMonth =
+    TimeSupport.YearMonth.parse(text, formatter)
 
 }
 
 
-/** Enriches [[YearMonth]] instances with additional methods. */
-final class RichYearMonth(val underlying: YearMonth) extends AnyVal {
-
-  /** Obtains a [[YearMonth]] with the specified number of months added.
-    * @throws DateTimeException if the result exceeds the supported range.
-    */
-  def +(months: Int): YearMonth = underlying.plusMonths(months)
-
-  /** Obtains a [[YearMonth]] with the specified number of months subtracted.
-    * @throws DateTimeException if the result exceeds the supported range.
-    */
-  def -(months: Int): YearMonth = underlying.minusMonths(months)
-
-  /** Returns `true` if this year-month is before the specified one. */
-  def <(other: YearMonth): Boolean = underlying.isBefore(other)
-
-  /** Returns `true` if this year-month is equal to or before the specified one. */
-  def <=(other: YearMonth): Boolean = underlying.equals(other) || underlying.isBefore(other)
-
-  /** Returns `true` if this year-month is after the specified one. */
-  def >(other: YearMonth): Boolean = underlying.isAfter(other)
-
-  /** Returns `true` if this year-month is equal to or after the specified one. */
-  def >=(other: YearMonth): Boolean = underlying.equals(other) || underlying.isAfter(other)
-
-  /** Obtains a [[LocalDate]] by combining this year-month with the specified day.
-    * @throws DateTimeException if the day is invalid for the year-month
-    */
-  def /(day: Int): LocalDate = underlying.atDay(day)
-
-  /** Formats this year-month using the specified formatter.
-    * @throws DateTimeException - if an error occurs during printing
-    */
-  def >>(formatter: DateTimeFormatter): String = underlying.format(formatter)
-
-}

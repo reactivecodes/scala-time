@@ -35,65 +35,33 @@ object MonthDay {
   /** Obtains the current [[MonthDay]] at the specified zone. */
   def apply(zone: ZoneId): MonthDay = TimeSupport.MonthDay.now(zone)
 
-  /** Tries to query a [[Temporal]] to obtain a [[MonthDay]]. */
-  def from(temporal: TemporalAccessor): Try[MonthDay] = Try(TimeSupport.MonthDay.from(temporal))
+  /** Queries a [[Temporal]] to obtain a [[MonthDay]].
+    * @throws DateTimeException if unable to convert to a MonthDay.
+    */
+  def from(temporal: TemporalAccessor): MonthDay = TimeSupport.MonthDay.from(temporal)
 
-  /** Tries to obtain a [[MonthDay]] from the specified month and day. */
-  def of(month: Month, day: Int): Try[MonthDay] = Try(TimeSupport.MonthDay.of(month, day))
-
-  /** Tries to obtain a [[MonthDay]] from the specified month and day. */
-  def of(month: Int, day: Int): Try[MonthDay] = Try(TimeSupport.MonthDay.of(Month(month), day))
-
-  /** Tries to obtain a [[MonthDay]] from text formatted as `--MM-dd`, such as `2014-10`. */
-  def parse(text: String): Try[MonthDay] = Try(TimeSupport.MonthDay.parse(text))
-
-  /** Tries to obtain a [[MonthDay]] from text formatted according to the provided `formatter`. */
-  def parse(text: String, formatter: DateTimeFormatter): Try[MonthDay] =
-    Try(TimeSupport.MonthDay.parse(text, formatter))
-
-}
-
-
-/** Enriches [[MonthDay]] instances with additional methods. */
-final class RichMonthDay(val underlying: MonthDay) extends AnyVal {
-
-  /** Returns `true` if this month-day is before the specified one. */
-  def <(other: MonthDay): Boolean = underlying.isBefore(other)
-
-  /** Returns `true` if this month-day is equal to or before the specified one. */
-  def <=(other: MonthDay): Boolean = underlying.equals(other) || underlying.isBefore(other)
-
-  /** Returns `true` if this month-day is after the specified one. */
-  def >(other: MonthDay): Boolean = underlying.isAfter(other)
-
-  /** Returns `true` if this month-day is equal to or after the specified one. */
-  def >=(other: MonthDay): Boolean = underlying.equals(other) || underlying.isAfter(other)
-
-  /** Obtains a copy of this MonthDay with the month-of-year altered. */
-  def ~=(month: Month): MonthDay = underlying.`with`(month)
-
-  /** Obtains a copy of this MonthDay with the day-of-month altered.
+  /** Obtains a [[MonthDay]] from the specified month and day.
     *
-    * @throws DateTimeException if the day-of-month value is invalid.
-    * @throws DateTimeException if the day-of-month value is invalid for the month.
+    * @throws DateTimeException if the value of any field is out of range, or if the day-of-month is invalid for the
+    *                           month.
     */
-  def ~=(day: Int): MonthDay = underlying.withDayOfMonth(day)
+  def of(month: Month, day: Int): MonthDay = TimeSupport.MonthDay.of(month, day)
 
-  /** Obtains a copy of this MonthDay with the month-of-year and/or day-of-month altered.
-    *
-    * @throws DateTimeException if the day-of-month value is invalid.
-    * @throws DateTimeException if the day-of-month value is invalid for the month.
+  /** Obtains a [[MonthDay]] from the specified month and day.
+    * @throws DateTimeException if the value of any field is out of range, or if the day-of-month is invalid for the
+    *                           month.
     */
-  def ~=(month: Option[Month], day: Option[Int]): MonthDay = {
-    def replaceMonth = if (month.nonEmpty) underlying.withMonth(month.get.getValue) else underlying
-    def replaceDay = if (day.nonEmpty) underlying.withDayOfMonth(day.get) else underlying
-    replaceMonth
-    replaceDay
-  }
+  def of(month: Int, day: Int): MonthDay = TimeSupport.MonthDay.of(Month(month), day)
 
-  /** Formats this month-day using the specified formatter.
-    * @throws DateTimeException - if an error occurs during printing
+  /** Obtains a [[MonthDay]] from text formatted as `--MM-dd`, such as `2014-10`.
+    * @throws DateTimeParseException if the text cannot be parsed.
     */
-  def >>(formatter: DateTimeFormatter): String = underlying.format(formatter)
+  def parse(text: String): MonthDay = TimeSupport.MonthDay.parse(text)
+
+  /** Obtains a [[MonthDay]] from text formatted according to the provided `formatter`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String, formatter: DateTimeFormatter): MonthDay =
+    TimeSupport.MonthDay.parse(text, formatter)
 
 }

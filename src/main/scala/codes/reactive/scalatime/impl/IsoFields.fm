@@ -17,28 +17,34 @@
  *******************************************************************/
 
 package codes.reactive.scalatime
-package temporal
+package impl
 
 import ${tPac}.temporal.{IsoFields => IF}
 
-
-/** Provides units specific to the ISO-8601 calendar system as [[TemporalUnit]] instances.
+/** Provides fields specific to the ISO-8601 calendar system as [[TemporalField]] instances.
   *
-  * @define Unit  [[TemporalUnit]] representing the concept of
+  * @define Field   [[TemporalField]] representing the
   */
-trait IsoUnits {
+trait IsoFields {
 
-  /** $Unit a quarter year, equal to 3 months with an estimates duration of a quarter of 365.2425 Days.
-    *
-    * @see  [[http://${tDoc}/temporal/IsoFields.html#QUARTER_YEARS QUARTER_YEARS]]
+  /** $Field day-of-quarter.
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#DAY_OF_QUARTER DAY_OF_QUARTER]]
     */
-  final val QuarterYears = IF.QUARTER_YEARS
+  final val DayOfQuarter = IF.DAY_OF_QUARTER
 
-  /** $Unit week-based-years for the purpose of addition and subtraction with an estimated duration the same as that of
-    * a standard ISO year at 365.2425 Days.
-    *
-    * @see  [[http://${tDoc}/temporal/IsoFields.html#WEEK_BASED_YEARS WEEK_BASED_YEARS]]
+  /** $Field quarter-of-year.
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#QUARTER_OF_YEAR QUARTER_OF_YEAR]]
     */
-  final val WeekBasedYears = IF.WEEK_BASED_YEARS
+  final val QuarterOfYear = IF.QUARTER_OF_YEAR
+
+  /** $Field week-based-year.
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#WEEK_BASED_YEAR WEEK_BASED_YEAR]]
+    */
+  final val WeekBasedYear = IF.WEEK_BASED_YEAR
+
+  /** $Field week-of-week-based-year.
+    * @see  [[http://${tDoc}/temporal/IsoFields.html#WEEK_OF_WEEK_BASED_YEAR WEEK_OF_WEEK_BASED_YEAR]]
+    */
+  final val WeekOfWeekBasedYear = IF.WEEK_OF_WEEK_BASED_YEAR
+
 }
-

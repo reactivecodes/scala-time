@@ -28,7 +28,7 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
 
   "code examples provided by documentation are current." - {
     import codes.reactive.scalatime._
-    import syntax._
+    import Scalatime._
     "readme / rootdoc examples" - {
 
       "create a Duration from a Long" in {
@@ -47,11 +47,9 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
 
       "Try to create a LocalDate" in {
         val localDate = LocalDate.of(2014, 6, 7)
-        localDate.foreach { d =>
-          d.getYear shouldBe 2014
-          d.getMonth shouldBe Month.June
-          d.getDayOfMonth shouldBe 7
-        }
+        localDate.getYear shouldBe 2014
+        localDate.getMonth shouldBe Month.June
+        localDate.getDayOfMonth shouldBe 7
       }
 
       "Create a ZonedDateTime from the current UTC instant" in {
@@ -61,7 +59,7 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
 
       "Obtains a default TemporalQuery for ZoneId" in {
         val query = TemporalQuery.zone
-        (query << ZonedDateTime()) shouldBe ZoneId.UTC
+        (query |> ZonedDateTime()) shouldBe ZoneId.UTC
       }
 
       "Create a Duration from the sum of Durations" in {
@@ -81,8 +79,8 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
         }
         val localDate = LocalDate.of(2014, 6, 7)
 
-        (period <<+ localDate.get) shouldBe LocalDate.of(2014, 6, 21).get
-        (localDate.get + period) shouldBe LocalDate.of(2014, 6, 21).get
+        (period <<+ localDate) shouldBe LocalDate.of(2014, 6, 21)
+        (localDate + period) shouldBe LocalDate.of(2014, 6, 21)
       }
 
 
@@ -92,16 +90,16 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
         }
         val localDate = LocalDate.of(2014, 6, 7)
 
-        (period <<- localDate.get) shouldBe LocalDate.of(2014, 5, 24).get
-        (localDate.get - period) shouldBe LocalDate.of(2014, 5, 24).get
+        (period <<- localDate) shouldBe LocalDate.of(2014, 5, 24)
+        (localDate - period) shouldBe LocalDate.of(2014, 5, 24)
       }
     }
 
     "control.Catcher api doc" - {
       import codes.reactive.scalatime._
-      val catchAllLocalDate = control.Catcher.all(_ => LocalDate.of(2014, 9, 14).get)
+      val catchAllLocalDate = control.Catcher.all(_ => LocalDate.of(2014, 9, 14))
       val recovered = Try(LocalDate.parse(")(&#)(@*@&#%@#%@#%)")).recover(catchAllLocalDate)
-      recovered.map(_ shouldBe LocalDate.of(2014, 9, 14).get)
+      recovered.map(_ shouldBe LocalDate.of(2014, 9, 14))
     }
 
     "Clock api doc" - {
@@ -138,7 +136,7 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
 
   "'extended' usage with additional implicits import of 'conversions._'" in {
     import codes.reactive.scalatime._
-    import syntax._
+    import Scalatime._
 
     val duration: Duration = 1L day
 

@@ -20,6 +20,7 @@ package codes.reactive.scalatime
 package chrono
 
 import format.DateTimeFormatter.{Iso => IDF}
+import impl.{ChronoLocalDateTimeOps, ChronoLocalDateOps}
 import org.scalatest.{Matchers, Outcome, fixture}
 
 
@@ -31,17 +32,17 @@ class RichChronoLocalDateSuite extends fixture.FunSuite with Matchers {
   }
 
   test("`>>` formats a ChronoLocalDate according to the specified formatter") { ld =>
-    ld >> IDF.LocalDate shouldBe ld.underlying.format(IDF.LocalDate)
+    ld |> IDF.LocalDate shouldBe ld.underlying.format(IDF.LocalDate)
   }
 
-  override type FixtureParam = RichChronoLocalDate
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new RichChronoLocalDate(LocalDate())))
+  override type FixtureParam = ChronoLocalDateOps
+  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new ChronoLocalDateOps(LocalDate())))
 }
 
 
 class RichChronoLocalDateTimeSuite extends fixture.FunSuite with Matchers {
 
-  test("`%%` combines a ChronoLocalDateTime with a time zone") { (ldt: RichChronoLocalDateTime[LocalDate]) =>
+  test("`%%` combines a ChronoLocalDateTime with a time zone") { (ldt: ChronoLocalDateTimeOps[LocalDate]) =>
     ldt %% ZoneId.UTC shouldBe  ldt.underlying.atZone(ZoneOffset.UTC)
   }
 
@@ -50,10 +51,10 @@ class RichChronoLocalDateTimeSuite extends fixture.FunSuite with Matchers {
   }
 
   test("`>>` formats a ChronoLocalDateTime according to the specified formatter") { ldt =>
-    ldt >> IDF.LocalDate shouldBe ldt.underlying.format(IDF.LocalDate)
+    ldt |> IDF.LocalDate shouldBe ldt.underlying.format(IDF.LocalDate)
   }
 
-  override type FixtureParam = RichChronoLocalDateTime[LocalDate]
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new RichChronoLocalDateTime(LocalDateTime())))
+  override type FixtureParam = ChronoLocalDateTimeOps[LocalDate]
+  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new ChronoLocalDateTimeOps(LocalDateTime())))
 
 }

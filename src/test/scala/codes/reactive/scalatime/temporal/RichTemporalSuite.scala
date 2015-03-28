@@ -19,32 +19,33 @@
 package codes.reactive.scalatime
 package temporal
 
+import impl.TemporalOps
 import org.scalatest.{Outcome, Matchers, fixture}
 
 
 
 class RichTemporalSuite extends fixture.FreeSpec with Matchers {
 
-  override type FixtureParam = RichTemporal
+  override type FixtureParam = TemporalOps
 
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new RichTemporal(LocalDate.of(2014, 6, 7).get)))
+  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new TemporalOps(LocalDate.of(2014, 6, 7))))
 
   "RichTemporal instances" - {
 
     "have a '+' method for adding a 'TemporalAmount' to an underlying 'Temporal'" in {
-      _ + Period.days(1) should equal (LocalDate.of(2014, 6, 8).get)
+      _ + Period.days(1) should equal (LocalDate.of(2014, 6, 8))
     }
 
     "have a '+' method for adding an amount of 'TemporalUnit's to an underlying 'Temporal'" in { p =>
-      (p +(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 8).get)
+      (p +(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 8))
     }
 
     "have a '-' method for subtracting a TemporalAmount from an underlying Temporal" in {
-      _ - Period.days(1) should equal (LocalDate.of(2014, 6, 6).get)
+      _ - Period.days(1) should equal (LocalDate.of(2014, 6, 6))
     }
 
     "have a '-' method for subtracting  an amount of 'TemporalUnit's from  an underlying 'Temporal'" in { p =>
-      (p -(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 6).get)
+      (p -(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 6))
     }
 
  }

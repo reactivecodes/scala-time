@@ -43,10 +43,14 @@ import scala.util.Try
   */
 object Duration {
 
-  /** Tries to obtain a [[Duration]] from a temporal amount which has an exact duration. */
-  def from(amount: TemporalAmount): Try[Duration] = Try(JD.from(amount))
+  /** Obtains a [[Duration]] from a temporal amount which has an exact duration.
+    *
+    * @throws DateTimeException if unable to convert to a Duration.
+    * @throws ArithmeticException if numeric overflow occurs.
+    */
+  def from(amount: TemporalAmount): Duration = JD.from(amount)
 
-  /** Tries to obtain a [[Duration]] from text based on the ISO-8601 Duration format - PnDTnHnMn.nS - with days
+  /** Obtains a [[Duration]] from text based on the ISO-8601 Duration format - PnDTnHnMn.nS - with days
     * considered to be exactly 24 hours.
     *
     * ==== Text Format ====
@@ -80,8 +84,10 @@ object Duration {
     *             // Parses as minus 6 hours, 3 minutes
     *             val dur3 = Duration.parse("P-6H3M")
     * }}}
+    *
+    * @throws DateTimeParseException. if the text cannot be parsed to a duration
     */
-  def parse(text: String): Try[Duration] = Try(JD.parse(text))
+  def parse(text: String): Duration = JD.parse(text)
 
   /** Obtains a [[Duration]] representing a number of nanoseconds. */
   def nanos(nanos: Long): Duration = JD.ofNanos(nanos)
@@ -105,5 +111,6 @@ object Duration {
   def days(days: Long): Duration = JD.ofDays(days)
 
   /** Obtains a [[Duration]] of zero. */
-  val Nil: Duration = JD.zero
+  def empty: Duration = JD.zero
+  private val EmptyDuration = JD.zero
 }

@@ -16,17 +16,34 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
-package temporal
+package codes.reactive.scalatime.impl
+
+import java.time.format.DateTimeParseException
+
+import codes.reactive.scalatime._
+
+import scala.language.implicitConversions
 
 
-/** Enriches [[TemporalUnit]] with additional methods. */
-final class RichTemporalUnit(val underlying: TemporalUnit) {
+final class StringOps(val underlying: String) extends AnyVal {
 
-  /** Returns a copy of the specified temporal object with the specified amount of this unit added.
+  def |>(formatter: DateTimeFormatter): TemporalAccessor = formatter.parse(underlying)
+
+  def |>[A](formatter: DateTimeFormatter, query: TemporalQuery[A]): A = formatter.parse(underlying, query)
+
+
+  /** Fully parses the text producing a temporal object.
     *
-    * @throws DateTimeException - if the amount cannot be added.
-    */
-  def <<+[A <: Temporal](temporal: A, amount: Long): A = underlying.addTo(temporal, amount)
+   * @throws  DateTimeParseException if unable to parse the requested result.
+   */
+  def ▹(formatter: DateTimeFormatter): TemporalAccessor = formatter.parse(underlying)
 
+  def ▹[A](formatter: DateTimeFormatter, query: TemporalQuery[A]): A = formatter.parse(underlying, query)
+
+
+
+}
+
+trait ToStringOps {
+  implicit final def toStringOpsFromString(f: String): StringOps = new StringOps(f)
 }

@@ -46,22 +46,37 @@ object Instant {
   /** Queries the provided [[Clock]] to obtain the current instant **/
   def apply(clock: Clock): Instant = I.now(clock)
 
-  /** Tries to obtain an [[Instant]] from specified milliseconds from the epoch of 1970-01-01T00:00:00Z. */
-  def milli(epochMilli: Long): Try[Instant] = Try(I.epochMilli(epochMilli))
+  /** Obtains an [[Instant]] from specified milliseconds from the epoch of 1970-01-01T00:00:00Z.
+    *
+    * @throws DateTimeException if the instant exceeds the maximum or minimum instant.
+    */
+  def milli(epochMilli: Long): Instant = I.epochMilli(epochMilli)
 
-  /** Tries to obtain an [[Instant]] from specified seconds from the epoch of 1970-01-01T00:00:00Z. */
-  def second(epochSecond: Long): Try[Instant] = Try(I.epochSec(epochSecond, 0))
+  /** Obtains an [[Instant]] from specified seconds from the epoch of 1970-01-01T00:00:00Z.
+    *
+    * @throws DateTimeException if the instant exceeds the maximum or minimum instant.
+    * @throws ArithmeticException if numeric overflow occurs.
+    */
+  def second(epochSecond: Long): Instant = I.epochSec(epochSecond, 0)
 
-  /** Tries to obtain an [[Instant]] from specified seconds from the epoch of 1970-01-01T00:00:00Z, and nanosecond
+  /** Obtains an [[Instant]] from specified seconds from the epoch of 1970-01-01T00:00:00Z, and nanosecond
     * fraction.
+    *
+    * @throws DateTimeException if the instant exceeds the maximum or minimum instant.
+    * @throws ArithmeticException if numeric overflow occurs.
     */
-  def second(epochSecond: Long, nanoAdjustment: Long): Try[Instant] = Try(I.epochSec(epochSecond, nanoAdjustment))
+  def second(epochSecond: Long, nanoAdjustment: Long): Instant = I.epochSec(epochSecond, nanoAdjustment)
 
-  /** Tries to query a [[Temporal]] to obtain an [[Instant]]. */
-  def from(from: TemporalAccessor): Try[Instant] = Try(I.from(from))
+  /** Queries a [[Temporal]] to obtain an [[Instant]].
+    *
+    * @throws DateTimeException if unable to convert to an Instant.
+    */
+  def from(from: TemporalAccessor): Instant = I.from(from)
 
-  /** Tries to obtain an [[Instant]] from text formatted according to [[format.DateTimeFormatter.Iso.Instant]], such as
+  /** Obtains an [[Instant]] from text formatted according to [[format.DateTimeFormatter.Iso.Instant]], such as
     * `2014-07-15T14:47:00.00Z`.
+    *
+    * @throws DateTimeParseException - if the text cannot be parsed.
     */
-  def parse(text: String): Try[Instant] = Try(I.parse(text))
+  def parse(text: String): Instant = I.parse(text)
 }

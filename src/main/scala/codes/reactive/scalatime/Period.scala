@@ -43,12 +43,13 @@ import scala.util.Try
   */
 object Period {
 
-  /** Tries to obtain a [[Period]] from a temporal amount by looping around the set of units from the amount and using
+  /** Obtains a [[Period]] from a temporal amount by looping around the set of units from the amount and using
     * the YEARS, MONTHS and DAYS units to create a period.
+    * @throws DateTimeException if unable to convert to a Period.
     */
-  def from(amount: TemporalAmount): Try[Period] = Try(JP.from(amount))
+  def from(amount: TemporalAmount): Period = JP.from(amount)
 
-  /** Tries to obtain a [[Duration]] from text based on the ISO-8601 Period format - PnDTnHnMn.nS - PnYnMnD and PnW.
+  /** Obtains a [[Period]] from text based on the ISO-8601 Period format - PnDTnHnMn.nS - PnYnMnD and PnW.
     *
     * ==== Text Format ====
     * The string starts with an optional sign, denoted by the ASCII negative or positive symbol. If negative, the whole
@@ -65,6 +66,8 @@ object Period {
     *
     * The leading plus/minus sign, and negative values for other units are not part of the ISO-8601 standard.
     *
+    * @throws DateTimeParseException if the text cannot be parsed.
+    *
     * @example
     * {{{
     *               import codes.reactive.scalatime._
@@ -76,16 +79,13 @@ object Period {
     *               val peri2 = Period.parse("P-1Y2M")
     * }}}
     */
-  def parse(text: String): Try[Period] = Try(JP.parse(text))
+  def parse(text: String): Period = JP.parse(text)
 
   /** Obtains a [[Period]] representing a number of days. */
   def days(days: Int): Period = JP.ofDays(days)
 
   /** Obtains a [[Period]] representing a number of weeks. */
   def weeks(weeks: Int): Period = JP.ofWeeks(weeks)
-
-  /** Obtains a [[Period]] representing a number of fortnights. */
-  def fortnights(fortnights: Int): Period = JP.ofWeeks(fortnights * 2)
 
   /** Obtains a [[Period]] representing a number of months. */
   def months(months: Int): Period = JP.ofMonths(months)
@@ -94,5 +94,6 @@ object Period {
   def years(years: Int): Period = JP.ofYears(years)
 
   /** Obtains a [[Period]] of zero. */
-  val Nil: Period = JP.zero
+  def empty: Period = JP.zero
+  final val EmptyPeriod = JP.zero
 }

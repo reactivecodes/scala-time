@@ -64,17 +64,4 @@ object TemporalQuery {
 
 }
 
-/** Enriches instances of [[TemporalQuery]] with additional methods. */
-class RichTemporalQuery[A](val underlying: TemporalQuery[A]) extends AnyVal {
 
-  /** Tries to query the specified [[TemporalAccessor]] using this query strategy. */
-  def <<?(temporal: TemporalAccessor): Try[A] = Try(temporal.query(underlying))
-
-  /** Queries the specified [[TemporalAccessor]] using this query strategy.
-    *
-    * @throws DateTimeException if unable to query.
-    * @throws ArithmeticException if numeric overflow occurs.
-    */
-  def <<(temporal: TemporalAccessor): A = temporal.query(underlying)
-
-}

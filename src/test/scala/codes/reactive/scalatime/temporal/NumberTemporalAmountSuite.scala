@@ -18,6 +18,7 @@
 
 package codes.reactive.scalatime.temporal
 
+import codes.reactive.scalatime.impl.{LongOps, IntOps}
 import org.scalatest.{Outcome, fixture, Matchers}
 
 
@@ -25,15 +26,13 @@ class IntPeriodSuite extends fixture.FunSuite with Matchers {
 
   import codes.reactive.scalatime.test.PeriodTestHelpers._
 
-  override type FixtureParam = IntPeriod
+  override type FixtureParam = IntOps
 
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new IntPeriod(10)))
+  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new IntOps(10)))
 
   test("An IntPeriod instance can create a Period instance of days from an Int")(i => (i days) shouldEqual days(10))
 
   test("An IntPeriod instance can create a Period instance of weeks from an Int")(i => (i weeks) shouldEqual weeks(10))
-
-  test("An IntPeriod instance can create a Period instance of fortnights from an Int")(i => (i fortnights) shouldEqual weeks(20))
 
   test("An IntPeriod instance can create a Period instance of months from an Int")(i => (i months) shouldEqual months(10))
 
@@ -46,9 +45,9 @@ class LongDurationSuite extends fixture.FunSuite with Matchers {
 
   import codes.reactive.scalatime.test.DurationTestHelpers._
 
-  override type FixtureParam = LongDuration
+  override type FixtureParam = LongOps
 
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new LongDuration(10)))
+  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new LongOps(10)))
 
   test("A LongDuration instance can create a Duration instance of nanos from a Long")(i => (i nanos) shouldEqual nanos(10))
 

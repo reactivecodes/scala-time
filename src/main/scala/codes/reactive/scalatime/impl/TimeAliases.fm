@@ -20,7 +20,7 @@ package codes.reactive.scalatime.impl
 
 
 /** Contains type aliases for JDK time types. */
-private[scalatime] abstract class TimeAliases {
+private[scalatime] trait TimeAliases extends Any {
 
   // java.time
   /** Alias for ''java.time'' `Clock`. A clock providing access to the current instant, date and time using a time-zone.
@@ -181,10 +181,15 @@ private[scalatime] abstract class TimeAliases {
 
   /** Alias for ''java.time.format'' `DateTimeFormatterBuilder`. DateTimeFormatterBuilder is a factory for creating
     * date-time formatters. See the ''java.time.format''
-    * [[http://${tDoc}/format/package-summary.html API Documentation]] for further
-    * information.
+    * [[http://${tDoc}/format/package-summary.html API Documentation]] for further information.
     */
   type DateTimeFormatterBuilder = ${tPac}.format.DateTimeFormatterBuilder
+
+  /** Alias for ''java.time.format'' `DateTimeParseException`. DateTimeParseException is an exception throws when an
+    * error occurs during parsing. See the ''java.time.format''
+    * [[http://${tDoc}/format/package-summary.html API Documentation]] for further information.
+    */
+  type DateTimeParseException = ${tPac}.format.DateTimeParseException
 
 
   // java.time.temporal

@@ -35,17 +35,25 @@ object Year {
   /** Obtains the current [[Year]] at the specified zone. */
   def apply(zone: ZoneId): Year = TimeSupport.Year.now(zone)
 
-  /** Tries to query a [[Temporal]] to obtain a [[Year]]. */
-  def from(temporal: TemporalAccessor): Try[Year] = Try(TimeSupport.Year.from(temporal))
+  /** Queries a [[Temporal]] to obtain a [[Year]].
+    * @throws DateTimeException if unable to convert to a Year.
+    */
+  def from(temporal: TemporalAccessor): Year = TimeSupport.Year.from(temporal)
 
-  /** Tries to obtain a [[Year]] from the specified proleptic year. */
-  def of(year: Int): Try[Year] = Try(TimeSupport.Year.of(year))
+  /** Obtains a [[Year]] from the specified proleptic year.
+    * @throws DateTimeException if the field is invalid.
+    */
+  def of(year: Int): Year = TimeSupport.Year.of(year)
 
-  /** Tries to obtain a [[Year]] from text such as `2014`. */
-  def parse(text: String): Try[Year] = Try(TimeSupport.Year.parse(text))
+  /** Obtains a [[Year]] from text such as `2014`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String): Year = TimeSupport.Year.parse(text)
 
-  /** Tries to obtain a [[Year]] text formatted according to the provided `formatter`. */
-  def parse(text: String, formatter: DateTimeFormatter): Try[Year] = Try(TimeSupport.Year.parse(text, formatter))
+  /** Obtains a [[Year]] text formatted according to the provided `formatter`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String, formatter: DateTimeFormatter): Year = TimeSupport.Year.parse(text, formatter)
 
   /** The maximum supported year, '+999,999,999'. */
   val Max: Year = TimeSupport.Year.of(TimeSupport.Year.max)
@@ -56,41 +64,3 @@ object Year {
 }
 
 
-/** Enriches [[Year]] instances with additional methods. */
-final class RichYear(val underlying: Year) extends AnyVal {
-
-  /** Obtains a year with the specified number of years added. */
-  def +(years: Int) = underlying.plusYears(years)
-
-  /** Obtains a year with the specified number of years subtracted. */
-  def -(years: Int): Year = underlying.minusYears(years)
-
-  /** Returns `true` if this year is before the specified one. */
-  def <(other: Year): Boolean = underlying.isBefore(other)
-
-  /** Returns `true` if this year is equal to or before the specified one. */
-  def <=(other: Year): Boolean = underlying.equals(other) || underlying.isBefore(other)
-
-  /** Returns `true` if this year is after the specified one. */
-  def >(other: Year): Boolean = underlying.isAfter(other)
-
-  /** Returns `true` if this year is equal to or after the specified one. */
-  def >=(other: Year): Boolean = underlying.equals(other) || underlying.isAfter(other)
-
-  /** Obtains a [[YearMonth]] by combining this year with the specified [[Month]]. */
-  def /(month: Month): YearMonth = underlying.atMonth(month)
-
-  /** Obtains a [[YearMonth]] by combining this year with the specified month, from 1 (January) to 12 (December).
-    * @throws DateTimeException if the month is invalid.
-    */
-  def /(month: Int): YearMonth = underlying.atMonth(month)
-
-  /** Obtains a [[LocalDate]] by combining this year with the specified [[MonthDay]]. */
-  def /(monthDay: MonthDay): LocalDate = underlying.atMonthDay(monthDay)
-
-  /** Formats this year using the specified formatter.
-    * @throws DateTimeException - if an error occurs during printing
-    */
-  def >>(formatter: DateTimeFormatter): String = underlying.format(formatter)
-
-}

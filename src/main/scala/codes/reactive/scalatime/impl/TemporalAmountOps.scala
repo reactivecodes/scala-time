@@ -16,12 +16,14 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
-package temporal
+package codes.reactive.scalatime.impl
 
+import codes.reactive.scalatime._
+
+import scala.language.implicitConversions
 
 /** Enriches a [[TemporalAmount]] with scala friendly methods. */
-final class RichTemporalAmount(val underlying: TemporalAmount) extends AnyVal {
+final class TemporalAmountOps(val underlying: TemporalAmount) extends AnyVal {
 
   /** Adds this amount to the specified temporal object **/
   def <<+(temporal: Temporal): Temporal = underlying.addTo(temporal)
@@ -30,9 +32,13 @@ final class RichTemporalAmount(val underlying: TemporalAmount) extends AnyVal {
   def <<-(temporal: Temporal): Temporal = underlying.subtractFrom(temporal)
 }
 
+trait ToTemporalAmountOps extends Any {
+  implicit final def toTemporalAmountOpsFromTemporalAmount(f: TemporalAmount): TemporalAmountOps = new TemporalAmountOps(f)
+}
+
 
 /** Enriches a [[Duration]] with scala friendly methods. */
-final class RichDuration(val underlying: Duration) extends AnyVal {
+final class DurationOps(val underlying: Duration) extends AnyVal {
 
   /** Obtains a copy of this duration multiplied by the scalar.
     *
@@ -79,9 +85,13 @@ final class RichDuration(val underlying: Duration) extends AnyVal {
   def unary_! : Duration = underlying.negated
 }
 
+trait ToDurationOps extends Any {
+  implicit final def toDurationOpsFromDuration(f: Duration): DurationOps = new DurationOps(f)
+}
+
 
 /** Enriches a [[Period]] with scala friendly methods. */
-final class RichPeriod(val underlying: Period) extends AnyVal {
+final class PeriodOps(val underlying: Period) extends AnyVal {
 
   /** Obtains a copy of this period multiplied by the scalar.
     *
@@ -109,4 +119,9 @@ final class RichPeriod(val underlying: Period) extends AnyVal {
     *                             has the value Long.MIN_VALUE
     */
   def unary_! : Period = underlying.negated
+}
+
+trait ToPeriodOps extends Any {
+
+  implicit final def toPeriodOpsFromPeriod(f: Period): PeriodOps = new PeriodOps(f)
 }

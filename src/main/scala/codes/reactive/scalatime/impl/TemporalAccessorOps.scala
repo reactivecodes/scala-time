@@ -16,31 +16,44 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
-package temporal
+package codes.reactive.scalatime.impl
 
-import util.Try
+import codes.reactive.scalatime._
+import temporal.TemporalQuery
+
+import scala.language.implicitConversions
+
 
 /** Enriches a [[TemporalAccessor]] with additional methods. */
-final class RichTemporalAccessor(val underlying: TemporalAccessor) extends AnyVal {
+final class TemporalAccessorOps(val underlying: TemporalAccessor) extends AnyVal {
 
   /** Queries this object using the specified [[TemporalQuery]] strategy object.
     *
     * @throws DateTimeException - if unable to query.
     * @throws ArithmeticException - if numeric overflow occurs.
     */
-  def >>[A](query: TemporalQuery[A]): A = underlying.query(query)
+  def |>[A](query: TemporalQuery[A]): A = underlying.query(query)
 
-  /** Queries this object using the specified [[TemporalQuery]] strategy object. */
-  def >>?[A](query: TemporalQuery[A]): Try[A] = Try(underlying.query(query))
-
+  /** Queries this object using the specified [[TemporalQuery]] strategy object.
+    *
+    * @throws DateTimeException - if unable to query.
+    * @throws ArithmeticException - if numeric overflow occurs.
+    */
+  def ▹[A](query: TemporalQuery[A]): A = underlying.query(query)
+  
   /** Obtains the value of the specified field as a `Long` by querying for the value of the specified field.
     *
     * @throws DateTimeException - if a value for the field cannot be obtained.
     * @throws ArithmeticException - if numeric overflow occurs.
     */
-  def >>(field: TemporalField): Long = underlying.getLong(field)
+  def #|>(field: TemporalField): Long = underlying.getLong(field)
 
-  /** Tries to obtain the value of the specified field as a `Long` by querying for the value of the specified field. */
-  def >>?(field: TemporalField): Long = underlying.getLong(field)
+  def #▹(field: TemporalField): Long = underlying.getLong(field)
+
+}
+
+trait ToTemporalAccessorOps extends Any {
+
+  implicit final def toTemporalAccessorOpsFromTemporalAccessor(f: TemporalAccessor): TemporalAccessorOps =
+    new TemporalAccessorOps(f)
 }

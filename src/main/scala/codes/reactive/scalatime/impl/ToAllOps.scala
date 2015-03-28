@@ -16,7 +16,26 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime
+package codes.reactive.scalatime.impl
 
-/** Provides functionality relating to generic calendar systems other than the default ISO system. */
-package object chrono
+
+abstract class ToAllOps extends ToIntOps
+    with ToLongOps
+    with ToMonthDayOps
+    with ToMonthOps
+    with ToTemporalAccessorOps
+    with ToTemporalAdjusterOps
+    with ToTemporalAmountOps
+    with ToDurationOps
+    with ToPeriodOps
+    with ToTemporalOps
+    with ToTemporalQueryOps
+    with ToTemporalUnitOps
+    with ToYearMonthOps
+    with ToYearOps
+    with ToChronoLocalDateOps
+    with ToChronoLocalDateTimeOps
+    with ToChronoZonedDateTimeOps
+    with ToStringOps
+
+trait ToAllStd extends Any with ToTemporalQuery

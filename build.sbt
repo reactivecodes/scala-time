@@ -15,7 +15,7 @@ ghpages.settings
 
 fmppSettings
 
-version := "0.2.0-SNAPSHOT"
+version := "0.3.0-SNAPSHOT"
 
 organization := "codes.reactive"
 
@@ -35,7 +35,7 @@ jdkVersion := System.getProperty("java.specification.version")
 
 scalaVersion := crossScalaVersions.value.head
 
-crossScalaVersions := Seq("2.11.4", "2.10.4")
+crossScalaVersions := Seq("2.11.6", "2.10.5")
 
 libraryDependencies ++= {
   def dependencies = Seq(scalaTest, mockito)
@@ -54,8 +54,6 @@ scalacOptions in (Compile, compile) += "-language:postfixOps"
 unmanagedSourceDirectories in Compile += (sourceDirectory in Compile).value / s"jdk_${jdkVersion.value}"
 
 unmanagedSourceDirectories in Test += (sourceDirectory in Test).value / s"jdk_${jdkVersion.value}"
-
-codesDevelopers := Some(Seq(Developer("Ali Salim Rashid", "arashi01")))
 
 OsgiKeys.bundleSymbolicName := "codes.reactive.scalatime"
 
@@ -80,11 +78,10 @@ SiteKeys.siteMappings <++= (mappings in (ScalaUnidoc, packageDoc), version) map 
 
 git.remoteRepo := codesGithubRepo.value.developerConnection.drop(8)
 
+addDevelopers(("arashi01", "Ali Salim Rashid", "a.rashid@zantekk.com"))
 
 fmppArgs ++= Seq(
   s"-DtPac:${matchJava(jdkVersion.value, "org.threeten.bp", "java.time")}," +
     s"tDoc:${matchJava(jdkVersion.value, "www.threeten.org/threetenbp/apidocs/org/threeten/bp",
     "docs.oracle.com/javase/8/docs/api/java/time")}"
 )
-
-

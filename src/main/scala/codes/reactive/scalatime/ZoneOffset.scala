@@ -43,29 +43,36 @@ import util.Try
   */
 object ZoneOffset {
 
-  /** Tries to obtain a [[ZoneOffset]] from an offset of hours - from 0 to ±18. */
-  def apply(hours: Int): Try[ZoneOffset] = Try(ZO.h(hours))
+  /** Obtains a [[ZoneOffset]] from an offset of hours - from 0 to ±18.
+    * @throws DateTimeException if the offset is not in the required range.
+    */
+  def apply(hours: Int): ZoneOffset = ZO.h(hours)
 
-  /** Tries to obtain a [[ZoneOffset]] from an offset of hours (from 0 to ±18) and minutes (0 to ±59). */
-  def apply(hours: Int, minutes: Int): Try[ZoneOffset] = Try(ZO.hm(hours, minutes))
+  /** Obtains a [[ZoneOffset]] from an offset of hours (from 0 to ±18) and minutes (0 to ±59).
+    * @throws DateTimeException if the offset is not in the required range.
+    */
+  def apply(hours: Int, minutes: Int): ZoneOffset = ZO.hm(hours, minutes)
 
-  /** Tries to obtains a [[ZoneOffset]] from an offset of hours (from 0 to ±18), minutes and seconds (both 0 to ±59). */
-  def apply(hours: Int, minutes: Int, seconds: Int): Try[ZoneOffset] =
-    Try(ZO.hms(hours, minutes, seconds))
+  /** Obtainss a [[ZoneOffset]] from an offset of hours (from 0 to ±18), minutes and seconds (both 0 to ±59).
+    * @throws DateTimeException if the offset is not in the required range.
+    */
+  def apply(hours: Int, minutes: Int, seconds: Int): ZoneOffset = ZO.hms(hours, minutes, seconds)
 
-  /** Tries to obtain a [[ZoneOffset]] from text.
+  /** Obtains a [[ZoneOffset]] from text.
     * See [[http://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html#of-java.lang.String- Java API.]] for more
     * detail.
     *
-    * @note Returns `Failure[DateTimeException]` if the offset ID is invalid.
+    * @throws DateTimeException if the offset ID is invalid.
     */
-  def apply(offsetId: String): Try[ZoneOffset] = Try(ZO.of(offsetId))
+  def apply(offsetId: String): ZoneOffset = ZO.of(offsetId)
 
-  /** Tries to query a [[Temporal]] instance to obtain its [[ZoneOffset]]. */
-  def from(temporal: TemporalAccessor): Try[ZoneOffset] = Try(ZO.from(temporal))
+  /** Queries a [[Temporal]] instance to obtain its [[ZoneOffset]].
+    * @throws DateTimeException if unable to convert to a ZoneOffset.
+    */
+  def from(temporal: TemporalAccessor): ZoneOffset = ZO.from(temporal)
 
   /** The time-zone offset representing EAT (Eastern Africa Time), with an offset of '+03:00'. */
-  val EAT: ZoneOffset = apply(3).get
+  val EAT: ZoneOffset = apply(3)
 
   /** The time-zone offset representing UTC (Coordinated Universal Time), with an offset of '0'. */
   val UTC: ZoneOffset = ZO.utc

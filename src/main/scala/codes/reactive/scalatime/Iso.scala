@@ -19,7 +19,7 @@
 package codes.reactive.scalatime
 
 
-import temporal.{IsoUnits, IsoFields}
+import impl.{IsoUnits, IsoFields}
 
 /** Provides units specific to the ISO-8601 calendar system as [[TemporalUnit]] instances. */
 object IsoUnit extends IsoUnits

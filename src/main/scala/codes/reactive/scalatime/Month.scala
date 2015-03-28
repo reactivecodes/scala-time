@@ -29,7 +29,7 @@ import scala.util.Try
 object Month {
 
   /** Obtains the current [[Month]] at UTC. */
-  def apply(): Month = from(OffsetDateTime()).get
+  def apply(): Month = from(OffsetDateTime())
 
   /** Obtains the [[Month]] of an int value (from 1 to 12).
     *
@@ -37,8 +37,10 @@ object Month {
     */
   def apply(month: Int): Month = M.of(month)
 
-  /** Tries to obtain the month from a [[Temporal]]. */
-  def from(temporal: TemporalAccessor): Try[Month] = Try(M.from(temporal))
+  /** Queries a [[Temporal]] to obtain a Month.
+    * @throws DateTimeException if unable to convert to a Month.
+    */
+  def from(temporal: TemporalAccessor): Month = M.from(temporal)
 
   /** $Repr January, with 31 days and a numeric value of `1`. */
   final val January = apply(1)
@@ -79,21 +81,4 @@ object Month {
 }
 
 
-/** Enriches a [[Month]] with additional methods. */
-final class RichMonth(val underlying: Month) extends AnyVal {
 
-  /** Obtains the month-of-year which is the specified number of months after this one. */
-  def +(months: Int) = underlying.plus(months)
-
-  /** Obtains the month-of-year which is the specified number of months before this one. */
-  def -(months: Int) = underlying.minus(months)
-
-  /** Obtains a [[MonthDay]] by combining this month with the specified day-of-month.
-    * @throws DateTimeException if the day-of-month is invalid for the month.
-    */
-  def /(day: Int): MonthDay = MonthDay.of(underlying, day).get
-
-
-  def =~(temporal: Temporal) = underlying.adjustInto(temporal)
-
-}

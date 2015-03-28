@@ -36,11 +36,15 @@ object OffsetDateTime {
   /** Obtains an [[OffsetDateTime]] from the specified [[LocalDateTime]] and [[ZoneOffset]]. */
   def apply(dateTime: LocalDateTime, zone: ZoneOffset): OffsetDateTime = OD.of(dateTime, zone)
 
-  /** Tries to query a [[Temporal]] instance to obtain an [[OffsetDateTime]]. */
-  def from(from: TemporalAccessor): Try[OffsetDateTime] = Try(OD.from(from))
+  /** Queries a [[Temporal]] instance to obtain an [[OffsetDateTime]].
+    * @throws DateTimeException if unable to convert to a OffsetDateTime.
+    */
+  def from(from: TemporalAccessor): OffsetDateTime = OD.from(from)
 
-  /** Tries to obtain an [[OffsetDateTime]] from a year, month, day, hour, minute, second, nanosecond and offset. The
+  /** Obtains an [[OffsetDateTime]] from a year, month, day, hour, minute, second, nanosecond and offset. The
     * values of all fields must be within range, and the day must be valid for the year and month.
+    * @throws DateTimeException if the value of any field is out of range, or if the day-of-month is invalid
+    *                           for the month-year.
     */
   def of(year: Int,
          month: Int,
@@ -49,11 +53,13 @@ object OffsetDateTime {
          minute: Int,
          second: Int,
          nano: Int,
-         zone: ZoneOffset): Try[OffsetDateTime] =
-    Try(OD.of(year, month, day, hour, minute, second, nano, zone))
+         zone: ZoneOffset): OffsetDateTime =
+    OD.of(year, month, day, hour, minute, second, nano, zone)
 
-  /** Tries to obtain an [[OffsetDateTime]] from a year, [[Month]], day, hour, minute, second, nanosecond and offset. The values of
+  /** Obtains an [[OffsetDateTime]] from a year, [[Month]], day, hour, minute, second, nanosecond and offset. The values of
     * all fields must be within range, and the day must be valid for the year and month.
+    * @throws DateTimeException if the value of any field is out of range, or if the day-of-month is invalid
+    *                           for the month-year.
     */
   def of(year: Int,
          month: Month,
@@ -62,17 +68,19 @@ object OffsetDateTime {
          minute: Int,
          second: Int,
          nano: Int,
-         zone: ZoneOffset): Try[OffsetDateTime] =
-    Try(OD.of(year, month.getValue, day, hour, minute, second, nano, zone))
+         zone: ZoneOffset): OffsetDateTime =
+    OD.of(year, month.getValue, day, hour, minute, second, nano, zone)
 
-  /** Tries to obtain an [[OffsetDateTime]] from text formatted according to [[format.DateTimeFormatter.Iso.OffsetDateTime]].
-    *
+  /** Obtains an [[OffsetDateTime]] from text formatted according to [[format.DateTimeFormatter.Iso.OffsetDateTime]].
     * @param text the text to parse such as "2007-12-03T10:15:30+01:00"
+    * @throws DateTimeParseException if the text cannot be parsed.
     */
-  def parse(text: String): Try[OffsetDateTime] = Try(OD.parse(text, format.DateTimeFormatter.Iso.OffsetDateTime))
+  def parse(text: String): OffsetDateTime = OD.parse(text, format.DateTimeFormatter.Iso.OffsetDateTime)
 
-  /** Tries to obtain an [[OffsetDateTime]] from valid text formatted according to the provided `formatter`. */
-  def parse(text: String, formatter: DateTimeFormatter): Try[OffsetDateTime] = Try(OD.parse(text, formatter))
+  /** Obtains an [[OffsetDateTime]] from valid text formatted according to the provided `formatter`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String, formatter: DateTimeFormatter): OffsetDateTime = OD.parse(text, formatter)
 
   /** The maximum supported OffsetDateTime, '+999999999-12-31T23:59:59.999999999-18:00' - or 'far future'. */
   val Max: OffsetDateTime = OD.max

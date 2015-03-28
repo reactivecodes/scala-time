@@ -19,7 +19,6 @@
 package codes.reactive.scalatime
 
 import impl.TimeSupport.{LocalTime => LT}
-import util.Try
 
 
 /** Factory object for obtaining [[LocalTime]] instances. **/
@@ -31,36 +30,48 @@ object LocalTime {
   /** Obtains a [[LocalTime]] by querying the specified clock for the current time. */
   def apply(clock: Clock): LocalTime = LT.now(clock)
 
-  /** Tries to query a [[Temporal]] instance to obtain a [[LocalTime]]. */
-  def from(from: TemporalAccessor): Try[LocalTime] = Try(LT.from(from))
+  /** Queries a [[Temporal]] instance to obtain a [[LocalTime]].
+    * @throws DateTimeException if unable to convert to a LocalTime.
+    */
+  def from(from: TemporalAccessor): LocalTime = LT.from(from)
 
-  /** Tries to obtain a [[LocalTime]] from text formatted according to [[format.DateTimeFormatter.Iso.LocalTime]].
-    *
+  /** Obtains a [[LocalTime]] from text formatted according to [[format.DateTimeFormatter.Iso.LocalTime]].
     * @param text the text to parse such as "10:15:30"
+    * @throws DateTimeParseException if the text cannot be parsed.
     */
-  def parse(text: String): Try[LocalTime] = Try(LT.parse(text, format.DateTimeFormatter.Iso.LocalTime))
+  def parse(text: String): LocalTime = LT.parse(text, format.DateTimeFormatter.Iso.LocalTime)
 
-  /** Tries to obtain a [[LocalTime]] instance from valid text formatted according to the provided `formatter`. */
-  def parse(text: String, formatter: DateTimeFormatter): Try[LocalTime] = Try(LT.parse(text, formatter))
+  /** Obtains a [[LocalTime]] instance from valid text formatted according to the provided `formatter`.
+    * @throws DateTimeParseException if the text cannot be parsed.
+    */
+  def parse(text: String, formatter: DateTimeFormatter):  LocalTime = LT.parse(text, formatter)
 
-  /** Tries to obtain a [[LocalTime]] from an hour, minute, second and nanosecond. All values must be within range. */
-  def of(hour: Int, minute: Int, second: Int, nano: Int): Try[LocalTime] = Try(LT.of(hour, minute, second, nano))
+  /** Obtains a [[LocalTime]] from an hour, minute, second and nanosecond. All values must be within range.
+    * @throws DateTimeException if the value of any field is out of range.
+    */
+  def of(hour: Int, minute: Int, second: Int, nano: Int): LocalTime = LT.of(hour, minute, second, nano)
 
-  /** Tries to obtain a [[LocalTime]] from an hour, minute and second, setting nanoseconds to zero. All values
+  /** Obtains a [[LocalTime]] from an hour, minute and second, setting nanoseconds to zero. All values
     *  must be within range.
+    * @throws DateTimeException if the value of any field is out of range.
     */
-  def of(hour: Int, minute: Int, second: Int): Try[LocalTime] = Try(LT.of(hour, minute, second, 0))
+  def of(hour: Int, minute: Int, second: Int): LocalTime = LT.of(hour, minute, second, 0)
 
-  /** Tries to obtain a [[LocalTime]] from an hour and minute, setting seconds and nanoseconds to zero. Both values
+  /** Obtains a [[LocalTime]] from an hour and minute, setting seconds and nanoseconds to zero. Both values
     * must be within range.
+    * @throws DateTimeException if the value of any field is out of range.
     */
-  def of(hour: Int, minute: Int): Try[LocalTime] = Try(LT.of(hour, minute, 0, 0))
+  def of(hour: Int, minute: Int): LocalTime = LT.of(hour, minute, 0, 0)
 
-  /** Tries to obtain a [[LocalTime]] instance from from a nanos-of-day value - from 0 to 24 * 60 * 60 * 1,000,000,000 - 1 */
-  def ofNano(nanoOfDay: Long): Try[LocalTime] = Try(LT.ofNano(nanoOfDay))
+  /** Obtains a [[LocalTime]] instance from from a nanos-of-day value - from 0 to 24 * 60 * 60 * 1,000,000,000 - 1.
+    * @throws DateTimeException if the `nanoOfDay` value is invalid.
+    */
+  def ofNano(nanoOfDay: Long): LocalTime = LT.ofNano(nanoOfDay)
 
-  /** Tries to obtain a [[LocalTime]] instance from from a second-of-day value - from 0 to 24 * 60 * 60 - 1 */
-  def ofSecond(secondOfDay: Long): Try[LocalTime] = Try(LT.ofSec(secondOfDay))
+  /** Obtains a [[LocalTime]] instance from from a second-of-day value - from 0 to 24 * 60 * 60 - 1.
+    * @throws DateTimeException if the `secondOfDay` value is invalid.
+    */
+  def ofSecond(secondOfDay: Long): LocalTime = LT.ofSec(secondOfDay)
 
   /** The maximum supported LocalTime ('23:59:59.999999999' - just before midnight at the end of the day). */
   val Max: LocalTime = LT.max

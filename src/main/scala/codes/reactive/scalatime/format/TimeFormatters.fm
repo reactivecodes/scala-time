@@ -109,17 +109,19 @@ private[scalatime] trait TimeFormatters {
   /** Formats or parses an RFC-1123 / RFC822 (internet) date-time */
   final val Internet = `RFC1123/RFC822`
 
-  /** Tries to obtain a [[DateTimeFormatter]] based on a text pattern of letters and symbols. See the
+  /** Obtains a [[DateTimeFormatter]] based on a text pattern of letters and symbols. See the
     * [[http://${tDoc}/format/DateTimeFormatter.html java API documentation]] for
     * a full list of symbols and meanings. For example, d MMM uuuu will format 2014-06-07 as '7 Jun 2014'.
+    * @throws IllegalArgumentException if the pattern is invalid.
     */
-  def apply(pattern: String): Try[DateTimeFormatter] = Try(DF.ofPattern(pattern))
+  def apply(pattern: String): DateTimeFormatter = DF.ofPattern(pattern)
 
-  /** Tries to obtain a [[DateTimeFormatter]] based on a text pattern of letters and symbols and the provided locale.
+  /** Obtains a [[DateTimeFormatter]] based on a text pattern of letters and symbols and the provided locale.
     * This can be changed using `withLocale(Locale)` on the returned formatter. See the
     * [[http://${tDoc}/format/DateTimeFormatter.html java API documentation]] for
     * a full list of symbols and meanings. For example, d MMM uuuu will format 2014-06-07 as '7 Jun 2014'.
+    * @throws IllegalArgumentException if the pattern is invalid.
     */
-  def apply(pattern: String, locale: Locale): Try[DateTimeFormatter] = Try(DF.ofPattern(pattern, locale))
+  def apply(pattern: String, locale: Locale): DateTimeFormatter = DF.ofPattern(pattern, locale)
 
 }

@@ -27,7 +27,7 @@ import org.scalatest.{Matchers, Outcome, fixture}
 class TimeFormattersSuite extends fixture.FreeSpec with Matchers {
 
   case class FormatFixture(subject: TimeFormatters = new TimeFormatters {},
-                           date: ZonedDateTime = ZonedDateTime.of(2014, 6, 10, 22, 35, 29, 978, ZoneId.UTC).get,
+                           date: ZonedDateTime = ZonedDateTime.of(2014, 6, 10, 22, 35, 29, 978, ZoneId.UTC),
                            internet: String = "Tue, 10 Jun 2014 22:35:29 GMT",
                            offset: String = "2014-06-10T22:35:29.000000978Z",
                            offsetTruncated: String = "2014-06-10T22:35:29Z",
@@ -44,14 +44,14 @@ class TimeFormattersSuite extends fixture.FreeSpec with Matchers {
       "including ISO-8601 formatters provided by the `iso` member" in { a =>
         import a.subject.Iso
         Iso.OffsetDateTime.format(a.date.truncatedTo(ChronoUnit.Seconds)) should be(a.offsetTruncated)
-        LocalDateTime.from(Iso.OffsetDateTime.parse(a.offset)).get.truncatedTo(ChronoUnit.Seconds) should be(a.date.toLocalDateTime.truncatedTo(ChronoUnit.Seconds))
+        LocalDateTime.from(Iso.OffsetDateTime.parse(a.offset)).truncatedTo(ChronoUnit.Seconds) should be(a.date.toLocalDateTime.truncatedTo(ChronoUnit.Seconds))
         Iso.LocalTime.format(a.date.truncatedTo(ChronoUnit.Seconds)) should be(a.localTime)
       }
 
       "and an RFC-1123 / RFC822 (internet) date-time formatter" in { a =>
         import a.subject.Internet
         Internet.format(a.date) should be(a.internet)
-        LocalDateTime.from(Internet.parse(a.internet)).get should be(a.date.truncatedTo(ChronoUnit.Seconds).toLocalDateTime)
+        LocalDateTime.from(Internet.parse(a.internet)) should be(a.date.truncatedTo(ChronoUnit.Seconds).toLocalDateTime)
       }
 
     }
