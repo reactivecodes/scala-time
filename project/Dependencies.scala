@@ -16,7 +16,7 @@
  * License.                                                       *
  ******************************************************************/
 
-import codes.reactive.sbt.CodesPlugin.autoImport.Deps
+import codes.reactive.sbt.SbtCodes.autoImport.Deps
 import sbt._
 
 object Dependencies extends Plugin {
