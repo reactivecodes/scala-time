@@ -24,7 +24,7 @@ package temporal
 object TemporalAdjuster {
 
   /** Obtains a [[TemporalAdjuster]] from a function `([[Temporal]]) => [[Temporal]]`. */
-  def apply[A <: Temporal](f: A => A) = new codes.reactive.scalatime.TemporalAdjuster {
+  def apply[A <: Temporal](f: A => A): TemporalAdjuster = new TemporalAdjuster {
     override def adjustInto(temporal: Temporal): Temporal = f(temporal.asInstanceOf[A]).asInstanceOf[Temporal]
   }
 }

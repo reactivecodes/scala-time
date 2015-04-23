@@ -16,22 +16,14 @@
  * License.                                                       *
  ******************************************************************/
 
-import codes.reactive.sbt.SbtCodes.autoImport.Deps
-import sbt._
+package codes.reactive.scalatime
+package format
 
-object Dependencies extends Plugin {
+import impl.TimeSupport
 
-  val jdkVersion = settingKey[String]("Revision of the JDK used to build this project.")
 
-  def scalaTest = Deps.scalaTest("2.1.5")
+object DateTimeFormatterBuilder {
 
-  def mockito = Deps.mockitoCore("1.10.8")
+  def apply(): DateTimeFormatterBuilder = TimeSupport.DateTimeFormatterBuilder.get
 
-  def threeten = "org.threeten" % "threetenbp" % "1.2"
-
-  def matchJava[A](v: String, jdk7: => A, other: => A) = v.takeRight(1).toInt match {
-    case 7 => jdk7
-    case x if x > 7 => other
-    case _ => sys.error("Java JDK version not supported. Use JDK 1.7 (Java 7) or greater.")
-  }
 }

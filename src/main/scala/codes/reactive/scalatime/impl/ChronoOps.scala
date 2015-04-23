@@ -48,10 +48,10 @@ final class ChronoLocalDateTimeOps[A <: ChronoLocalDate](val underlying: ChronoL
 
 
   /** Combines this date-time with a time-zone to create a ZonedDateTime. **/
-  def %%(zone: ZoneId) = underlying.atZone(zone)
+  def %%(zone: ZoneId): ChronoZonedDateTime[A] = underlying.atZone(zone)
 
   /** Alias for [[%%]].Combines this date-time with a time-zone to create a ZonedDateTime. **/
-  def ±(zone: ZoneId) = %%(zone)
+  def ±(zone: ZoneId): ChronoZonedDateTime[A] = %%(zone)
 
   /** Formats this date using the specified formatter.
     * @throws DateTimeException - if an error occurs during formatting.
@@ -63,7 +63,7 @@ final class ChronoLocalDateTimeOps[A <: ChronoLocalDate](val underlying: ChronoL
 }
 
 trait ToChronoLocalDateTimeOps {
-  implicit final def toChronoLocalDatetimeOpsFromChronoLocalDateTime[A <: ChronoLocalDate](f: ChronoLocalDateTime[A]): 
+  implicit final def toChronoLocalDatetimeOpsFromChronoLocalDateTime[A <: ChronoLocalDate](f: ChronoLocalDateTime[A]):
     ChronoLocalDateTimeOps[A] = new ChronoLocalDateTimeOps(f)
 }
 

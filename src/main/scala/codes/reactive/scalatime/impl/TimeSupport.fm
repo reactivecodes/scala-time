@@ -183,4 +183,10 @@ private[scalatime] object TimeSupport {
     def precision = T.precision()
     def zone = T.zone()
     def zoneId = T.zoneId()  }
+
+  // format
+  object DateTimeFormatterBuilder {
+    import ${tPac}.format.{DateTimeFormatterBuilder => T}
+    def get = new T
+  }
 }

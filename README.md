@@ -5,7 +5,7 @@ Basic Scala utilities allowing for easier use of *`java.time` compatible* APIs, 
 Scala API (and migration point) between [JDK 1.8 Time][2], and the [Threeten BP][12] JDK 7 backport.
 
 ###### [Build:][11]
-  - [*devel*][7]: ![Devel Build Status Icon][3]
+  - [*master*][7]: ![Devel Build Status Icon][3]
 
 ###### [Issues][8]
 
@@ -95,11 +95,11 @@ limitations under the License.
 
 [1]: http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html
 [2]: http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-[3]: https://reactive.codes/ci/app/rest/builds/buildType(id:ScalaTime_Devel),branch:devel/statusIcon
+[3]: https://reactive.codes/ci/app/rest/builds/buildType(id:ScalaTime_IntegrationTest),branch:master/statusIcon
 [4]: http://www.apache.org/licenses/LICENSE-2.0
 [5]: https://oss.sonatype.org/content/repositories/snapshots
 [6]: http://scala-sbt.org
-[7]: https://reactive.codes/ci/viewLog.html?buildTypeId=ScalaTime_Devel&buildId=lastFinished&buildBranch=devel
+[7]: https://reactive.codes/ci/viewLog.html?buildTypeId=ScalaTime_IntegrationTest&buildId=lastFinished&buildBranch=master
 [8]: https://reactive.codes/issues/issues?q=project%3A+%7BScala+Time%7D
 [9]: http://oss.reactive.codes/scala-time
 [11]: https://reactive.codes/ci/project.html?projectId=ScalaTime&tab=projectOverview

@@ -29,7 +29,8 @@ final class IntOps(val underlying: Int) extends AnyVal {
   def day: Period = days
 
   /** Obtains a [[Period]] representing a number of days. */
-  def days: Period = Period.days(underlying) // TODO? Better way to overload day/days when used on literals. ie. both Period and Duration can be constructed from Int literals
+  def days: Period = Period.days(underlying) // TODO? Better way to overload day/days when used on literals.
+                                             // ie. both Period and Duration can be constructed from Int literals
 
   /** Obtains a [[Period]] representing a number of weeks. */
   def week: Period = weeks

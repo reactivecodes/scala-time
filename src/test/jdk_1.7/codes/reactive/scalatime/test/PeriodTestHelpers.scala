@@ -20,9 +20,7 @@ package codes.reactive.scalatime.test
 
 import org.threeten.bp.{Period => P}
 
-/**
- * Created by arashid on 14/07/14.
- */
+
 object PeriodTestHelpers {
 
   def days(i: Int) = P.ofDays(i)

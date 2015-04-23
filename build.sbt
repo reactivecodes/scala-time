@@ -1,11 +1,6 @@
-import org.scalastyle.sbt.{PluginKeys => StylePluginKeys, ScalastylePlugin}
-import Dependencies._
+enablePlugins(CodesOsgi)
 
-val jdkVersion = settingKey[String]("Revision of the JDK used to build this project.")
-
-lazy val scalaTime = project.in(file("."))
-  .enablePlugins(CodesOsgi)
-  .configs(Fmpp)
+configs(Fmpp)
 
 name <<= (name, jdkVersion)((n, v) => matchJava(v, s"$n Threeten", n))
 
@@ -67,9 +62,7 @@ OsgiKeys.privatePackage := Seq("codes.reactive.scalatime*")
 
 OsgiKeys.exportPackage := Seq("codes.reactive.scalatime*")
 
-ScalastylePlugin.Settings
-
-StylePluginKeys.config <<= baseDirectory(_ / "project/scalastyle-config.xml")
+scalastyleConfig <<= baseDirectory(_ / "project/scalastyle_config.xml")
 
 SiteKeys.siteMappings := Seq(baseDirectory.value / "project/site.html" -> "index.html")
 

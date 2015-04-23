@@ -26,7 +26,7 @@ import scala.language.implicitConversions
 final class YearOps(val underlying: Year) extends AnyVal {
 
   /** Obtains a year with the specified number of years added. */
-  def +(years: Int) = underlying.plusYears(years)
+  def +(years: Int): Year = underlying.plusYears(years)
 
   /** Obtains a year with the specified number of years subtracted. */
   def -(years: Int): Year = underlying.minusYears(years)

@@ -79,6 +79,3 @@ object Month {
   final val December = apply(12)
 
 }
-
-
-
