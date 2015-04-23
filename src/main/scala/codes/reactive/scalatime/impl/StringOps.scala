@@ -18,7 +18,6 @@
 
 package codes.reactive.scalatime.impl
 
-import java.time.format.DateTimeParseException
 
 import codes.reactive.scalatime._
 
