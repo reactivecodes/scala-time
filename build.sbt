@@ -1,6 +1,6 @@
-enablePlugins(CodesOsgi)
-
-configs(Fmpp)
+lazy val scalaTime = (project in file("."))
+  .enablePlugins(CodesOsgi)
+  .configs(Fmpp)
 
 name <<= (name, jdkVersion)((n, v) => matchJava(v, s"$n Threeten", n))
 
