@@ -16,25 +16,21 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime.impl
+package codes.reactive.scalatime
+package impl
 
-import codes.reactive.scalatime._
+import org.scalatest.{Outcome, Matchers, fixture}
 
-import scala.language.implicitConversions
 
-/** Enriches a [[TemporalAdjuster]] with additional methods. */
-final class TemporalAdjusterOps(val underlying: TemporalAdjuster) extends AnyVal {
+class TemporalAdjusterOpsSuite extends fixture.FunSuite with Matchers {
+  override type FixtureParam = TemporalAdjusterOps
 
-  /** Adjusts the provided temporal object using the logic encapsulated in this.
-    *
-    * @throws DateTimeException if unable to make the adjustment.
-    * @throws ArithmeticException if numeric overflow occurs.
-    */
-  def <<=[A <: Temporal](temporal: A): A = underlying.adjustInto(temporal).asInstanceOf[A]  //TODO: Finalise method name
+  override protected def withFixture(test: OneArgTest): Outcome = {
+    val adj = temporal.TemporalAdjuster.firstDayOfMonth
+    withFixture(test.toNoArgTest(new FixtureParam(adj)))
+  }
 
-}
-
-trait ToTemporalAdjusterOps extends Any {
-
-  implicit final def toTemporalAdjusterOpsFromTemporalAdjuster(f: TemporalAdjuster): TemporalAdjusterOps = new TemporalAdjusterOps(f)
+  test("`<<=` applies the boxed TemporalAdjuster to the specified Temporal") { a ⇒
+    (a <<= LocalDate.of(2015, 4, 25)) shouldBe LocalDate.of(2015, 4, 1)
+  }
 }

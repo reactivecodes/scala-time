@@ -134,7 +134,7 @@ class ScalaTimeSuite extends FreeSpec with Matchers {
     period shouldBe PeriodTestHelpers.days(1)
   }
 
-  "'extended' usage with additional implicits import of 'conversions._'" in {
+  "'extended' usage with additional implicits imported of 'Scalatime._'" in {
     import codes.reactive.scalatime._
     import Scalatime._
 

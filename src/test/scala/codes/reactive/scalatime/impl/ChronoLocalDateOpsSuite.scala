@@ -17,44 +17,29 @@
  ******************************************************************/
 
 package codes.reactive.scalatime
-package chrono
+package impl
 
-import format.DateTimeFormatter.{Iso => IDF}
-import impl.{ChronoLocalDateTimeOps, ChronoLocalDateOps}
 import org.scalatest.{Matchers, Outcome, fixture}
+import format.DateTimeFormatter.Iso
 
 
-class RichChronoLocalDateSuite extends fixture.FunSuite with Matchers {
+class ChronoLocalDateOpsSuite extends fixture.FunSuite with Matchers {
 
   test("`%%` combines a ChronoLocalDate with a LocalTime") { ld =>
     val lt = LocalTime()
-   ld %% lt shouldBe  ld.underlying.atTime(lt)
+    ld %% lt shouldBe ld.underlying.atTime(lt)
   }
 
   test("`>>` formats a ChronoLocalDate according to the specified formatter") { ld =>
-    ld |> IDF.LocalDate shouldBe ld.underlying.format(IDF.LocalDate)
+    ld |> Iso.LocalDate shouldBe ld.underlying.format(Iso.LocalDate)
+  }
+
+  test("`▹` formats a ChronoLocalDate according to the specified formatter") { ld =>
+    ld  ▹ Iso.LocalDate shouldBe ld.underlying.format(Iso.LocalDate)
   }
 
   override type FixtureParam = ChronoLocalDateOps
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new ChronoLocalDateOps(LocalDate())))
-}
 
-
-class RichChronoLocalDateTimeSuite extends fixture.FunSuite with Matchers {
-
-  test("`%%` combines a ChronoLocalDateTime with a time zone") { (ldt: ChronoLocalDateTimeOps[LocalDate]) =>
-    ldt %% ZoneId.UTC shouldBe  ldt.underlying.atZone(ZoneOffset.UTC)
-  }
-
-  test("`±` combines a ChronoLocalDateTime with a time zone") { ldt =>
-    ldt ± ZoneId.UTC shouldBe  ldt.underlying.atZone(ZoneOffset.UTC)
-  }
-
-  test("`>>` formats a ChronoLocalDateTime according to the specified formatter") { ldt =>
-    ldt |> IDF.LocalDate shouldBe ldt.underlying.format(IDF.LocalDate)
-  }
-
-  override type FixtureParam = ChronoLocalDateTimeOps[LocalDate]
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new ChronoLocalDateTimeOps(LocalDateTime())))
-
+  override protected def withFixture(test: OneArgTest): Outcome =
+    withFixture(test.toNoArgTest(new ChronoLocalDateOps(LocalDate())))
 }

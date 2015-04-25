@@ -26,9 +26,6 @@ import scala.util.Try
   *
   * Duration is a time-based amount of time, such as '34.5 seconds'.
   *
-  * @note   Direct use of this object is not the only mechanism to obtain [[Duration]] instances. See also
-  *         the [[syntax]] syntax for alternatives.
-  *
   * @example
   * {{{
   *             import codes.reactive.scalatime._
@@ -49,6 +46,14 @@ object Duration {
     * @throws ArithmeticException if numeric overflow occurs.
     */
   def from(amount: TemporalAmount): Duration = JD.from(amount)
+
+  /** Obtains a Duration representing the duration between two temporal objects. The specified temporal objects must
+    * support the [[ChronoUnit.Seconds]] unit.
+    *
+    * @throws DateTimeException if the seconds between the temporals cannot be obtained.
+    * @throws ArithmeticException if the calculation exceeds the capacity of Duration.
+    */
+  def between(start: Temporal, end: Temporal): Duration = JD.between(start, end)
 
   /** Obtains a [[Duration]] from text based on the ISO-8601 Duration format - PnDTnHnMn.nS - with days
     * considered to be exactly 24 hours.
@@ -112,5 +117,5 @@ object Duration {
 
   /** Obtains a [[Duration]] of zero. */
   def empty: Duration = JD.zero
-  private val EmptyDuration = JD.zero
+  private final val EmptyDuration = JD.zero
 }

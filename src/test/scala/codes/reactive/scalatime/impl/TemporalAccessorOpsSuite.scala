@@ -17,37 +17,33 @@
  ******************************************************************/
 
 package codes.reactive.scalatime
-package temporal
+package impl
 
-import impl.TemporalOps
 import org.scalatest.{Outcome, Matchers, fixture}
+import temporal.TemporalQuery
 
 
+class TemporalAccessorOpsSuite extends fixture.FunSuite with Matchers {
+  override type FixtureParam = TemporalAccessorOps
 
-class RichTemporalSuite extends fixture.FreeSpec with Matchers {
+  override protected def withFixture(test: OneArgTest): Outcome = {
+    val accessor = LocalDate.of(2015, 4, 25)
+    withFixture(test.toNoArgTest(new FixtureParam(accessor)))
+  }
 
-  override type FixtureParam = TemporalOps
+  test("`|>` queries the boxed object using the specified TemporalQuery strategy object.") {
+    _ |> TemporalQuery.precision shouldBe ChronoUnit.Days
+  }
 
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new TemporalOps(LocalDate.of(2014, 6, 7))))
+  test("`▹` queries the boxed object using the specified TemporalQuery strategy object.") {
+    _ |> TemporalQuery.precision shouldBe ChronoUnit.Days
+  }
 
-  "RichTemporal instances" - {
+  test("`#|>` queries the boxed object to obtains the value of the specified field as a `Long`") {
+    _ #|> ChronoField.DayOfMonth shouldBe 25L
+  }
 
-    "have a '+' method for adding a 'TemporalAmount' to an underlying 'Temporal'" in {
-      _ + Period.days(1) should equal (LocalDate.of(2014, 6, 8))
-    }
-
-    "have a '+' method for adding an amount of 'TemporalUnit's to an underlying 'Temporal'" in { p =>
-      (p +(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 8))
-    }
-
-    "have a '-' method for subtracting a TemporalAmount from an underlying Temporal" in {
-      _ - Period.days(1) should equal (LocalDate.of(2014, 6, 6))
-    }
-
-    "have a '-' method for subtracting  an amount of 'TemporalUnit's from  an underlying 'Temporal'" in { p =>
-      (p -(1, ChronoUnit.Days)) should equal(LocalDate.of(2014, 6, 6))
-    }
-
- }
-
+  test("`#▹` queries the boxed object to obtains the value of the specified field as a `Long`") {
+    _ #▹ ChronoField.DayOfMonth shouldBe 25L
+  }
 }

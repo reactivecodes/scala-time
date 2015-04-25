@@ -34,6 +34,9 @@ final class ChronoLocalDateOps(val underlying: ChronoLocalDate) extends AnyVal {
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
+  /** Formats this date using the specified formatter.
+    * @throws DateTimeException - if an error occurs during formatting.
+    */
   def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
 }
 

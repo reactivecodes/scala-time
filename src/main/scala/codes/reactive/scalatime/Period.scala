@@ -26,9 +26,6 @@ import scala.util.Try
   *
   * Period is a date-based amount of time in the ISO-8601 calendar system, such as '2 years, 3 months and 4 days'.
   *
-  * @note   Direct use of this object is not the only mechanism to obtain [[Period]] instances. See also
-  *         [[syntax]] for alternatives.
-  *
   * @example
   *          {{{
   *            import codes.reactive.scalatime._
@@ -39,17 +36,20 @@ import scala.util.Try
   *            // Obtain a Period of zero
   *            val zero = Period.Nil
   *          }}}
-  *
+  * @define ObtP  Obtains a Period
   */
 object Period {
 
-  /** Obtains a [[Period]] from a temporal amount by looping around the set of units from the amount and using
+  /** $ObtP from a temporal amount by looping around the set of units from the amount and using
     * the YEARS, MONTHS and DAYS units to create a period.
     * @throws DateTimeException if unable to convert to a Period.
     */
   def from(amount: TemporalAmount): Period = JP.from(amount)
 
-  /** Obtains a [[Period]] from text based on the ISO-8601 Period format - PnDTnHnMn.nS - PnYnMnD and PnW.
+  /** Obtains a Period consisting of the number of years, months, and days between two dates. */
+  def between(start: LocalDate, end: LocalDate): Period = JP.between(start, end)
+
+  /** $ObtP from text based on the ISO-8601 Period format - PnDTnHnMn.nS - PnYnMnD and PnW.
     *
     * ==== Text Format ====
     * The string starts with an optional sign, denoted by the ASCII negative or positive symbol. If negative, the whole
@@ -81,19 +81,19 @@ object Period {
     */
   def parse(text: String): Period = JP.parse(text)
 
-  /** Obtains a [[Period]] representing a number of days. */
+  /** $ObtP representing a number of days. */
   def days(days: Int): Period = JP.ofDays(days)
 
-  /** Obtains a [[Period]] representing a number of weeks. */
+  /** $ObtP representing a number of weeks. */
   def weeks(weeks: Int): Period = JP.ofWeeks(weeks)
 
-  /** Obtains a [[Period]] representing a number of months. */
+  /** $ObtP representing a number of months. */
   def months(months: Int): Period = JP.ofMonths(months)
 
-  /** Obtains a [[Period]] representing a number of years. */
+  /** $ObtP representing a number of years. */
   def years(years: Int): Period = JP.ofYears(years)
 
-  /** Obtains a [[Period]] of zero. */
+  /** $ObtP of zero. */
   def empty: Period = JP.zero
   final val EmptyPeriod = JP.zero
 }

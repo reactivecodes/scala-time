@@ -19,13 +19,13 @@
 package codes.reactive.scalatime
 
 import impl.TimeSupport.{Clock => JC}
+import Scalatime.DefaultZone
 
 
 /** Factory object for obtaining instances of [[Clock]].
   *
-  * The default no-argument `apply` method differs from the underlying library no-argument constructor in that it
-  * explicitly returns the '''UTC''' Zone Clock from the current system time. Use `apply(ZoneId)` to specify an
-  * alternative zone, or [[Clock.systemZone]] to obtain a Clock from the current system time and zone.
+  * The default `apply` determines the time zone via in implicitly specified [[ZoneId]] argument (set to  '''UTC'''
+  * by default).
   *
   * @example
   * {{{

@@ -37,7 +37,7 @@ trait ToTemporalAmountOps extends Any {
 }
 
 
-/** Enriches a [[Duration]] with scala friendly methods. */
+/** Enriches a [[Duration! Duration]] with scala friendly methods. */
 final class DurationOps(val underlying: Duration) extends AnyVal {
 
   /** Obtains a copy of this duration multiplied by the scalar.
@@ -90,7 +90,7 @@ trait ToDurationOps extends Any {
 }
 
 
-/** Enriches a [[Period]] with scala friendly methods. */
+/** Enriches a [[Period! Period]] with scala friendly methods. */
 final class PeriodOps(val underlying: Period) extends AnyVal {
 
   /** Obtains a copy of this period multiplied by the scalar.

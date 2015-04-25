@@ -20,9 +20,7 @@ package codes.reactive.scalatime.test.fixtures
 
 import codes.reactive.scalatime._
 
-/**
- * Created by arashid on 17/06/14.
- */
+
 trait TimeFixtures {
 
   val localDate = LocalDate.of(2014, 6, 10)

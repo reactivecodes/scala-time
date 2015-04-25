@@ -25,6 +25,7 @@ private[scalatime] object TimeSupport {
     def parse(a: CharSequence) = T.parse(a)
     def zero = T.ZERO
     def from(a: TemporalAmount) = T.from(a)
+    def between(a: Temporal, b: Temporal) = T.between(a,b)
   }
 
   object Instant {
@@ -106,6 +107,7 @@ private[scalatime] object TimeSupport {
     def parse(a: CharSequence) = T.parse(a)
     def zero = T.ZERO
     def from(a: TemporalAmount) = T.from(a)
+    def between(a: LocalDate, b: LocalDate) = T.between(a,b)
   }
 
   object ZonedDateTime {
@@ -183,6 +185,23 @@ private[scalatime] object TimeSupport {
     def precision = T.precision()
     def zone = T.zone()
     def zoneId = T.zoneId()  }
+
+  object TemporalAdjuster {
+    import ${tPac}.temporal.{TemporalAdjusters => T}
+    def dayOfWeekInMonth(ordinal: Int, dayOfWeek: DayOfWeek) = T.dayOfWeekInMonth(ordinal, dayOfWeek)
+    def firstDayOfMonth = T.firstDayOfMonth
+    def firstDayOfNextMonth = T.firstDayOfNextMonth
+    def firstDayOfNextYear = T.firstDayOfNextYear
+    def firstDayOfYear = T.firstDayOfYear
+    def firstInMonth(dayOfWeek: DayOfWeek) = T.firstInMonth(dayOfWeek)
+    def lastDayOfMonth = T.lastDayOfMonth
+    def lastDayOfYear = T.lastDayOfYear
+    def lastInMonth(dayOfWeek: DayOfWeek) = T.lastInMonth(dayOfWeek)
+    def next(dayOfWeek: DayOfWeek) = T.next(dayOfWeek)
+    def nextOrSame(dayOfWeek: DayOfWeek) = T.nextOrSame(dayOfWeek)
+    def previous(dayOfWeek: DayOfWeek) = T.previous(dayOfWeek)
+    def previousOrSame(dayOfWeek: DayOfWeek) = T.previousOrSame(dayOfWeek)
+  }
 
   // format
   object DateTimeFormatterBuilder {

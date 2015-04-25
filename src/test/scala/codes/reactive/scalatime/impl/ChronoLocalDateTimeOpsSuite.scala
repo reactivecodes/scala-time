@@ -16,25 +16,35 @@
  * License.                                                       *
  ******************************************************************/
 
-package codes.reactive.scalatime.impl
+package codes.reactive.scalatime
+package impl
 
-import codes.reactive.scalatime._
+import format.DateTimeFormatter.{Iso ⇒ IDF}
+import org.scalatest.{Matchers, Outcome, fixture}
 
-import scala.language.implicitConversions
 
-/** Enriches a [[TemporalAdjuster]] with additional methods. */
-final class TemporalAdjusterOps(val underlying: TemporalAdjuster) extends AnyVal {
 
-  /** Adjusts the provided temporal object using the logic encapsulated in this.
-    *
-    * @throws DateTimeException if unable to make the adjustment.
-    * @throws ArithmeticException if numeric overflow occurs.
-    */
-  def <<=[A <: Temporal](temporal: A): A = underlying.adjustInto(temporal).asInstanceOf[A]  //TODO: Finalise method name
 
-}
 
-trait ToTemporalAdjusterOps extends Any {
+class ChronoLocalDateTimeOpsSuite extends fixture.FunSuite with Matchers {
 
-  implicit final def toTemporalAdjusterOpsFromTemporalAdjuster(f: TemporalAdjuster): TemporalAdjusterOps = new TemporalAdjusterOps(f)
+  test("`%%` combines a ChronoLocalDateTime with a time zone") { (ldt: ChronoLocalDateTimeOps[LocalDate]) =>
+    ldt %% ZoneId.UTC shouldBe  ldt.underlying.atZone(ZoneOffset.UTC)
+  }
+
+  test("`±` combines a ChronoLocalDateTime with a time zone") { ldt =>
+    ldt ± ZoneId.UTC shouldBe  ldt.underlying.atZone(ZoneOffset.UTC)
+  }
+
+  test("`>>` formats a ChronoLocalDateTime according to the specified formatter") { ldt =>
+    ldt |> IDF.LocalDate shouldBe ldt.underlying.format(IDF.LocalDate)
+  }
+
+  test("`▹` formats a ChronoLocalDateTime according to the specified formatter") { ldt =>
+    ldt ▹ IDF.LocalDate shouldBe ldt.underlying.format(IDF.LocalDate)
+  }
+
+  override type FixtureParam = ChronoLocalDateTimeOps[LocalDate]
+  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new ChronoLocalDateTimeOps(LocalDateTime())))
+
 }

@@ -41,13 +41,18 @@ final class TemporalAccessorOps(val underlying: TemporalAccessor) extends AnyVal
     */
   def ▹[A](query: TemporalQuery[A]): A = underlying.query(query)
   
-  /** Obtains the value of the specified field as a `Long` by querying for the value of the specified field.
+  /** Queries this object to obtain the value of the specified field as a `Long`.
     *
     * @throws DateTimeException - if a value for the field cannot be obtained.
     * @throws ArithmeticException - if numeric overflow occurs.
     */
   def #|>(field: TemporalField): Long = underlying.getLong(field)
 
+  /** Queries this object to obtain the value of the specified field as a `Long`.
+    *
+    * @throws DateTimeException - if a value for the field cannot be obtained.
+    * @throws ArithmeticException - if numeric overflow occurs.
+    */
   def #▹(field: TemporalField): Long = underlying.getLong(field)
 
 }
