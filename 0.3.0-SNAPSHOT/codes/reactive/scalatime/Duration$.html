@@ -50,7 +50,7 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a>.</p><p>Duration is a time-based amount of time, such as '34.5 seconds'.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a0b7b59/src/main/scala/codes/reactive/scalatime/Duration.scala" target="_blank">Duration.scala</a></dd><div class="block">Example:
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/bf191ec/src/main/scala/codes/reactive/scalatime/Duration.scala" target="_blank">Duration.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
 <span class="cmt">// Obtain a Duration of 10 nano seconds</span>
@@ -58,9 +58,7 @@
 
 <span class="cmt">// Obtain a Duration of zero</span>
 <span class="kw">val</span> zero = Duration.Nil</pre></li></ol>
-            </div><dt>Note</dt><dd><span class="cmt"><p>Direct use of this object is not the only mechanism to obtain <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> instances. See also
-        the <span class="extype" name="syntax">syntax</span> syntax for alternatives.
-</p></span></dd></dl><div class="toggleContainer block">
+            </div></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -174,6 +172,26 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="codes.reactive.scalatime.Duration#between" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="between(start:codes.reactive.scalatime.Temporal,end:codes.reactive.scalatime.Temporal):codes.reactive.scalatime.Duration"></a>
+      <a id="between(scalatime.Temporal,scalatime.Temporal):scalatime.Duration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">between</span><span class="params">(<span name="start">start: <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">scalatime.Temporal</a></span>, <span name="end">end: <a href="package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">scalatime.Temporal</a></span>)</span><span class="result">: <a href="package.html#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">scalatime.Duration</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#codes.reactive.scalatime.Duration$@between(start:codes.reactive.scalatime.Temporal,end:codes.reactive.scalatime.Temporal):codes.reactive.scalatime.Duration" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains a Duration representing the duration between two temporal objects.</p><div class="fullcomment"><div class="comment cmt"><p>Obtains a Duration representing the duration between two temporal objects. The specified temporal objects must
+support the <a href="ChronoUnit$.html#Seconds:java.time.temporal.ChronoUnit(SECONDS)" class="extmbr" name="codes.reactive.scalatime.ChronoUnit#Seconds">ChronoUnit.Seconds</a> unit.
+</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="ArithmeticException"><code>ArithmeticException</code></span> if the calculation exceeds the capacity of Duration.
+</p></span><span class="cmt"><p><a href="package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException"><code>DateTimeException</code></a> if the seconds between the temporals cannot be obtained.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -681,7 +699,7 @@ dot or a comma. The fractional part may have from zero to 9 digits.</p><p>The le
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.3.0-SNAPSHOT (Rev. a0b7b59) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.3.0-SNAPSHOT (Rev. bf191ec) Scala 2.11 API Documentation. </div>
 
 
     </body>

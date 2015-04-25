@@ -49,7 +49,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Enriches a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a> with additional methods.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a0b7b59/src/main/scala/codes/reactive/scalatime/impl/TemporalAdjusterOps.scala" target="_blank">TemporalAdjusterOps.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Enriches a <a href="../package.html#TemporalAdjuster=java.time.temporal.TemporalAdjuster" class="extmbr" name="codes.reactive.scalatime.TemporalAdjuster">TemporalAdjuster</a> with additional methods.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/bf191ec/src/main/scala/codes/reactive/scalatime/impl/TemporalAdjusterOps.scala" target="_blank">TemporalAdjusterOps.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyVal">AnyVal</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
@@ -203,6 +203,25 @@
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="codes.reactive.scalatime.impl.TemporalAdjusterOps#&lt;&lt;=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;&lt;=[A&lt;:codes.reactive.scalatime.Temporal](temporal:A):A"></a>
+      <a id="&lt;&lt;=[A&lt;:scalatime.Temporal](A):A"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$less$eq" class="name">&lt;&lt;=</span><span class="tparams">[<span name="A">A &lt;: <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">scalatime.Temporal</a></span>]</span><span class="params">(<span name="temporal">temporal: <span class="extype" name="codes.reactive.scalatime.impl.TemporalAdjusterOps.&lt;&lt;=.A">A</span></span>)</span><span class="result">: <span class="extype" name="codes.reactive.scalatime.impl.TemporalAdjusterOps.&lt;&lt;=.A">A</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#codes.reactive.scalatime.impl.TemporalAdjusterOps@&lt;&lt;=[A&lt;:codes.reactive.scalatime.Temporal](temporal:A):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Adjusts the provided temporal object using the logic encapsulated in this.</p><div class="fullcomment"><div class="comment cmt"><p>Adjusts the provided temporal object using the logic encapsulated in this.
+</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="ArithmeticException"><code>ArithmeticException</code></span> if numeric overflow occurs.
+</p></span><span class="cmt"><p><a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException"><code>DateTimeException</code></a> if unable to make the adjustment.</p></span></dd></dl></div>
     </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
@@ -220,25 +239,6 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="codes.reactive.scalatime.impl.TemporalAdjusterOps#=~" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="=~[A&lt;:codes.reactive.scalatime.Temporal](temporal:A):A"></a>
-      <a id="=~[A&lt;:scalatime.Temporal](A):A"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $eq$tilde" class="name">=~</span><span class="tparams">[<span name="A">A &lt;: <a href="../package.html#Temporal=java.time.temporal.Temporal" class="extmbr" name="codes.reactive.scalatime.Temporal">scalatime.Temporal</a></span>]</span><span class="params">(<span name="temporal">temporal: <span class="extype" name="codes.reactive.scalatime.impl.TemporalAdjusterOps.=~.A">A</span></span>)</span><span class="result">: <span class="extype" name="codes.reactive.scalatime.impl.TemporalAdjusterOps.=~.A">A</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#codes.reactive.scalatime.impl.TemporalAdjusterOps@=~[A&lt;:codes.reactive.scalatime.Temporal](temporal:A):A" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Adjusts the provided temporal object using the logic encapsulated in this.</p><div class="fullcomment"><div class="comment cmt"><p>Adjusts the provided temporal object using the logic encapsulated in this.
-</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="ArithmeticException"><code>ArithmeticException</code></span> if numeric overflow occurs.
-</p></span><span class="cmt"><p><a href="../package.html#DateTimeException=java.time.DateTimeException" class="extmbr" name="codes.reactive.scalatime.DateTimeException"><code>DateTimeException</code></a> if unable to make the adjustment.</p></span></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -497,7 +497,7 @@
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.3.0-SNAPSHOT (Rev. a0b7b59) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.3.0-SNAPSHOT (Rev. bf191ec) Scala 2.11 API Documentation. </div>
 
 
     </body>

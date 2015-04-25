@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Basic Scala wrapper for easier use of JSR-310 compatible time APIs.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/a0b7b59/src/main/scala/codes/reactive/scalatime/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Basic Scala wrapper for easier use of JSR-310 compatible time APIs.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/bf191ec/src/main/scala/codes/reactive/scalatime/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="codes.reactive.scalatime.impl.TimeAliases">TimeAliases</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -967,9 +967,8 @@ information.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><p>The default no-argument <code>apply</code> method differs from the underlying library no-argument constructor in that it
-explicitly returns the <b>UTC</b> Zone Clock from the current system time. Use <code>apply(ZoneId)</code> to specify an
-alternative zone, or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Clock" class="extmbr" name="codes.reactive.scalatime.Clock#systemZone">Clock.systemZone</a> to obtain a Clock from the current system time and zone.
+      <p class="shortcomment cmt">Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for obtaining instances of <a href="#Clock=java.time.Clock" class="extmbr" name="codes.reactive.scalatime.Clock">Clock</a>.</p><p>The default <code>apply</code> determines the time zone via in implicitly specified <a href="#ZoneId=java.time.ZoneId" class="extmbr" name="codes.reactive.scalatime.ZoneId">ZoneId</a> argument (set to  <b>UTC</b>
+by default).
 </p></div><dl class="attributes block"> <div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
 
@@ -1004,9 +1003,7 @@ alternative zone, or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Cl
 
 <span class="cmt">// Obtain a Duration of zero</span>
 <span class="kw">val</span> zero = Duration.Nil</pre></li></ol>
-            </div><dt>Note</dt><dd><span class="cmt"><p>Direct use of this object is not the only mechanism to obtain <a href="#Duration=java.time.Duration" class="extmbr" name="codes.reactive.scalatime.Duration">Duration</a> instances. See also
-        the <span class="extype" name="syntax">syntax</span> syntax for alternatives.
-</p></span></dd></dl></div>
+            </div></dl></div>
     </li><li name="codes.reactive.scalatime.Instant" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Instant"></a>
       <a id="Instant:Instant"></a>
@@ -1211,9 +1208,7 @@ alternative zone, or <a href="Clock$.html#systemZone:codes.reactive.scalatime.Cl
 
 <span class="cmt">// Obtain a Period of zero</span>
 <span class="kw">val</span> zero = Period.Nil</pre></li></ol>
-            </div><dt>Note</dt><dd><span class="cmt"><p>Direct use of this object is not the only mechanism to obtain <a href="#Period=java.time.Period" class="extmbr" name="codes.reactive.scalatime.Period">Period</a> instances. See also
-        <span class="extype" name="syntax">syntax</span> for alternatives.
-</p></span></dd></dl></div>
+            </div></dl></div>
     </li><li name="codes.reactive.scalatime.Scalatime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Scalatime"></a>
       <a id="Scalatime:Scalatime"></a>
@@ -1531,7 +1526,7 @@ respectively.
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.3.0-SNAPSHOT (Rev. a0b7b59) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.3.0-SNAPSHOT (Rev. bf191ec) Scala 2.11 API Documentation. </div>
 
 
     </body>
