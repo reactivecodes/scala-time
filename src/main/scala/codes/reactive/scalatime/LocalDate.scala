@@ -19,7 +19,6 @@
 package codes.reactive.scalatime
 
 import impl.TimeSupport.{LocalDate => LD}
-import Scalatime.DefaultZone
 
 
 /** Factory object for creation of [[LocalDate]] instances. */

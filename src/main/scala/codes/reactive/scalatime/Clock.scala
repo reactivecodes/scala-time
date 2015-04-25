@@ -19,7 +19,6 @@
 package codes.reactive.scalatime
 
 import impl.TimeSupport.{Clock => JC}
-import Scalatime.DefaultZone
 
 
 /** Factory object for obtaining instances of [[Clock]].
