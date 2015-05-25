@@ -26,7 +26,7 @@ import language.implicitConversions
   *
   * @define  sameType  Obtains an object of the same type as this object
   */
-final class TemporalOps(val underlying: Temporal) extends AnyVal {
+final case class TemporalOps(underlying: Temporal) extends AnyVal {
 
   /** $sameType with an amount added.
     *

@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 /** Enriches a [[scala.Int]] with methods for obtaining [[Duration]] instances. */
-final class LongOps(val underlying: Long) extends AnyVal {
+final case class LongOps(underlying: Long) extends AnyVal {
 
   /** Obtains a [[Duration]] representing a number of nanoseconds. */
   def nano: Duration = nanos

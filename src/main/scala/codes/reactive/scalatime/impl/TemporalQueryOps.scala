@@ -24,7 +24,7 @@ import temporal.TemporalQuery
 import scala.language.implicitConversions
 
 /** Enriches instances of [[TemporalQuery! TemporalQuery]] with additional methods. */
-class TemporalQueryOps[A](val underlying: TemporalQuery[A]) extends AnyVal {
+final case class TemporalQueryOps[A](underlying: TemporalQuery[A]) extends AnyVal {
 
   /** Queries the specified [[TemporalAccessor]] using this query strategy.
     *

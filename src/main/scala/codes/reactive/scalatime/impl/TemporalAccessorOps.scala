@@ -25,7 +25,7 @@ import scala.language.implicitConversions
 
 
 /** Enriches a [[TemporalAccessor]] with additional methods. */
-final class TemporalAccessorOps(val underlying: TemporalAccessor) extends AnyVal {
+final case class TemporalAccessorOps(underlying: TemporalAccessor) extends AnyVal {
 
   /** Queries this object using the specified [[TemporalQuery]] strategy object.
     *

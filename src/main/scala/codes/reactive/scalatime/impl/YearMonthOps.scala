@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 /** Enriches [[YearMonth]] instances with additional methods. */
-final class YearMonthOps(val underlying: YearMonth) extends AnyVal {
+final case class YearMonthOps(underlying: YearMonth) extends AnyVal {
 
   /** Obtains a [[YearMonth]] with the specified number of months added.
     * @throws DateTimeException if the result exceeds the supported range.

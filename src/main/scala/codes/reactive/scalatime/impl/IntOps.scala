@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 /** Enriches a [[scala.Long]] with methods for obtaining [[Period]] instances. */
-final class IntOps(val underlying: Int) extends AnyVal {
+final case class IntOps(underlying: Int) extends AnyVal {
 
   /** Obtains a [[Period]] representing a number of days. */
   def day: Period = days

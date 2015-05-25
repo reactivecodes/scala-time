@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 /** Enriches a [[Month]] with additional methods. */
-final class MonthOps(val underlying: Month) extends AnyVal {
+final case class MonthOps(underlying: Month) extends AnyVal {
 
   /** Obtains the month-of-year which is the specified number of months after this one. */
   def +(months: Int): Month = underlying.plus(months)
@@ -35,7 +35,6 @@ final class MonthOps(val underlying: Month) extends AnyVal {
     * @throws DateTimeException if the day-of-month is invalid for the month.
     */
   def /(day: Int): MonthDay = MonthDay.of(underlying, day)
-
 
   def =~(temporal: Temporal): Temporal = underlying.adjustInto(temporal)
 

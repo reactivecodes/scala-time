@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 /** Enriches a [[TemporalAdjuster]] with additional methods. */
-final class TemporalAdjusterOps(val underlying: TemporalAdjuster) extends AnyVal {
+final case class TemporalAdjusterOps(underlying: TemporalAdjuster) extends AnyVal {
 
   /** Adjusts the provided temporal object using the logic encapsulated in this.
     *

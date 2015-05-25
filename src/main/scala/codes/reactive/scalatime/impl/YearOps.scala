@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 /** Enriches [[Year]] instances with additional methods. */
-final class YearOps(val underlying: Year) extends AnyVal {
+final case class YearOps(underlying: Year) extends AnyVal {
 
   /** Obtains a year with the specified number of years added. */
   def +(years: Int): Year = underlying.plusYears(years)

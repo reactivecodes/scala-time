@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 /** Enriches a [[TemporalAmount]] with scala friendly methods. */
-final class TemporalAmountOps(val underlying: TemporalAmount) extends AnyVal {
+final case class TemporalAmountOps(underlying: TemporalAmount) extends AnyVal {
 
   /** Adds this amount to the specified temporal object **/
   def <<+(temporal: Temporal): Temporal = underlying.addTo(temporal)
@@ -38,7 +38,7 @@ trait ToTemporalAmountOps extends Any {
 
 
 /** Enriches a [[Duration! Duration]] with scala friendly methods. */
-final class DurationOps(val underlying: Duration) extends AnyVal {
+final case class DurationOps(underlying: Duration) extends AnyVal {
 
   /** Obtains a copy of this duration multiplied by the scalar.
     *
@@ -91,7 +91,7 @@ trait ToDurationOps extends Any {
 
 
 /** Enriches a [[Period! Period]] with scala friendly methods. */
-final class PeriodOps(val underlying: Period) extends AnyVal {
+final case class PeriodOps(underlying: Period) extends AnyVal {
 
   /** Obtains a copy of this period multiplied by the scalar.
     *

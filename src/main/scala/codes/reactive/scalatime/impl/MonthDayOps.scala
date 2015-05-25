@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 /** Enriches [[MonthDay]] instances with additional methods. */
-final class MonthDayOps(val underlying: MonthDay) extends AnyVal {
+final case class MonthDayOps(underlying: MonthDay) extends AnyVal {
 
   /** Returns `true` if this month-day is before the specified one. */
   def <(other: MonthDay): Boolean = underlying.isBefore(other)
@@ -64,6 +64,9 @@ final class MonthDayOps(val underlying: MonthDay) extends AnyVal {
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
+  /** Formats this month-day using the specified formatter.
+    * @throws DateTimeException - if an error occurs during printing
+    */
   def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
 

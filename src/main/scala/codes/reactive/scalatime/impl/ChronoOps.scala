@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import language.implicitConversions
 
 /** Enriches a [[ChronoLocalDate]] with additional methods.  */
-final class ChronoLocalDateOps(val underlying: ChronoLocalDate) extends AnyVal {
+final case class ChronoLocalDateOps(underlying: ChronoLocalDate) extends AnyVal {
 
   /** Combines this date with a time to create a LocalDateTime. **/
   def %%[A <: underlying.type](time: LocalTime): ChronoLocalDateTime[A] =
@@ -47,8 +47,7 @@ trait ToChronoLocalDateOps {
 
 
 /** Enriches a [[ChronoLocalDateTime]] with additional methods. */
-final class ChronoLocalDateTimeOps[A <: ChronoLocalDate](val underlying: ChronoLocalDateTime[A]) extends AnyVal {
-
+final case class ChronoLocalDateTimeOps[A <: ChronoLocalDate](underlying: ChronoLocalDateTime[A]) extends AnyVal {
 
   /** Combines this date-time with a time-zone to create a ZonedDateTime. **/
   def %%(zone: ZoneId): ChronoZonedDateTime[A] = underlying.atZone(zone)
@@ -61,6 +60,9 @@ final class ChronoLocalDateTimeOps[A <: ChronoLocalDate](val underlying: ChronoL
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
+  /** Formats this date using the specified formatter.
+    * @throws DateTimeException - if an error occurs during formatting.
+    */
   def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
 }
@@ -72,13 +74,16 @@ trait ToChronoLocalDateTimeOps {
 
 
 /** Enriches a [[ChronoZonedDateTime]] with additional methods. */
-final class ChronoZonedDateTimeOps[A <: ChronoLocalDate](val underlying: ChronoZonedDateTime[A]) extends AnyVal {
+final case class ChronoZonedDateTimeOps[A <: ChronoLocalDate](underlying: ChronoZonedDateTime[A]) extends AnyVal {
 
   /** Formats this date using the specified formatter.
     * @throws DateTimeException - if an error occurs during formatting.
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
+  /** Formats this date using the specified formatter.
+    * @throws DateTimeException - if an error occurs during formatting.
+    */
   def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
 }

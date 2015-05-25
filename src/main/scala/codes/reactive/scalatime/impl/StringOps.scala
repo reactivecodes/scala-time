@@ -24,7 +24,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 
-final class StringOps(val underlying: String) extends AnyVal {
+final case class StringOps(underlying: String) extends AnyVal {
 
   def |>(formatter: DateTimeFormatter): TemporalAccessor = formatter.parse(underlying)
 

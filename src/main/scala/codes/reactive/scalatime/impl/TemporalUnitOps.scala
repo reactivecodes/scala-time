@@ -23,7 +23,7 @@ import codes.reactive.scalatime._
 import scala.language.implicitConversions
 
 /** Enriches [[TemporalUnit]] with additional methods. */
-final class TemporalUnitOps(val underlying: TemporalUnit) {
+final case class TemporalUnitOps(underlying: TemporalUnit) {
 
   /** Returns a copy of the specified temporal object with the specified amount of this unit added.
     *
