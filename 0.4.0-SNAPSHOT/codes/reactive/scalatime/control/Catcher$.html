@@ -51,10 +51,12 @@
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides methods for obtaining default <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.util.control.Exception$@Catcher[+T]=PartialFunction[Throwable,T]" class="extype" target="_top">Catchers</a> for possible
 <span class="extype" name="DateTimeException">DateTimeExceptions</span> thrown by the underlying Java API.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/130e745/src/main/scala/codes/reactive/scalatime/control/Catcher.scala" target="_blank">Catcher.scala</a></dd><div class="block">Example:
-               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> codes.reactive.scalatime._
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/reactivecodes/scala-time/blob/8f1f3ca/src/main/scala/codes/reactive/scalatime/control/Catcher.scala" target="_blank">Catcher.scala</a></dd><div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">import</span> java.time._
+<span class="kw">import</span> codes.reactive.scalatime._
+<span class="kw">import</span> control.Catcher
  <span class="cmt">// Obtain a TimeCatcher for all DateTimeExceptions</span>
- <span class="kw">val</span> catchAllLocalDate = Catcher.all(_ <span class="kw">=&gt;</span> LocalDate())
+ <span class="kw">val</span> catchAllLocalDate = Catcher.all(_ <span class="kw">=&gt;</span> LocalDate.now())
  <span class="cmt">// Use the catcher to recover from a parse error</span>
  <span class="kw">val</span> recovered = Try { LocalDate.parse(<span class="lit">")(&#)(@*@&#%@#%@#%)"</span>) } recover catchAllLocalDate</pre></li></ol>
             </div></dl><div class="toggleContainer block">
@@ -572,7 +574,7 @@
 
       <div id="tooltip"></div>
 
-      <div id="footer"> Scala Time 0.4.0-SNAPSHOT (Rev. 130e745) Scala 2.11 API Documentation. </div>
+      <div id="footer"> Scala Time 0.4.0-SNAPSHOT (Rev. 8f1f3ca) Scala 2.11 API Documentation. </div>
 
 
     </body>
