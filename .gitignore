@@ -2,6 +2,7 @@
 !.idea/copyright/
 !.idea/inspectionProfiles/
 !.idea/codeStyleSettings.xml
+!.idea/scalastyle_config.xml
 .idea_modules/
 target/
 out/

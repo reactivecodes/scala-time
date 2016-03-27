@@ -17,14 +17,14 @@ __________________________________
 
 Usage:
 -----
-This project is not *yet* considered stable, and the API is subject to change, however `0.3.0-SNAPSHOT` binaries are
+This project is not *yet* considered stable, and the API is subject to change, however `0.4.0-SNAPSHOT` binaries are
 published to the [`Sonatype OSS Snapshots`][5] public repository.
 
 ###### [sbt][6] coordinates:
 
 ```scala
     // Requires JDK 1.8 and above
-    "codes.reactive" %% "scala-time" % "0.3.0-SNAPSHOT"
+    "codes.reactive" %% "scala-time" % "0.4.0-SNAPSHOT"
 ```
 
 #### Documentation:

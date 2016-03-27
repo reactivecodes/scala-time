@@ -10,7 +10,7 @@ version := "0.4.0-SNAPSHOT"
 
 organization := "codes.reactive"
 
-description := "Basic Scala wrapper for convenient  use of JDK 1.8.0 time libraries."
+description := "Basic Scala wrapper for convenient use of JDK 1.8.0 time libraries."
 
 startYear := Some(2014)
 
@@ -42,9 +42,12 @@ OsgiKeys.privatePackage := Seq("codes.reactive.scalatime*")
 
 OsgiKeys.exportPackage := Seq("codes.reactive.scalatime*")
 
-scalastyleConfig <<= baseDirectory(_ / "project/scalastyle_config.xml")
+scalastyleConfig <<= baseDirectory(_ / ".idea/scalastyle_config.xml")
 
-SiteKeys.siteMappings := Seq(baseDirectory.value / "project/site.html" -> "index.html")
+SiteKeys.siteMappings := {
+  val dir = baseDirectory.value / "project/site"
+  Seq(dir / "site.html" → "index.html", dir / "site.css" → "site.css", dir / "site.js" → "site.js")
+}
 
 SiteKeys.siteMappings <++= (mappings in(ScalaUnidoc, packageDoc), version) map { (m, v) =>
   for ((f, d) <- m) yield (f, s"$v/$d")
@@ -53,5 +56,7 @@ SiteKeys.siteMappings <++= (mappings in(ScalaUnidoc, packageDoc), version) map {
 git.remoteRepo := codesGithubRepo.value.developerConnection.drop(8)
 
 CoverallsKeys.coverallsToken := sys.env.get("COVERALLS_TOKEN")
+
+coverageEnabled := true
 
 addDevelopers(("arashi01", "Ali Salim Rashid", "a.rashid@zantekk.com"))
