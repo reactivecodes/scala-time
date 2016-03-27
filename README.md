@@ -103,4 +103,4 @@ limitations under the License.
 [Build Status]:https://travis-ci.org/reactivecodes/scala-time
 [Build Status Image]:https://travis-ci.org/reactivecodes/scala-time.svg?branch=master
 [Coverage Status]:https://coveralls.io/r/reactivecodes/scala-time?branch=master
-[Coverage Status Image]:https://coveralls.io/repos/reactivecodes/scala-time/badge.svg?branch=master
+[Coverage Status Image]:https://coveralls.io/repos/github/reactivecodes/scala-time/badge.svg?branch=master
