@@ -46,7 +46,10 @@ scalastyleConfig <<= baseDirectory(_ / ".idea/scalastyle_config.xml")
 
 SiteKeys.siteMappings := {
   val dir = baseDirectory.value / "project/site"
-  Seq(dir / "site.html" → "index.html", dir / "site.css" → "site.css", dir / "site.js" → "site.js")
+  Seq(
+    (dir / "site.html") → "index.html",
+    (dir / "site.css") → "site.css",
+    (dir / "site.js") → "site.js")
 }
 
 SiteKeys.siteMappings <++= (mappings in(ScalaUnidoc, packageDoc), version) map { (m, v) =>
