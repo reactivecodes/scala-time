@@ -18,19 +18,22 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
+import java.time.format.DateTimeFormatter
+import java.time.{DateTimeException, LocalDate, YearMonth}
 
 import scala.language.implicitConversions
 
 /** Enriches [[YearMonth]] instances with additional methods. */
 final case class YearMonthOps(underlying: YearMonth) extends AnyVal {
 
-  /** Obtains a [[YearMonth]] with the specified number of months added.
+  /** Obtains a [[java.time.YearMonth]] with the specified number of months added.
+    *
     * @throws DateTimeException if the result exceeds the supported range.
     */
   def +(months: Int): YearMonth = underlying.plusMonths(months)
 
   /** Obtains a [[YearMonth]] with the specified number of months subtracted.
+    *
     * @throws DateTimeException if the result exceeds the supported range.
     */
   def -(months: Int): YearMonth = underlying.minusMonths(months)
@@ -47,12 +50,14 @@ final case class YearMonthOps(underlying: YearMonth) extends AnyVal {
   /** Returns `true` if this year-month is equal to or after the specified one. */
   def >=(other: YearMonth): Boolean = underlying.equals(other) || underlying.isAfter(other)
 
-  /** Obtains a [[LocalDate]] by combining this year-month with the specified day.
+  /** Obtains a [[java.time.LocalDate]] by combining this year-month with the specified day.
+    *
     * @throws DateTimeException if the day is invalid for the year-month
     */
   def /(day: Int): LocalDate = underlying.atDay(day)
 
   /** Formats this year-month using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during printing
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)

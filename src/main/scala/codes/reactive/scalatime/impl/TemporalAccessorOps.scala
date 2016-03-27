@@ -18,8 +18,8 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
-import temporal.TemporalQuery
+import java.time.DateTimeException
+import java.time.temporal.{TemporalAccessor, TemporalField, TemporalQuery}
 
 import scala.language.implicitConversions
 
@@ -27,7 +27,7 @@ import scala.language.implicitConversions
 /** Enriches a [[TemporalAccessor]] with additional methods. */
 final case class TemporalAccessorOps(underlying: TemporalAccessor) extends AnyVal {
 
-  /** Queries this object using the specified [[TemporalQuery]] strategy object.
+  /** Queries this object using the specified [[java.time.temporal.TemporalQuery]] strategy object.
     *
     * @throws DateTimeException - if unable to query.
     * @throws ArithmeticException - if numeric overflow occurs.

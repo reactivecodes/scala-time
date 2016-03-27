@@ -1,20 +1,16 @@
 lazy val scalaTime = (project in file("."))
-  .enablePlugins(CodesOsgi)
-  .configs(Fmpp)
+  .enablePlugins(SbtCodesOsgi)
 
-name <<= (name, jdkVersion)((n, v) => matchJava(v, s"$n Threeten", n))
 
 site.settings
 
 ghpages.settings
 
-fmppSettings
-
-version := "0.3.0-SNAPSHOT"
+version := "0.4.0-SNAPSHOT"
 
 organization := "codes.reactive"
 
-description := "Basic Scala wrapper for easier use of JDK 1.8.0 or Threeten BP time libraries."
+description := "Basic Scala wrapper for convenient  use of JDK 1.8.0 time libraries."
 
 startYear := Some(2014)
 
@@ -26,17 +22,11 @@ apacheLicensed
 
 publishOSS
 
-jdkVersion := System.getProperty("java.specification.version")
-
 scalaVersion := crossScalaVersions.value.head
 
-crossScalaVersions := Seq("2.11.6", "2.10.5")
+crossScalaVersions := Seq("2.11.8", "2.10.6")
 
-libraryDependencies ++= {
-  def dependencies = Seq(scalaTest, mockito)
-  def j7Dependencies = threeten +: dependencies
-  matchJava(jdkVersion.value, j7Dependencies, dependencies )
-}
+libraryDependencies ++= Seq("org.scalatest" %% "scalatest" % "2.2.6" % Test)
 
 codesCompileOpts
 
@@ -44,19 +34,9 @@ codesDocOpts
 
 codesUnidocOpts
 
-scalacOptions in (Compile, compile) += "-language:postfixOps"
-
-unmanagedSourceDirectories in Compile += (sourceDirectory in Compile).value / s"jdk_${jdkVersion.value}"
-
-unmanagedSourceDirectories in Test += (sourceDirectory in Test).value / s"jdk_${jdkVersion.value}"
+scalacOptions in(Compile, compile) += "-language:postfixOps"
 
 OsgiKeys.bundleSymbolicName := "codes.reactive.scalatime"
-
-OsgiKeys.bundleSymbolicName := {
-  import OsgiKeys.{bundleSymbolicName => n}
-  matchJava(jdkVersion.value, s"${n.value}-threeten", n.value) }
-
-OsgiKeys.bundleRequiredExecutionEnvironment := matchJava(jdkVersion.value, Seq("JavaSE-1.7"), Seq("JavaSE-1.8"))
 
 OsgiKeys.privatePackage := Seq("codes.reactive.scalatime*")
 
@@ -66,15 +46,12 @@ scalastyleConfig <<= baseDirectory(_ / "project/scalastyle_config.xml")
 
 SiteKeys.siteMappings := Seq(baseDirectory.value / "project/site.html" -> "index.html")
 
-SiteKeys.siteMappings <++= (mappings in (ScalaUnidoc, packageDoc), version) map {(m,v) =>
-  for ((f, d) <- m) yield (f, s"$v/$d") }
+SiteKeys.siteMappings <++= (mappings in(ScalaUnidoc, packageDoc), version) map { (m, v) =>
+  for ((f, d) <- m) yield (f, s"$v/$d")
+}
 
 git.remoteRepo := codesGithubRepo.value.developerConnection.drop(8)
 
-addDevelopers(("arashi01", "Ali Salim Rashid", "a.rashid@zantekk.com"))
+CoverallsKeys.coverallsToken := sys.env.get("COVERALLS_TOKEN")
 
-fmppArgs ++= Seq(
-  s"-DtPac:${matchJava(jdkVersion.value, "org.threeten.bp", "java.time")}," +
-    s"tDoc:${matchJava(jdkVersion.value, "www.threeten.org/threetenbp/apidocs/org/threeten/bp",
-    "docs.oracle.com/javase/8/docs/api/java/time")}"
-)
+addDevelopers(("arashi01", "Ali Salim Rashid", "a.rashid@zantekk.com"))

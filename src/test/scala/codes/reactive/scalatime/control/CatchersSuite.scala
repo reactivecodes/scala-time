@@ -19,6 +19,9 @@
 package codes.reactive.scalatime
 package control
 
+import java.time.{LocalTime, LocalDate}
+import java.time.temporal.{IsoFields, UnsupportedTemporalTypeException}
+
 import org.scalatest.{Matchers, FunSuite}
 
 import scala.util.{Success, Try}
@@ -26,9 +29,9 @@ import scala.util.{Success, Try}
 
 class CatchersSuite extends FunSuite with Matchers {
 
-test("Catcher provides 'Catcher' instances for 'DateTimeException' instances") {
+test("Catcher provides 'Catcher' instances for all 'DateTimeException' instances") {
     val t = Try(LocalDate.parse(")(&#)(@*@&#%@#%@#%)")).recover(Catcher.all(_ => LocalDate.of(2014, 7, 13)))
-    val t1 = Try(LocalTime().get(IsoField.DayOfQuarter)).recover(Catcher.unsupportedTemporalType(throw _))
+    val t1 = Try(LocalTime.now().get(IsoFields.DAY_OF_QUARTER)).recover(Catcher.unsupportedTemporalType(throw _))
     t shouldEqual Success(LocalDate.of(2014, 7, 13))
     t1.isFailure shouldEqual true
     intercept[UnsupportedTemporalTypeException](t1.get)

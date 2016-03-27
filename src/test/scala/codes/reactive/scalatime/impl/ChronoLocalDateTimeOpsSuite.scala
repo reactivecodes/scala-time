@@ -19,32 +19,31 @@
 package codes.reactive.scalatime
 package impl
 
-import format.DateTimeFormatter.{Iso ⇒ IDF}
+import java.time.format.DateTimeFormatter._
+import java.time.{LocalDate, LocalDateTime, ZoneId, ZoneOffset}
+
 import org.scalatest.{Matchers, Outcome, fixture}
-
-
-
 
 
 class ChronoLocalDateTimeOpsSuite extends fixture.FunSuite with Matchers {
 
   test("`%%` combines a ChronoLocalDateTime with a time zone") { (ldt: ChronoLocalDateTimeOps[LocalDate]) =>
-    ldt %% ZoneId.UTC shouldBe  ldt.underlying.atZone(ZoneOffset.UTC)
+    ldt %% ZoneId.of("Z") shouldBe  ldt.underlying.atZone(ZoneOffset.UTC)
   }
 
   test("`±` combines a ChronoLocalDateTime with a time zone") { ldt =>
-    ldt ± ZoneId.UTC shouldBe  ldt.underlying.atZone(ZoneOffset.UTC)
+    ldt ± ZoneId.of("Z") shouldBe  ldt.underlying.atZone(ZoneOffset.UTC)
   }
 
   test("`>>` formats a ChronoLocalDateTime according to the specified formatter") { ldt =>
-    ldt |> IDF.LocalDate shouldBe ldt.underlying.format(IDF.LocalDate)
+    ldt |> ISO_LOCAL_DATE shouldBe ldt.underlying.format(ISO_LOCAL_DATE)
   }
 
   test("`▹` formats a ChronoLocalDateTime according to the specified formatter") { ldt =>
-    ldt ▹ IDF.LocalDate shouldBe ldt.underlying.format(IDF.LocalDate)
+    ldt ▹ ISO_LOCAL_DATE shouldBe ldt.underlying.format(ISO_LOCAL_DATE)
   }
 
   override type FixtureParam = ChronoLocalDateTimeOps[LocalDate]
-  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new ChronoLocalDateTimeOps(LocalDateTime())))
+  override protected def withFixture(test: OneArgTest): Outcome = withFixture(test.toNoArgTest(new ChronoLocalDateTimeOps(LocalDateTime.now())))
 
 }

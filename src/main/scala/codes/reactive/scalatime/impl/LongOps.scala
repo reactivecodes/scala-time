@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
+import java.time.Duration
 
 import scala.language.implicitConversions
 
@@ -29,37 +29,37 @@ final case class LongOps(underlying: Long) extends AnyVal {
   def nano: Duration = nanos
 
   /** Obtains a [[Duration]] representing a number of nanoseconds. */
-  def nanos: Duration = Duration.nanos(underlying)
+  def nanos: Duration = Duration.ofNanos(underlying)
 
   /** Obtains a [[Duration]] representing a number of milliseconds. */
   def milli: Duration = millis
 
   /** Obtains a [[Duration]] representing a number of milliseconds. */
-  def millis: Duration = Duration.millis(underlying)
+  def millis: Duration = Duration.ofMillis(underlying)
 
   /** Obtains a [[Duration]] representing a number of seconds. */
   def second: Duration = seconds
 
   /** Obtains a [[Duration]] representing a number of seconds. */
-  def seconds: Duration = Duration.seconds(underlying)
+  def seconds: Duration = Duration.ofSeconds(underlying)
 
   /** Obtains a [[Duration]] representing a number of minutes. */
   def minute: Duration = minutes
 
   /** Obtains a [[Duration]] representing a number of minutes. */
-  def minutes: Duration = Duration.minutes(underlying)
+  def minutes: Duration = Duration.ofMinutes(underlying)
 
   /** Obtains a [[Duration]] representing a number of hours. */
   def hour: Duration = hours
 
   /** Obtains a [[Duration]] representing a number of hours. */
-  def hours: Duration = Duration.hours(underlying)
+  def hours: Duration = Duration.ofHours(underlying)
 
   /** Obtains a [[Duration]] representing a number of days. */
   def day: Duration = days
 
   /** Obtains a [[Duration]] representing a number of days. */
-  def days: Duration = Duration.days(underlying)
+  def days: Duration = Duration.ofDays(underlying)
 
 }
 

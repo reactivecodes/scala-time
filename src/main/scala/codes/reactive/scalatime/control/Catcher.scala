@@ -19,6 +19,11 @@
 package codes.reactive.scalatime
 package control
 
+import java.time.DateTimeException
+import java.time.format.DateTimeParseException
+import java.time.temporal.UnsupportedTemporalTypeException
+import java.time.zone.ZoneRulesException
+
 import scala.reflect.ClassTag
 import scala.util.control.Exception
 import scala.util.control.Exception.Catcher
@@ -28,22 +33,25 @@ import scala.util.control.Exception.Catcher
   *
   * @example
   * {{{
+  *              import java.time._
   *              import codes.reactive.scalatime._
+  *              import control.Catcher
   *
   *               // Obtain a TimeCatcher for all DateTimeExceptions
-  *               val catchAllLocalDate = Catcher.all(_ => LocalDate())
+  *               val catchAllLocalDate = Catcher.all(_ => LocalDate.now())
   *
   *               // Use the catcher to recover from a parse error
   *               val recovered = Try { LocalDate.parse(")(&#)(@*@&#%@#%@#%)") } recover catchAllLocalDate
   * }}}
-  *
   * @define Obt Obtains a [[scala.util.control.Exception.Catcher Catcher]] for
-  *
   */
 object Catcher {
 
   private def catcher[A, Ex <: Throwable : ClassTag](f: Ex => A): Catcher[A] =
-    Exception.mkCatcher((x: Ex) => x match { case _: Ex => true; case _ => false }, f)(implicitly[ClassTag[Ex]])
+    Exception.mkCatcher((x: Ex) => x match {
+      case _: Ex => true;
+      case _ => false
+    }, f)(implicitly[ClassTag[Ex]])
 
   /** $Obt all [[DateTimeException]]s. */
   def all[A]: Catcher[A] = catcher[A, DateTimeException](throw _)
@@ -54,18 +62,18 @@ object Catcher {
     */
   def all[A](f: DateTimeException => A): Catcher[A] = catcher(f)
 
-  /** $Obt an [[UnsupportedTemporalTypeException]], an exception indicating that a [[ChronoField]] or [[ChronoUnit]]is
-    * not supported for a Temporal class.
+  /** $Obt an [[java.time.temporal.UnsupportedTemporalTypeException]], an exception indicating that a
+    * [[java.time.temporal.ChronoField]] or [[java.time.temporal.ChronoUnit]]is not supported for a Temporal class.
     *
     * @param  f function to execute if the exception is encountered.
     */
   def unsupportedTemporalType[A](f: UnsupportedTemporalTypeException => A): Catcher[A] =
     catcher(f)
 
-  /** $Obt a [[ZoneRulesException]], an exception indicating a problems with the configured time-zone rules. */
+  /** $Obt a [[java.time.zone.ZoneRulesException]], an exception indicating a problems with the configured time-zone rules. */
   def zoneRules[A](f: ZoneRulesException => A): Catcher[A] = catcher(f)
 
-  /** $Obt a [[DateTimeParseException]], an exception indicating when an error occurs during parsing. */
+  /** $Obt a [[java.time.format.DateTimeParseException]], an exception indicating when an error occurs during parsing. */
   def dateTimeParseException[A](f: DateTimeParseException ⇒ A): Catcher[A] = catcher(f)
 
 }

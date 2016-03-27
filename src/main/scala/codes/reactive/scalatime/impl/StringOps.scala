@@ -19,7 +19,8 @@
 package codes.reactive.scalatime.impl
 
 
-import codes.reactive.scalatime._
+import java.time.format.{DateTimeFormatter, DateTimeParseException}
+import java.time.temporal.{TemporalAccessor, TemporalQuery}
 
 import scala.language.implicitConversions
 

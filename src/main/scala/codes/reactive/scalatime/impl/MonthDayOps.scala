@@ -18,7 +18,8 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
+import java.time.format.DateTimeFormatter
+import java.time.{DateTimeException, Month, MonthDay}
 
 import scala.language.implicitConversions
 
@@ -60,11 +61,13 @@ final case class MonthDayOps(underlying: MonthDay) extends AnyVal {
   }
 
   /** Formats this month-day using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during printing
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
   /** Formats this month-day using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during printing
     */
   def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)

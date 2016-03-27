@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
+import java.time.Period
 
 import scala.language.implicitConversions
 
@@ -29,26 +29,26 @@ final case class IntOps(underlying: Int) extends AnyVal {
   def day: Period = days
 
   /** Obtains a [[Period]] representing a number of days. */
-  def days: Period = Period.days(underlying) // TODO? Better way to overload day/days when used on literals.
+  def days: Period = Period.ofDays(underlying) // TODO? Better way to overload day/days when used on literals.
                                              // ie. both Period and Duration can be constructed from Int literals
 
   /** Obtains a [[Period]] representing a number of weeks. */
   def week: Period = weeks
 
   /** Obtains a [[Period]] representing a number of weeks. */
-  def weeks: Period = Period.weeks(underlying)
+  def weeks: Period = Period.ofWeeks(underlying)
 
   /** Obtains a [[Period]] representing a number of months. */
   def month: Period = months
 
   /** Obtains a [[Period]] representing a number of months. */
-  def months: Period = Period.months(underlying)
+  def months: Period = Period.ofMonths(underlying)
 
   /** Obtains a [[Period]] representing a number of years. */
   def year: Period = years
 
   /** Obtains a [[Period]] representing a number of years. */
-  def years: Period = Period.years(underlying)
+  def years: Period = Period.ofYears(underlying)
 
 }
 

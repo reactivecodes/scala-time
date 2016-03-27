@@ -20,4 +20,4 @@ package codes.reactive
 
 
 /** Basic Scala wrapper for easier use of JSR-310 compatible time APIs. */
-package object scalatime extends impl.TimeAliases
+package object scalatime

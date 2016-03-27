@@ -19,27 +19,29 @@
 package codes.reactive.scalatime
 package impl
 
+import java.time.format.DateTimeFormatter._
+import java.time.{LocalDate, LocalTime}
+
 import org.scalatest.{Matchers, Outcome, fixture}
-import format.DateTimeFormatter.Iso
 
 
 class ChronoLocalDateOpsSuite extends fixture.FunSuite with Matchers {
 
   test("`%%` combines a ChronoLocalDate with a LocalTime") { ld =>
-    val lt = LocalTime()
+    val lt = LocalTime.now()
     ld %% lt shouldBe ld.underlying.atTime(lt)
   }
 
   test("`>>` formats a ChronoLocalDate according to the specified formatter") { ld =>
-    ld |> Iso.LocalDate shouldBe ld.underlying.format(Iso.LocalDate)
+    ld |> ISO_LOCAL_DATE shouldBe ld.underlying.format(ISO_LOCAL_DATE)
   }
 
   test("`▹` formats a ChronoLocalDate according to the specified formatter") { ld =>
-    ld  ▹ Iso.LocalDate shouldBe ld.underlying.format(Iso.LocalDate)
+    ld  ▹ ISO_LOCAL_DATE shouldBe ld.underlying.format(ISO_LOCAL_DATE)
   }
 
   override type FixtureParam = ChronoLocalDateOps
 
   override protected def withFixture(test: OneArgTest): Outcome =
-    withFixture(test.toNoArgTest(new ChronoLocalDateOps(LocalDate())))
+    withFixture(test.toNoArgTest(new ChronoLocalDateOps(LocalDate.now())))
 }

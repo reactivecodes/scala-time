@@ -18,7 +18,8 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
+import java.time.temporal.Temporal
+import java.time.{DateTimeException, Month, MonthDay}
 
 import scala.language.implicitConversions
 
@@ -31,7 +32,8 @@ final case class MonthOps(underlying: Month) extends AnyVal {
   /** Obtains the month-of-year which is the specified number of months before this one. */
   def -(months: Int): Month = underlying.minus(months)
 
-  /** Obtains a [[MonthDay]] by combining this month with the specified day-of-month.
+  /** Obtains a [[java.time.MonthDay]] by combining this month with the specified day-of-month.
+    *
     * @throws DateTimeException if the day-of-month is invalid for the month.
     */
   def /(day: Int): MonthDay = MonthDay.of(underlying, day)

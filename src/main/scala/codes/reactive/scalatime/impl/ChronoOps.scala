@@ -18,9 +18,11 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
+import java.time.chrono.{ChronoLocalDate, ChronoLocalDateTime, ChronoZonedDateTime}
+import java.time.format.DateTimeFormatter
+import java.time.{DateTimeException, LocalTime, ZoneId}
 
-import language.implicitConversions
+import scala.language.implicitConversions
 
 /** Enriches a [[ChronoLocalDate]] with additional methods.  */
 final case class ChronoLocalDateOps(underlying: ChronoLocalDate) extends AnyVal {
@@ -30,11 +32,13 @@ final case class ChronoLocalDateOps(underlying: ChronoLocalDate) extends AnyVal 
     underlying.atTime(time).asInstanceOf[ChronoLocalDateTime[A]]
 
   /** Formats this date using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during formatting.
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
   /** Formats this date using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during formatting.
     */
   def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
@@ -56,11 +60,13 @@ final case class ChronoLocalDateTimeOps[A <: ChronoLocalDate](underlying: Chrono
   def ±(zone: ZoneId): ChronoZonedDateTime[A] = %%(zone)
 
   /** Formats this date using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during formatting.
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
   /** Formats this date using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during formatting.
     */
   def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
@@ -69,7 +75,7 @@ final case class ChronoLocalDateTimeOps[A <: ChronoLocalDate](underlying: Chrono
 
 trait ToChronoLocalDateTimeOps {
   implicit final def toChronoLocalDatetimeOpsFromChronoLocalDateTime[A <: ChronoLocalDate](f: ChronoLocalDateTime[A]):
-    ChronoLocalDateTimeOps[A] = new ChronoLocalDateTimeOps(f)
+  ChronoLocalDateTimeOps[A] = new ChronoLocalDateTimeOps(f)
 }
 
 
@@ -77,11 +83,13 @@ trait ToChronoLocalDateTimeOps {
 final case class ChronoZonedDateTimeOps[A <: ChronoLocalDate](underlying: ChronoZonedDateTime[A]) extends AnyVal {
 
   /** Formats this date using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during formatting.
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)
 
   /** Formats this date using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during formatting.
     */
   def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
@@ -90,5 +98,5 @@ final case class ChronoZonedDateTimeOps[A <: ChronoLocalDate](underlying: Chrono
 
 trait ToChronoZonedDateTimeOps {
   implicit final def toChronoZonedDatetimeOpsFromChronoLocalDateTime[A <: ChronoLocalDate](f: ChronoZonedDateTime[A]):
-    ChronoZonedDateTimeOps[A] = new ChronoZonedDateTimeOps(f)
+  ChronoZonedDateTimeOps[A] = new ChronoZonedDateTimeOps(f)
 }

@@ -19,6 +19,9 @@
 package codes.reactive.scalatime
 package impl
 
+import java.time.temporal.ChronoUnit
+import java.time.{Duration, LocalTime, Period}
+
 import org.scalatest.{Matchers, Outcome, fixture}
 
 
@@ -26,7 +29,7 @@ class TemporalAmountOpsSuite extends fixture.FunSuite with Matchers {
   override type FixtureParam = (TemporalAmountOps)
 
   override protected def withFixture(test: OneArgTest): Outcome = {
-    val amt = Duration.minutes(60)
+    val amt = Duration.ofMinutes(60)
     withFixture(test.toNoArgTest(new TemporalAmountOps(amt)))
   }
 
@@ -44,36 +47,36 @@ class DurationOpsSuite extends fixture.FunSuite with Matchers {
   override type FixtureParam = DurationOps
 
   override protected def withFixture(test: OneArgTest): Outcome = {
-    val dur = Duration.minutes(60)
+    val dur = Duration.ofMinutes(60)
     withFixture(test.toNoArgTest(new DurationOps(dur)))
   }
 
   test("`*` obtains a copy of the boxed Duration multiplied by the scalar") {
-    _ * 2 shouldBe Duration.minutes(120)
+    _ * 2 shouldBe Duration.ofMinutes(120)
   }
 
   test("`+` obtains a copy of the boxed Duration with the specified Duration added") {
-    _ + Duration.minutes(60) shouldBe Duration.minutes(120)
+    _ + Duration.ofMinutes(60) shouldBe Duration.ofMinutes(120)
   }
 
   test("`+` obtains a copy of the boxed Duration with a duration added in terms of the specified unit") {
-    _ +(60, ChronoUnit.Minutes) shouldBe Duration.minutes(120)
+    _ +(60, ChronoUnit.MINUTES) shouldBe Duration.ofMinutes(120)
   }
 
   test("`-` obtains a copy of the boxed Duration with the specified Duration subtracted") {
-    _ - Duration.minutes(60) shouldBe Duration.minutes(0)
+    _ - Duration.ofMinutes(60) shouldBe Duration.ofMinutes(0)
   }
 
   test("`-` obtains a copy of the boxed Duration with a duration subtracted in terms of the specified unit") {
-    _ -(60, ChronoUnit.Minutes) shouldBe Duration.minutes(0)
+    _ -(60, ChronoUnit.MINUTES) shouldBe Duration.ofMinutes(0)
   }
 
   test("`/` obtains a copy of the boxed Duration divided by the divisor") {
-    _ / 2 shouldBe Duration.minutes(30)
+    _ / 2 shouldBe Duration.ofMinutes(30)
   }
 
   test("`unary_!` negates the boxed Duration") {
-    !_ shouldBe Duration.minutes(-60)
+    !_ shouldBe Duration.ofMinutes(-60)
   }
 }
 
@@ -82,23 +85,23 @@ class PeriodOpsSuite extends fixture.FunSuite with Matchers {
   override type FixtureParam = PeriodOps
 
   override protected def withFixture(test: OneArgTest): Outcome = {
-    val period = Period.days(60)
+    val period = Period.ofDays(60)
     withFixture(test.toNoArgTest(new FixtureParam(period)))
   }
 
   test("`*` obtains a copy of the boxed Period multiplied by the scalar") {
-    _ * 2 shouldBe Period.days(120)
+    _ * 2 shouldBe Period.ofDays(120)
   }
 
   test("`+` obtains a copy of the boxed Period with the specified TemporalAmount added") {
-    _ + Period.days(60) shouldBe Period.days(120)
+    _ + Period.ofDays(60) shouldBe Period.ofDays(120)
   }
 
   test("`+` obtains a copy of the boxed Period with the specified TemporalAmount subtracted") {
-    _ - Period.days(60) shouldBe Period.days(0)
+    _ - Period.ofDays(60) shouldBe Period.ofDays(0)
   }
 
   test("`unary_!` negates the boxed Period") {
-    !_ shouldBe Period.days(-60)
+    !_ shouldBe Period.ofDays(-60)
   }
 }

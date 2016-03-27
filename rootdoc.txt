@@ -2,25 +2,15 @@
 '''scala-time''' is a simple Scala wrapper for easier use JDK 1.8.0 (Java 8) time APIs
 
 ==== Overview ====
-The library is contained in the [[codes.reactive.scalatime scalatime]] package which includes type aliases, as well as
-factory objects for core '''java.time''' types and constant values.
+The library is contained in the [[codes.reactive.scalatime scalatime]] package which includes extension methods provided
+via implicit conversion methods to Scala value classes.
 
-It is further divided into packages corresponding to the underlying
-[[http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html java.time]] package - with the
-exception of the [[codes.reactive.scalatime.control control]] package which provides default
-[[scala.util.control.Exception.Catcher Catcher]] instances for exceptions which may be thrown by the underlying
-library.
-
-==== Package Structure ====
-  - [[codes.reactive.scalatime.temporal temporal]]  - Access to date and time using fields and units, and date time adjusters.
-  - [[codes.reactive.scalatime.control control]]    - [[scala.util.control.Exception.Catcher Catcher]] instances.
-  - [[codes.reactive.scalatime.format format]]  - Provides classes to print and parse dates and times.
-
-
+For usage examples see below:
 
 @example
 {{{
     // Import the required classes path:
+    import java.time._
     import codes.reactive.scalatime._
     import Scalatime._
 
@@ -35,11 +25,8 @@ library.
     // Obtain a LocalDate instance
     val localDate = LocalDate.of(2014, 6, 7)
 
-    // Obtain the current UTC ZonedDateTime
-    val zonedDateTime = ZonedDateTime()
-
-    // Obtain a default TemporalQuery for the ZoneId
-    val query = temporal.TemporalQuery.zone
+    // Obtain a default TemporalQuery for the precision
+    val query = temporal.TemporalQueries.precision
 
     // Obtain a Duration instance from a sum of Durations
     duration + otherDuration
@@ -54,5 +41,5 @@ library.
     localDate - period
 
     // Query a specified Temporal
-    val result = query |> zonedDateTime
+    val result = query |> localDate
 }}}

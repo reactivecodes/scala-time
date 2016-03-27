@@ -18,9 +18,10 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
+import java.time.DateTimeException
+import java.time.temporal._
 
-import language.implicitConversions
+import scala.language.implicitConversions
 
 /** Enriches a [[Temporal]] with additional methods.
   *

@@ -18,7 +18,8 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
+import java.time.temporal.{Temporal, TemporalAmount, TemporalUnit, UnsupportedTemporalTypeException}
+import java.time.{Duration, Period}
 
 import scala.language.implicitConversions
 

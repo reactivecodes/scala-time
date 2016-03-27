@@ -1,9 +1,6 @@
 <component name="CopyrightManager">
   <copyright>
-    <option name="notice" value="See the NOTICE file distributed with this work for additional &#10;information regarding Copyright ownership.  The author/authors &#10;license this file to you under the terms of the Apache License &#10;Version 2.0 (the &quot;License&quot;); you may not use this file except &#10;in compliance with the License.  You may obtain a copy of the &#10;License at:&#10;&#10;    http://www.apache.org/licenses/LICENSE-2.0&#10;&#10;Unless required by applicable law or agreed to in writing,&#10;software distributed under the License is distributed on an&#10;&quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,&#10;either express or implied.  See the License for the specific&#10;language governing permissions and limitations under the&#10;License." />
-    <option name="keyword" value="Copyright" />
-    <option name="allowReplaceKeyword" value="See the NOTICE" />
     <option name="myName" value="ASF, 2.0" />
-    <option name="myLocal" value="true" />
+    <option name="notice" value="See the NOTICE file distributed with this work for additional &#10;information regarding Copyright ownership.  The author/authors &#10;license this file to you under the terms of the Apache License &#10;Version 2.0 (the &quot;License&quot;); you may not use this file except &#10;in compliance with the License.  You may obtain a copy of the &#10;License at:&#10;&#10;    http://www.apache.org/licenses/LICENSE-2.0&#10;&#10;Unless required by applicable law or agreed to in writing,&#10;software distributed under the License is distributed on an&#10;&quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,&#10;either express or implied.  See the License for the specific&#10;language governing permissions and limitations under the&#10;License." />
   </copyright>
 </component>

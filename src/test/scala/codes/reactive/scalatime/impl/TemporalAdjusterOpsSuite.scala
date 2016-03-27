@@ -19,14 +19,17 @@
 package codes.reactive.scalatime
 package impl
 
-import org.scalatest.{Outcome, Matchers, fixture}
+import java.time.LocalDate
+import java.time.temporal.TemporalAdjusters
+
+import org.scalatest.{Matchers, Outcome, fixture}
 
 
 class TemporalAdjusterOpsSuite extends fixture.FunSuite with Matchers {
   override type FixtureParam = TemporalAdjusterOps
 
   override protected def withFixture(test: OneArgTest): Outcome = {
-    val adj = temporal.TemporalAdjuster.firstDayOfMonth
+    val adj = TemporalAdjusters.firstDayOfMonth()
     withFixture(test.toNoArgTest(new FixtureParam(adj)))
   }
 

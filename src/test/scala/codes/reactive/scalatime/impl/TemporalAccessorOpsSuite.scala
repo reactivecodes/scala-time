@@ -19,8 +19,10 @@
 package codes.reactive.scalatime
 package impl
 
-import org.scalatest.{Outcome, Matchers, fixture}
-import temporal.TemporalQuery
+import java.time.LocalDate
+import java.time.temporal.{ChronoField, ChronoUnit, TemporalQueries}
+
+import org.scalatest.{Matchers, Outcome, fixture}
 
 
 class TemporalAccessorOpsSuite extends fixture.FunSuite with Matchers {
@@ -32,18 +34,18 @@ class TemporalAccessorOpsSuite extends fixture.FunSuite with Matchers {
   }
 
   test("`|>` queries the boxed object using the specified TemporalQuery strategy object.") {
-    _ |> TemporalQuery.precision shouldBe ChronoUnit.Days
+    _ |> TemporalQueries.precision shouldBe ChronoUnit.DAYS
   }
 
   test("`▹` queries the boxed object using the specified TemporalQuery strategy object.") {
-    _ |> TemporalQuery.precision shouldBe ChronoUnit.Days
+    _ |> TemporalQueries.precision shouldBe ChronoUnit.DAYS
   }
 
   test("`#|>` queries the boxed object to obtains the value of the specified field as a `Long`") {
-    _ #|> ChronoField.DayOfMonth shouldBe 25L
+    _ #|> ChronoField.DAY_OF_MONTH shouldBe 25L
   }
 
   test("`#▹` queries the boxed object to obtains the value of the specified field as a `Long`") {
-    _ #▹ ChronoField.DayOfMonth shouldBe 25L
+    _ #▹ ChronoField.DAY_OF_MONTH shouldBe 25L
   }
 }

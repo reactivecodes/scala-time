@@ -18,7 +18,8 @@
 
 package codes.reactive.scalatime.impl
 
-import codes.reactive.scalatime._
+import java.time._
+import java.time.format.DateTimeFormatter
 
 import scala.language.implicitConversions
 
@@ -43,10 +44,11 @@ final case class YearOps(underlying: Year) extends AnyVal {
   /** Returns `true` if this year is equal to or after the specified one. */
   def >=(other: Year): Boolean = underlying.equals(other) || underlying.isAfter(other)
 
-  /** Obtains a [[YearMonth]] by combining this year with the specified [[Month]]. */
+  /** Obtains a [[YearMonth]] by combining this year with the specified [[java.time.Month]]. */
   def /(month: Month): YearMonth = underlying.atMonth(month)
 
   /** Obtains a [[YearMonth]] by combining this year with the specified month, from 1 (January) to 12 (December).
+    *
     * @throws DateTimeException if the month is invalid.
     */
   def /(month: Int): YearMonth = underlying.atMonth(month)
@@ -55,6 +57,7 @@ final case class YearOps(underlying: Year) extends AnyVal {
   def /(monthDay: MonthDay): LocalDate = underlying.atMonthDay(monthDay)
 
   /** Formats this year using the specified formatter.
+    *
     * @throws DateTimeException - if an error occurs during printing
     */
   def |>(formatter: DateTimeFormatter): String = underlying.format(formatter)

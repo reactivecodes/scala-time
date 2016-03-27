@@ -1,17 +1,17 @@
 scala-time
 ==========
 
-Basic Scala utilities allowing for easier use of *`java.time` compatible* APIs, with the aim of providing a single
-Scala API (and migration point) between [JDK 1.8 Time][2], and the [Threeten BP][12] JDK 7 backport.
+Basic Scala utilities allowing for easier use of *`java.time`* APIs.
 
-###### [Build:][11]
-  - [*master*][7]: ![Devel Build Status Icon][3]
-
-###### [Issues][8]
+*Note:* Support has now been dropped for JDK 7 and the [Threeten BP][12] backport APIs.
 
 ###### Supported Scala Versions:
 - 2.11
 - 2.10
+
+<br>
+[![][Build Status Image]][Build Status]
+[![][Coverage Status Image]][Coverage Status]
 
 __________________________________
 
@@ -23,11 +23,8 @@ published to the [`Sonatype OSS Snapshots`][5] public repository.
 ###### [sbt][6] coordinates:
 
 ```scala
-    // If using JDK 1.8 and above
+    // Requires JDK 1.8 and above
     "codes.reactive" %% "scala-time" % "0.3.0-SNAPSHOT"
-    
-    // If using JDK 1.7
-    "codes.reactive" %% "scala-time-threeten" % "0.3.0-SNAPSHOT"
 ```
 
 #### Documentation:
@@ -35,6 +32,7 @@ See the [project website][9] for links to current documentation.
 
 #### Examples:
 ```scala
+import java.time._
 import codes.reactive.scalatime._
 import Scalatime._
 
@@ -49,11 +47,8 @@ val period = 2 weeks
 // Obtains a LocalDate instance
 val localDate = LocalDate.of(2014, 6, 7)
 
-// Obtain the current UTC ZonedDateTime
-val zonedDateTime = ZonedDateTime()
-
-// Obtain a default TemporalQuery for the ZoneId
-val query = temporal.TemporalQuery.zone
+// Obtain a default TemporalQuery for precision
+val query = temporal.TemporalQueries.precision
 
 // Obtain a Duration instance from a sum of Durations
 duration + otherDuration
@@ -68,7 +63,7 @@ localDate + period
 localDate - period
 
 // Query a specified Temporal
-val result = query |> zonedDateTime
+val result = query |> localDate
 ```
 
 
@@ -105,3 +100,7 @@ limitations under the License.
 [11]: https://reactive.codes/ci/project.html?projectId=ScalaTime&tab=projectOverview
 [12]: http://www.threeten.org
 [13]: http://www.threeten.org/threetenbp/apidocs
+[Build Status]:https://travis-ci.org/reactivecodes/scala-time
+[Build Status Image]:https://travis-ci.org/reactivecodes/scala-time.svg?branch=master
+[Coverage Status]:https://coveralls.io/r/reactivecodes/scala-time?branch=master
+[Coverage Status Image]:https://coveralls.io/repos/reactivecodes/scala-time/badge.svg?branch=master
