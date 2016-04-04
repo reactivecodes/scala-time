@@ -53,11 +53,11 @@ final case class MonthDayOps(underlying: MonthDay) extends AnyVal {
     * @throws DateTimeException if the day-of-month value is invalid.
     * @throws DateTimeException if the day-of-month value is invalid for the month.
     */
-  def ~=(month: Option[Month], day: Option[Int]): MonthDay = {
-    def replaceMonth = if (month.nonEmpty) underlying.withMonth(month.get.getValue) else underlying
-    def replaceDay = if (day.nonEmpty) underlying.withDayOfMonth(day.get) else underlying
-    replaceMonth
-    replaceDay
+  def ~=(month: Option[Month], day: Option[Int]): MonthDay = (month, day) match {
+    case (Some(m), Some(d)) ⇒ def md1 = underlying.withMonth(m.getValue); md1.withDayOfMonth(d)
+    case (Some(m), None) ⇒ underlying.withMonth(m.getValue)
+    case (None, Some(d)) ⇒ underlying.withDayOfMonth(d)
+    case _ ⇒ underlying
   }
 
   /** Formats this month-day using the specified formatter.
@@ -71,8 +71,6 @@ final case class MonthDayOps(underlying: MonthDay) extends AnyVal {
     * @throws DateTimeException - if an error occurs during printing
     */
   def ▹(formatter: DateTimeFormatter): String = underlying.format(formatter)
-
-
 }
 
 trait ToMonthDayOps extends Any {
