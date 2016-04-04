@@ -18,6 +18,8 @@
 
 package codes.reactive
 
+import scalatime.impl.{ToAllOps, ToAllStd}
+
 
 /** Basic Scala wrapper for easier use of JSR-310 compatible time APIs. */
-package object scalatime
+package object scalatime  extends ToAllOps with ToAllStd

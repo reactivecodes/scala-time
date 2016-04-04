@@ -34,7 +34,6 @@ See the [project website][9] for links to current documentation.
 ```scala
 import java.time._
 import codes.reactive.scalatime._
-import Scalatime._
 
 // Obtain a Duration instance from a Long
 val duration = 10L minutes

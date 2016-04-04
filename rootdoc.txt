@@ -12,7 +12,6 @@ For usage examples see below:
     // Import the required classes path:
     import java.time._
     import codes.reactive.scalatime._
-    import Scalatime._
 
     // Obtain a Duration instance from a Long
     val duration = 10L minutes
