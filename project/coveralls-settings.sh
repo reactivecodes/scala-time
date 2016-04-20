@@ -10,7 +10,7 @@ coveralls_plugin_dependency="addSbtPlugin(\"org.scoverage\" % \"sbt-coveralls\" 
 
 coveralls_token_setting="CoverallsKeys.coverallsToken := sys.env.get(\"COVERALLS_TOKEN\")"
 
-coveralls_enabled_setting="coverageEnabled in Test := true"
+coveralls_enabled_setting="coverageEnabled := true"
 
 if [ -n "${CI}" ]; then
 echo -e "\n\n${scoverage_plugin_dependency}\n\n${coveralls_plugin_dependency}" >> ${TRAVIS_BUILD_DIR}/project/plugins.sbt

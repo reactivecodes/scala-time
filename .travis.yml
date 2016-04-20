@@ -8,4 +8,4 @@ script:
 
 after_success:
   - ./project/coveralls-settings.sh
-  - sbt coverageReport coveralls
+  - sbt clean test coverageReport coveralls
