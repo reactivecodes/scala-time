@@ -58,8 +58,4 @@ SiteKeys.siteMappings <++= (mappings in(ScalaUnidoc, packageDoc), version) map {
 
 git.remoteRepo := codesGithubRepo.value.developerConnection.drop(8)
 
-CoverallsKeys.coverallsToken := sys.env.get("COVERALLS_TOKEN")
-
-coverageEnabled := true
-
 addDevelopers(("arashi01", "Ali Salim Rashid", "a.rashid@zantekk.com"))
