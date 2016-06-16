@@ -6,7 +6,7 @@ site.settings
 
 ghpages.settings
 
-version := "0.4.0-SNAPSHOT"
+version := "0.4.0"
 
 organization := "codes.reactive"
 
@@ -26,7 +26,7 @@ scalaVersion := crossScalaVersions.value.head
 
 crossScalaVersions := Seq("2.11.8", "2.10.6")
 
-libraryDependencies ++= Seq("org.scalatest" %% "scalatest" % "2.2.6" % Test)
+libraryDependencies ++= Seq("org.scalatest" %% "scalatest" % "3.0.0-RC2" % Test)
 
 codesCompileOpts
 

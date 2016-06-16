@@ -12,7 +12,7 @@ coveralls_token_setting="CoverallsKeys.coverallsToken := sys.env.get(\"COVERALLS
 
 coveralls_enabled_setting="coverageEnabled := true"
 
-if [ -n "${CI}" ]; then
+if [ -n "${ci}" ]; then
 echo -e "\n\n${scoverage_plugin_dependency}\n\n${coveralls_plugin_dependency}" >> ${TRAVIS_BUILD_DIR}/project/plugins.sbt
 echo -e "\n\n${coveralls_token_setting}\n\n${coveralls_enabled_setting}\n\n" >> ${TRAVIS_BUILD_DIR}/build.sbt
 exit 0

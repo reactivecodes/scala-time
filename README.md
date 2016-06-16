@@ -10,21 +10,23 @@ Basic Scala utilities allowing for easier use of *`java.time`* APIs.
 - 2.10
 
 <br>
-[![][Build Status Image]][Build Status]
 [![][Coverage Status Image]][Coverage Status]
+[![][Build Status Image]][Build Status]
+[![][License Badge]][4]
+[![][Maven Central Badge]][Maven Central Repo]
 
 __________________________________
 
 Usage:
 -----
-This project is not *yet* considered stable, and the API is subject to change, however `0.4.0-SNAPSHOT` binaries are
-published to the [`Sonatype OSS Snapshots`][5] public repository.
+This project is not *yet* considered stable, and the API is subject to change, however version `0.4.0` binaries are
+published to the [`Maven Central`][Maven Central Repo] public repository.
 
 ###### [sbt][6] coordinates:
 
 ```scala
     // Requires JDK 1.8 and above
-    "codes.reactive" %% "scala-time" % "0.4.0-SNAPSHOT"
+    "codes.reactive" %% "scala-time" % "0.4.0"
 ```
 
 #### Documentation:
@@ -103,3 +105,6 @@ limitations under the License.
 [Build Status Image]:https://travis-ci.org/reactivecodes/scala-time.svg?branch=master
 [Coverage Status]:https://coveralls.io/r/reactivecodes/scala-time?branch=master
 [Coverage Status Image]:https://coveralls.io/repos/github/reactivecodes/scala-time/badge.svg?branch=master
+[License Badge]:https://img.shields.io/badge/License-Apache%202-brightgreen.svg
+[Maven Central Badge]: https://maven-badges.herokuapp.com/maven-central/codes.reactive/scala-time_2.11/badge.svg
+[Maven Central Repo]: https://repo1.maven.org/maven2/codes/reactive/scala-time_2.11/
