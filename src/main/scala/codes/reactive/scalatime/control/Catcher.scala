@@ -53,9 +53,6 @@ object Catcher {
       case _ => false
     }, f)(implicitly[ClassTag[Ex]])
 
-  /** $Obt all [[DateTimeException]]s. */
-  def all[A]: Catcher[A] = catcher[A, DateTimeException](throw _)
-
   /** $Obt all [[DateTimeException]]s.
     *
     * @param  f function to execute if the exception is encountered.
