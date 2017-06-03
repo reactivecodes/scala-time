@@ -18,7 +18,7 @@
 
 package codes.reactive.scalatime.impl
 
-import java.time.Period
+import java.time.{Month, Period, YearMonth}
 
 import org.scalatest.{Matchers, Outcome, fixture}
 

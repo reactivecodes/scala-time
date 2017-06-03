@@ -11,6 +11,7 @@ Basic Scala utilities allowing for easier use of *`java.time`* APIs.
 - 2.10
 
 <br>
+
 [![][Coverage Status Image]][Coverage Status]
 [![][Build Status Image]][Build Status]
 [![][License Badge]][4]

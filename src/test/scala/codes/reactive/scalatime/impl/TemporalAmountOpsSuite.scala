@@ -30,7 +30,7 @@ class TemporalAmountOpsSuite extends fixture.FunSuite with Matchers {
 
   override protected def withFixture(test: OneArgTest): Outcome = {
     val amt = Duration.ofMinutes(60)
-    withFixture(test.toNoArgTest(new TemporalAmountOps(amt)))
+    withFixture(test.toNoArgTest(TemporalAmountOps(amt)))
   }
 
   test("`<<+` adds the boxed amount to the specified Temporal") {
@@ -48,7 +48,7 @@ class DurationOpsSuite extends fixture.FunSuite with Matchers {
 
   override protected def withFixture(test: OneArgTest): Outcome = {
     val dur = Duration.ofMinutes(60)
-    withFixture(test.toNoArgTest(new DurationOps(dur)))
+    withFixture(test.toNoArgTest(DurationOps(dur)))
   }
 
   test("`*` obtains a copy of the boxed Duration multiplied by the scalar") {
@@ -77,6 +77,10 @@ class DurationOpsSuite extends fixture.FunSuite with Matchers {
 
   test("`unary_!` negates the boxed Duration") {
     !_ shouldBe Duration.ofMinutes(-60)
+  }
+
+  test("`asConcurrentDuration` obtains the Duration as a `concurrent.duration.Duration`") {
+    _.asConcurrentDuration shouldBe concurrent.duration.Duration.fromNanos(3600000000000L)
   }
 }
 
