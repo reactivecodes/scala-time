@@ -71,6 +71,6 @@ object Catcher {
   def zoneRules[A](f: ZoneRulesException => A): Catcher[A] = catcher(f)
 
   /** $Obt a [[java.time.format.DateTimeParseException]], an exception indicating when an error occurs during parsing. */
-  def dateTimeParseException[A](f: DateTimeParseException ⇒ A): Catcher[A] = catcher(f)
+  def dateTimeParseException[A](f: DateTimeParseException => A): Catcher[A] = catcher(f)
 
 }

@@ -24,9 +24,9 @@ publishOSS
 
 scalaVersion := crossScalaVersions.value.head
 
-crossScalaVersions := Seq("2.12.2", "2.11.11", "2.10.6")
+crossScalaVersions := Seq("2.13.0", "2.12.8", "2.11.12", "2.10.7")
 
-libraryDependencies ++= Seq("org.scalatest" %% "scalatest" % "3.0.0" % Test)
+libraryDependencies ++= Seq("org.scalatest" %% "scalatest" % "3.0.+" % Test)
 
 codesCompileOpts
 

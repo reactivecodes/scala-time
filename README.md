@@ -6,6 +6,7 @@ Basic Scala utilities allowing for easier use of *`java.time`* APIs.
 *Note:* Support has now been dropped for JDK 7 and the [Threeten BP][12] backport APIs.
 
 ###### Supported Scala Versions:
+- 2.13
 - 2.12
 - 2.11
 - 2.10
@@ -21,14 +22,14 @@ __________________________________
 
 Usage:
 -----
-This project is not *yet* considered stable, and the API is subject to change, however version `0.4.1` binaries are
+This project is not *yet* considered stable, and the API is subject to change, however version `0.4.2` binaries are
 published to the [`Maven Central`][Maven Central Repo] public repository.
 
 ###### [sbt][6] coordinates:
 
 ```scala
     // Requires JDK 1.8 and above
-    "codes.reactive" %% "scala-time" % "0.4.1"
+    "codes.reactive" %% "scala-time" % "0.4.2"
 ```
 
 #### Documentation:
