@@ -45,7 +45,7 @@ trait ToTemporalQueryOps extends Any {
 
   implicit final def toTemporalQueryOpsFromTemporalQuery[A](v: TemporalQuery[A]): TemporalQueryOps[A] = new TemporalQueryOps(v)
 
-  implicit final def toTemporalQueryOpsFromFunction1[A](f: (TemporalAccessor) ⇒ A): TemporalQueryOps[A] =
+  implicit final def toTemporalQueryOpsFromFunction1[A](f: (TemporalAccessor) => A): TemporalQueryOps[A] =
     new TemporalQueryOps(new TemporalQuery[A] {
       override def queryFrom(temporalAccessor: TemporalAccessor): A = f(temporalAccessor)
     })
@@ -53,7 +53,7 @@ trait ToTemporalQueryOps extends Any {
 
 trait ToTemporalQuery extends Any {
 
-  implicit final def toTemporalQueryFromFunction1[A](f: (TemporalAccessor) ⇒ A): TemporalQuery[A] = new TemporalQuery[A] {
+  implicit final def toTemporalQueryFromFunction1[A](f: (TemporalAccessor) => A): TemporalQuery[A] = new TemporalQuery[A] {
     override def queryFrom(temporalAccessor: TemporalAccessor): A = f(temporalAccessor)
   }
 }

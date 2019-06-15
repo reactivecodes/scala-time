@@ -34,7 +34,7 @@ final case class TemporalAmountOps(underlying: TemporalAmount) extends AnyVal {
 }
 
 trait ToTemporalAmountOps extends Any {
-  implicit final def toTemporalAmountOpsFromTemporalAmount(f: TemporalAmount): TemporalAmountOps = new TemporalAmountOps(f)
+  implicit final def toTemporalAmountOpsFromTemporalAmount(f: TemporalAmount): TemporalAmountOps = TemporalAmountOps(f)
 }
 
 
@@ -73,7 +73,7 @@ final case class DurationOps(underlying: Duration) extends AnyVal {
     */
   def -(amount: Long, unit: TemporalUnit): Duration = underlying.minus(amount, unit)
 
-  /** Obtains a copy of this amount divided by the divisor.
+  /** Obtains a copy of this duration divided by the divisor.
     *
     * @throws ArithmeticException - if numeric overflow occurs
     */
@@ -84,10 +84,16 @@ final case class DurationOps(underlying: Duration) extends AnyVal {
     * @throws ArithmeticException - if numeric overflow occurs
     */
   def unary_! : Duration = underlying.negated
+
+  /** Obtains a [[scala.concurrent.duration.Duration]] from the value of this duration in nanoseconds.
+    *
+    * @throws ArithmeticException - if numeric overflow occurs
+    */
+  def asConcurrentDuration: concurrent.duration.Duration = concurrent.duration.Duration.fromNanos(underlying.toNanos)
 }
 
 trait ToDurationOps extends Any {
-  implicit final def toDurationOpsFromDuration(f: Duration): DurationOps = new DurationOps(f)
+  implicit final def toDurationOpsFromDuration(f: Duration): DurationOps = DurationOps(f)
 }
 
 
@@ -124,5 +130,5 @@ final case class PeriodOps(underlying: Period) extends AnyVal {
 
 trait ToPeriodOps extends Any {
 
-  implicit final def toPeriodOpsFromPeriod(f: Period): PeriodOps = new PeriodOps(f)
+  implicit final def toPeriodOpsFromPeriod(f: Period): PeriodOps = PeriodOps(f)
 }

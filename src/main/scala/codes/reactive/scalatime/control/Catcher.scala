@@ -53,9 +53,6 @@ object Catcher {
       case _ => false
     }, f)(implicitly[ClassTag[Ex]])
 
-  /** $Obt all [[DateTimeException]]s. */
-  def all[A]: Catcher[A] = catcher[A, DateTimeException](throw _)
-
   /** $Obt all [[DateTimeException]]s.
     *
     * @param  f function to execute if the exception is encountered.
@@ -74,6 +71,6 @@ object Catcher {
   def zoneRules[A](f: ZoneRulesException => A): Catcher[A] = catcher(f)
 
   /** $Obt a [[java.time.format.DateTimeParseException]], an exception indicating when an error occurs during parsing. */
-  def dateTimeParseException[A](f: DateTimeParseException ⇒ A): Catcher[A] = catcher(f)
+  def dateTimeParseException[A](f: DateTimeParseException => A): Catcher[A] = catcher(f)
 
 }

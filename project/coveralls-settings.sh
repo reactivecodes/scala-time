@@ -4,9 +4,9 @@
 
 ci=${TRAVIS}
 
-scoverage_plugin_dependency="addSbtPlugin(\"org.scoverage\" % \"sbt-scoverage\" % \"1.3.5\")"
+scoverage_plugin_dependency="addSbtPlugin(\"org.scoverage\" % \"sbt-scoverage\" % \"1.6.0\")"
 
-coveralls_plugin_dependency="addSbtPlugin(\"org.scoverage\" % \"sbt-coveralls\" % \"1.1.0\")"
+coveralls_plugin_dependency="addSbtPlugin(\"org.scoverage\" % \"sbt-coveralls\" % \"1.2.7\")"
 
 coveralls_token_setting="CoverallsKeys.coverallsToken := sys.env.get(\"COVERALLS_TOKEN\")"
 
