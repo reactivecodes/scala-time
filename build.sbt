@@ -6,7 +6,7 @@ site.settings
 
 ghpages.settings
 
-version := "0.4.2-SNAPSHOT"
+version := "0.4.2"
 
 organization := "codes.reactive"
 
