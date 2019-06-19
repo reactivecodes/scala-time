@@ -22,7 +22,7 @@ import java.time.Period
 
 import scala.language.implicitConversions
 
-/** Enriches a [[scala.Long]] with methods for obtaining [[Period]] instances. */
+/** Enriches a [[scala.Int]] with methods for obtaining [[Period]] instances. */
 final case class IntOps(underlying: Int) extends AnyVal {
 
   /** Obtains a [[Period]] representing a number of days. */
