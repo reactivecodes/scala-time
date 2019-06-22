@@ -1,17 +1,41 @@
 == Scala Time ==
-'''scala-time''' is a simple Scala wrapper for easier use JDK 1.8.0 (Java 8) time APIs
+'''scala-time''' is a simple Scala wrapper for easier use of the '''java.time''' time API.
 
 ==== Overview ====
-The library is contained in the [[codes.reactive.scalatime scalatime]] package which includes extension methods provided
-via implicit conversion methods to Scala value classes.
+The library is contained in the '''[[scalatime]]''' package which includes extension methods provided via implicit
+conversion methods to Scala value classes. Value classes themselves are contained in the '''[[scalatime.impl impl]]'''
+package and are named after the corresponding type for which extension methods are provided.
 
-For usage examples see below:
+For example, to see methods available to [[scala.Int Int]] instances, see the [[scalatime.impl.IntOps IntOps]] api
+documentation. A quick reference table to documentation for all available extension methods is below:
 
+| Type                                     	| Value Class                                                      	|
+|------------------------------------------	|------------------------------------------------------------------	|
+| [[java.time.chrono.ChronoLocalDate]]     	| [[scalatime.impl.ChronoLocalDateOps ChronoLocalDateOps]]         	|
+| [[java.time.chrono.ChronoLocalDateTime]] 	| [[scalatime.impl.ChronoLocalDateTimeOps ChronoLocalDateTimeOps]] 	|
+| [[java.time.chrono.ChronoZonedDateTime]] 	| [[scalatime.impl.ChronoZonedDateTime ChronoZonedDateTime]]       	|
+| [[java.time.Duration]]                   	| [[scalatime.impl.DurationOps DurationOps]]                       	|
+| [[scala.Int Int]]                        	| [[scalatime.impl.IntOps IntOps]]                                 	|
+| [[scala.Long Long]]                      	| [[scalatime.impl.LongOps LongOps]]                               	|
+| [[java.time.MonthDay]]                   	| [[scalatime.impl.MonthDayOps MonthDayOps]]                       	|
+| [[java.time.Month]]                      	| [[scalatime.impl.MonthOps MonthOps]]                             	|
+| [[java.time.Period]]                     	| [[scalatime.impl.PeriodOps PeriodOps]]                           	|
+| [[scala.Predef.String String]]           	| [[scalatime.impl.StringOps StringOps]]                           	|
+| [[java.time.temporal.TemporalAccessor]]  	| [[scalatime.impl.TemporalAccessorOps TemporalAccessorOps]]       	|
+| [[java.time.temporal.TemporalAdjuster]]  	| [[scalatime.impl.TemporalAdjusterOps TemporalAdjusterOps]]       	|
+| [[java.time.temporal.TemporalAmount]]    	| [[scalatime.impl.TemporalAmountOps TemporalAmountOps]]           	|
+| [[java.time.temporal.Temporal]]          	| [[scalatime.impl.TemporalOps TemporalOps]]                       	|
+| [[java.time.temporal.TemporalQuery]]     	| [[scalatime.impl.TemporalQueryOps TemporalQueryOps]]             	|
+| [[java.time.temporal.TemporalUnit]]      	| [[scalatime.impl.TemporalUnitOps TemporalUnitOps]]               	|
+
+<br/>
+
+==== Usage Examples ====
 @example
 {{{
     // Import the required classes path:
     import java.time._
-    import codes.reactive.scalatime._
+    import scalatime._
 
     // Obtain a Duration instance from a Long
     val duration = 10L minutes

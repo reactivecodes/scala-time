@@ -15,7 +15,7 @@ Basic Scala utilities allowing for easier use of *`java.time`* APIs.
 
 [![][Coverage Status Image]][Coverage Status]
 [![][Build Status Image]][Build Status]
-[![][License Badge]][4]
+[![][License Badge]][License]
 [![][Maven Central Badge]][Maven Central Repo]
 
 __________________________________
@@ -38,7 +38,8 @@ See the [project website][9] for links to current documentation.
 #### Examples:
 ```scala
 import java.time._
-import codes.reactive.scalatime._
+import scalatime._  // NOTE: Package name was changed from codes.reactive.scalatime => scalatime 
+                    // for versions 0.5.x and newer. If still using 0.4.x, use codes.reactive.scalatime
 
 // Obtain a Duration instance from a Long
 val duration = 10L minutes
@@ -83,7 +84,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this work except in compliance with the License.
 You may obtain a copy of the License at
 
- [`http://www.apache.org/licenses/LICENSE-2.0`][4]
+ [`http://www.apache.org/licenses/LICENSE-2.0`][License]
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -92,18 +93,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 
-[1]: http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html
-[2]: http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-[3]: https://reactive.codes/ci/app/rest/builds/buildType(id:ScalaTime_IntegrationTest),branch:master/statusIcon
-[4]: http://www.apache.org/licenses/LICENSE-2.0
+
+[License]: http://www.apache.org/licenses/LICENSE-2.0
 [5]: https://oss.sonatype.org/content/repositories/snapshots
 [6]: http://scala-sbt.org
-[7]: https://reactive.codes/ci/viewLog.html?buildTypeId=ScalaTime_IntegrationTest&buildId=lastFinished&buildBranch=master
-[8]: https://reactive.codes/issues/issues?q=project%3A+%7BScala+Time%7D
 [9]: http://oss.reactive.codes/scala-time
-[11]: https://reactive.codes/ci/project.html?projectId=ScalaTime&tab=projectOverview
 [12]: http://www.threeten.org
-[13]: http://www.threeten.org/threetenbp/apidocs
 [Build Status]:https://travis-ci.org/reactivecodes/scala-time
 [Build Status Image]:https://travis-ci.org/reactivecodes/scala-time.svg?branch=master
 [Coverage Status]:https://coveralls.io/r/reactivecodes/scala-time?branch=master
